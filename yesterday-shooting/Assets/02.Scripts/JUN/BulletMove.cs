@@ -41,7 +41,15 @@ public class BulletMove : MonoBehaviour
 
         time += Time.deltaTime;
         
-        if(time > 2)
+        if(time > 1.5f)
+        {
+            PoolManager.Instance.Push(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
         {
             PoolManager.Instance.Push(gameObject);
         }
