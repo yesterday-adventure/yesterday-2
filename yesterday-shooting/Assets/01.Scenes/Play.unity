@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &192980359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2137,8 @@ Rigidbody2D:
     e31: 0
     e32: 0
     e33: 1
+=======
+>>>>>>> parent of 2a79a1a (attack)
 --- !u!1 &565624208
 GameObject:
   m_ObjectHideFlags: 0
