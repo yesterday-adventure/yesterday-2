@@ -31,25 +31,25 @@ public class PlayerFire : MonoBehaviour
     {
         while (true)
         {
-            if(Input.GetKeyDown(KeyCode.RightArrow))
+            if(Input.GetKey(KeyCode.RightArrow))
             {
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.right;
                 yield return new WaitForSeconds(delay);
             }
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if(Input.GetKey(KeyCode.LeftArrow))
             {
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.left;
                 yield return new WaitForSeconds(delay);
             }
-            if(Input.GetKeyDown(KeyCode.UpArrow))
+            if(Input.GetKey(KeyCode.UpArrow))
             {
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.up;
                 yield return new WaitForSeconds(delay);
             }
-            if(Input.GetKeyDown(KeyCode.DownArrow))
+            if(Input.GetKey(KeyCode.DownArrow))
             {
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.down;
