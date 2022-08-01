@@ -64,7 +64,7 @@ public class IntroButtonManager : MonoBehaviour
 
     public void SaveBackk()
     {
-        anim.SetLayerWeight(1, 0f);
+        anim.SetLayerWeight(2, 0f);
     }
     #endregion
 
