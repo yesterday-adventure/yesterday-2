@@ -12,5 +12,4 @@ public class EnemyBulletDir : MonoBehaviour
         up = 3,
         follow = 4,
     }
-    public FireDir fireDir;
 }
