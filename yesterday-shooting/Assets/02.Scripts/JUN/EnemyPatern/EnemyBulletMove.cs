@@ -8,7 +8,6 @@ public class EnemyBulletMove : MonoBehaviour
     private float time = 0f;
     private GameObject player = null;
     private Vector3 dir;
-    EnemyBulletDir enemyBulletDir;
 
     private void Awake()
     {
@@ -19,16 +18,19 @@ public class EnemyBulletMove : MonoBehaviour
     {
         time = 0f;
         dir = player.transform.position - transform.position;
+    }
 
-        if(enemyBulletDir.fireDir == EnemyBulletDir.FireDir.right)
+    public void set(EnemyBulletDir.FireDir A)
+    {
+        if(A == EnemyBulletDir.FireDir.right)
             StartCoroutine(Right());
-        else if(enemyBulletDir.fireDir == EnemyBulletDir.FireDir.left)
+        else if(A == EnemyBulletDir.FireDir.left)
             StartCoroutine(Left());
-        else if(enemyBulletDir.fireDir == EnemyBulletDir.FireDir.up)
+        else if(A == EnemyBulletDir.FireDir.up)
             StartCoroutine(Up());
-        else if(enemyBulletDir.fireDir == EnemyBulletDir.FireDir.down)
+        else if(A == EnemyBulletDir.FireDir.down)
             StartCoroutine(Down());
-        else if(enemyBulletDir.fireDir == EnemyBulletDir.FireDir.follow)
+        else if(A == EnemyBulletDir.FireDir.follow)
             StartCoroutine(Follow());
     }
 
@@ -37,7 +39,7 @@ public class EnemyBulletMove : MonoBehaviour
         while(true)
         {
             transform.position += speed * Time.deltaTime * Vector3.right;
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
     }
 
@@ -72,7 +74,6 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log("123");
             transform.position += speed * Time.deltaTime * dir.normalized;
             yield return null;
         }
