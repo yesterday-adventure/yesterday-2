@@ -29,7 +29,13 @@ public class PlayerHp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Enemy") && shieldTime >= 1)
+        if((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+            OnDamage(()=>{});
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
             OnDamage(()=>{});
     }
 
