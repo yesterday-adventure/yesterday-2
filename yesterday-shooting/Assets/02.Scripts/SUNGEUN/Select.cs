@@ -10,7 +10,7 @@ public class Select : MonoBehaviour
     public Button[] slotButton;
     public Button fileDelete, start;
 
-    public Color playing;
+    public Color playing, fileSelect;
 
     bool[] savefile = new bool[3];
 
@@ -52,13 +52,13 @@ public class Select : MonoBehaviour
 
     public void nowSelect(int number)
     {
-        slotButton[number].image.color = Color.blue;
+        slotButton[number].image.color = fileSelect;
 
         for (int i = 0; i < slotButton.Length; i++)
         {
             if (slotButton[number] != slotButton[i])
             {
-                if (slotButton[i].image.color == Color.blue)
+                if (slotButton[i].image.color == fileSelect)
                 {
                     if (!savefile[i])
                     {
@@ -92,7 +92,7 @@ public class Select : MonoBehaviour
     {
         for (int i = 0; i < slotButton.Length; i++)
         {
-            if (slotButton[i].image.color == Color.blue)
+            if (slotButton[i].image.color == fileSelect)
             {
                 System.IO.File.Delete(DataManager.instance.path + $"{i}");
                 savefile[i] = false;
@@ -111,11 +111,12 @@ public class Select : MonoBehaviour
 
     public void Back()
     {
-        Debug.Log("tlfkqf");
+        fileDelete.interactable = false;
+        start.interactable = false;
 
         for (int i = 0; i < slotButton.Length; i++)
         {
-                if (slotButton[i].image.color == Color.blue)
+                if (slotButton[i].image.color == fileSelect)
                 {
                     if (!savefile[i])
                     {
