@@ -15,7 +15,6 @@ public class MeleeMonster : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log("!23");
         if(other.gameObject.tag == "Player")
         {
             Rb2D.AddForce(Vector2.up * 1);
@@ -24,7 +23,6 @@ public class MeleeMonster : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        Debug.Log("1231342");
         if(other.gameObject.tag == "Player")
         {
             Rb2D.velocity = Vector2.zero;

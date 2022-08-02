@@ -17,9 +17,7 @@ public class BulletMove : MonoBehaviour
     private void OnEnable()
     {
         checkdir = false;
-        time = 0;
-        fireSpeed = 5f;
-        
+        time = 0f;
     }
 
     private void Update()
@@ -37,7 +35,7 @@ public class BulletMove : MonoBehaviour
 
             checkdir = true;
         }
-        transform.position += fireSpeed * Time.deltaTime * dir;
+        transform.position += fireSpeed * Time.deltaTime * dir.normalized;
 
         time += Time.deltaTime;
         
@@ -49,7 +47,7 @@ public class BulletMove : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Wall"))
         {
             PoolManager.Instance.Push(gameObject);
         }
