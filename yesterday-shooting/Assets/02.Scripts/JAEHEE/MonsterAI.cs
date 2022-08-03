@@ -9,17 +9,19 @@ public class MonsterAI : MonoBehaviour
     [Tooltip("감지 범위")]
     [SerializeField] float range = 0;
 
-    
+    SpriteRenderer _spriteRenderer = null;
     private GameObject player = null;
     [SerializeField] Rigidbody2D rigid = null;
 
     private void OnEnable()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player");
     }
     private void Update()
     {
         Vector2 degree = player.transform.position - transform.position;
+        Debug.Log(degree.magnitude);
         if (degree.magnitude <= range)
         {
             rigid.velocity = degree.normalized * speed;
