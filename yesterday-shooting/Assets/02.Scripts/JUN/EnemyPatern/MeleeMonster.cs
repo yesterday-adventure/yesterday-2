@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class MeleeMonster : MonoBehaviour
 {
-    [SerializeField]private Rigidbody2D Rb2D = null;
-    //[SerializeField]private Collision2D playerC = null;
+    private Rigidbody2D Rb2D = null;
 
     private void Awake()
     {
         Rb2D = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        //playerC = GameObject.Find("Player").GetComponent<Collision2D>();
     }
     
     private void OnCollisionStay2D(Collision2D other)

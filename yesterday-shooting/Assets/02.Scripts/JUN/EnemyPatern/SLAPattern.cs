@@ -6,6 +6,7 @@ public class SLAPattern : MonoBehaviour
 {
     public GameObject EnemyBullet = null;
     [SerializeField] EnemyBulletDir.FireDir firDir;
+    [SerializeField] float delay = 0f;
     void OnEnable()
     {
         StartCoroutine("Attack");
@@ -15,7 +16,7 @@ public class SLAPattern : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(delay);
             
             GameObject obj = PoolManager.Instance.Pop(EnemyBullet,transform.position,Quaternion.identity);
             obj.GetComponent<EnemyBulletMove>().set(firDir);
