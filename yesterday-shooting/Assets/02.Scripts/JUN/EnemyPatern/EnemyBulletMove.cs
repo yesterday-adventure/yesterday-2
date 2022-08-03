@@ -12,6 +12,7 @@ public class EnemyBulletMove : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player");
+        dir = player.transform.position - transform.position;
     }
 
     private void OnEnable()
@@ -38,6 +39,7 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
+            Debug.Log("오른쪽");
             transform.position += speed * Time.deltaTime * Vector3.right;
             yield return null;
         }
@@ -47,6 +49,7 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
+            Debug.Log("왼쪽");
             transform.position += speed * Time.deltaTime * Vector3.left;
             yield return null;
         }
@@ -56,6 +59,7 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
+            Debug.Log("위쪽");
             transform.position += speed * Time.deltaTime * Vector3.up;
             yield return null;
         }
@@ -65,6 +69,7 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
+            Debug.Log("아래쪽");
             transform.position += speed * Time.deltaTime * Vector3.down;
             yield return null;
         }

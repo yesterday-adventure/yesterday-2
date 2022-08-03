@@ -16,6 +16,6 @@ public class PlayerManager : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(x,y,0);
-        rb2D.velocity = dir * speed;
+        rb2D.velocity = dir.normalized * speed;
     }
 }
