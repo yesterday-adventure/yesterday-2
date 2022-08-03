@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2662254684216549865}
   - component: {fileID: 4059997920124409778}
   m_Layer: 10
-  m_Name: BigBig(attack(x))
+  m_Name: BigBig
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
