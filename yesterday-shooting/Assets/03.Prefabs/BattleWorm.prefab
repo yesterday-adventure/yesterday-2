@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1088391304772076642}
   - component: {fileID: 1088391304772076641}
   - component: {fileID: 1088391304772076646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BattleWorm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
