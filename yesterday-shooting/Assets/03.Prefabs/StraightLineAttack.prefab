@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6802937908760554701}
   - component: {fileID: 6821673676253718087}
   - component: {fileID: 6821673676253718084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StraightLineAttack
   m_TagString: Enemy
   m_Icon: {fileID: 0}

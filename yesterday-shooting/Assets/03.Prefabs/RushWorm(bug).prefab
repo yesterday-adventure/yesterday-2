@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8445362027095245815}
   - component: {fileID: 8445362027095245808}
   - component: {fileID: 8445362027095245816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RushWorm(bug)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
