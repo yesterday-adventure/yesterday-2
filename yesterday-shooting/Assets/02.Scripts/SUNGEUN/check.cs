@@ -6,17 +6,11 @@ public class check : MonoBehaviour
 {
     private void Start()
     {
-        Debug.Log(DataManager.instance.path);
-        Debug.Log(DataManager.instance.nowPlayer.playing);
+        //Debug.Log(DataManager.instance.path);
+        //Debug.Log(DataManager.instance.nowPlayer.playing);
     }
-
-    /*public void Start()
-    {
-        Debug.Log(DataManager.instance.nowPlayer.playing);
-    }*/
-
     public void Back()
     {
-        Debug.Log("gg");
+       //Debug.Log("gg");
     }
 }

@@ -5,12 +5,11 @@ using System;
 
 public class EnemyHp : MonoBehaviour, IDamageable
 {
-    [SerializeField] int hp;
+    [SerializeField]public float hp;
     public void OnDamage(Action lambda)
     {
         hp--;
         lambda?.Invoke();
-        Debug.Log("데미지 받음");
     }
 
     private void Update()

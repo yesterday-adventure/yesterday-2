@@ -6,7 +6,7 @@ public class SLAPattern : MonoBehaviour
 {
     public GameObject EnemyBullet = null;
     [SerializeField] EnemyBulletDir.FireDir firDir;
-    [SerializeField] float delay = 0f;
+    [SerializeField] public float delay = 0f;
     void OnEnable()
     {
         StartCoroutine("Attack");
