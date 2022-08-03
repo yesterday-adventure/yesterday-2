@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4059997920124409786}
   - component: {fileID: 2662254684216549865}
   - component: {fileID: 4059997920124409778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigBig(attack(x))
   m_TagString: Enemy
   m_Icon: {fileID: 0}

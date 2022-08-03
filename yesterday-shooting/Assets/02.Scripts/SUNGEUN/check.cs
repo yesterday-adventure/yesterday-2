@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class check : MonoBehaviour
 {
-    /*private void Start()
+    private void Start()
     {
         Debug.Log(DataManager.instance.path);
-    }*/
+        Debug.Log(DataManager.instance.nowPlayer.playing);
+    }
 
-    public void Start()
+    /*public void Start()
     {
         Debug.Log(DataManager.instance.nowPlayer.playing);
+    }*/
+
+    public void Back()
+    {
+        Debug.Log("gg");
     }
 }

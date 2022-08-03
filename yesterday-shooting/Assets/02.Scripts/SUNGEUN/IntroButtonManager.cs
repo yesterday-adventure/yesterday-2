@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class IntroButtonManager : MonoBehaviour
 {
     Animator anim;
+    Select select;
 
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        select = FindObjectOfType<Select>();
     }
 
     #region Exit
@@ -60,6 +62,13 @@ public class IntroButtonManager : MonoBehaviour
     {
         anim.SetBool("isSave", false);
         Invoke("SaveBackk", 0.5f);
+
+        Invoke("ColorBack", 0.3f);
+    }
+
+    public void ColorBack()
+    {
+        select.Back();
     }
 
     public void SaveBackk()
@@ -68,8 +77,4 @@ public class IntroButtonManager : MonoBehaviour
     }
     #endregion
 
-    public void GameStart()
-    {
-        SceneManager.LoadScene("Play");
-    }
 }

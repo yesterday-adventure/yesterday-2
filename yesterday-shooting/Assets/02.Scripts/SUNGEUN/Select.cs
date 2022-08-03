@@ -10,7 +10,7 @@ public class Select : MonoBehaviour
     public Button[] slotButton;
     public Button fileDelete, start;
 
-    public Color playing;
+    public Color playing, fileSelect;
 
     bool[] savefile = new bool[3];
 
@@ -40,13 +40,10 @@ public class Select : MonoBehaviour
     {
         DataManager.instance.nowSlot = number;
 
+        // 저장된 데이터가 있을 때
         if (savefile[number])
         {
             DataManager.instance.LoadData();
-        }
-        else
-        {
-            slotButton[number].image.color = playing;
         }
 
         nowSelect(number);
@@ -55,15 +52,22 @@ public class Select : MonoBehaviour
 
     public void nowSelect(int number)
     {
-        slotButton[number].image.color = Color.blue;
+        slotButton[number].image.color = fileSelect;
 
         for (int i = 0; i < slotButton.Length; i++)
         {
             if (slotButton[number] != slotButton[i])
             {
-                if (slotButton[i].image.color == Color.blue)
+                if (slotButton[i].image.color == fileSelect)
                 {
-                    slotButton[i].image.color = playing;
+                    if (!savefile[i])
+                    {
+                        slotButton[i].image.color = Color.white;
+                    }
+                    else
+                    {
+                        slotButton[i].image.color = playing;
+                    }
                 }
             }
         }
@@ -71,12 +75,16 @@ public class Select : MonoBehaviour
 
     public void GoGame()
     {
+        // 저장된 데이터가 없을 때
         if (!savefile[DataManager.instance.nowSlot])
         {
+            fileDelete.interactable = false;
             DataManager.instance.nowPlayer.playing = true;
-            DataManager.instance.SaveData();
         }
-        fileDelete.interactable = true;
+        else
+        {
+            fileDelete.interactable = true;
+        }
         start.interactable = true;
     }
 
@@ -84,9 +92,10 @@ public class Select : MonoBehaviour
     {
         for (int i = 0; i < slotButton.Length; i++)
         {
-            if (slotButton[i].image.color == Color.blue)
+            if (slotButton[i].image.color == fileSelect)
             {
                 System.IO.File.Delete(DataManager.instance.path + $"{i}");
+                savefile[i] = false;
                 slotButton[i].image.color = Color.white;
                 fileDelete.interactable = false;
                 start.interactable = false;
@@ -96,6 +105,29 @@ public class Select : MonoBehaviour
 
     public void GameStart()
     {
+        DataManager.instance.SaveData();
         SceneManager.LoadScene("Play");
+    }
+
+    public void Back()
+    {
+        fileDelete.interactable = false;
+        start.interactable = false;
+
+        for (int i = 0; i < slotButton.Length; i++)
+        {
+                if (slotButton[i].image.color == fileSelect)
+                {
+                    if (!savefile[i])
+                    {
+                        slotButton[i].image.color = Color.white;
+                    }
+                    else
+                    {
+                        slotButton[i].image.color = playing;
+                    }
+                }
+            
+        }
     }
 }
