@@ -7,6 +7,8 @@ public class PlayerData
 {
     // 여기에 저장할 데이터 적어서 사용
     public bool playing = false; // 플레이한 기록이 있고 저장되어 있는지 판단.
+    public float introBGM = 0.5f;
+    public float introButtonSound = 0.5f;
 }
 
 public class DataManager : MonoBehaviour
@@ -39,13 +41,24 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         string data = JsonUtility.ToJson(nowPlayer);
-
         File.WriteAllText(path + nowSlot.ToString(), data);
+    }
+
+    public void NoSlotSaveData()
+    {
+        string data = JsonUtility.ToJson(nowPlayer);
+        File.WriteAllText(path + "NoSlot", data);
     }
 
     public void LoadData()
     {
         string data = File.ReadAllText(path + nowSlot.ToString());
+        nowPlayer = JsonUtility.FromJson<PlayerData>(data);
+    }
+
+    public void NoSlotLoadData()
+    {
+        string data = File.ReadAllText(path + "NoSlot");
         nowPlayer = JsonUtility.FromJson<PlayerData>(data);
     }
 
