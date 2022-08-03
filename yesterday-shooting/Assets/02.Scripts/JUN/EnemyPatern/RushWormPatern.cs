@@ -163,7 +163,6 @@ public class RushWormPatern : MonoBehaviour
             switch(random)
             {
                 case 1:
-                    Debug.Log("1");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.right;
@@ -171,7 +170,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 2:
-                    Debug.Log("2");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.left;
@@ -179,7 +177,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 3:
-                    Debug.Log("3");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.up;
@@ -187,7 +184,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 4:
-                    Debug.Log("4");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.down;

@@ -7,7 +7,6 @@ public class DoorOnOff : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(door.activeSelf);
         Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
         if (hit != null)
         {

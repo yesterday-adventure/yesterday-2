@@ -13,7 +13,6 @@ public class PlayerHp : MonoBehaviour
         shieldTime = 0;
         hp--;
         lambda?.Invoke();
-        Debug.Log("플레이어 데미지 받음");
     }
 
     private void Update()

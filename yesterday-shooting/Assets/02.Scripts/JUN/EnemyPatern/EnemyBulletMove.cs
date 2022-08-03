@@ -39,7 +39,6 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log("오른쪽");
             transform.position += speed * Time.deltaTime * Vector3.right;
             yield return null;
         }
@@ -49,7 +48,6 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log("왼쪽");
             transform.position += speed * Time.deltaTime * Vector3.left;
             yield return null;
         }
@@ -59,7 +57,6 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log("위쪽");
             transform.position += speed * Time.deltaTime * Vector3.up;
             yield return null;
         }
@@ -69,7 +66,6 @@ public class EnemyBulletMove : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log("아래쪽");
             transform.position += speed * Time.deltaTime * Vector3.down;
             yield return null;
         }
@@ -87,7 +83,7 @@ public class EnemyBulletMove : MonoBehaviour
     {
         time += Time.deltaTime;
         
-        if(time > 1.5)
+        if(time > 2)
         {
             StopAllCoroutines();
             PoolManager.Instance.Push(gameObject);
