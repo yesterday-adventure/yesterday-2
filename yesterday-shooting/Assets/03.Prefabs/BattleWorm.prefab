@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  range: 5
+  range: 30
   rigid: {fileID: 1088391304772076643}
 --- !u!114 &1088391304772076641
 MonoBehaviour:
