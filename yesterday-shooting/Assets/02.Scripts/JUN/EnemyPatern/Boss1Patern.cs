@@ -31,7 +31,7 @@ public class Boss1Patern : MonoBehaviour
     {
         while (true)
         {
-            random = Random.Range(3, 4);
+            random = Random.Range(1, 6);
             switch (random)
             {
                 case 1:
@@ -80,6 +80,8 @@ public class Boss1Patern : MonoBehaviour
 
                 case 5:
                     enemyHp.hp += 50;
+                    Instantiate(healing,new Vector3(transform.position.x +1,transform.position.y+1,0),Quaternion.identity);
+                    Instantiate(healing,new Vector3(transform.position.x -1,transform.position.y-1,0),Quaternion.identity);
                     yield return new WaitForSeconds(3f);
                     break;
 
