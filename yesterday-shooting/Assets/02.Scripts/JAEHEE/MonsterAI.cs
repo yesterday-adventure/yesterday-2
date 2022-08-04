@@ -13,6 +13,10 @@ public class MonsterAI : MonoBehaviour
     private GameObject player = null;
     [SerializeField] Rigidbody2D rigid = null;
 
+    private bool _isMove = false;
+    public bool IsMove { get => _isMove; }
+
+
     private void OnEnable()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,14 +25,23 @@ public class MonsterAI : MonoBehaviour
     private void Update()
     {
         Vector2 degree = player.transform.position - transform.position;
-        Debug.Log(degree.magnitude);
         if (degree.magnitude <= range)
         {
             rigid.velocity = degree.normalized * speed;
+            _isMove = true;
         }
         else
         {
             rigid.velocity = Vector2.zero;
+            _isMove = false;
+        }
+        if (degree.x < 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
         }
     }
 }
