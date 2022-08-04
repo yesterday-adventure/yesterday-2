@@ -91,6 +91,7 @@ public class RushWormPatern : MonoBehaviour
                     while(true)
                     {
                         transform.position += skillspeed * Time.deltaTime * Vector3.left;
+                        num = 2;
                         yield return null;
                     }
                 }
@@ -99,6 +100,7 @@ public class RushWormPatern : MonoBehaviour
                     while(true)
                     {
                         transform.position += skillspeed * Time.deltaTime * Vector3.right;
+                        num = 1;
                         yield return null;
                     }
                 }
@@ -160,10 +162,11 @@ public class RushWormPatern : MonoBehaviour
             {
                 random = Random.Range(1,5);
             }
+            Debug.Log(random);
+            Debug.Log(num);
             switch(random)
             {
                 case 1:
-                    Debug.Log("1");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.right;
@@ -171,7 +174,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 2:
-                    Debug.Log("2");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.left;
@@ -179,7 +181,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 3:
-                    Debug.Log("3");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.up;
@@ -187,7 +188,6 @@ public class RushWormPatern : MonoBehaviour
                         yield return null;
                     }
                 case 4:
-                    Debug.Log("4");
                     while(true)
                     {
                         transform.position += speed * Time.deltaTime * Vector3.down;
@@ -205,10 +205,10 @@ public class RushWormPatern : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Wall") && useSkill)
         {
+            transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
             StopCoroutine("Rush");
             StartCoroutine("Rush");
-            StartCoroutine("Move");
-            StartCoroutine("Move");
+            
         }
     }
 }

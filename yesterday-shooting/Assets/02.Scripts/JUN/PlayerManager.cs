@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] GameObject stopPanel;
+    [SerializeField]private float speed = 5f;
     Animator _animator;
     void Start()
     {
@@ -26,6 +27,11 @@ public class PlayerManager : MonoBehaviour
         else
         {
             _animator.SetBool("IsMove", false);
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            stopPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6802937908760554703}
   - component: {fileID: 6802937908760554702}
   - component: {fileID: 6802937908760554697}
-  - component: {fileID: 6802937908760554701}
   - component: {fileID: 6821673676253718087}
   - component: {fileID: 6821673676253718084}
   - component: {fileID: 1554770182}
@@ -116,18 +115,6 @@ MonoBehaviour:
   EnemyBullet: {fileID: 7583783584051772301, guid: c0fed57c9665cce4c97bca4067485fb3, type: 3}
   firDir: 3
   delay: 2
---- !u!114 &6802937908760554701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6802937908760554696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3f91f61b1d74f439dfbc38ef78f85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &6821673676253718087
 Rigidbody2D:
   serializedVersion: 4
