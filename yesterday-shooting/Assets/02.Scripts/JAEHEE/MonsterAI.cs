@@ -21,7 +21,6 @@ public class MonsterAI : MonoBehaviour
     private void Update()
     {
         Vector2 degree = player.transform.position - transform.position;
-        Debug.Log(degree.magnitude);
         if (degree.magnitude <= range)
         {
             rigid.velocity = degree.normalized * speed;
@@ -29,6 +28,14 @@ public class MonsterAI : MonoBehaviour
         else
         {
             rigid.velocity = Vector2.zero;
+        }
+        if(degree.x > 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else
+        {
+            _spriteRenderer.flipX = true;
         }
     }
 }

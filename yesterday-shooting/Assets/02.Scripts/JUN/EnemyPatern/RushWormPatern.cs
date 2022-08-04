@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RushWormPatern : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
     private GameObject target;
     private float skillspeed = 10;
     private float speed = 3;
@@ -26,6 +27,7 @@ public class RushWormPatern : MonoBehaviour
     private int num1 = 0;
     private void OnEnable()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         useSkill = false;
         target = GameObject.Find("Player");
         StartCoroutine("Rush");
@@ -90,6 +92,7 @@ public class RushWormPatern : MonoBehaviour
                 {
                     while(true)
                     {
+                        _spriteRenderer.flipX = true;
                         transform.position += skillspeed * Time.deltaTime * Vector3.left;
                         num = 2;
                         yield return null;
@@ -99,6 +102,7 @@ public class RushWormPatern : MonoBehaviour
                 {
                     while(true)
                     {
+                        _spriteRenderer.flipX = false;
                         transform.position += skillspeed * Time.deltaTime * Vector3.right;
                         num = 1;
                         yield return null;
@@ -169,6 +173,7 @@ public class RushWormPatern : MonoBehaviour
                 case 1:
                     while(true)
                     {
+                        _spriteRenderer.flipX = false;
                         transform.position += speed * Time.deltaTime * Vector3.right;
                         num = 1;
                         yield return null;
@@ -176,6 +181,7 @@ public class RushWormPatern : MonoBehaviour
                 case 2:
                     while(true)
                     {
+                        _spriteRenderer.flipX = true;
                         transform.position += speed * Time.deltaTime * Vector3.left;
                         num = 2;
                         yield return null;
