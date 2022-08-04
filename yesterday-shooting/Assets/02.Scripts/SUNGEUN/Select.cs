@@ -99,6 +99,7 @@ public class Select : MonoBehaviour
                 slotButton[i].image.color = Color.white;
                 fileDelete.interactable = false;
                 start.interactable = false;
+                DataManager.instance.DataClear();
             }
         }
     }

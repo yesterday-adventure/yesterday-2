@@ -76,5 +76,4 @@ public class IntroButtonManager : MonoBehaviour
         anim.SetLayerWeight(2, 0f);
     }
     #endregion
-
 }
