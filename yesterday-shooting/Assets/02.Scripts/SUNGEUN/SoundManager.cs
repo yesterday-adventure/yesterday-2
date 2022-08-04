@@ -7,41 +7,41 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    public Slider introBGMSlider;
-    public AudioSource introBGM;
+    public Slider BGMSlider;
+    public AudioSource BGM;
 
-    public Slider introButtonSoundSlider;
-    public AudioSource introButtonSound;
+    public Slider ButtonClickSoundSlider;
+    public AudioSource ButtonClickSound;
 
     private void Start()
     {
-        if (File.Exists(DataManager.instance.path + "NoSlot"))
+        if (File.Exists(DataManager.instance.path + "Option"))
         {
-            DataManager.instance.NoSlotLoadData();
+            DataManager.instance.OptionLoadData();
         }
-        introBGMSlider.value = DataManager.instance.nowPlayer.introBGM;
-        introBGM.volume = DataManager.instance.nowPlayer.introBGM;
+        BGMSlider.value = DataManager.instance.nowOption.BGM;
+        BGM.volume = DataManager.instance.nowOption.BGM;
 
-        introButtonSoundSlider.value = DataManager.instance.nowPlayer.introButtonSound;
-        introButtonSound.volume = DataManager.instance.nowPlayer.introButtonSound;
+        ButtonClickSoundSlider.value = DataManager.instance.nowOption.ButtonClickSound;
+        ButtonClickSound.volume = DataManager.instance.nowOption.ButtonClickSound;
     }
 
-    public void IntroBGMVolume(float volume)
+    public void BGMVolume(float volume)
     {
-        introBGM.volume = volume;
-        DataManager.instance.nowPlayer.introBGM = introBGM.volume;
-        DataManager.instance.NoSlotSaveData();
+        BGM.volume = volume;
+        DataManager.instance.nowOption.BGM = BGM.volume;
+        DataManager.instance.OptionSaveData();
     }
 
-    public void IntroButtonSoundVolume(float volume)
+    public void ButtonClickSoundVolume(float volume)
     {
-        introButtonSound.volume = volume;
-        DataManager.instance.nowPlayer.introButtonSound = introButtonSound.volume;
-        DataManager.instance.NoSlotSaveData();
+        ButtonClickSound.volume = volume;
+        DataManager.instance.nowOption.ButtonClickSound = ButtonClickSound.volume;
+        DataManager.instance.OptionSaveData();
     }
 
     public void ButtonClick()
     {
-        introButtonSound.Play();
+        ButtonClickSound.Play();
     }
 }

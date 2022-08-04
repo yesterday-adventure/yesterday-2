@@ -440,7 +440,6 @@ RectTransform:
   m_Children:
   - {fileID: 134949433}
   - {fileID: 1979911604}
-  - {fileID: 201501813}
   m_Father: {fileID: 1858211244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -927,86 +926,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171746648}
   m_CullTransparentMesh: 1
---- !u!1 &201501812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 201501813}
-  - component: {fileID: 201501815}
-  - component: {fileID: 201501814}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &201501813
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201501812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 68471534}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 706.2969, y: -302.74478}
-  m_SizeDelta: {x: 510.044, y: 380.044}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &201501814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201501812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 8
-    m_MaxSize: 80
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uD50C\uB808\uC774\uC5B4 \uD3EC\uC9C0\uC158 \uAC12\uC218\uC815\uD558\uAE30
-    \u3145\u3144\u3144\u3144\u3144\u3144\u3142"
---- !u!222 &201501815
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201501812}
-  m_CullTransparentMesh: 1
 --- !u!1 &260361276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 308600604}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: IntroBGMVolume
+        m_MethodName: BGMVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1220,10 +1139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b724aa7b9751af479a2c7cc6d309572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introBGMSlider: {fileID: 302169440}
-  introBGM: {fileID: 475530414}
-  introButtonSoundSlider: {fileID: 1197754283}
-  introButtonSound: {fileID: 826535452}
+  BGMSlider: {fileID: 302169440}
+  BGM: {fileID: 475530414}
+  ButtonClickSoundSlider: {fileID: 1197754283}
+  ButtonClickSound: {fileID: 826535452}
 --- !u!1 &395834278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2051,7 @@ GameObject:
   - component: {fileID: 826535453}
   - component: {fileID: 826535452}
   m_Layer: 0
-  m_Name: introButtonSound
+  m_Name: ButtonClickSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2241,8 +2160,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826535451}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 783.478, y: 672.841, z: -146.20279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 308600603}
@@ -2859,7 +2778,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 308600604}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: IntroButtonSoundVolume
+        m_MethodName: ButtonClickSoundVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

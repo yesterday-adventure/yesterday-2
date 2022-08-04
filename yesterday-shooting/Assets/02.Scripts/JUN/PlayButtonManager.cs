@@ -16,7 +16,7 @@ public class PlayButtonManager : MonoBehaviour
 
     public void OnClickExit()
     {
-        DataManager.instance.nowPlayer.playerPosition = player.transform.position;
+        DataManager.instance.nowPlayer.playerPosition = transform.position;
         DataManager.instance.SaveData();
         SceneManager.LoadScene("Intro");
         Time.timeScale = 1;
