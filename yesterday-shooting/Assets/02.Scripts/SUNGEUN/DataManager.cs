@@ -9,6 +9,8 @@ public class PlayerData
     public bool playing = false; // 플레이한 기록이 있고 저장되어 있는지 판단.
     public float introBGM = 0.5f;
     public float introButtonSound = 0.5f;
+    public bool[] roomClear = new bool[14];
+    public Vector3 playerPosition = new Vector3(0, 0, 0);
 }
 
 public class DataManager : MonoBehaviour
