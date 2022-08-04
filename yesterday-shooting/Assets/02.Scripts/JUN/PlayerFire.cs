@@ -7,6 +7,8 @@ public class PlayerFire : MonoBehaviour
     public GameObject weapon = null;
     private float delay = 0f;
 
+    SpriteRenderer _spriteRenderer;
+
     public enum FireDir : short
     {
         right = 0,
@@ -18,6 +20,7 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         delay = 0.7f;
         //weapon = null; // 시작 무기
     }
@@ -33,12 +36,14 @@ public class PlayerFire : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.RightArrow))
             {
+                _spriteRenderer.flipX = false;
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.right;
                 yield return new WaitForSeconds(delay);
             }
             if(Input.GetKey(KeyCode.LeftArrow))
             {
+                _spriteRenderer.flipX = true;
                 PoolManager.Instance.Pop(weapon,transform.position,Quaternion.identity);
                 fireDir = FireDir.left;
                 yield return new WaitForSeconds(delay);
