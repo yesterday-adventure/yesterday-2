@@ -37,26 +37,26 @@ public class PlayerFire : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 _spriteRenderer.flipX = false;
-                PoolManager.Instance.Pop(weapon, transform.position, Quaternion.identity);
+                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y -0.3f), Quaternion.identity);
                 fireDir = FireDir.right;
                 yield return new WaitForSeconds(delay);
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 _spriteRenderer.flipX = true;
-                PoolManager.Instance.Pop(weapon, transform.position, Quaternion.identity);
+                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.left;
                 yield return new WaitForSeconds(delay);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                PoolManager.Instance.Pop(weapon, transform.position, Quaternion.identity);
+                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.up;
                 yield return new WaitForSeconds(delay);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                PoolManager.Instance.Pop(weapon, transform.position, Quaternion.identity);
+                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.down;
                 yield return new WaitForSeconds(delay);
             }
