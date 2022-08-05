@@ -43,7 +43,7 @@ public class PlayButtonManager : MonoBehaviour
 
     public void OnClickExit()
     {
-        DataManager.instance.nowPlayer.playerPosition = player.transform.position;
+        //DataManager.instance.nowPlayer.playerPosition = player.transform.position;
         DataManager.instance.nowPlayer.cameraPosition = cameraP.transform.position;
         DataManager.instance.SaveData();
         SceneManager.LoadScene("Intro");
