@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 13
+  roomNumber: 12
 --- !u!1 &153302221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 14
+  roomNumber: 13
 --- !u!1001 &165995676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 6
+  roomNumber: 5
 --- !u!1 &192980359
 GameObject:
   m_ObjectHideFlags: 0
@@ -25779,7 +25779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 9
+  roomNumber: 8
 --- !u!1 &249309273
 GameObject:
   m_ObjectHideFlags: 0
@@ -25909,7 +25909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 3
+  roomNumber: 2
 --- !u!1001 &316649221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27455,7 +27455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 4
+  roomNumber: 3
 --- !u!1 &565624208
 GameObject:
   m_ObjectHideFlags: 0
@@ -27535,6 +27535,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
+      propertyPath: range
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
@@ -39684,7 +39688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 2
+  roomNumber: 1
 --- !u!1 &1206615060
 GameObject:
   m_ObjectHideFlags: 0
@@ -39756,6 +39760,10 @@ PrefabInstance:
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
+      propertyPath: range
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
@@ -39853,7 +39861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 145741642}
-  roomNumber: 13
+  roomNumber: 12
 --- !u!1 &1276047849
 GameObject:
   m_ObjectHideFlags: 0
@@ -40164,7 +40172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 162785222}
-  roomNumber: 14
+  roomNumber: 13
 --- !u!1001 &1338797457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41480,7 +41488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 12
+  roomNumber: 11
 --- !u!1001 &1553106163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41557,6 +41565,10 @@ PrefabInstance:
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
+      propertyPath: range
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
@@ -41654,7 +41666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 11
+  roomNumber: 10
 --- !u!1 &1579511920
 GameObject:
   m_ObjectHideFlags: 0
@@ -41701,7 +41713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 5
+  roomNumber: 4
 --- !u!1001 &1599630296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41716,6 +41728,10 @@ PrefabInstance:
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
+      propertyPath: range
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
@@ -42066,7 +42082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 277882306}
-  roomNumber: 3
+  roomNumber: 2
 --- !u!1001 &1681967556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44312,7 +44328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 8
+  roomNumber: 7
 --- !u!1 &1998977291
 GameObject:
   m_ObjectHideFlags: 0
@@ -44945,7 +44961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 10
+  roomNumber: 9
 --- !u!1001 &2071474031
 PrefabInstance:
   m_ObjectHideFlags: 0

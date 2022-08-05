@@ -23,7 +23,6 @@ public class IntroButtonManager : MonoBehaviour
     public void ExitYes()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void ExitNo()
