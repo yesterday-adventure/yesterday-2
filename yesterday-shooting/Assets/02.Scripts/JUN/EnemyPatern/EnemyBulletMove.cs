@@ -12,13 +12,11 @@ public class EnemyBulletMove : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player");
-        dir = player.transform.position - transform.position;
     }
 
     private void OnEnable()
     {
         time = 0f;
-        dir = player.transform.position - transform.position;
     }
 
     public void set(EnemyBulletDir.FireDir A)
@@ -73,6 +71,7 @@ public class EnemyBulletMove : MonoBehaviour
 
     IEnumerator Follow()
     {
+        dir = player.transform.position - transform.position;
         while(true)
         {
             transform.position += speed * Time.deltaTime * dir.normalized;

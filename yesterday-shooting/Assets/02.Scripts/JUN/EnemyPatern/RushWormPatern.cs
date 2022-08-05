@@ -19,10 +19,10 @@ public class RushWormPatern : MonoBehaviour
     private bool iswallL;
     private bool iswallU;
     private bool iswallD;
-    [SerializeField]private bool chL = true;
-    [SerializeField]private bool chR = true;
-    [SerializeField]private bool chU = true;
-    [SerializeField]private bool chD = true;
+    private bool chL = true;
+    private bool chR = true;
+    private bool chU = true;
+    private bool chD = true;
     private bool checkCo = false;
     private int num = 0;
     private int num1 = 0;
@@ -230,7 +230,10 @@ public class RushWormPatern : MonoBehaviour
             if (transform.position.y > target.transform.position.y - 0.5f && transform.position.y < target.transform.position.y + 0.5f)
             {
                 if (coroutineMove != null)
+                {
                     StopCoroutine(coroutineMove);
+                    checkCo = false;
+                }
                 useSkill = true;
                 chR = true;
                 chL = true;
@@ -265,9 +268,10 @@ public class RushWormPatern : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall") && useSkill)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             StopCoroutine("Rush");
             StartCoroutine("Rush");
+            useSkill = false;
         }
     }
 }
