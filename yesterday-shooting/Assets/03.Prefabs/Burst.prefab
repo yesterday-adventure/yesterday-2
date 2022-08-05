@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7869459583551800599}
   - component: {fileID: 7869459583551800598}
-  - component: {fileID: 7869459583551800617}
   - component: {fileID: 7869459583551800616}
+  - component: {fileID: 7527615807581553703}
   - component: {fileID: 7869459583551800597}
   - component: {fileID: 7869459583551800618}
   - component: {fileID: 7869459583551800620}
@@ -90,32 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7869459583551800617
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7869459583551800596}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5494583}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.125}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.7383534}
-  m_EdgeRadius: 0
 --- !u!50 &7869459583551800616
 Rigidbody2D:
   serializedVersion: 4
@@ -137,6 +111,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!60 &7527615807581553703
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869459583551800596}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2.125}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.14555931, y: 0.61101985}
+      - {x: -0.23725414, y: 0.15804327}
+      - {x: -0.5485196, y: -0.027960539}
+      - {x: -0.56990147, y: -1.0411184}
+      - {x: 0.60197353, y: -1.0625}
+      - {x: 0.58234835, y: 0.19804382}
+      - {x: 0.58059216, y: 0.3108554}
+      - {x: 0.28947353, y: 0.69654596}
 --- !u!114 &7869459583551800597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBullet: {fileID: 7583783584051772301, guid: c0fed57c9665cce4c97bca4067485fb3, type: 3}
+  player: {fileID: 0}
 --- !u!114 &7869459583551800619
 MonoBehaviour:
   m_ObjectHideFlags: 0

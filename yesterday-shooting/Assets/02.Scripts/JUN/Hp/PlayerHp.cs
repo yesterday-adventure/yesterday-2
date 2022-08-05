@@ -9,13 +9,38 @@ public class PlayerHp : MonoBehaviour
 {
     //public int hp = 5;
     public float shieldTime = 1; // 무적시간
+    [SerializeField]SpriteRenderer sR;
     public void OnDamage(Action lambda)
     {
         shieldTime = 0;
         //hp--;
         DataManager.instance.nowPlayer.playerHp--;
+        StartCoroutine(TwinkeON());
         lambda?.Invoke();
     }
+
+    IEnumerator TwinkeON()
+    {
+        yield return StartCoroutine(Fade(1,0));
+        yield return StartCoroutine(Fade(0,1));
+    }
+
+    IEnumerator Fade(float start, float end)
+    {
+        float currentTime = 0;
+        float percent = 0;
+        while(percent < 1)
+        {
+            currentTime += Time.deltaTime;
+            percent = currentTime / 0.1f;
+            
+            Color color = sR.color;
+            color.a = Mathf.Lerp(start,end,percent);
+            sR.color = color;
+
+            yield return null;
+        }
+    }    
 
     private void Update()
     {

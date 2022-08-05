@@ -10,8 +10,7 @@ public class BurstPattern : MonoBehaviour
     {
         if (player == null)
             return;
-
-        Debug.Log("12");
+            
         GameObject obj = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
         obj.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.up);
 

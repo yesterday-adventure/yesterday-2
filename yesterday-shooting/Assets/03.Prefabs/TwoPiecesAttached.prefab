@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 2863453856122875470}
   - component: {fileID: 2863453856122875465}
   - component: {fileID: 2863453856122875464}
-  - component: {fileID: 2863453856122875467}
   - component: {fileID: 2863453856122875466}
   - component: {fileID: 2863453856122872245}
   - component: {fileID: 2863453856122872244}
   - component: {fileID: 2863453856122875471}
   - component: {fileID: 1275582672}
+  - component: {fileID: 7382454063282808758}
   m_Layer: 10
   m_Name: TwoPiecesAttached
   m_TagString: Enemy
@@ -110,32 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2863453856122875467
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2863453856122872247}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 0.9375}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &2863453856122875466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +182,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &7382454063282808758
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2863453856122872247}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 0.9375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.069108486, y: 0.46875}
+      - {x: -0.31373203, y: 0.21875}
+      - {x: -0.42506725, y: -0.15625}
+      - {x: -0.625, y: -0.46875}
+      - {x: 0.45239708, y: -0.47827062}
+      - {x: 0.7011649, y: -0.16285849}
+      - {x: 0.5393146, y: 0.19018817}
+      - {x: 0.29883516, y: 0.44970876}

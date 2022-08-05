@@ -179,7 +179,7 @@ public class RushWormPatern : MonoBehaviour
         {
             random = Random.Range(1, 5);
         }
-        Debug.Log(random);
+
         switch (random)
         {
             case 1:
