@@ -25,13 +25,15 @@ public class RushWormPatern : MonoBehaviour
     private bool chD = true;
     private int num = 0;
     private int num1 = 0;
+
+    Coroutine coroutineMove;
     private void OnEnable()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         useSkill = false;
         target = GameObject.Find("Player");
         StartCoroutine("Rush");
-        StartCoroutine("Move");
+        coroutineMove = StartCoroutine(Move());
     }
 
     private void Update()
@@ -43,35 +45,39 @@ public class RushWormPatern : MonoBehaviour
 
         if(iswallR && chR)
         {
-            StopCoroutine("Move");
-            StartCoroutine("Move");
+            if(coroutineMove != null)
+                StopCoroutine(coroutineMove);
+            coroutineMove = StartCoroutine(Move());
             chR = false;
             chL = true;
             chU = true;
             chD = true;
         }
-        if(iswallL && chL)
+        else if(iswallL && chL)
         {
-            StopCoroutine("Move");
-            StartCoroutine("Move");
+            if(coroutineMove != null)
+                StopCoroutine(coroutineMove);
+            coroutineMove = StartCoroutine(Move());
             chR = true;
             chL = false;
             chU = true;
             chD = true;
         }
-        if(iswallU && chU)
+        else if(iswallU && chU)
         {
-            StopCoroutine("Move");
-            StartCoroutine("Move");
+            if(coroutineMove != null)
+                StopCoroutine(coroutineMove);
+            coroutineMove = StartCoroutine(Move());
             chR = true;
             chL = true;
             chU = false;
             chD = true;
         }
-        if(iswallD && chD)
+        else if(iswallD && chD)
         {
-            StopCoroutine("Move");
-            StartCoroutine("Move");
+            if(coroutineMove != null)
+                StopCoroutine(coroutineMove);
+            coroutineMove = StartCoroutine(Move());
             chR = true;
             chL = true;
             chU = true;
@@ -86,7 +92,8 @@ public class RushWormPatern : MonoBehaviour
         {
             if(transform.position.y > target.transform.position.y - 0.5f && transform.position.y < target.transform.position.y + 0.5f)
             {
-                StopCoroutine("Move");
+                if(coroutineMove != null)
+                    StopCoroutine(coroutineMove);
                 useSkill = true;
                 if(transform.position.x > target.transform.position.x)
                 {
@@ -117,57 +124,31 @@ public class RushWormPatern : MonoBehaviour
     {
         if(iswallD && iswallL)
         {
-            if(num == 4)
-            {
-                num1 = 2;
-            }
-            else
-            {
-                num1 = 4;
-            }
+            num = 4;
+            num1 = 2;
         }
         if(iswallD && iswallR)
         {
-            if(num == 1)
-            {
-                num1 = 4;
-            }
-            else
-            {
-                num1 = 1;
-            }
+            num = 1;
+            num1 = 4;
         }
         if(iswallU && iswallL)
         {
-            if(num == 3)
-            {
-                num1 = 2;
-            }
-            else
-            {
-                num1 = 3;
-            }
+            num = 3;
+            num1 = 2;
         }
         if(iswallU && iswallR)
         {
-            if(num == 3)
-            {
-                num1 = 1;
-            }
-            else
-            {
-                num1 = 3;
-            }
+            num = 3;
+            num1 = 1;
         }
         while(true)
         {
-            random = Random.Range(1,5);
             while(random == num || random == num1)
             {
                 random = Random.Range(1,5);
             }
             Debug.Log(random);
-            Debug.Log(num);
             switch(random)
             {
                 case 1:
