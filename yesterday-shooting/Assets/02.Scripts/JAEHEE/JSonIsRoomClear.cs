@@ -5,14 +5,26 @@ using UnityEngine;
 public class JSonIsRoomClear : MonoBehaviour
 {
     [SerializeField] int roomNumber;
-    private void OnEnable()
+    /*private void OnEnable()
     {
         Collider2D hitmonster = Physics2D.OverlapBox(transform.position, new Vector2(17f, 9f), 0, 1 << 10);
         Collider2D hitPlayer = Physics2D.OverlapBox(transform.position, new Vector2(17f, 9f), 0, 1 << 8);
         
+        if (hitmonster == null || hitPlayer != null)
+        {
+            DataManager.instance.nowPlayer.roomClear[roomNumber] = true;
+        }
+    }*/
+
+    private void Update()
+    {
+        Collider2D hitmonster = Physics2D.OverlapBox(transform.position, new Vector2(17f, 9f), 0, 1 << 10);
+        Collider2D hitPlayer = Physics2D.OverlapBox(transform.position, new Vector2(17f, 9f), 0, 1 << 8);
+
         if (hitmonster == null && hitPlayer != null)
         {
             DataManager.instance.nowPlayer.roomClear[roomNumber] = true;
+            DataManager.instance.SaveData();
         }
     }
 }

@@ -19,15 +19,25 @@ public class ShowHp : MonoBehaviour
                 this.transform.GetChild(4).gameObject.SetActive(false);
                 break;
             case 3:
+                this.transform.GetChild(4).gameObject.SetActive(false);
                 this.transform.GetChild(3).gameObject.SetActive(false);
                 break;
             case 2:
+                this.transform.GetChild(4).gameObject.SetActive(false);
+                this.transform.GetChild(3).gameObject.SetActive(false);
                 this.transform.GetChild(2).gameObject.SetActive(false);
                 break;
             case 1:
+                this.transform.GetChild(4).gameObject.SetActive(false);
+                this.transform.GetChild(3).gameObject.SetActive(false);
+                this.transform.GetChild(2).gameObject.SetActive(false);
                 this.transform.GetChild(1).gameObject.SetActive(false);
                 break;
             case 0:
+                this.transform.GetChild(4).gameObject.SetActive(false);
+                this.transform.GetChild(3).gameObject.SetActive(false);
+                this.transform.GetChild(2).gameObject.SetActive(false);
+                this.transform.GetChild(1).gameObject.SetActive(false);
                 this.transform.GetChild(0).gameObject.SetActive(false);
                 break;
         }
