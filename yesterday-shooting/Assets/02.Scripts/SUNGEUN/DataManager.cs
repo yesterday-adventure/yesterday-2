@@ -5,10 +5,11 @@ using System.IO;
 
 public class PlayerData
 {
-    // ¿©±â¿¡ ÀúÀåÇÒ µ¥ÀÌÅÍ Àû¾î¼­ »ç¿ë
-    public bool playing = false; // ÇÃ·¹ÀÌÇÑ ±â·ÏÀÌ ÀÖ°í ÀúÀåµÇ¾î ÀÖ´ÂÁö ÆÇ´Ü.
+    // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½
+    public bool playing = false; // ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½.
     public bool[] roomClear = new bool[14];
     public Vector3 playerPosition = new Vector3(0, 0, 0);
+    public Vector3 cameraPosition = new Vector3(0, 0, -10);
 }
 
 public class GameOption
@@ -19,7 +20,7 @@ public class GameOption
 
 public class DataManager : MonoBehaviour
 {
-    //½Ì±ÛÅæ
+    //ï¿½Ì±ï¿½ï¿½ï¿½
     public static DataManager instance;
 
     public PlayerData nowPlayer = new PlayerData();
@@ -30,7 +31,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        #region ½Ì±ÛÅæ
+        #region ï¿½Ì±ï¿½ï¿½ï¿½
         if (instance == null)
         {
             instance = this;
