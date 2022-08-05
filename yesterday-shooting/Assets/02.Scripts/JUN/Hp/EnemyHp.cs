@@ -26,8 +26,16 @@ public class EnemyHp : MonoBehaviour, IDamageable
             OnDamage(()=>{});
     }
 
+    GameEffectSoundManager effectSound;
+
+    private void Start()
+    {
+        effectSound = FindObjectOfType<GameEffectSoundManager>();
+    }
+
     void Die()
     {
+        effectSound.MonsterDie();
         Destroy(gameObject);//나중에 풀메니저로
     }
 }
