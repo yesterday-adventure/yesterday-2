@@ -25,8 +25,11 @@ public class PlayerFire : MonoBehaviour
         //weapon = null; // 시작 무기
     }
 
+    GameEffectSoundManager effectSound;
+
     private void Start()
     {
+        effectSound = FindObjectOfType<GameEffectSoundManager>();
         StartCoroutine("Fire");
     }
 
@@ -36,6 +39,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
+                effectSound.PlayerAtteck();
                 _spriteRenderer.flipX = false;
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y -0.3f), Quaternion.identity);
                 fireDir = FireDir.right;
@@ -43,6 +47,7 @@ public class PlayerFire : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                effectSound.PlayerAtteck();
                 _spriteRenderer.flipX = true;
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.left;
@@ -50,12 +55,14 @@ public class PlayerFire : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
+                effectSound.PlayerAtteck();
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.up;
                 yield return new WaitForSeconds(delay);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
+                effectSound.PlayerAtteck();
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.down;
                 yield return new WaitForSeconds(delay);
