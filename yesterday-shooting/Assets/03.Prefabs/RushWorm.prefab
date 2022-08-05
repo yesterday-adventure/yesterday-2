@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6926569244046140513}
   - component: {fileID: 6926569244046140512}
   - component: {fileID: 6926569244046140527}
-  - component: {fileID: 7192007137423706274}
   - component: {fileID: 6926569244046140525}
   - component: {fileID: 6926569244046140522}
   - component: {fileID: 6926569244046140514}
   - component: {fileID: 733345039}
+  - component: {fileID: 1136976916891407154}
   m_Layer: 10
   m_Name: RushWorm
   m_TagString: Enemy
@@ -109,41 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!60 &7192007137423706274
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6926569244046140515}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 0.625}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.04873848, y: 0.085344136}
-      - {x: -0.2998705, y: 0.06858152}
-      - {x: -0.2590232, y: 0.41363692}
-      - {x: -0.4194212, y: 0.15508914}
-      - {x: -0.38875103, y: -0.25286645}
-      - {x: -0.3244648, y: -0.32439852}
-      - {x: -0.08909416, y: -0.320723}
-      - {x: 0.4375, y: -0.3125}
-      - {x: 0.4375, y: 0.0625}
-      - {x: 0.06256628, y: 0.24705851}
 --- !u!114 &6926569244046140525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +168,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1136976916891407154
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926569244046140515}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.029821157, y: -0.11762872}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.875, y: 0.625}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8153577, y: 0.38974255}
+  m_EdgeRadius: 0
