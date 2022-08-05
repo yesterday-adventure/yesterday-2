@@ -7,23 +7,29 @@ using System.IO;
 
 public class PlayerHp : MonoBehaviour
 {
-    public int hp = 3;
+    //public int hp = 5;
     public float shieldTime = 1; // 무적시간
     public void OnDamage(Action lambda)
     {
         shieldTime = 0;
-        hp--;
+        //hp--;
+        DataManager.instance.nowPlayer.playerHp--;
         lambda?.Invoke();
     }
 
     private void Update()
     {
-        if(hp <= 0)
+        /*if(hp <= 0)
+        {
+            Die();//여기에 죽는 애니메이션
+        }*/
+
+        if (DataManager.instance.nowPlayer.playerHp <= 0)
         {
             Die();//여기에 죽는 애니메이션
         }
 
-        if(shieldTime < 1)
+        if (shieldTime < 1)
             shieldTime += Time.deltaTime;
     }
 
