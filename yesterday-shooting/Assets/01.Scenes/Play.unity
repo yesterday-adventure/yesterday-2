@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piece (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 195402603285124511, guid: d4813d8d88a11b44fb78652e2bd0edfe, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4813d8d88a11b44fb78652e2bd0edfe, type: 3}
 --- !u!4 &65370694 stripped
@@ -36612,6 +36616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piece
       objectReference: {fileID: 0}
+    - target: {fileID: 195402603285124511, guid: d4813d8d88a11b44fb78652e2bd0edfe, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4813d8d88a11b44fb78652e2bd0edfe, type: 3}
 --- !u!4 &819736577 stripped
@@ -39900,7 +39908,7 @@ GameObject:
   - component: {fileID: 1722234387}
   - component: {fileID: 1722234386}
   - component: {fileID: 1722234385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Wall
   m_Icon: {fileID: 0}
