@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PlayerHp : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PlayerHp : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);//플레이어 죽는 애니메션
+        System.IO.File.Delete(DataManager.instance.path + DataManager.instance.nowSlot);
         SceneManager.LoadScene("Intro");
     }
 }
