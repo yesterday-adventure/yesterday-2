@@ -8,9 +8,12 @@ public class PlayButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject stopPanel;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject cameraP;
 
     private void Start()
     {
+        cameraP.transform.position = DataManager.instance.nowPlayer.cameraPosition;
+
         switch (DataManager.instance.nowPlayer.playerRoom)
         {
             case 0:
@@ -64,6 +67,8 @@ public class PlayButtonManager : MonoBehaviour
 
     public void OnClickExit()
     {
+        DataManager.instance.nowPlayer.cameraPosition = cameraP.transform.position;
+        DataManager.instance.SaveData();
         SceneManager.LoadScene("Intro");
         Time.timeScale = 1;
     }
