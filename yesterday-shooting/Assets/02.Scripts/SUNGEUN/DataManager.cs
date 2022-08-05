@@ -7,7 +7,7 @@ public class PlayerData
 {
     // ���⿡ ������ ������ ��� ���
     public bool playing = false; // �÷����� ����� �ְ� ����Ǿ� �ִ��� �Ǵ�.
-    public bool[] roomClear = new bool[14];
+    public bool[] roomClear = new bool[14] ;
     public Vector3 playerPosition = new Vector3(0, 0, 0);
     public int playerRoom = 0;
     public Vector3 cameraPosition = new Vector3(0, 0, -10);
