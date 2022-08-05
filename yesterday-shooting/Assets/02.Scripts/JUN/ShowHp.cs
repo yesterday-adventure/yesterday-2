@@ -13,7 +13,7 @@ public class ShowHp : MonoBehaviour
 
     private void showplayerhp()
     {
-        switch(playerHp.hp)
+        switch(DataManager.instance.nowPlayer.playerHp)
         {
             case 4:
                 this.transform.GetChild(4).gameObject.SetActive(false);

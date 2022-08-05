@@ -11,10 +11,18 @@ TagManager:
   - room0
   - room1
   - room2
-  - romm3
   - room4
   - room5
   - room6
+  - room3
+  - room7
+  - room8
+  - room9
+  - room10
+  - room11
+  - room12
+  - room13
+  - room14
   layers:
   - Default
   - TransparentFX
