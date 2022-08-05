@@ -44,6 +44,8 @@ public class RushWormPatern : MonoBehaviour
         iswallU = Physics2D.Raycast(transform.position, Vector2.up, transform.localScale.x / 2f + 0.1f, wallLayer);
         iswallD = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.x / 2f + 0.1f, wallLayer);
 
+        if(useSkill)
+            return;
         if (iswallD && iswallL)
         {
             if (coroutineMove != null)
@@ -268,7 +270,6 @@ public class RushWormPatern : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall") && useSkill)
         {
-            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             StopCoroutine("Rush");
             StartCoroutine("Rush");
             useSkill = false;
