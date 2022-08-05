@@ -8,6 +8,13 @@ TagManager:
   - PlayerBullet
   - Wall
   - EnemyBullet
+  - room0
+  - room1
+  - room2
+  - romm3
+  - room4
+  - room5
+  - room6
   layers:
   - Default
   - TransparentFX

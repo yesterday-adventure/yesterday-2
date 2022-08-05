@@ -13,7 +13,6 @@ public class JSonIsRoomClear : MonoBehaviour
         if (hitmonster == null && hitPlayer != null)
         {
             DataManager.instance.nowPlayer.roomClear[roomNumber] = true;
-            
         }
     }
 }
