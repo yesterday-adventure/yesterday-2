@@ -4,50 +4,58 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using System.IO;
+using DG.Tweening;
 
 public class PlayerHp : MonoBehaviour
 {
     //public int hp = 5;
     public float shieldTime = 1; // 무적시간
-    [SerializeField]SpriteRenderer sR;
+    [SerializeField] SpriteRenderer sR;
     public void OnDamage(Action lambda)
     {
         shieldTime = 0;
         //hp--;
         DataManager.instance.nowPlayer.playerHp--;
-        StartCoroutine(TwinkeON());
+        //StartCoroutine(TwinkeON());
+        HitAnimation();
         lambda?.Invoke();
     }
 
-    IEnumerator TwinkeON()
+    private void HitAnimation()
     {
-        yield return StartCoroutine(Fade(1,0));
-        yield return StartCoroutine(Fade(0,1));
+        Sequence seq = DOTween.Sequence();
+        seq.Append(sR.DOFade(0, 0.1f));
+        seq.Append(sR.DOFade(1, 0.3f));
     }
+    //IEnumerator TwinkeON()
+    //{
+    //    for (int i = 0; i < 2; i++)
+    //    {
 
-    IEnumerator Fade(float start, float end)
-    {
-        float currentTime = 0;
-        float percent = 0;
-        while(percent < 1)
-        {
-            currentTime += Time.deltaTime;
-            percent = currentTime / 0.1f;
-            
-            Color color = sR.color;
-            color.a = Mathf.Lerp(start,end,percent);
-            sR.color = color;
+    //        yield return StartCoroutine(Fade(1, 0));
+    //        yield return StartCoroutine(Fade(0, 1));
+    //    }
+    //}
 
-            yield return null;
-        }
-    }    
+    //IEnumerator Fade(float start, float end)
+    //{
+    //    float currentTime = 0;
+    //    float percent = 0;
+    //    while (percent < 1)
+    //    {
+    //        currentTime += Time.deltaTime;
+    //        percent = currentTime / 0.1f;
+
+    //        Color color = sR.color;
+    //        color.a = Mathf.Lerp(start, end, percent);
+    //        sR.color = color;
+
+    //        yield return null;
+    //    }
+    //}
 
     private void Update()
     {
-        /*if(hp <= 0)
-        {
-            Die();//여기에 죽는 애니메이션
-        }*/
 
         if (DataManager.instance.nowPlayer.playerHp <= 0)
         {
@@ -60,14 +68,14 @@ public class PlayerHp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
-            OnDamage(()=>{});
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+            OnDamage(() => { });
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
-            OnDamage(()=>{});
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+            OnDamage(() => { });
     }
 
     void Die()
