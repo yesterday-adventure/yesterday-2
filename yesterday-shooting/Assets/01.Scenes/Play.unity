@@ -25846,51 +25846,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &262341447
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 262341448}
-  - component: {fileID: 262341449}
-  m_Layer: 0
-  m_Name: Map
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &262341448
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262341447}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1671624711}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &262341449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262341447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc707ac6185844a458c4a7d520c2fd00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xIndex: 18
-  yIndex: 10
 --- !u!1 &277280449
 GameObject:
   m_ObjectHideFlags: 0
@@ -32066,7 +32021,7 @@ Transform:
   - {fileID: 1118947933}
   - {fileID: 1715644452}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &503204353
 GameObject:
@@ -42718,7 +42673,7 @@ Transform:
   - {fileID: 1085839056}
   - {fileID: 2080330604}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085839055
 GameObject:
@@ -45002,60 +44957,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.368664, y: 9.305451}
   m_EdgeRadius: 0
---- !u!1 &1671624710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1671624711}
-  - component: {fileID: 1671624712}
-  m_Layer: 0
-  m_Name: MapManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1671624711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671624710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 262341448}
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1671624712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671624710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87bbb6d638d54749a46f46a070e33c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maps: {fileID: 262341449}
-  randomMap:
-  - {fileID: 7912702765164721684, guid: cba33db2185eaaf4fa6756f5a5f6303e, type: 3}
-  - {fileID: 6425451640755601951, guid: a589236c10a23d74b88aa57ee41d01d8, type: 3}
-  - {fileID: 7872206482781790957, guid: cd0df12a858d01a41a33b9ce79ecbd75, type: 3}
-  - {fileID: 4111659863422304232, guid: 85518e9abc7de2d4997f4b7db91652f5, type: 3}
-  - {fileID: 5104205450867934917, guid: 4b1e9ddb7699f1a45b3d627da932a8a7, type: 3}
-  - {fileID: 8733290504246908155, guid: 086ba9191b56d4a4a97421b5df572cac, type: 3}
-  - {fileID: 635424129377460877, guid: d838787945c038d4e85619032c55deb2, type: 3}
-  maxRoomCount: 12
 --- !u!1001 &1681967556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45979,7 +45880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534cbb464bf075e45be1e5c15adf0101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1293106168}
   upD: {fileID: 277280449}
   downD: {fileID: 1722234381}
   leftD: {fileID: 250698773}
