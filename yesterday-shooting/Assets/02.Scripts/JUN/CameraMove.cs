@@ -16,29 +16,21 @@ public class CameraMove : MonoBehaviour
         {
             StartCoroutine(CameraRight());
             move = false;
-            //transform.DOMove(new Vector3(transform.position.x + offset.x * 2,transform.position.y,-10),0.1f,true);;
-            //playerP.transform.position += new Vector3(1,0,0);
         }
         if(player.position.x - transform.position.x < -offset.x && move)
         {
             StartCoroutine(CameraLeft());
             move = false;
-            //transform.DOMove(new Vector3(transform.position.x - offset.x * 2,transform.position.y,-10),0.1f,true);
-            //playerP.transform.position += new Vector3(-1,0,0);
         }
         if(player.position.y - transform.position.y > offset.y && move)
         {
             StartCoroutine(CameraUp());
             move = false;
-            //transform.DOMove(new Vector3(transform.position.x,transform.position.y + offset.y * 2,-10),0.1f,true);
-            //playerP.transform.position += new Vector3(0,1,0);
         }
         if(player.position.y - transform.position.y < -offset.y && move)
         {
             StartCoroutine(CameraDown());
             move = false;
-            //transform.DOMove(new Vector3(transform.position.x,transform.position.y - offset.y * 2,-10),0.1f,true);
-            //playerP.transform.position += new Vector3(0,-1,0);
         }
     }
 

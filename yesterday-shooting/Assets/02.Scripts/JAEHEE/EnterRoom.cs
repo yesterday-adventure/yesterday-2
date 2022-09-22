@@ -10,6 +10,7 @@ public class EnterRoom : MonoBehaviour
     private void Update()
     {
         Collider2D hitPlayer = Physics2D.OverlapBox(transform.position, new Vector2(17f, 9f), 0, 1 << 8);
+
         if(hitPlayer != null && DataManager.instance.nowPlayer.roomClear[roomNumber] == false)
         {
             room.SetActive(true);
