@@ -14,7 +14,7 @@ public class RandomMapSpawn : MonoBehaviour
     private int checkroom = 0;
     private int checknearroom = 0;
 
-    [SerializeField] int createRoom = 8;
+    [SerializeField] int createRoom;
     private void Awake()
     {
         mapgrid = null;
