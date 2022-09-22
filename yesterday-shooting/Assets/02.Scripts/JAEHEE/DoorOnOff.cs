@@ -25,7 +25,7 @@ public class DoorOnOff : MonoBehaviour
 
     private void Awake()
     {
-        _RMS = GameObject.Find("MapManager").GetComponent<RandomMapSpawn>();
+        _RMS = GameObject.Find("RandomMapSpawn").GetComponent<RandomMapSpawn>();
     }
 
     private void Start()
@@ -37,51 +37,69 @@ public class DoorOnOff : MonoBehaviour
     private void Update()
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
-        //if (hit == null)
-        //{
-        //}
-        //else
-        //{
-        //    upD.SetActive(true);
-        //    downD.SetActive(true);
-        //    leftD.SetActive(true);
-        //    rightD.SetActive(true);
-        //}
-
-        if (_RMS.mapGrid[x + 1, y] == null)
+        if (hit == null)
         {
-            rightD.SetActive(true);
+            if (_RMS.mapGrid[x + 1, y] == null)
+            {
+                rightD.SetActive(true);
+
+                Debug.Log($"{hit} 11");
+            }
+            else
+            {
+                rightD.SetActive(false);
+            }
+
+            if (_RMS.mapGrid[x - 1, y] == null)
+            {
+                leftD.SetActive(true);
+
+                Debug.Log($"{hit} 11");
+            }
+            else
+            {
+                leftD.SetActive(false);
+            }
+            if (_RMS.mapGrid[x, y + 1] == null)
+            {
+                upD.SetActive(true);
+
+                Debug.Log($"{hit} 11");
+            }
+            else
+            {
+                upD.SetActive(false);
+            }
+            if (_RMS.mapGrid[x, y - 1] == null)
+            {
+                downD.SetActive(true);
+
+                Debug.Log($"{hit} 11");
+            }
+            else
+            {
+                downD.SetActive(false);
+            }
         }
         else
-        {
-            rightD.SetActive(false);
-        }
-
-        if (_RMS.mapGrid[x - 1, y] == null)
-        {
-            leftD.SetActive(true);
-        }
-        else
-        {
-            leftD.SetActive(false);
-        }
-        if (_RMS.mapGrid[x, y + 1] == null)
         {
             upD.SetActive(true);
-        }
-        else
-        {
-            upD.SetActive(false);
-        }
-        if (_RMS.mapGrid[x, y - 1] == null)
-        {
             downD.SetActive(true);
+            leftD.SetActive(true);
+            rightD.SetActive(true);
         }
-        else
-        {
-            downD.SetActive(false);
-        }
-        Debug.Log($"{hit} 11");
+    }
+
+    public void changePos()
+    {
+        if (dir == Dir.up)
+            y++;
+        else if (dir == Dir.down)
+            y--;
+        else if (dir == Dir.left)
+            x--;
+        else if (dir == Dir.right)
+            x++;
     }
 
 }
