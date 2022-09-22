@@ -49085,7 +49085,7 @@ MonoBehaviour:
   randomMap:
   - {fileID: 7912702765164721684, guid: cba33db2185eaaf4fa6756f5a5f6303e, type: 3}
   - {fileID: 6425451640755601951, guid: a589236c10a23d74b88aa57ee41d01d8, type: 3}
-  createRoom: 8
+  createRoom: 12
 --- !u!1 &2080884384
 GameObject:
   m_ObjectHideFlags: 0
