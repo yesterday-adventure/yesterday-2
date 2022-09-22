@@ -5,27 +5,27 @@ using UnityEngine;
 public class RandomMapSpawn : MonoBehaviour
 {
     [SerializeField] Map maps;
-    Map[,] mapgrid = null;
+    public Map[,] mapGrid = null;
     [SerializeField] GameObject[] randomMap;
 
-    private int xindex = 9;
-    private int yindex = 10;
+    private int xIndex = 9;
+    private int yIndex = 10;
 
-    private int checkroom = 0;
-    private int checknearroom = 0;
+    private int RoomCount = 0;
+    private int NearRoomCount = 0;
 
-    [SerializeField] int createRoom;
+    [SerializeField] int maxRoomCount;
     private void Awake()
     {
-        mapgrid = null;
+        mapGrid = null;
     }
     void Start()
     {
-        mapgrid = new Map[xindex + 1, yindex + 1];
-        InputStartMap(mapgrid, maps);
-        while (checkroom < createRoom)
+        mapGrid = new Map[xIndex + 1, yIndex + 1];
+        InputStartMap(mapGrid, maps);
+        while (RoomCount < maxRoomCount)
         {
-            RandomSpawn(mapgrid, maps);
+            RandomSpawn(mapGrid, maps);
         }
     }
 
@@ -38,27 +38,26 @@ public class RandomMapSpawn : MonoBehaviour
 
     void RandomSpawn(Map[,] map, Map _map)
     {
-        checknearroom = 0;
-        int x = Random.Range(1, xindex);
-        int y = Random.Range(1, yindex);
+        NearRoomCount = 0;
+        int x = Random.Range(1, xIndex);
+        int y = Random.Range(1, yIndex);
         if (map[x, y] == null)
         {
             if (map[x + 1, y] != null)
-                checknearroom++;
+                NearRoomCount++;
             if (map[x - 1, y] != null)
-                checknearroom++;
+                NearRoomCount++;
             if (map[x, y + 1] != null)
-                checknearroom++;
+                NearRoomCount++;
             if (map[x, y - 1] != null)
-                checknearroom++;
+                NearRoomCount++;
 
-            if (checknearroom == 1)
+            if (NearRoomCount == 1)
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
                 spawnMap.name = spawnMap.name.Replace("(Clone)", "");
                 map[x, y] = _map;
-                Debug.Log($"x : {x} y : {y}");
-                checkroom++;
+                RoomCount++;
             }
         }
     }
