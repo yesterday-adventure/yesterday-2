@@ -19,6 +19,7 @@ public class RandomMapSpawn : MonoBehaviour
     {
         mapGrid = null;
     }
+
     void Start()
     {
         mapGrid = new Map[xIndex + 1, yIndex + 1];
@@ -31,8 +32,6 @@ public class RandomMapSpawn : MonoBehaviour
 
     void InputStartMap(Map[,] map, Map _map)
     {
-        //GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(5, 6), Quaternion.identity);
-        //spawnMap.name = "Start";
         map[5, 6] = _map;
     }
 
