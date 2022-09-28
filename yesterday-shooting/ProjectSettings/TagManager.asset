@@ -23,6 +23,10 @@ TagManager:
   - room12
   - room13
   - room14
+  - Up
+  - Down
+  - Right
+  - Left
   layers:
   - Default
   - TransparentFX
