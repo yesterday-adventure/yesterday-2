@@ -10,7 +10,7 @@ public class PlayerRoom : MonoBehaviour
         if (collision.tag == "room0")
         {
             DataManager.instance.nowPlayer.playerRoom = 0;
-            DataManager.instance.SaveData();
+            
         }
         if (collision.tag == "room1")
         {
@@ -83,5 +83,15 @@ public class PlayerRoom : MonoBehaviour
             DataManager.instance.nowPlayer.playerRoom = 14;
             DataManager.instance.SaveData();
         }
+
+        if (collision.tag == "Up")
+        {
+            DataManager.instance.nowPlayer.playerDirection = 1;
+            Debug.Log("tlqkf");
+        }
+        if (collision.tag == "Down") DataManager.instance.nowPlayer.playerDirection = 2;
+        if (collision.tag == "Right") DataManager.instance.nowPlayer.playerDirection = 3;
+        if (collision.tag == "Left") DataManager.instance.nowPlayer.playerDirection = 4;
+        DataManager.instance.SaveData();
     }
 }
