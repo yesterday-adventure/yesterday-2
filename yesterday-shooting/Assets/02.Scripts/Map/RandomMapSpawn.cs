@@ -11,8 +11,6 @@ public class RandomMapSpawn : MonoBehaviour
     private int xIndex = 9;
     private int yIndex = 10;
 
-    [SerializeField]private GameObject[,] mapInfo = new GameObject[9, 10];
-
     private int RoomCount = 0;
     private int NearRoomCount = 0;
 
@@ -57,9 +55,6 @@ public class RandomMapSpawn : MonoBehaviour
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
                 spawnMap.name = spawnMap.name.Replace("(Clone)", "");
-
-                mapInfo[x, y] = spawnMap;
-                Debug.Log(mapInfo[x, y]);
 
                 map[x, y] = _map;
                 RoomCount++;
