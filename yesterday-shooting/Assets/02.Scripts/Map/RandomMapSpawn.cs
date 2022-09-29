@@ -17,16 +17,19 @@ public class RandomMapSpawn : MonoBehaviour
     [SerializeField] int maxRoomCount;
     private void Awake()
     {
-        mapGrid = null;
+
     }
 
     void Start()
     {
-        mapGrid = new Map[xIndex + 1, yIndex + 1];
-        InputStartMap(mapGrid, maps);
-        while (RoomCount < maxRoomCount)
+        if (mapGrid != null)
         {
-            RandomSpawn(mapGrid, maps);
+            mapGrid = new Map[xIndex + 1, yIndex + 1];
+            InputStartMap(mapGrid, maps);
+            while (RoomCount < maxRoomCount)
+            {
+                RandomSpawn(mapGrid, maps);
+            }
         }
     }
 
@@ -55,7 +58,9 @@ public class RandomMapSpawn : MonoBehaviour
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
+
                 spawnMap.name = $"{RoomCount + 1}";
+                spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
                 RoomCount++;

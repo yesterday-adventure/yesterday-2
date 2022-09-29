@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnterRoom : MonoBehaviour
 {
     [SerializeField] GameObject room;
-    [SerializeField] int roomNumber;
+    public int roomNumber;
 
     private void Update()
     {
