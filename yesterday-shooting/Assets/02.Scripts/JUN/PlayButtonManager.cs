@@ -17,26 +17,16 @@ public class PlayButtonManager : MonoBehaviour
         switch (DataManager.instance.nowPlayer.playerRoom)
         {
             case 0:
-                player.transform.position = new Vector3(90, 60, 0);
-                if (DataManager.instance.nowPlayer.playerDirection == 1)
-                {
-                    player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3, 0);
-                }
-                if (DataManager.instance.nowPlayer.playerDirection == 2)
-                {
-                    player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 3, 0);
-                }
-                if (DataManager.instance.nowPlayer.playerDirection == 3)
-                {
-                    player.transform.position = new Vector3(player.transform.position.x + 7, player.transform.position.y, 0);
-                }
-                if (DataManager.instance.nowPlayer.playerDirection == 4)
-                {
-                    player.transform.position = new Vector3(player.transform.position.x - 7, player.transform.position.y, 0);
-                }
+                player.transform.position = new Vector3(90, 60, 0); // 위로 10 옆으로 18 그리고 스타트 배열은 (5, 6)
+                PlayerLocation();
                 break;
             case 1:
-
+                if (GameObject.Find("Room1Parent") != null) //이거 복붙이나 메서드 만들거나 룰루랄라
+                {
+                    GameObject room1 = GameObject.Find("Room1Parent");
+                    player.transform.position = room1.transform.position;
+                    PlayerLocation();
+                }
                 //player.transform.position = new Vector3(-10, -10, 0);
                 break;
             case 2:
@@ -79,6 +69,30 @@ public class PlayButtonManager : MonoBehaviour
                 //player.transform.position = new Vector3(54, -46, 0);
                 break;
 
+        }
+    }
+
+    private void PlayerLocation()
+    {
+        if (DataManager.instance.nowPlayer.playerDirection == 1)
+        {
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3, 0);
+        }
+        if (DataManager.instance.nowPlayer.playerDirection == 2)
+        {
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 3, 0);
+        }
+        if (DataManager.instance.nowPlayer.playerDirection == 3)
+        {
+            player.transform.position = new Vector3(player.transform.position.x + 7, player.transform.position.y, 0);
+        }
+        if (DataManager.instance.nowPlayer.playerDirection == 4)
+        {
+            player.transform.position = new Vector3(player.transform.position.x - 7, player.transform.position.y, 0);
+        }
+        if (DataManager.instance.nowPlayer.playerDirection == 5)
+        {
+            player.transform.position = new Vector3(90, 60, 0);
         }
     }
 
