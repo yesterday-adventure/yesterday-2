@@ -33589,7 +33589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &554679081
 Transform:
   m_ObjectHideFlags: 0
@@ -49725,6 +49725,8 @@ MonoBehaviour:
   - {fileID: 5104205450867934917, guid: 4b1e9ddb7699f1a45b3d627da932a8a7, type: 3}
   - {fileID: 8733290504246908155, guid: 086ba9191b56d4a4a97421b5df572cac, type: 3}
   - {fileID: 635424129377460877, guid: d838787945c038d4e85619032c55deb2, type: 3}
+  - {fileID: 4313664771625731495, guid: 73e716ab8052809439c3c9babf1a9f09, type: 3}
+  - {fileID: 2096960509866231491, guid: a86848e909212cc4094c809158bcff35, type: 3}
   maxRoomCount: 12
 --- !u!1 &2080884384
 GameObject:
