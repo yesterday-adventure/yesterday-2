@@ -21,7 +21,7 @@ public class PlayButtonManager : MonoBehaviour
                 PlayerLocation();
                 break;
             case 1:
-                if (GameObject.Find("Room1Parent") != null)
+                if (GameObject.Find("Room1Parent") != null) //이거 복붙이나 메서드 만들거나 룰루랄라
                 {
                     GameObject room1 = GameObject.Find("Room1Parent");
                     player.transform.position = room1.transform.position;
