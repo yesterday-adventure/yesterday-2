@@ -54,7 +54,8 @@ public class RandomMapSpawn : MonoBehaviour
             if (NearRoomCount == 1)
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
-                spawnMap.name = spawnMap.name.Replace("(Clone)", "");
+                //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
+                spawnMap.name = $"{RoomCount + 1}";
 
                 map[x, y] = _map;
                 RoomCount++;
