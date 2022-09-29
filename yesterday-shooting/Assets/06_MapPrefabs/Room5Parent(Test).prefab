@@ -221,9 +221,9 @@ GameObject:
   - component: {fileID: 1928813111031359585}
   - component: {fileID: 1928813111031359586}
   - component: {fileID: 1928813111031359587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room5Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
