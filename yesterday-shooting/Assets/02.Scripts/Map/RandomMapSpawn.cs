@@ -18,7 +18,7 @@ public class RandomMapSpawn : MonoBehaviour
 
     // 성은 쓴거
     [SerializeField] int roomCount = 12;
-    GameObject[] isMap = new GameObject[12];
+    public GameObject[] isMap = new GameObject[12];
 
 
     private void Awake()
@@ -44,9 +44,9 @@ public class RandomMapSpawn : MonoBehaviour
                 if (GameObject.Find(i.ToString()) != null)
                 {
                     Debug.Log("맵이 생성됬다!");
-                    isMap[i] = GameObject.Find(i.ToString());
-                    DataManager.instance.nowPlayer.tlqkf[i] = isMap[i].transform.position;
-                    DataManager.instance.nowPlayer.tlqkftlqkf[i] = isMap[i].GetComponentInChildren<EnterRoom>().roomNumber;
+                    isMap[i - 1] = GameObject.Find(i.ToString());
+                    DataManager.instance.nowPlayer.tlqkf[i - 1] = isMap[i - 1].transform.position;
+                    DataManager.instance.nowPlayer.tlqkftlqkf[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
@@ -99,7 +99,7 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
 
                 spawnMap.name = $"{RoomCount + 1}";
-                spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
+                //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
                 RoomCount++;

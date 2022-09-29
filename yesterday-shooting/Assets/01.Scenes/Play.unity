@@ -48698,7 +48698,7 @@ GameObject:
   - component: {fileID: 1803253217}
   - component: {fileID: 1803253216}
   m_Layer: 0
-  m_Name: 12
+  m_Name: knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49772,6 +49772,20 @@ MonoBehaviour:
   - {fileID: 4313664771625731495, guid: 73e716ab8052809439c3c9babf1a9f09, type: 3}
   - {fileID: 2096960509866231491, guid: a86848e909212cc4094c809158bcff35, type: 3}
   maxRoomCount: 12
+  roomCount: 12
+  isMap:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2080884384
 GameObject:
   m_ObjectHideFlags: 0
