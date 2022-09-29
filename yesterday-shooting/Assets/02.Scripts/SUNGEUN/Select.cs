@@ -7,12 +7,29 @@ using System.IO;
 
 public class Select : MonoBehaviour
 {
+    public static Select instance;
+
     public Button[] slotButton;
     public Button fileDelete, start;
 
     public Color playing, fileSelect;
 
     bool[] savefile = new bool[3];
+
+    public bool newStart = false;
+
+    private void Awake()
+    {
+        newStart = false;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance.gameObject);
+        }
+    }
 
     void Start()
     {
@@ -40,7 +57,7 @@ public class Select : MonoBehaviour
     {
         DataManager.instance.nowSlot = number;
 
-        // ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ÀÖÀ» ¶§
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         if (savefile[number])
         {
             DataManager.instance.LoadData();
@@ -75,11 +92,12 @@ public class Select : MonoBehaviour
 
     public void GoGame()
     {
-        // ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ¾øÀ» ¶§
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         if (!savefile[DataManager.instance.nowSlot])
         {
             fileDelete.interactable = false;
             DataManager.instance.nowPlayer.playing = true;
+            newStart = true;
         }
         else
         {

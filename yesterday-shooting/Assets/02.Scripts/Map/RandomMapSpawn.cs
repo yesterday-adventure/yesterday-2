@@ -22,7 +22,7 @@ public class RandomMapSpawn : MonoBehaviour
 
     void Start()
     {
-        if (mapGrid != null)
+        if(Select.instance.newStart)
         {
             mapGrid = new Map[xIndex + 1, yIndex + 1];
             InputStartMap(mapGrid, maps);
