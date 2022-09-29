@@ -93,7 +93,7 @@ public class Select : MonoBehaviour
     public void GoGame()
     {
         // ����� �����Ͱ� ���� ��
-        if (!savefile[DataManager.instance.nowSlot])
+        if (!savefile[DataManager.instance.nowSlot])    // 세이브 파일이 없을 때
         {
             fileDelete.interactable = false;
             DataManager.instance.nowPlayer.playing = true;

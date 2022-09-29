@@ -15,6 +15,12 @@ public class RandomMapSpawn : MonoBehaviour
     private int NearRoomCount = 0;
 
     [SerializeField] int maxRoomCount;
+
+    // 성은 쓴거
+    [SerializeField] int roomCount = 12;
+    GameObject[] isMap = new GameObject[12];
+
+
     private void Awake()
     {
 
@@ -29,6 +35,39 @@ public class RandomMapSpawn : MonoBehaviour
             while (RoomCount < maxRoomCount)
             {
                 RandomSpawn(mapGrid, maps);
+            }
+
+
+            //성은ㅇ성늘ㅇ
+            for (int i = 1; i < roomCount + 1; i++)
+            {
+                if (GameObject.Find(i.ToString()) != null)
+                {
+                    Debug.Log("맵이 생성됬다!");
+                    isMap[i] = GameObject.Find(i.ToString());
+                    DataManager.instance.nowPlayer.tlqkf[i] = isMap[i].transform.position;
+                    DataManager.instance.nowPlayer.tlqkftlqkf[i] = isMap[i].GetComponentInChildren<EnterRoom>().roomNumber;
+                }
+                else
+                {
+                    Debug.Log("맵이 생성되다말았다!");
+                }
+                    Debug.Log("맵이 뒤졌다!");
+
+            }
+        }
+        else
+        {
+            Debug.Log("맵맵맵");
+            if (DataManager.instance.nowPlayer.tlqkf != null && DataManager.instance.nowPlayer.tlqkftlqkf != null)
+            {
+                // 위치값과 방 숫자를 더해서 생성
+                for (int i = 0; i < DataManager.instance.nowPlayer.tlqkf.Length; i++)
+                {
+                    Debug.Log("맵맵맵이 생성 되나 진짜로?");
+                    //DataManager.instance.nowPlayer.tlqkf[i]
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.tlqkftlqkf[i]], DataManager.instance.nowPlayer.tlqkf[i], Quaternion.identity);
+                }
             }
         }
     }
