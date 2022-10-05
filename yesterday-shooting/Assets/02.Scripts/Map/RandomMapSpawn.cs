@@ -20,14 +20,10 @@ public class RandomMapSpawn : MonoBehaviour
 
     // ���� ����
     [SerializeField] int roomCount = 12;
-    GameObject[] isMap = new GameObject[12];
+    public GameObject[] isMap = new GameObject[12];
 
 
-    private void Awake()
-    {
-        if(createMiniMap == null)
-            createMiniMap = GameObject.Find("SpawnMap/MiniMap").GetComponent<CreateMiniMap>();
-    }
+    
 
     void Start()
     {
@@ -47,9 +43,9 @@ public class RandomMapSpawn : MonoBehaviour
                 if (GameObject.Find(i.ToString()) != null)
                 {
                     Debug.Log("���� �������!");
-                    isMap[i] = GameObject.Find(i.ToString());
-                    DataManager.instance.nowPlayer.roomPos[i] = isMap[i].transform.position;
-                    DataManager.instance.nowPlayer.roomNumber[i] = isMap[i].GetComponentInChildren<EnterRoom>().roomNumber;
+                    isMap[i - 1] = GameObject.Find(i.ToString());
+                    DataManager.instance.nowPlayer.roomPos[i - 1] = isMap[i - 1].transform.position;
+                    DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
@@ -69,7 +65,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("�ʸʸ��� ���� �ǳ� ��¥��?");
                     //DataManager.instance.nowPlayer.roomPos[i]
-                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i]], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] -1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
             }
         }
@@ -102,7 +98,7 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
 
                 spawnMap.name = $"{RoomCount + 1}";
-                spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
+                //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
                 RoomCount++;
