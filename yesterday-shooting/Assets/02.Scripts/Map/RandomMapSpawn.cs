@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RandomMapSpawn : MonoBehaviour
 {
+    [SerializeField] CreateMiniMap createMiniMap;
     [SerializeField] Map maps;
     public Map[,] mapGrid = null;
+    public CreateMiniMap[,] createMiniMapA = null;
     [SerializeField] GameObject[] randomMap;
 
     private int xIndex = 9;
@@ -16,14 +18,15 @@ public class RandomMapSpawn : MonoBehaviour
 
     [SerializeField] int maxRoomCount;
 
-    // ¼ºÀº ¾´°Å
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     [SerializeField] int roomCount = 12;
     GameObject[] isMap = new GameObject[12];
 
 
     private void Awake()
     {
-
+        if(createMiniMap == null)
+            createMiniMap = GameObject.Find("SpawnMap/MiniMap").GetComponent<CreateMiniMap>();
     }
 
     void Start()
@@ -38,33 +41,33 @@ public class RandomMapSpawn : MonoBehaviour
             }
 
 
-            //¼ºÀº¤·¼º´Ã¤·
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¤ï¿½
             for (int i = 1; i < roomCount + 1; i++)
             {
                 if (GameObject.Find(i.ToString()) != null)
                 {
-                    Debug.Log("¸ÊÀÌ »ý¼º‰ç´Ù!");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
                     isMap[i] = GameObject.Find(i.ToString());
                     DataManager.instance.nowPlayer.tlqkf[i] = isMap[i].transform.position;
                     DataManager.instance.nowPlayer.tlqkftlqkf[i] = isMap[i].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
-                    Debug.Log("¸ÊÀÌ »ý¼ºµÇ´Ù¸»¾Ò´Ù!");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´Ù¸ï¿½ï¿½Ò´ï¿½!");
                 }
-                    Debug.Log("¸ÊÀÌ µÚÁ³´Ù!");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 
             }
         }
         else
         {
-            Debug.Log("¸Ê¸Ê¸Ê");
+            Debug.Log("ï¿½Ê¸Ê¸ï¿½");
             if (DataManager.instance.nowPlayer.tlqkf != null && DataManager.instance.nowPlayer.tlqkftlqkf != null)
             {
-                // À§Ä¡°ª°ú ¹æ ¼ýÀÚ¸¦ ´õÇØ¼­ »ý¼º
+                // ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½
                 for (int i = 0; i < DataManager.instance.nowPlayer.tlqkf.Length; i++)
                 {
-                    Debug.Log("¸Ê¸Ê¸ÊÀÌ »ý¼º µÇ³ª ÁøÂ¥·Î?");
+                    Debug.Log("ï¿½Ê¸Ê¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½?");
                     //DataManager.instance.nowPlayer.tlqkf[i]
                     Instantiate(randomMap[DataManager.instance.nowPlayer.tlqkftlqkf[i]], DataManager.instance.nowPlayer.tlqkf[i], Quaternion.identity);
                 }
