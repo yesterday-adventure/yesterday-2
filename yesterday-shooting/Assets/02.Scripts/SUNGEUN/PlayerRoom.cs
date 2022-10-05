@@ -7,6 +7,8 @@ public class PlayerRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 플레이어의 위치 저장은 누군가 해주겠지? 정말 좋당
+        #region 테그로 플레이어 위치 구하기
         if (collision.tag == "room0")
         {
             DataManager.instance.nowPlayer.playerRoom = 0;
@@ -67,6 +69,7 @@ public class PlayerRoom : MonoBehaviour
         {
             DataManager.instance.nowPlayer.playerRoom = 14;
         }
+        #endregion
 
         if (collision.tag == "Up")
         {
