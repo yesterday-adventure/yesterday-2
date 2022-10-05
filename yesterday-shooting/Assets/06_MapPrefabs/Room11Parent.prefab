@@ -1962,7 +1962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 4313664770594060171}
-  roomNumber: 12
+  roomNumber: 11
 --- !u!1 &4313664772046986200
 GameObject:
   m_ObjectHideFlags: 0

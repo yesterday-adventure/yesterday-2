@@ -18,7 +18,7 @@ public class RandomMapSpawn : MonoBehaviour
 
     // 성은 쓴거
     [SerializeField] int roomCount = 12;
-    GameObject[] isMap = new GameObject[12];
+    public GameObject[] isMap = new GameObject[12];
 
 
     private void Awake()
@@ -44,9 +44,9 @@ public class RandomMapSpawn : MonoBehaviour
                 if (GameObject.Find(i.ToString()) != null)
                 {
                     Debug.Log("맵이 생성됬다!");
-                    isMap[i] = GameObject.Find(i.ToString());
-                    DataManager.instance.nowPlayer.tlqkf[i] = isMap[i].transform.position;
-                    DataManager.instance.nowPlayer.tlqkftlqkf[i] = isMap[i].GetComponentInChildren<EnterRoom>().roomNumber;
+                    isMap[i - 1] = GameObject.Find(i.ToString());
+                    DataManager.instance.nowPlayer.roomPos[i - 1] = isMap[i - 1].transform.position;
+                    DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
@@ -59,14 +59,14 @@ public class RandomMapSpawn : MonoBehaviour
         else
         {
             Debug.Log("맵맵맵");
-            if (DataManager.instance.nowPlayer.tlqkf != null && DataManager.instance.nowPlayer.tlqkftlqkf != null)
+            if (DataManager.instance.nowPlayer.roomPos != null && DataManager.instance.nowPlayer.roomNumber != null)
             {
                 // 위치값과 방 숫자를 더해서 생성
-                for (int i = 0; i < DataManager.instance.nowPlayer.tlqkf.Length; i++)
+                for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)
                 {
                     Debug.Log("맵맵맵이 생성 되나 진짜로?");
                     //DataManager.instance.nowPlayer.tlqkf[i]
-                    Instantiate(randomMap[DataManager.instance.nowPlayer.tlqkftlqkf[i]], DataManager.instance.nowPlayer.tlqkf[i], Quaternion.identity);
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i]], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
             }
         }
@@ -99,7 +99,7 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
 
                 spawnMap.name = $"{RoomCount + 1}";
-                spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
+                //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
                 RoomCount++;

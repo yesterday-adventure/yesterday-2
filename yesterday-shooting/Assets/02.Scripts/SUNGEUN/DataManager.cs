@@ -11,8 +11,8 @@ public class PlayerData
     public Vector3 playerPosition = new Vector3(90, 60, 0);
     public int playerRoom = 0;  // 플레이어가 마지막으로 있던 방의 방 숫자
     public int playerDirection = 0; // 플레이어가 마지막으로 있던 방의 위치 숫자로 위, 아래 오른쪽, 왼쪽, 센터
-    public Vector3[] tlqkf = new Vector3[12];    // 방의 위치 포지션 배열
-    public int[] tlqkftlqkf = new int[12];  // 방의 방 넘버 배열
+    public Vector3[] roomPos = new Vector3[12];    // 방의 위치 포지션 배열
+    public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
     public Vector3 cameraPosition = new Vector3(90, 60, -10);
     public int playerHp = 5;
 }
