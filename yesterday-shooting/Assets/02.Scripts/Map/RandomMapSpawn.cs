@@ -66,7 +66,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("¸Ê¸Ê¸ÊÀÌ »ı¼º µÇ³ª ÁøÂ¥·Î?");
                     //DataManager.instance.nowPlayer.tlqkf[i]
-                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i]], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
             }
         }
