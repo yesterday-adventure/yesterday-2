@@ -49,6 +49,7 @@ public class BulletMove : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Wall"))
         {
+            Debug.Log(1);
             PoolManager.Instance.Push(gameObject);
         }
     }
