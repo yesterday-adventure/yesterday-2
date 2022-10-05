@@ -45,8 +45,8 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("¸ÊÀÌ »ý¼º‰ç´Ù!");
                     isMap[i - 1] = GameObject.Find(i.ToString());
-                    DataManager.instance.nowPlayer.tlqkf[i - 1] = isMap[i - 1].transform.position;
-                    DataManager.instance.nowPlayer.tlqkftlqkf[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
+                    DataManager.instance.nowPlayer.roomPos[i - 1] = isMap[i - 1].transform.position;
+                    DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
@@ -59,14 +59,14 @@ public class RandomMapSpawn : MonoBehaviour
         else
         {
             Debug.Log("¸Ê¸Ê¸Ê");
-            if (DataManager.instance.nowPlayer.tlqkf != null && DataManager.instance.nowPlayer.tlqkftlqkf != null)
+            if (DataManager.instance.nowPlayer.roomPos != null && DataManager.instance.nowPlayer.roomNumber != null)
             {
                 // À§Ä¡°ª°ú ¹æ ¼ýÀÚ¸¦ ´õÇØ¼­ »ý¼º
-                for (int i = 0; i < DataManager.instance.nowPlayer.tlqkf.Length; i++)
+                for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)
                 {
                     Debug.Log("¸Ê¸Ê¸ÊÀÌ »ý¼º µÇ³ª ÁøÂ¥·Î?");
                     //DataManager.instance.nowPlayer.tlqkf[i]
-                    Instantiate(randomMap[DataManager.instance.nowPlayer.tlqkftlqkf[i]], DataManager.instance.nowPlayer.tlqkf[i], Quaternion.identity);
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i]], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
             }
         }

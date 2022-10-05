@@ -13,4 +13,9 @@ public class check : MonoBehaviour
     {
        //Debug.Log("gg");
     }
+
+    public void Save()
+    {
+        DataManager.instance.SaveData();
+    }
 }
