@@ -23,12 +23,6 @@ public class RandomMapSpawn : MonoBehaviour
     GameObject[] isMap = new GameObject[12];
 
 
-    private void Awake()
-    {
-        if(createMiniMap == null)
-            createMiniMap = GameObject.Find("SpawnMap/MiniMap").GetComponent<CreateMiniMap>();
-    }
-
     void Start()
     {
         if(Select.instance.newStart)

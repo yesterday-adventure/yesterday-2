@@ -21,11 +21,12 @@ public class DoorOnOff : MonoBehaviour
 
     int x = 5;
     int y = 6;
-    RandomMapSpawn _RMS;
+    [SerializeField]RandomMapSpawn _RMS;
 
     private void Awake()
     {
-        _RMS = GameObject.Find("RandomMapSpawn").GetComponent<RandomMapSpawn>();
+        _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
+        Debug.Log(_RMS);
     }
 
     private void Start()
