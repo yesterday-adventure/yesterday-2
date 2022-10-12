@@ -21,7 +21,7 @@ public class DoorOnOff : MonoBehaviour
 
     int x = 5;
     int y = 6;
-    [SerializeField]RandomMapSpawn _RMS;
+    [SerializeField] RandomMapSpawn _RMS;
 
     private void Awake()
     {
