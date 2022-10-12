@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class RandomMapSpawn : MonoBehaviour
 {
-    [SerializeField] CreateMiniMap createMiniMap;
     [SerializeField] Map maps;
     public Map[,] mapGrid = null;
-    public CreateMiniMap[,] createMiniMapA = null;
     [SerializeField] GameObject[] randomMap;
 
     private int xIndex = 9;
@@ -18,16 +16,15 @@ public class RandomMapSpawn : MonoBehaviour
 
     [SerializeField] int maxRoomCount;
 
-    // ���� ����
     [SerializeField] int roomCount = 12;
     public GameObject[] isMap = new GameObject[12];
 
-
-    
+    [SerializeField] GameObject monsterMinimap;
+    [SerializeField] GameObject minimap;
 
     void Start()
     {
-        if(Select.instance.newStart)
+        if (Select.instance.newStart)
         {
             DataManager.instance.nowPlayer.mapGrid = new Map[xIndex + 1, yIndex + 1];
             InputStartMap(DataManager.instance.nowPlayer.mapGrid, maps);
@@ -51,7 +48,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("���� �����Ǵٸ��Ҵ�!");
                 }
-                    Debug.Log("���� ������!");
+                Debug.Log("���� ������!");
 
             }
         }
@@ -65,7 +62,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("�ʸʸ��� ���� �ǳ� ��¥��?");
                     //DataManager.instance.nowPlayer.roomPos[i]
-                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] -1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
+                    Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
             }
         }
@@ -95,7 +92,12 @@ public class RandomMapSpawn : MonoBehaviour
             if (NearRoomCount == 1)
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
+
+                GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+
+                spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x-5,y-6);
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
+
 
                 spawnMap.name = $"{RoomCount + 1}";
                 //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;

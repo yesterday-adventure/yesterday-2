@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CreateMiniMap : MonoBehaviour
 {
+    [SerializeField] GameObject monsterRoom;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
