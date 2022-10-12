@@ -13,6 +13,7 @@ public class PlayerData
     public int playerDirection = 0; // 플레이어가 마지막으로 있던 방의 위치 숫자로 위, 아래 오른쪽, 왼쪽, 센터
     public Vector3[] roomPos = new Vector3[12];    // 방의 위치 포지션 배열
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
+    public Map[,] mapGrid = null;   // 2차원배열은 저장이 안돼용!
     public Vector3 cameraPosition = new Vector3(90, 60, -10);
     public int playerHp = 5;
 }
