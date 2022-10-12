@@ -11,5 +11,4 @@ public class ThunderAnim : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-
 }

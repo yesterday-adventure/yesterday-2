@@ -5,7 +5,14 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
     public GameObject weapon = null;
+
+    [SerializeField] private GameObject[] weaponarr;
+    Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
+
+
     private float delay = 0f;
+    private bool isChanging = false;
+
 
     private SpriteRenderer _spriteRenderer;
 
@@ -20,6 +27,11 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        for (int i = 0; i < weaponarr.Length; i++)
+        {
+            weapons.Add(weaponarr[i].name, weaponarr[i]);
+        }
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         delay = 0.7f;
         //weapon = null; // 시작 무기
@@ -41,7 +53,7 @@ public class PlayerFire : MonoBehaviour
             {
                 effectSound.PlayerAtteck();
                 _spriteRenderer.flipX = false;
-                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y -0.3f), Quaternion.identity);
+                PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.right;
                 yield return new WaitForSeconds(delay);
             }
@@ -69,5 +81,23 @@ public class PlayerFire : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("WeaponItem") && !isChanging)
+        {
+            StartCoroutine(ChangeWeapon(collision));
+        }
+    }
+    IEnumerator ChangeWeapon(Collider2D collision)
+    {
+        //나중에 아이템먹는 애니매이션 작업 하기
+        isChanging = true;
+        string temp = weapon.name;
+        weapon = weapons[collision.gameObject.name];
+        collision.gameObject.name = temp;
+        yield return new WaitForSeconds(1.5f);
+        isChanging = false;
     }
 }
