@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomMapSpawn : MonoBehaviour
 {
     [SerializeField] Map maps;
-    public Map[,] mapGrid = null;
+    public Map[,] mapGrid;
     [SerializeField] GameObject[] randomMap;
 
     private int xIndex = 9;

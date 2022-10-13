@@ -25,7 +25,7 @@ public class DoorOnOff : MonoBehaviour
 
     private void Awake()
     {
-        _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
+        //_RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
         //Debug.Log(_RMS);
     }
 
@@ -40,42 +40,34 @@ public class DoorOnOff : MonoBehaviour
         Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
         if (hit == null)
         {
-            if (_RMS.mapGrid[x + 1, y] == null)
+            if (DataManager.instance.nowPlayer.mapGrid[x + 1, y] == null)
             {
                 rightD.SetActive(true);
-
-                Debug.Log($"{hit} 11");
             }
             else
             {
                 rightD.SetActive(false);
             }
 
-            if (_RMS.mapGrid[x - 1, y] == null)
+            if (DataManager.instance.nowPlayer.mapGrid[x - 1, y] == null)
             {
                 leftD.SetActive(true);
-
-                Debug.Log($"{hit} 11");
             }
             else
             {
                 leftD.SetActive(false);
             }
-            if (_RMS.mapGrid[x, y + 1] == null)
+            if (DataManager.instance.nowPlayer.mapGrid[x, y + 1] == null)
             {
                 upD.SetActive(true);
-
-                Debug.Log($"{hit} 11");
             }
             else
             {
                 upD.SetActive(false);
             }
-            if (_RMS.mapGrid[x, y - 1] == null)
+            if (DataManager.instance.nowPlayer.mapGrid[x, y - 1] == null)
             {
                 downD.SetActive(true);
-
-                Debug.Log($"{hit} 11");
             }
             else
             {

@@ -15110,7 +15110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3341de0b7d5a64b930de7be961de93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOnOff: {fileID: 0}
+  doorOnOff: {fileID: 1752153546}
   player: {fileID: 1529723048}
   offset: {x: 9, y: 5, z: -10}
   playerP: {fileID: 1529723045}
@@ -15131,7 +15131,7 @@ MonoBehaviour:
   leftD: {fileID: 250698773}
   rightD: {fileID: 131902672}
   dir: 0
-  _RMS: {fileID: 0}
+  _RMS: {fileID: 2080330605}
 --- !u!114 &1752153547
 MonoBehaviour:
   m_ObjectHideFlags: 0
