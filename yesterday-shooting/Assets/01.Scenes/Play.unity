@@ -9419,7 +9419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 730787329}
   - component: {fileID: 730787330}
-  - component: {fileID: 730787331}
   m_Layer: 0
   m_Name: MiniMap
   m_TagString: Untagged
@@ -9493,19 +9492,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &730787331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730787328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aae6bc6a4749594183656d759dcf035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterRoom: {fileID: 5838585122523306124, guid: b94f36ca1f78539409e197d976f96ce5, type: 3}
 --- !u!1 &769088416
 GameObject:
   m_ObjectHideFlags: 0
@@ -13635,6 +13621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4374826873290748653, guid: 7922c20e7fdc63f469eeb11a13a8004b, type: 3}
+  weaponarr: []
   fireDir: 0
 --- !u!50 &1529723050
 Rigidbody2D:

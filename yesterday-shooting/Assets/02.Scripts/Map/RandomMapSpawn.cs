@@ -39,16 +39,16 @@ public class RandomMapSpawn : MonoBehaviour
             {
                 if (GameObject.Find(i.ToString()) != null)
                 {
-                    Debug.Log("���� �������!");
+                    //Debug.Log("���� �������!");
                     isMap[i - 1] = GameObject.Find(i.ToString());
                     DataManager.instance.nowPlayer.roomPos[i - 1] = isMap[i - 1].transform.position;
                     DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
                 else
                 {
-                    Debug.Log("���� �����Ǵٸ��Ҵ�!");
+                    //Debug.Log("���� �����Ǵٸ��Ҵ�!");
                 }
-                Debug.Log("���� ������!");
+                //Debug.Log("���� ������!");
 
             }
         }

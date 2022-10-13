@@ -26,7 +26,7 @@ public class DoorOnOff : MonoBehaviour
     private void Awake()
     {
         _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
-        Debug.Log(_RMS);
+        //Debug.Log(_RMS);
     }
 
     private void Start()
