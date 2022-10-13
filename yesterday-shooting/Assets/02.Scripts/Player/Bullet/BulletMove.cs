@@ -11,6 +11,7 @@ public class BulletMove : MonoBehaviour
     [SerializeField] private float lifeTime = 0f;
     private bool checkdir = false;
     PlayerFire playerFire;
+
     private void Awake()
     {
         playerFire = GameObject.Find("Player").GetComponent<PlayerFire>();
