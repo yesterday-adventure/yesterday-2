@@ -13877,7 +13877,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0051073134, y: -0.39310992}
+  m_Offset: {x: 0.008171082, y: -0.39089775}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13888,7 +13888,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5403438, y: 0.8412049}
+  m_Size: {x: 0.6199951, y: 0.9429817}
   m_EdgeRadius: 0
 --- !u!114 &1529723052
 MonoBehaviour:
@@ -15110,7 +15110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3341de0b7d5a64b930de7be961de93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOnOff: {fileID: 0}
+  doorOnOff: {fileID: 1752153546}
   player: {fileID: 1529723048}
   offset: {x: 9, y: 5, z: -10}
   playerP: {fileID: 1529723045}
@@ -15131,7 +15131,7 @@ MonoBehaviour:
   leftD: {fileID: 250698773}
   rightD: {fileID: 131902672}
   dir: 0
-  _RMS: {fileID: 0}
+  _RMS: {fileID: 2080330605}
 --- !u!114 &1752153547
 MonoBehaviour:
   m_ObjectHideFlags: 0
