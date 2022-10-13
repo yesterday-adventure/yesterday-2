@@ -25,7 +25,7 @@ public class DoorOnOff : MonoBehaviour
 
     private void Awake()
     {
-        //_RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
+        _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
         //Debug.Log(_RMS);
     }
 
@@ -35,12 +35,64 @@ public class DoorOnOff : MonoBehaviour
         y = 6;
     }
 
+    /*
+        private void Update()
+        {
+            Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
+            if (hit == null)
+            {
+                if (_RMS.mapGrid[x + 1, y] == null)
+                {
+                    rightD.SetActive(true);
+                }
+                else
+                {
+                    rightD.SetActive(false);
+                }
+
+                if (_RMS.mapGrid[x - 1, y] == null)
+                {
+                    leftD.SetActive(true);
+                }
+                else
+                {
+                    leftD.SetActive(false);
+                }
+                if (_RMS.mapGrid[x, y + 1] == null)
+                {
+                    upD.SetActive(true);
+                }
+                else
+                {
+                    upD.SetActive(false);
+                }
+                if (_RMS.mapGrid[x, y - 1] == null)
+                {
+                    downD.SetActive(true);
+                }
+                else
+                {
+                    downD.SetActive(false);
+                }
+            }
+            else
+            {
+                upD.SetActive(true);
+                downD.SetActive(true);
+                leftD.SetActive(true);
+                rightD.SetActive(true);
+            }
+        }*/
+
+
     private void Update()
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
         if (hit == null)
         {
-            if (DataManager.instance.nowPlayer.mapGrid[x + 1, y] == null)
+            //if (_RMS.mapGrid[x + 1, y] == null)
+            if (DataManager.instance.mapGrid[0].mapArr[x + 1] == null &&
+                DataManager.instance.mapGrid[1].mapArr[y] == null)
             {
                 rightD.SetActive(true);
             }
@@ -49,7 +101,9 @@ public class DoorOnOff : MonoBehaviour
                 rightD.SetActive(false);
             }
 
-            if (DataManager.instance.nowPlayer.mapGrid[x - 1, y] == null)
+            //if (_RMS.mapGrid[x - 1, y] == null)
+            if (DataManager.instance.mapGrid[0].mapArr[x - 1] == null &&
+                DataManager.instance.mapGrid[1].mapArr[y] == null)
             {
                 leftD.SetActive(true);
             }
@@ -57,7 +111,9 @@ public class DoorOnOff : MonoBehaviour
             {
                 leftD.SetActive(false);
             }
-            if (DataManager.instance.nowPlayer.mapGrid[x, y + 1] == null)
+            //if (_RMS.mapGrid[x, y + 1] == null)
+            if (DataManager.instance.mapGrid[0].mapArr[x] == null &&
+                DataManager.instance.mapGrid[1].mapArr[y + 1] == null)
             {
                 upD.SetActive(true);
             }
@@ -65,7 +121,9 @@ public class DoorOnOff : MonoBehaviour
             {
                 upD.SetActive(false);
             }
-            if (DataManager.instance.nowPlayer.mapGrid[x, y - 1] == null)
+            //if (_RMS.mapGrid[x, y - 1] == null)
+            if (DataManager.instance.mapGrid[0].mapArr[x] == null &&
+                DataManager.instance.mapGrid[1].mapArr[y - 1] == null)
             {
                 downD.SetActive(true);
             }

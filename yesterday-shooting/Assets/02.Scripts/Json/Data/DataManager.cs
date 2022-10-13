@@ -24,8 +24,53 @@ public class GameOption
     public float ButtonClickSound = 0.5f;
 }
 
+
+
+
+#region 2차원 배열
+
+[System.Serializable]
+public class MapArr
+{
+    public Map[] mapArr;
+    public MapArr(Map[] _mapArr)
+    {
+        Debug.Log("클래스 mapArr");
+        mapArr = _mapArr;
+    }
+}
+
+public class MapArrTwo
+{
+    public List<MapArr> twoArrList;
+
+    public MapArrTwo(List<MapArr> _twoArr)
+    {
+        Debug.Log("클래스 MapArrTwo");
+        twoArrList = _twoArr;
+    }
+}
+
+#endregion
+
+
+
+
+
 public class DataManager : MonoBehaviour
 {
+    public List<MapArr> mapGrid = new List<MapArr>();
+
+    public void TwoSave(MapArrTwo mapArrTwo/* = null*/)
+    {
+        string data = JsonUtility.ToJson(mapArrTwo);
+
+        File.WriteAllText(path + "TwoArr" + nowSlot.ToString(), data);
+    }
+
+
+
+
     //�̱���
     public static DataManager instance;
 

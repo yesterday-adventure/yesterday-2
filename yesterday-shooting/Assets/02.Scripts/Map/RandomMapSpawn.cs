@@ -26,12 +26,23 @@ public class RandomMapSpawn : MonoBehaviour
     {
         if (Select.instance.newStart)
         {
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[11]));
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[12]));
+
+            //map[0].mapArr[5] = _map
+            DataManager.instance.mapGrid[0].mapArr[5] = maps;
+
+            MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+            DataManager.instance.TwoSave(mapArrTwo);
+
             //DataManager.instance.nowPlayer.
-                mapGrid = new Map[xIndex + 1, yIndex + 1];
+            mapGrid = new Map[xIndex + 1, yIndex + 1];
             InputStartMap(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
+            //InputStartMapp(DataManager.instance.mapGrid, maps);
             while (RoomCount < maxRoomCount)
             {
                 RandomSpawn(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
+                //RandomSpawnn(DataManager.instance.mapGrid, maps);
             }
 
 
@@ -72,8 +83,24 @@ public class RandomMapSpawn : MonoBehaviour
     void InputStartMap(Map[,] map, Map _map)
     {
         map[5, 6] = _map;
+
+        //map[DataManager.instance.mapGrid[0].mapArr[5], DataManager.instance.mapGrid[1].mapArr[6]] = _map; 
     }
 
+
+
+
+    void InputStartMapp(List<MapArr> map, Map _map)
+    {
+        //map[5, 6] = _map;
+
+        map[0].mapArr[5] = _map; 
+        map[1].mapArr[6] = _map; 
+    }
+
+
+
+    //no data save
     void RandomSpawn(Map[,] map, Map _map)
     {
         NearRoomCount = 0;
@@ -104,6 +131,8 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
+                DataManager.instance.mapGrid[0].mapArr[x] = maps;
+                DataManager.instance.mapGrid[1].mapArr[y] = maps;
                 RoomCount++;
             }
         }

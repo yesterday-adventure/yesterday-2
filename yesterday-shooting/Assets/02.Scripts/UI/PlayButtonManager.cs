@@ -100,6 +100,8 @@ public class PlayButtonManager : MonoBehaviour
     {
         DataManager.instance.nowPlayer.cameraPosition = cameraP.transform.position;
         DataManager.instance.SaveData();
+        //MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+        //DataManager.instance.TwoSave(mapArrTwo);
         SceneManager.LoadScene("Intro");
         Time.timeScale = 1;
     }
