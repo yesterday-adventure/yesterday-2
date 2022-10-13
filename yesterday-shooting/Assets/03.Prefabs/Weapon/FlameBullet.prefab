@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 2781283497111883333}
   - component: {fileID: 2781283497111883332}
   - component: {fileID: 2781283497111883339}
-  - component: {fileID: 2781283497111883338}
   m_Layer: 0
-  m_Name: ThunderBullet
+  m_Name: FlameBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c703ee944ee6fd242a7da0ff48ed0c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpeed: 6
-  lifeTime: 2.5
+  fireSpeed: 5
+  lifeTime: 3
 --- !u!114 &2781283497111883339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,26 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ccd2a518e93344b97f1998d126fcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 1200
---- !u!95 &2781283497111883338
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2781283497111883337}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7fed4f9e2160db4095c5fb269490187, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  rotateSpeed: 1100
 --- !u!1 &2781283497525884521
 GameObject:
   m_ObjectHideFlags: 0
