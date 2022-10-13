@@ -26,11 +26,12 @@ public class RandomMapSpawn : MonoBehaviour
     {
         if (Select.instance.newStart)
         {
-            DataManager.instance.nowPlayer.mapGrid = new Map[xIndex + 1, yIndex + 1];
-            InputStartMap(DataManager.instance.nowPlayer.mapGrid, maps);
+            //DataManager.instance.nowPlayer.
+                mapGrid = new Map[xIndex + 1, yIndex + 1];
+            InputStartMap(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
             while (RoomCount < maxRoomCount)
             {
-                RandomSpawn(DataManager.instance.nowPlayer.mapGrid, maps);
+                RandomSpawn(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
             }
 
 

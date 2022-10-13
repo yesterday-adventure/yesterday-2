@@ -14,7 +14,7 @@ public class PlayerData
     public Vector3[] roomPos = new Vector3[12];    // 방의 위치 포지션 배열
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
     public Map[,] mapGrid = null;   // 2차원배열은 저장이 안돼용!
-    public Vector3 cameraPosition = new Vector3(90, 60, -10);
+    public Vector3 cameraPosition = new Vector3(90, 60, -10);   //카메라 포지션
     public int playerHp = 5;
 }
 
