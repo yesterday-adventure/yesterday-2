@@ -9,7 +9,7 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private GameObject[] weaponarr;
     Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
 
-
+    public static PlayerFire instance = null;
     private float delay = 0f;
     private bool isChanging = false;
 
@@ -27,6 +27,10 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         for (int i = 0; i < weaponarr.Length; i++)
         {
             weapons.Add(weaponarr[i].name, weaponarr[i]);
