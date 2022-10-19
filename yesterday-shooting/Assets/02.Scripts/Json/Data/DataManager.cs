@@ -52,6 +52,7 @@ public class MapArrTwo
 }
 
 
+[System.Serializable]
 public class BoolArr
 {
     public bool[] boolArr;
@@ -64,12 +65,12 @@ public class BoolArr
 
 public class BoolArrTwo
 {
-    public BoolArr[] twoArrList;
+    public BoolArr[] boolTwoArr;
 
     public BoolArrTwo(BoolArr[] _twoArr)
     {
         Debug.Log("클래스 BoolArrTwo");
-        twoArrList = _twoArr;
+        boolTwoArr = _twoArr;
     }
 }
 #endregion
@@ -84,16 +85,25 @@ public class DataManager : MonoBehaviour
 
     public List<MapArr> mapGrid = new List<MapArr>();
 
+    public BoolArr[] twoBoolArr = new BoolArr[] { new BoolArr(new bool[10]), new BoolArr(new bool[11]) };
+
     public MapArrTwo mapArrTwo;/* = new MapArrTwo(instance.mapGrid);*/
 
-    public void TwoSave(MapArrTwo mapArrTwo /*= null*/, BoolArrTwo boolArrTwo = null)
+    public BoolArrTwo boolArrTwo;
+
+    public void TwoSave(MapArrTwo mapArrTwo/* = null*/, BoolArrTwo boolArrTwo = null)
     {
         Debug.Log("데이터 배열 저장");
-        mapArrTwo = new MapArrTwo(instance.mapGrid);
+        mapArrTwo = new MapArrTwo(mapGrid);
+        boolArrTwo = new BoolArrTwo(twoBoolArr);
 
-         string data = JsonUtility.ToJson(mapArrTwo) + JsonUtility.ToJson(boolArrTwo);
+        string data = /*mapArrTwo?.ToString() ?? */JsonUtility.ToJson(mapArrTwo);
+        //data = boolArrTwo?.ToString() ?? /*JsonUtility.ToJson(mapArrTwo) + */JsonUtility.ToJson(boolArrTwo);
+        string dataBool = JsonUtility.ToJson(boolArrTwo);
+
 
         File.WriteAllText(path + "TwoArr" + nowSlot.ToString(), data);
+        File.WriteAllText(path + "TwoArrBool" + nowSlot.ToString(), dataBool);
     }
 
     public void TwoLoad()
@@ -101,9 +111,27 @@ public class DataManager : MonoBehaviour
         Debug.Log("2차원 배열이 로드되었따!");
         
         string data = File.ReadAllText(path + "TwoArr" + nowSlot.ToString());
+        string dataBool = File.ReadAllText(path + "TwoArrBool" + nowSlot.ToString());
         mapArrTwo = JsonUtility.FromJson<MapArrTwo>(data);
+        boolArrTwo = JsonUtility.FromJson<BoolArrTwo>(dataBool);
 
-        Debug.Log(mapArrTwo.twoArrList[0].mapArr[5]);
+        for (int i = 0; i < twoBoolArr[0].boolArr.Length; i++)
+        {
+            if (twoBoolArr[0].boolArr[i] == true)
+            {
+                mapGrid[0].mapArr[i] = FindObjectOfType<Map>();
+            }
+        }
+
+        for (int i = 0; i < twoBoolArr[1].boolArr.Length; i++)
+        {
+            if (twoBoolArr[1].boolArr[i] == true)
+            {
+                mapGrid[1].mapArr[i] = FindObjectOfType<Map>();
+            }
+        }
+
+        //Debug.Log(mapArrTwo.twoArrList[0].mapArr[5]);
     }
 
 
@@ -138,6 +166,9 @@ public class DataManager : MonoBehaviour
         Debug.Log("데이터 배열 저장");
         mapGrid.Add(new MapArr(new Map[10]));
         mapGrid.Add(new MapArr(new Map[11]));
+
+        //BoolArr[] twoBoolArr = new BoolArr[2] { new BoolArr(new bool[10]), new BoolArr(new bool[11]) };
+        //BoolArrTwo = new BoolArrTwo(twoBoolArr);
     }
 
     public void SaveData()

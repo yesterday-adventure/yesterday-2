@@ -145,11 +145,15 @@ public class RandomMapSpawn : MonoBehaviour
 
                 map[x, y] = _map;
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
-                Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
+                DataManager.instance.twoBoolArr[0].boolArr[x] = true;
+                //Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
                 DataManager.instance.mapGrid[1].mapArr[y] = maps;
-                Debug.Log(DataManager.instance.mapGrid[1].mapArr[y]);
+                DataManager.instance.twoBoolArr[1].boolArr[y] = true;
+                //Debug.Log(DataManager.instance.mapGrid[1].mapArr[y]);
                 MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+                BoolArrTwo boolArrTwo= new BoolArrTwo(DataManager.instance.twoBoolArr);
                 DataManager.instance.TwoSave(mapArrTwo);
+                DataManager.instance.TwoSave(null, boolArrTwo);
                 RoomCount++;
             }
         }
