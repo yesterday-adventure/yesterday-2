@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2781283497111883333}
   - component: {fileID: 2781283497111883332}
   - component: {fileID: 2781283497111883339}
-  - component: {fileID: 2781283497111883338}
   - component: {fileID: 837538194}
+  - component: {fileID: 108703049917095652}
+  - component: {fileID: -1828366587710884457}
   m_Layer: 0
   m_Name: ThunderBullet
   m_TagString: PlayerBullet
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2781283497111883337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.38, y: 59.95, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2781283497525884522}
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2781283497111883333
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.20035172
 --- !u!114 &2781283497111883332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,25 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 1200
---- !u!95 &2781283497111883338
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2781283497111883337}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7fed4f9e2160db4095c5fb269490187, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &837538194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +166,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630a06253690db945b641b537f8355d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &108703049917095652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2781283497111883337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f06d07c7a96b845bcb1a1c59b8ac49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &-1828366587710884457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2781283497111883337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2089dc5013302f34698a38721de70e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRadius: 2
+  thunderEffectDamage: 1
 --- !u!1 &2781283497525884521
 GameObject:
   m_ObjectHideFlags: 0

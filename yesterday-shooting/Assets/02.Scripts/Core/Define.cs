@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThunderBulletEffect : MonoBehaviour
+public static class Define
 {
+    public static LayerMask monster = 1 << 10;
 
 }
