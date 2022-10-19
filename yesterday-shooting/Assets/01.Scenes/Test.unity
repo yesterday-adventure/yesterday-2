@@ -861,6 +861,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2781283497111883334, guid: 7f471050987b36f4ca62f00f792a8c6a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2781283497111883337, guid: 7f471050987b36f4ca62f00f792a8c6a, type: 3}
       propertyPath: m_Name
       value: ThunderBullet
@@ -1761,7 +1765,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: 70575884309772145a6a19e0a1c378e4, type: 3}
+  m_Sprite: {fileID: 384345958766670168, guid: b506451f8076ff34e87dfdb7aaec65b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1780,7 +1784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782387475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.38, y: 59.95, z: 0}
+  m_LocalPosition: {x: 83.78, y: 59.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 311790485}

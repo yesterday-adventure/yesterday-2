@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WeaponCollsionAnim : MonoBehaviour
 {
-    Rigidbody2D rigid;
-    Animator animator;
+    Rigidbody2D rigid = null;
+    Animator animator = null;
 
     private void OnEnable()
     {
@@ -18,6 +18,7 @@ public class WeaponCollsionAnim : MonoBehaviour
         Destroy(rigid);
         animator.SetTrigger("IsCollision");
     }
+
     public void EndOfAnimation()
     {
         PoolManager.Instance.Push(gameObject);

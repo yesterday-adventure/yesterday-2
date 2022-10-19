@@ -13841,7 +13841,7 @@ MonoBehaviour:
   weapon: {fileID: 4374826873290748653, guid: 7922c20e7fdc63f469eeb11a13a8004b, type: 3}
   weaponarr:
   - {fileID: 4374826873290748653, guid: 7922c20e7fdc63f469eeb11a13a8004b, type: 3}
-  - {fileID: 2781283497111883337, guid: b00727445eb6ff74fbf72ebc518aeed2, type: 3}
+  - {fileID: 2781283497111883337, guid: 7f471050987b36f4ca62f00f792a8c6a, type: 3}
   fireDir: 0
 --- !u!50 &1529723050
 Rigidbody2D:
