@@ -61,7 +61,7 @@ public class DataManager : MonoBehaviour
 {
     public List<MapArr> mapGrid = new List<MapArr>();
 
-    public void TwoSave(MapArrTwo mapArrTwo/* = null*/)
+    public void TwoSave(MapArrTwo mapArrTwo /*= null*/)
     {
         string data = JsonUtility.ToJson(mapArrTwo);
 

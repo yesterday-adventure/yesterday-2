@@ -31,6 +31,7 @@ public class RandomMapSpawn : MonoBehaviour
 
             //map[0].mapArr[5] = _map
             DataManager.instance.mapGrid[0].mapArr[5] = maps;
+            DataManager.instance.mapGrid[1].mapArr[6] = maps;
 
             MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
             DataManager.instance.TwoSave(mapArrTwo);
@@ -132,7 +133,11 @@ public class RandomMapSpawn : MonoBehaviour
 
                 map[x, y] = _map;
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
+                Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
                 DataManager.instance.mapGrid[1].mapArr[y] = maps;
+                Debug.Log(DataManager.instance.mapGrid[1].mapArr[y]);
+                MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+                DataManager.instance.TwoSave(mapArrTwo);
                 RoomCount++;
             }
         }
