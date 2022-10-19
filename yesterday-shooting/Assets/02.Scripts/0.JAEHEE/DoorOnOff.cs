@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public enum Dir
 {
@@ -27,6 +28,15 @@ public class DoorOnOff : MonoBehaviour
     {
         _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
         //Debug.Log(_RMS);
+
+
+        if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
+        {
+            Debug.Log("2차원 배열 받아오기");
+            DataManager.instance.TwoLoad();
+            DataManager.instance.TwoSave(DataManager.instance.mapArrTwo);
+
+        }
     }
 
     private void Start()
@@ -88,17 +98,20 @@ public class DoorOnOff : MonoBehaviour
     private void Update()
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
+        Debug.Log($"제발 널이 아니길여ㅛ{DataManager.instance.mapGrid[1].mapArr[x]}");
         if (hit == null)
         {
             //if (_RMS.mapGrid[x + 1, y] == null)
-            if (DataManager.instance.mapGrid[0].mapArr[x + 1] == null &&
-                DataManager.instance.mapGrid[1].mapArr[y] == null)
+            if (DataManager.instance.mapGrid[0].mapArr[x + 1] == null)
             {
-                rightD.SetActive(true);
-            }
-            else
-            {
-                rightD.SetActive(false);
+                if (DataManager.instance.mapGrid[1].mapArr[y] == null)
+                {
+                    rightD.SetActive(true);
+                }
+                else
+                {
+                    rightD.SetActive(false);
+                }
             }
 
             //if (_RMS.mapGrid[x - 1, y] == null)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System.IO;
 
 public class RandomMapSpawn : MonoBehaviour
 {
@@ -22,19 +23,30 @@ public class RandomMapSpawn : MonoBehaviour
     [SerializeField] GameObject monsterMinimap;
     [SerializeField] GameObject minimap;
 
+    /*private void Awake()
+    {
+        if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
+        {
+            Debug.Log("2차원 배열 받아오기");
+            DataManager.instance.TwoLoad();
+        }
+    }*/
+
     void Start()
     {
         if (Select.instance.newStart)
         {
-            DataManager.instance.mapGrid.Add(new MapArr(new Map[11]));
-            DataManager.instance.mapGrid.Add(new MapArr(new Map[12]));
+            /*Debug.Log("데이터 배열 저장");
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[10]));
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[11]));*/
 
             //map[0].mapArr[5] = _map
             DataManager.instance.mapGrid[0].mapArr[5] = maps;
             DataManager.instance.mapGrid[1].mapArr[6] = maps;
 
-            MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
-            DataManager.instance.TwoSave(mapArrTwo);
+            //MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+            DataManager.instance.TwoSave(DataManager.instance.mapArrTwo);
+            //DataManager.instance.TwoSave(mapArrTwo);
 
             //DataManager.instance.nowPlayer.
             mapGrid = new Map[xIndex + 1, yIndex + 1];
@@ -73,7 +85,7 @@ public class RandomMapSpawn : MonoBehaviour
                 // ��ġ���� �� ���ڸ� ���ؼ� ����
                 for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)
                 {
-                    Debug.Log("�ʸʸ��� ���� �ǳ� ��¥��?");
+                    Debug.Log("MapSpaw?");
                     //DataManager.instance.nowPlayer.roomPos[i]
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
