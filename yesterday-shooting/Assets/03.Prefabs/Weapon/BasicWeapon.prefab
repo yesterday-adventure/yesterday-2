@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8384979944121046903}
   - component: {fileID: 6789308091102963441}
   - component: {fileID: 3146537486080786719}
+  - component: {fileID: 5388017983363615048}
   m_Layer: 0
   m_Name: BasicWeapon
   m_TagString: PlayerBullet
@@ -176,3 +177,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 1000
+--- !u!114 &5388017983363615048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374826873290748653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f06d07c7a96b845bcb1a1c59b8ac49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
