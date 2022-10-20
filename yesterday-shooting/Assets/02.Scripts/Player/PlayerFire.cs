@@ -27,6 +27,7 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         if (instance == null)
         {
             instance = this;
@@ -36,8 +37,7 @@ public class PlayerFire : MonoBehaviour
             weapons.Add(weaponarr[i].name, weaponarr[i]);
         }
 
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        delay = 0.7f;
+        delay = weapon.GetComponent<BulletInfo>().AttackDelay;
         //weapon = null; // 시작 무기
     }
 
@@ -96,12 +96,18 @@ public class PlayerFire : MonoBehaviour
     }
     IEnumerator ChangeWeapon(Collider2D collision)
     {
-        //나중에 아이템먹는 애니매이션 작업 하기
+        //아이템획득 애니매이션?
         isChanging = true;
         string temp = weapon.name;
+        Debug.Log(collision);
+        Debug.Log(collision.gameObject);
+        Debug.Log(collision.gameObject.name);
+
         weapon = weapons[collision.gameObject.name];
         collision.gameObject.name = temp;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
+        delay = weapon.GetComponent<BulletInfo>().AttackDelay;
+        yield return new WaitForSeconds(1f);
         isChanging = false;
     }
 }

@@ -11,6 +11,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         _renderer = GetComponent<SpriteRenderer>();
     }
+    
     public void OnDamage(Action lambda, float damage)
     {
         hp -= damage;
@@ -52,6 +53,6 @@ public class EnemyHp : MonoBehaviour, IDamageable
     void Die()
     {
         effectSound.MonsterDie();
-        Destroy(gameObject);//나중에 풀메니저로
+        PoolManager.Instance.Push(gameObject);
     }
 }

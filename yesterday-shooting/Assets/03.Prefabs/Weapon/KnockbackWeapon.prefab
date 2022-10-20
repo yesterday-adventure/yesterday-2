@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7720566519286760731}
   - component: {fileID: 913080602}
   - component: {fileID: 5555010088243352307}
+  - component: {fileID: 3198605740045366671}
   m_Layer: 0
   m_Name: KnockbackWeapon
   m_TagString: PlayerBullet
@@ -197,3 +198,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pwr: 1000
+--- !u!114 &3198605740045366671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720566519286760163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f06d07c7a96b845bcb1a1c59b8ac49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  attackDelay: 2
