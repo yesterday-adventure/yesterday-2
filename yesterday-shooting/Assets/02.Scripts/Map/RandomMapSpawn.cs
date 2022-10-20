@@ -30,9 +30,11 @@ public class RandomMapSpawn : MonoBehaviour
             Debug.Log("mapGrid에 값 넣어주기");
             mapGrid = new Map[xIndex + 1, yIndex + 1];
 
-
-            mapGrid[DataManager.instance.nowPlayer.mapGrid[0], 
-                DataManager.instance.nowPlayer.mapGrid[1]] = maps;
+            for (int i = 0; i < DataManager.instance.nowPlayer.mapGrid.Length; i += 2)
+            {//21번 만큼 돌림, 0, 2, 4, 6, 8...
+            mapGrid[DataManager.instance.nowPlayer.mapGrid[i], 
+                DataManager.instance.nowPlayer.mapGrid[i + 1]] = maps;
+            }
             //Debug.Log($"{mapGrid[0, 0]}");
         }
     }
