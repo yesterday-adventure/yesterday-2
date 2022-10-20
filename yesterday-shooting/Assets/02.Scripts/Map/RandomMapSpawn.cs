@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System.IO;
+using System.IO;
 
 public class RandomMapSpawn : MonoBehaviour
 {
@@ -23,14 +23,19 @@ public class RandomMapSpawn : MonoBehaviour
     [SerializeField] GameObject monsterMinimap;
     [SerializeField] GameObject minimap;
 
-    /*private void Awake()
+    private void Awake()
     {
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
-            Debug.Log("2차원 배열 받아오기");
-            DataManager.instance.TwoLoad();
+            Debug.Log("mapGrid에 값 넣어주기");
+            mapGrid = new Map[xIndex + 1, yIndex + 1];
+
+
+            mapGrid[DataManager.instance.nowPlayer.mapGrid[0], 
+                DataManager.instance.nowPlayer.mapGrid[1]] = maps;
+            //Debug.Log($"{mapGrid[0, 0]}");
         }
-    }*/
+    }
 
     void Start()
     {
@@ -144,6 +149,8 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
+                mapGirdSave(x, y);
+                Debug.Log($"{x}, {y}");
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
                 DataManager.instance.twoBoolArr[0].boolArr[x] = true;
                 //Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
@@ -157,6 +164,17 @@ public class RandomMapSpawn : MonoBehaviour
                 RoomCount++;
             }
         }
+    }
+
+    int number = 0;
+
+    void mapGirdSave(int own, int two)
+    {
+        DataManager.instance.nowPlayer.mapGrid[number] = own;
+        number++;
+        DataManager.instance.nowPlayer.mapGrid[number] = two;
+        number++;
+
     }
 
     public GameObject PopMap()
