@@ -91,19 +91,24 @@ public class DataManager : MonoBehaviour
 
     public BoolArrTwo boolArrTwo;
 
-    public void TwoSave(MapArrTwo mapArrTwo/* = null*/, BoolArrTwo boolArrTwo = null)
+    public void TwoSave(MapArrTwo? mapArrTwo/* = null*/, BoolArrTwo? boolArrTwo = null)
     {
         Debug.Log("데이터 배열 저장");
         mapArrTwo = new MapArrTwo(mapGrid);
         boolArrTwo = new BoolArrTwo(twoBoolArr);
 
-        string data = /*mapArrTwo?.ToString() ?? */JsonUtility.ToJson(mapArrTwo);
+        string data = /*mapArrTwo?.ToString() ?? */JsonUtility.ToJson(mapArrTwo) ?? null;
         //data = boolArrTwo?.ToString() ?? /*JsonUtility.ToJson(mapArrTwo) + */JsonUtility.ToJson(boolArrTwo);
-        string dataBool = JsonUtility.ToJson(boolArrTwo);
+        string dataBool = JsonUtility.ToJson(boolArrTwo) ?? null;
 
-
-        File.WriteAllText(path + "TwoArr" + nowSlot.ToString(), data);
-        File.WriteAllText(path + "TwoArrBool" + nowSlot.ToString(), dataBool);
+        if (data != null)
+        {
+            File.WriteAllText(path + "TwoArr" + nowSlot.ToString(), data);
+        }
+        if (dataBool != null)
+        {
+            File.WriteAllText(path + "TwoArrBool" + nowSlot.ToString(), dataBool);
+        }
     }
 
     public void TwoLoad()
@@ -120,6 +125,7 @@ public class DataManager : MonoBehaviour
             if (twoBoolArr[0].boolArr[i] == true)
             {
                 mapGrid[0].mapArr[i] = FindObjectOfType<Map>();
+                Debug.Log("맵 스크립트를 넣어주는중!");
             }
         }
 
@@ -128,6 +134,7 @@ public class DataManager : MonoBehaviour
             if (twoBoolArr[1].boolArr[i] == true)
             {
                 mapGrid[1].mapArr[i] = FindObjectOfType<Map>();
+                Debug.Log("맵 스크립트를 넣어주는중!");
             }
         }
 
@@ -152,12 +159,12 @@ public class DataManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
         {
-            Destroy(instance.gameObject);
+            Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
         #endregion
 
         path = Application.persistentDataPath + "/save";

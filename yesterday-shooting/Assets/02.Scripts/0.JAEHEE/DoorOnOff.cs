@@ -34,7 +34,7 @@ public class DoorOnOff : MonoBehaviour
         {
             Debug.Log("2차원 배열 받아오기");
             DataManager.instance.TwoLoad();
-            DataManager.instance.TwoSave(DataManager.instance.mapArrTwo);
+            DataManager.instance.TwoSave(DataManager.instance.mapArrTwo, DataManager.instance.boolArrTwo);
 
         }
     }
