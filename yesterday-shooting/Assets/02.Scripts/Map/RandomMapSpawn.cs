@@ -172,10 +172,20 @@ public class RandomMapSpawn : MonoBehaviour
 
     void mapGirdSave(int own, int two)
     {
+        try
+        {
         DataManager.instance.nowPlayer.mapGrid[number] = own;
         number++;
         DataManager.instance.nowPlayer.mapGrid[number] = two;
-        number++;
+            if (number <= 21)
+            {
+             number++;
+            }
+        }
+        catch
+        {
+            Debug.Log($"현재 맵 그리드 숫자 {number}, 넣으려는 숫자 {own}, {two}");
+        }
 
     }
 

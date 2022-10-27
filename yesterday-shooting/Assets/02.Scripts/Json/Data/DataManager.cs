@@ -15,7 +15,7 @@ public class PlayerData
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
     public Vector3 cameraPosition = new Vector3(90, 60, -10);   //카메라 포지션
     public int playerHp = 5;
-    public int[] mapGrid = new int[24];
+    public int[] mapGrid = new int[22];
 }
 
 public class GameOption
