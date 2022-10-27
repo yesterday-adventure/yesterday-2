@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class RandomMapSpawn : MonoBehaviour
 {
@@ -22,16 +23,46 @@ public class RandomMapSpawn : MonoBehaviour
     [SerializeField] GameObject monsterMinimap;
     [SerializeField] GameObject minimap;
 
+    private void Awake()
+    {
+        if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
+        {
+            Debug.Log("mapGrid에 값 넣어주기");
+            mapGrid = new Map[xIndex + 1, yIndex + 1];
+
+            for (int i = 0; i < DataManager.instance.nowPlayer.mapGrid.Length; i += 2)
+            {//21번 만큼 돌림, 0, 2, 4, 6, 8...
+            mapGrid[DataManager.instance.nowPlayer.mapGrid[i], 
+                DataManager.instance.nowPlayer.mapGrid[i + 1]] = maps;
+            }
+            //Debug.Log($"{mapGrid[0, 0]}");
+        }
+    }
+
     void Start()
     {
         if (Select.instance.newStart)
         {
+            /*Debug.Log("데이터 배열 저장");
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[10]));
+            DataManager.instance.mapGrid.Add(new MapArr(new Map[11]));*/
+
+            //map[0].mapArr[5] = _map
+            DataManager.instance.mapGrid[0].mapArr[5] = maps;
+            DataManager.instance.mapGrid[1].mapArr[6] = maps;
+
+            //MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+            DataManager.instance.TwoSave(DataManager.instance.mapArrTwo);
+            //DataManager.instance.TwoSave(mapArrTwo);
+
             //DataManager.instance.nowPlayer.
-                mapGrid = new Map[xIndex + 1, yIndex + 1];
+            mapGrid = new Map[xIndex + 1, yIndex + 1];
             InputStartMap(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
+            //InputStartMapp(DataManager.instance.mapGrid, maps);
             while (RoomCount < maxRoomCount)
             {
                 RandomSpawn(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
+                //RandomSpawnn(DataManager.instance.mapGrid, maps);
             }
 
 
@@ -61,7 +92,7 @@ public class RandomMapSpawn : MonoBehaviour
                 // ��ġ���� �� ���ڸ� ���ؼ� ����
                 for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)
                 {
-                    Debug.Log("�ʸʸ��� ���� �ǳ� ��¥��?");
+                    Debug.Log("MapSpaw?");
                     //DataManager.instance.nowPlayer.roomPos[i]
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                 }
@@ -72,8 +103,24 @@ public class RandomMapSpawn : MonoBehaviour
     void InputStartMap(Map[,] map, Map _map)
     {
         map[5, 6] = _map;
+
+        //map[DataManager.instance.mapGrid[0].mapArr[5], DataManager.instance.mapGrid[1].mapArr[6]] = _map; 
     }
 
+
+
+
+    void InputStartMapp(List<MapArr> map, Map _map)
+    {
+        //map[5, 6] = _map;
+
+        map[0].mapArr[5] = _map; 
+        map[1].mapArr[6] = _map; 
+    }
+
+
+
+    //no data save
     void RandomSpawn(Map[,] map, Map _map)
     {
         NearRoomCount = 0;
@@ -104,9 +151,42 @@ public class RandomMapSpawn : MonoBehaviour
                 //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
+                mapGirdSave(x, y);
+                Debug.Log($"{x}, {y}");
+                DataManager.instance.mapGrid[0].mapArr[x] = maps;
+                DataManager.instance.twoBoolArr[0].boolArr[x] = true;
+                //Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
+                DataManager.instance.mapGrid[1].mapArr[y] = maps;
+                DataManager.instance.twoBoolArr[1].boolArr[y] = true;
+                //Debug.Log(DataManager.instance.mapGrid[1].mapArr[y]);
+                MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
+                BoolArrTwo boolArrTwo= new BoolArrTwo(DataManager.instance.twoBoolArr);
+                DataManager.instance.TwoSave(mapArrTwo);
+                DataManager.instance.TwoSave(null, boolArrTwo);
                 RoomCount++;
             }
         }
+    }
+
+    int number = 0;
+
+    void mapGirdSave(int own, int two)
+    {
+        try
+        {
+        DataManager.instance.nowPlayer.mapGrid[number] = own;
+        number++;
+        DataManager.instance.nowPlayer.mapGrid[number] = two;
+            if (number <= 21)
+            {
+             number++;
+            }
+        }
+        catch
+        {
+            Debug.Log($"현재 맵 그리드 숫자 {number}, 넣으려는 숫자 {own}, {two}");
+        }
+
     }
 
     public GameObject PopMap()

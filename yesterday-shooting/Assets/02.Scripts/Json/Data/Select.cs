@@ -113,6 +113,8 @@ public class Select : MonoBehaviour
             if (slotButton[i].image.color == fileSelect)
             {
                 System.IO.File.Delete(DataManager.instance.path + $"{i}");
+                System.IO.File.Delete(DataManager.instance.path + $"TwoArr{i}");
+                System.IO.File.Delete(DataManager.instance.path + $"TwoArrBool{i}");
                 savefile[i] = false;
                 slotButton[i].image.color = Color.white;
                 fileDelete.interactable = false;
