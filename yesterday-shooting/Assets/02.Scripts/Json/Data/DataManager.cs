@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+[System.Serializable]
 public class PlayerData
 {
     // ���⿡ ������ ������ ��� ���
@@ -55,6 +56,7 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         string data = JsonUtility.ToJson(nowPlayer);
+
         File.WriteAllText(path + nowSlot.ToString(), data);
     }
 

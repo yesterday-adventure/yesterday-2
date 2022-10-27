@@ -3273,6 +3273,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef977f900f95bba49b806d0d8b74970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowPlayer:
+    playing: 0
+    roomClear: 0000000000000000000000000000
+    playerPosition: {x: 90, y: 60, z: 0}
+    playerRoom: 0
+    playerDirection: 0
+    roomPos:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    roomNumber: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    mapGrid:
+    - maps:
+      - xIndex: 0
+        yIndex: 0
+        _MxIndex: 0
+        _MyIndex: 0
+      - xIndex: 0
+        yIndex: 0
+        _MxIndex: 0
+        _MyIndex: 0
+    - maps:
+      - xIndex: 0
+        yIndex: 0
+        _MxIndex: 0
+        _MyIndex: 0
+      - xIndex: 0
+        yIndex: 0
+        _MxIndex: 0
+        _MyIndex: 0
+    cameraPosition: {x: 90, y: 60, z: -10}
+    playerHp: 5
   path: 
   nowSlot: 0
 --- !u!4 &1787220895
