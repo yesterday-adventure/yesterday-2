@@ -91,9 +91,12 @@ public class PlayerFire : MonoBehaviour
     {
         if (collision.CompareTag("WeaponItem") && !isChanging)
         {
+            Debug.Log(collision);
+            //Debug.Log();
             StartCoroutine(ChangeWeapon(collision));
         }
     }
+
     IEnumerator ChangeWeapon(Collider2D collision)
     {
         //아이템획득 애니매이션?
