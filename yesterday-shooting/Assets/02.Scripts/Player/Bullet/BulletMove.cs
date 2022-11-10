@@ -16,6 +16,7 @@ public class BulletMove : MonoBehaviour
     {
         playerFire = GameObject.Find("Player").GetComponent<PlayerFire>();
     }
+
     private void OnEnable()
     {
         checkdir = false;
@@ -37,6 +38,7 @@ public class BulletMove : MonoBehaviour
 
             checkdir = true;
         }
+
         transform.position += fireSpeed * Time.deltaTime * dir.normalized;
 
         time += Time.deltaTime;

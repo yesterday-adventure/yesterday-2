@@ -5,5 +5,4 @@ using UnityEngine;
 public static class Define
 {
     public static LayerMask monster = 1 << 10;
-
 }
