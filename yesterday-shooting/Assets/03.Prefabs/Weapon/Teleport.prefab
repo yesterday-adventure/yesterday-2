@@ -190,4 +190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  attackDelay: 0.5
+  attackDelay: 3
