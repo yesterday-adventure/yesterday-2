@@ -11,8 +11,8 @@ public class PlayerFire : MonoBehaviour
 
     public static PlayerFire instance = null;
     private float delay = 0f;
-    private bool isChanging = false;
 
+    private bool isChanging = false;
 
     private SpriteRenderer _spriteRenderer;
 
@@ -32,13 +32,13 @@ public class PlayerFire : MonoBehaviour
         {
             instance = this;
         }
+
         for (int i = 0; i < weaponarr.Length; i++)
         {
             weapons.Add(weaponarr[i].name, weaponarr[i]);
         }
 
         delay = weapon.GetComponent<BulletInfo>().AttackDelay;
-        //weapon = null; // 시작 무기
     }
 
     GameEffectSoundManager effectSound;
@@ -92,7 +92,6 @@ public class PlayerFire : MonoBehaviour
         if (collision.CompareTag("WeaponItem") && !isChanging)
         {
             Debug.Log(collision);
-            //Debug.Log();
             StartCoroutine(ChangeWeapon(collision));
         }
     }
@@ -102,10 +101,6 @@ public class PlayerFire : MonoBehaviour
         //아이템획득 애니매이션?
         isChanging = true;
         string temp = weapon.name;
-        Debug.Log(collision);
-        Debug.Log(collision.gameObject);
-        Debug.Log(collision.gameObject.name);
-
         weapon = weapons[collision.gameObject.name];
         collision.gameObject.name = temp;
         yield return new WaitForSeconds(0.5f);

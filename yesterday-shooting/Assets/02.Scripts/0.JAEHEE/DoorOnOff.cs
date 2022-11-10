@@ -33,7 +33,7 @@ public class DoorOnOff : MonoBehaviour
 
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
-            Debug.Log("2Â÷¿ø ¹è¿­ ¹Þ¾Æ¿À±â");
+            Debug.Log("2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½");
             DataManager.instance.TwoLoad();
             DataManager.instance.TwoSave(DataManager.instance.mapArrTwo, DataManager.instance.boolArrTwo);
 
@@ -99,7 +99,8 @@ public class DoorOnOff : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"Á¦¹ß ³ÎÀÌ ¾Æ´Ï±æ¿©¤Ë{DataManager.instance.mapGrid[1].mapArr[x]}");
+        Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
+
         if (hit == null)
         {
             Debug.Log("dkdk");
@@ -108,12 +109,12 @@ public class DoorOnOff : MonoBehaviour
                 DataManager.instance.mapGrid[1].mapArr[y] == null)*/
             {
                 rightD.SetActive(true);
-                Debug.Log("¿À¸¥ÂÊ ¹® ´ÝÈû");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
             else
             {
                 rightD.SetActive(false);
-                Debug.Log("¿À¸¥ÂÊ ¹® ¿­Èû");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
 
 
@@ -157,7 +158,7 @@ public class DoorOnOff : MonoBehaviour
             leftD.SetActive(true);
             rightD.SetActive(true);
         }
-        hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10); //¸ó½ºÅÍ ¾øÀ¸¸é null
+        hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ null
     }
 
     public void changePos()
