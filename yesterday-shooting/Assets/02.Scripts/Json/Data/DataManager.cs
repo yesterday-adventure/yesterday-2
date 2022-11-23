@@ -16,7 +16,8 @@ public class PlayerData
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
     public Vector3 cameraPosition = new Vector3(90, 60, -10);   //카메라 포지션
     public int playerHp = 5;
-    public int[] mapGrid = new int[22];
+    public int[] mapGrid = new int[22]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
+    public string WeaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
 }
 
 public class GameOption
@@ -36,7 +37,7 @@ public class MapArr
     public Map[] mapArr;
     public MapArr(Map[] _mapArr)
     {
-        Debug.Log("클래스 mapArr");
+        //Debug.Log("클래스 mapArr");
         mapArr = _mapArr;
     }
 }
@@ -47,7 +48,7 @@ public class MapArrTwo
 
     public MapArrTwo(List<MapArr> _twoArr)
     {
-        Debug.Log("클래스 MapArrTwo");
+        //Debug.Log("클래스 MapArrTwo");
         twoArrList = _twoArr;
     }
 }
@@ -59,7 +60,7 @@ public class BoolArr
     public bool[] boolArr;
     public BoolArr(bool[] _boolArr)
     {
-        Debug.Log("클래스 BoolArr");
+        //Debug.Log("클래스 BoolArr");
         boolArr = _boolArr;
     }
 }
@@ -70,7 +71,7 @@ public class BoolArrTwo
 
     public BoolArrTwo(BoolArr[] _twoArr)
     {
-        Debug.Log("클래스 BoolArrTwo");
+        //Debug.Log("클래스 BoolArrTwo");
         boolTwoArr = _twoArr;
     }
 }
@@ -94,7 +95,7 @@ public class DataManager : MonoBehaviour
 
     public void TwoSave(MapArrTwo? mapArrTwo/* = null*/, BoolArrTwo? boolArrTwo = null)
     {
-        Debug.Log("데이터 배열 저장");
+        //Debug.Log("데이터 배열 저장");
         mapArrTwo = new MapArrTwo(mapGrid);
         boolArrTwo = new BoolArrTwo(twoBoolArr);
 
@@ -114,7 +115,7 @@ public class DataManager : MonoBehaviour
 
     public void TwoLoad()
     {
-        Debug.Log("2차원 배열이 로드되었따!");
+        //Debug.Log("2차원 배열이 로드되었따!");
         
         string data = File.ReadAllText(path + "TwoArr" + nowSlot.ToString());
         string dataBool = File.ReadAllText(path + "TwoArrBool" + nowSlot.ToString());
@@ -126,7 +127,7 @@ public class DataManager : MonoBehaviour
             if (twoBoolArr[0].boolArr[i] == true)
             {
                 mapGrid[0].mapArr[i] = FindObjectOfType<Map>();
-                Debug.Log("맵 스크립트를 넣어주는중!");
+                //Debug.Log("맵 스크립트를 넣어주는중!");
             }
         }
 
@@ -135,7 +136,7 @@ public class DataManager : MonoBehaviour
             if (twoBoolArr[1].boolArr[i] == true)
             {
                 mapGrid[1].mapArr[i] = FindObjectOfType<Map>();
-                Debug.Log("맵 스크립트를 넣어주는중!");
+                //Debug.Log("맵 스크립트를 넣어주는중!");
             }
         }
 
@@ -171,7 +172,7 @@ public class DataManager : MonoBehaviour
         path = Application.persistentDataPath + "/save";
 
 
-        Debug.Log("데이터 배열 저장");
+        //Debug.Log("데이터 배열 저장");
         mapGrid.Add(new MapArr(new Map[10]));
         mapGrid.Add(new MapArr(new Map[11]));
 

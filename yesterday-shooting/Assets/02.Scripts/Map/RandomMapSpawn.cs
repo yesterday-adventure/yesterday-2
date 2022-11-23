@@ -95,6 +95,8 @@ public class RandomMapSpawn : MonoBehaviour
                     Debug.Log("MapSpaw?");
                     //DataManager.instance.nowPlayer.roomPos[i]
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
+
+                    //여기에다가 미니맵 스폰 넣으면 될 듯. 안되면 자살
                 }
             }
         }
@@ -152,7 +154,7 @@ public class RandomMapSpawn : MonoBehaviour
 
                 map[x, y] = _map;
                 mapGirdSave(x, y);
-                Debug.Log($"{x}, {y}");
+                Debug.Log($"처음으로 생성되는 맵의 X 좌표는 : {x}, Y 좌표는 : {y}");
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
                 DataManager.instance.twoBoolArr[0].boolArr[x] = true;
                 //Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
