@@ -74,7 +74,7 @@ public class PlayButtonManager : MonoBehaviour
 
     private void PlayerLocation()
     {
-        if (DataManager.instance.nowPlayer.playerDirection == 1)
+        /*if (DataManager.instance.nowPlayer.playerDirection == 1)
         {
             player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3, 0);
         }
@@ -93,7 +93,7 @@ public class PlayButtonManager : MonoBehaviour
         if (DataManager.instance.nowPlayer.playerDirection == 5)
         {
             player.transform.position = new Vector3(90, 60, 0);
-        }
+        }*/
     }
 
     public void OnClickExit()
