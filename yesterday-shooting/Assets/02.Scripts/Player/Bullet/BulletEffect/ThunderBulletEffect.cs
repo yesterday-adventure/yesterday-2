@@ -14,7 +14,7 @@ public class ThunderBulletEffect : MonoBehaviour
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, effectRadius, Define.monster);
             foreach (Collider2D item in hit)
             {
-                item.gameObject.GetComponent<EnemyHp>().OnDamage(() => { }, thunderEffectDamage);
+                item.gameObject.GetComponent<EnemyHp>().OnDamage(() => {}, thunderEffectDamage);
                 //PoolManager.Instance.Pop(¿Ã∆Â∆Æ «¡∏Æ∆’,item.transform.position,Quaternion.identity);
             }
         }
