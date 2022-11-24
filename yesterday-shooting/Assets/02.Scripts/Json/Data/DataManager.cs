@@ -16,7 +16,7 @@ public class PlayerData
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
     public Vector3 cameraPosition = new Vector3(90, 60, -10);   //카메라 포지션
     public int playerHp = 5;
-    public int[] mapGrid = new int[22]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
+    public int[] mapGrid = new int[24]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
     public string WeaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
 }
 

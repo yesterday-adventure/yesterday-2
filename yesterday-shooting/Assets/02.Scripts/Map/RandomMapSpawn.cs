@@ -86,6 +86,7 @@ public class RandomMapSpawn : MonoBehaviour
         }
         else
         {
+            number = 0;
             Debug.Log("�ʸʸ�");
             if (DataManager.instance.nowPlayer.roomPos != null && DataManager.instance.nowPlayer.roomNumber != null)
             {
@@ -97,6 +98,11 @@ public class RandomMapSpawn : MonoBehaviour
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
 
                     //여기에다가 미니맵 스폰 넣으면 될 듯. 안되면 자살
+                    GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+
+                    spawnMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapGrid[number] - 5, DataManager.instance.nowPlayer.mapGrid[number + 1] - 6);
+
+                    number += 2;
                 }
             }
         }
