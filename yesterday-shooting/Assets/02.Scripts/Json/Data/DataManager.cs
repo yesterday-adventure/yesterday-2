@@ -9,15 +9,25 @@ public class PlayerData
     // ���⿡ ������ ������ ��� ���
     public bool playing = false; // �÷����� ����� �ְ� ����Ǿ� �ִ��� �Ǵ�.
     public bool[] roomClear = new bool[14] ;    // 전에 썼던 방 클리어 유뮤 판단하기
+
     public Vector3 playerPosition = new Vector3(90, 60, 0);
     public int playerRoom = 0;  // 플레이어가 마지막으로 있던 방의 방 숫자
     public int playerDirection = 0; // 플레이어가 마지막으로 있던 방의 위치 숫자로 위, 아래 오른쪽, 왼쪽, 센터
     public Vector3[] roomPos = new Vector3[12];    // 방의 위치 포지션 배열
     public int[] roomNumber = new int[12];  // 방의 방 넘버 배열
+
     public Vector3 cameraPosition = new Vector3(90, 60, -10);   //카메라 포지션
+    
     public int playerHp = 5;
     public int[] mapGrid = new int[24]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
-    public string WeaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
+
+    public string weaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
+    public string activeItem = null;      //아이템 이름 저장 설아야 이거 써서 엑티브 아이템 저장해줭
+    public int activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
+
+    public int goldenCoin = 0;   //이 세개는 돈, 폭탄, 열쇠임.
+    public int bomb = 0;
+    public int goldenKey = 0;
 }
 
 public class GameOption
