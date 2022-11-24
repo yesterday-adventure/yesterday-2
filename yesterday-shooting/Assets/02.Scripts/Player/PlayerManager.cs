@@ -33,8 +33,16 @@ public class PlayerManager : MonoBehaviour
         rb2D.velocity = dir.normalized * speed;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            stopPanel.SetActive(true);
-            Time.timeScale = 0;
+            if (stopPanel.activeSelf == false)
+            {
+                stopPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else if (stopPanel.activeSelf == true)
+            {
+                stopPanel.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
     }
 }
