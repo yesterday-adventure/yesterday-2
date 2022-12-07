@@ -13,8 +13,9 @@ public class PlayButtonManager : MonoBehaviour
     private void Start()
     {
         cameraP.transform.position = DataManager.instance.nowPlayer.cameraPosition;
+        player.transform.position = DataManager.instance.nowPlayer.playerPosition;
 
-        switch (DataManager.instance.nowPlayer.playerRoom)
+        /*switch (DataManager.instance.nowPlayer.playerRoom)
         {
             case 0:
                 player.transform.position = new Vector3(90, 60, 0); // 위로 10 옆으로 18 그리고 스타트 배열은 (5, 6)
@@ -69,7 +70,7 @@ public class PlayButtonManager : MonoBehaviour
                 //player.transform.position = new Vector3(54, -46, 0);
                 break;
 
-        }
+        }*/
     }
 
     private void PlayerLocation()
@@ -99,6 +100,7 @@ public class PlayButtonManager : MonoBehaviour
     public void OnClickExit()
     {
         DataManager.instance.nowPlayer.cameraPosition = cameraP.transform.position;
+        DataManager.instance.nowPlayer.playerPosition = player.transform.position;
         DataManager.instance.SaveData();
         //MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
         //DataManager.instance.TwoSave(mapArrTwo);
