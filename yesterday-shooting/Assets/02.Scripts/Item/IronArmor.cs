@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IronArmor : ItemSkil
 {
-    PlayerFire playerFire = new PlayerFire();
+    PlayerFire playerFire;
 
     public bool shield = false;
     public override void Skil()

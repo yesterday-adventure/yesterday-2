@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Marionette : ItemSkil
 {
-    BulletMove bulletMove = new BulletMove();
-    BulletInfo bulletInfo = new BulletInfo();
+    BulletMove bulletMove;
+    BulletInfo bulletInfo;
 
     [SerializeField] private GameObject player = null;
     private float tlqkf = 180;

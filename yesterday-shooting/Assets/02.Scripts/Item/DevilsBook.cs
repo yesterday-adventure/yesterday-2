@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DevilsBook : ItemSkil
 {
-    PlayerData playerData = new PlayerData();
-    BulletInfo bulletInfo = new BulletInfo();
+    PlayerData playerData;
+    BulletInfo bulletInfo;
     public override void Skil() {
         maxColl = 5;
         if (curColl > maxColl) {
