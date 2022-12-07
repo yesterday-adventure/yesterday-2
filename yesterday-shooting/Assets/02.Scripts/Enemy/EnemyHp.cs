@@ -53,6 +53,6 @@ public class EnemyHp : MonoBehaviour, IDamageable
     void Die()
     {
         effectSound.MonsterDie();
-        PoolManager.Instance.Push(gameObject);
+        Destroy(this.gameObject);
     }
 }

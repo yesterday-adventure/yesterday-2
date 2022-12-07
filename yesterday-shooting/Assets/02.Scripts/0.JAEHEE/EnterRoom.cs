@@ -14,6 +14,9 @@ public class EnterRoom : MonoBehaviour
 
         if(hitPlayer != null)
         {
+            GameManager.Instance.MapTrm = GetComponentInChildren<Grid>().transform;
+            if(MapManager.Instance != null)
+                MapManager.Instance.Init(GameManager.Instance.MapTrm);
             room.SetActive(true);
         }
     }

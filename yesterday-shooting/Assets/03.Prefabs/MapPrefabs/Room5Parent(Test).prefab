@@ -160,9 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813110871237365}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813110871237352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ GameObject:
   - component: {fileID: 1928813111031359586}
   - component: {fileID: 1928813111031359587}
   m_Layer: 6
-  m_Name: Room5Wall
+  m_Name: Collisions
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,9 +1051,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813111049098866}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813111049098869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1112,7 @@ GameObject:
   - component: {fileID: 1928813111373649185}
   - component: {fileID: 1928813111373649186}
   m_Layer: 0
-  m_Name: Room5Ground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2731,9 +2735,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813111606166547}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813111606166550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,9 +2944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813111984478129}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813111984478132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3145,9 +3153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813112194520554}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813112194520557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3352,9 +3362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813112364642308}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813112364642311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3606,9 +3618,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813112424209965}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813112424209952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3813,9 +3827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  range: 30
-  rigid: {fileID: 1928813112460190570}
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls: []
+  Agent: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1928813112460190573
 MonoBehaviour:
   m_ObjectHideFlags: 0

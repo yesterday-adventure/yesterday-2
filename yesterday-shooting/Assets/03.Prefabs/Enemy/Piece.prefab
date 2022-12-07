@@ -11,11 +11,14 @@ GameObject:
   - component: {fileID: 195402603285124502}
   - component: {fileID: 195402603285124501}
   - component: {fileID: 195402603285124507}
-  - component: {fileID: 195402603285124506}
   - component: {fileID: 195402603285124505}
   - component: {fileID: 195402603285124504}
   - component: {fileID: 1557828388}
   - component: {fileID: 74839943088721854}
+  - component: {fileID: 9203622657616799556}
+  - component: {fileID: 877459600185479581}
+  - component: {fileID: -5470134232916298314}
+  - component: {fileID: 5092413877365783517}
   m_Layer: 10
   m_Name: Piece
   m_TagString: Enemy
@@ -109,21 +112,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &195402603285124506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195402603285124511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  range: 5
-  rigid: {fileID: 195402603285124507}
 --- !u!114 &195402603285124505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +191,72 @@ PolygonCollider2D:
       - {x: 0.6513784, y: -0.14252758}
       - {x: 0.34282, y: 0.20596361}
       - {x: 0.24595904, y: 0.64478385}
+--- !u!114 &9203622657616799556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195402603285124511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+--- !u!114 &877459600185479581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195402603285124511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c6455d2301e5f4d83091b44fa8dc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  cornerCheck: 0
+  isDebug: 0
+--- !u!114 &-5470134232916298314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195402603285124511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9203622657616799556}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: MoveAgent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Agent: {fileID: 0}
+  target: {fileID: 0}
+--- !u!114 &5092413877365783517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195402603285124511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819378545babd9e48bdc907fe35b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

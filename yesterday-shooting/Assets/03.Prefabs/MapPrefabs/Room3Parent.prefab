@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 7872206482539679402}
   - component: {fileID: 7872206482539679403}
   m_Layer: 0
-  m_Name: Room3Ground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1919,7 +1919,7 @@ GameObject:
   - component: {fileID: 7872206482938680073}
   - component: {fileID: 7872206482938680119}
   m_Layer: 6
-  m_Name: Room3Wall
+  m_Name: Collisions
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
