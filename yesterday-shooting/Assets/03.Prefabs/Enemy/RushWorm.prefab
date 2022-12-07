@@ -16,6 +16,10 @@ GameObject:
   - component: {fileID: 6926569244046140514}
   - component: {fileID: 733345039}
   - component: {fileID: 1136976916891407154}
+  - component: {fileID: 9185173759538864817}
+  - component: {fileID: 5151609801908665807}
+  - component: {fileID: 745421690066262229}
+  - component: {fileID: 9087042082256448227}
   m_Layer: 10
   m_Name: RushWorm
   m_TagString: Enemy
@@ -194,3 +198,72 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8153577, y: 0.38974255}
   m_EdgeRadius: 0
+--- !u!114 &9185173759538864817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926569244046140515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+--- !u!114 &5151609801908665807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926569244046140515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c6455d2301e5f4d83091b44fa8dc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  cornerCheck: 0
+  isDebug: 0
+--- !u!114 &745421690066262229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926569244046140515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9185173759538864817}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: MoveAgent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Agent: {fileID: 0}
+  target: {fileID: 0}
+--- !u!114 &9087042082256448227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926569244046140515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819378545babd9e48bdc907fe35b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

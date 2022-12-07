@@ -12,11 +12,14 @@ GameObject:
   - component: {fileID: 4059997920124409777}
   - component: {fileID: 4059997920124409783}
   - component: {fileID: 7565815314497369184}
-  - component: {fileID: 4059997920124409781}
   - component: {fileID: 4059997920124409786}
   - component: {fileID: 2662254684216549865}
   - component: {fileID: 4059997920124409778}
   - component: {fileID: 392280216}
+  - component: {fileID: -6893924602397070804}
+  - component: {fileID: -3046123700089798033}
+  - component: {fileID: -2472811631652943999}
+  - component: {fileID: 3809295161737316987}
   m_Layer: 10
   m_Name: BigBig
   m_TagString: Enemy
@@ -149,21 +152,6 @@ PolygonCollider2D:
       - {x: 0.5356493, y: -0.072184086}
       - {x: 0.29985428, y: 0.3590948}
       - {x: 0.14788628, y: 0.5528161}
---- !u!114 &4059997920124409781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4059997920124409776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.8
-  range: 10
-  rigid: {fileID: 4059997920124409783}
 --- !u!114 &4059997920124409786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +211,72 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6893924602397070804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997920124409776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+--- !u!114 &-3046123700089798033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997920124409776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c6455d2301e5f4d83091b44fa8dc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  cornerCheck: 0
+  isDebug: 0
+--- !u!114 &-2472811631652943999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997920124409776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce447b0b6334c046b8d8882a9215028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMovementCommend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6893924602397070804}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: MoveAgent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Agent: {fileID: 0}
+  target: {fileID: 0}
+--- !u!114 &3809295161737316987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997920124409776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819378545babd9e48bdc907fe35b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

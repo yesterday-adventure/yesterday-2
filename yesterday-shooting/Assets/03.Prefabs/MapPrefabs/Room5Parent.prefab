@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2096960510279815879}
   - component: {fileID: 2096960510279815876}
   m_Layer: 6
-  m_Name: Room12Wall
+  m_Name: Collisions
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 2096960510950846548}
   - component: {fileID: 2096960510950846549}
   m_Layer: 0
-  m_Name: Room12Ground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
