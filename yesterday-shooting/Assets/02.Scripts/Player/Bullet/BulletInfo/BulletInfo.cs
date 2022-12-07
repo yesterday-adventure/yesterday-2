@@ -5,12 +5,12 @@ using UnityEngine;
 public class BulletInfo : MonoBehaviour
 {
     #region property
-    [SerializeField] private float damage = 0; //µ¥¹ÌÁö
-    [SerializeField] private float attackDelay = 0; //°ø°Ý¼Óµµ
+    [SerializeField] private float damage = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] private float attackDelay = 0; //ï¿½ï¿½ï¿½Ý¼Óµï¿½
     #endregion
 
     #region get set
-    public float Damage { get { return damage; } }
+    public float Damage { get { return damage; } set { damage = value; }}
     public float AttackDelay { get { return attackDelay; } }
     #endregion
 }

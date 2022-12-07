@@ -7,8 +7,8 @@ public class PlayerRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡ ÀúÀåÀº ´©±º°¡ ÇØÁÖ°ÚÁö? Á¤¸» ÁÁ´ç
-        #region Å×±×·Î ÇÃ·¹ÀÌ¾î À§Ä¡ ±¸ÇÏ±â
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½? ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        #region ï¿½×±×·ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½Ï±ï¿½
         if (collision.tag == "room0")
         {
             DataManager.instance.nowPlayer.playerRoom = 0;

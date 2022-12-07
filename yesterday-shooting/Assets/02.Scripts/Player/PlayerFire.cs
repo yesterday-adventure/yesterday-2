@@ -10,7 +10,7 @@ public class PlayerFire : MonoBehaviour
     Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
 
     public static PlayerFire instance = null;
-    private float delay = 0f;
+    public float delay = 0f;
     private bool isChanging = false;
 
 
