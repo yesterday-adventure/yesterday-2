@@ -11,14 +11,21 @@ public class PlayerHp : MonoBehaviour
     //public int hp = 5;
     public float shieldTime = 1; // 무적시간
     [SerializeField] SpriteRenderer sR;
+
+    IronArmor ironArmor = new IronArmor();
     public void OnDamage(Action lambda)
     {
-        shieldTime = 0;
-        //hp--;
-        DataManager.instance.nowPlayer.playerHp--;
-        //StartCoroutine(TwinkeON());
-        HitAnimation();
-        lambda?.Invoke();
+        if (ironArmor.shield) { //철갑주 아이템을 사용하여 보호막이 있는 경우
+            ironArmor.shield = false;
+        }
+        else { //없는 경우
+            shieldTime = 0;
+            //hp--;
+            DataManager.instance.nowPlayer.playerHp--;
+            //StartCoroutine(TwinkeON());
+            HitAnimation();
+            lambda?.Invoke();
+        }
     }
 
     private void HitAnimation()
