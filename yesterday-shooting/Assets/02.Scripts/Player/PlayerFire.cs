@@ -89,6 +89,16 @@ public class PlayerFire : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("LockItem"))
+        {
+            ShopExchange shopExchange = collision.GetComponent<ShopExchange>();
+            if(shopExchange.CanExchange())
+            {
+                Debug.Log("구매!");
+                collision.tag = "WeaponItem";
+            }
+        }
+
         if (collision.CompareTag("WeaponItem") && !isChanging)
         {
             Debug.Log(collision);
