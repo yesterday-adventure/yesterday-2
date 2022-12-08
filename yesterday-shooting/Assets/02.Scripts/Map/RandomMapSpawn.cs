@@ -27,13 +27,23 @@ public class RandomMapSpawn : MonoBehaviour
     {
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
-            Debug.Log("mapGrid에 값 넣어주기");
             mapGrid = new Map[xIndex + 1, yIndex + 1];
 
-            for (int i = 0; i < DataManager.instance.nowPlayer.mapGrid.Length; i += 2)
-            {//21번 만큼 돌림, 0, 2, 4, 6, 8...
-            mapGrid[DataManager.instance.nowPlayer.mapGrid[i], 
+            mapGrid[5, 6] = maps;
+
+            for (int i = 0; i < DataManager.instance.nowPlayer.mapGrid.Length; i += 2) //21번 만큼 돌림, 0, 2, 4, 6, 8...
+            {
+                mapGrid[DataManager.instance.nowPlayer.mapGrid[i], 
                 DataManager.instance.nowPlayer.mapGrid[i + 1]] = maps;
+                if (mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
+                DataManager.instance.nowPlayer.mapGrid[i + 1]] != null)
+                {
+                    Debug.Log(mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
+                    DataManager.instance.nowPlayer.mapGrid[i + 1]]);
+
+                    Debug.Log($"{DataManager.instance.nowPlayer.mapGrid[i]}, {DataManager.instance.nowPlayer.mapGrid[i + 1]}");
+                }
+                Debug.Log("mapGrid에 값 넣어주기");
             }
             //Debug.Log($"{mapGrid[0, 0]}");
         }
@@ -163,10 +173,10 @@ public class RandomMapSpawn : MonoBehaviour
                 Debug.Log($"처음으로 생성되는 맵의 X 좌표는 : {x}, Y 좌표는 : {y}");
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
                 DataManager.instance.twoBoolArr[0].boolArr[x] = true;
-                //Debug.Log(DataManager.instance.mapGrid[0].mapArr[x]);
+
                 DataManager.instance.mapGrid[1].mapArr[y] = maps;
                 DataManager.instance.twoBoolArr[1].boolArr[y] = true;
-                //Debug.Log(DataManager.instance.mapGrid[1].mapArr[y]);
+
                 MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
                 BoolArrTwo boolArrTwo= new BoolArrTwo(DataManager.instance.twoBoolArr);
                 DataManager.instance.TwoSave(mapArrTwo);
@@ -182,9 +192,9 @@ public class RandomMapSpawn : MonoBehaviour
     {
         try
         {
-        DataManager.instance.nowPlayer.mapGrid[number] = own;
-        number++;
-        DataManager.instance.nowPlayer.mapGrid[number] = two;
+            DataManager.instance.nowPlayer.mapGrid[number] = own;
+            number++;
+            DataManager.instance.nowPlayer.mapGrid[number] = two;
             if (number <= 21)
             {
              number++;

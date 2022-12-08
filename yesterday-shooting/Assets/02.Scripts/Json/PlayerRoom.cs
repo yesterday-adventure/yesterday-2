@@ -9,7 +9,7 @@ public class PlayerRoom : MonoBehaviour
     {
         // 플레이어의 위치 저장은 누군가 해주겠지? 정말 좋당
         #region 테그로 플레이어 위치 구하기
-        if (collision.tag == "room0")
+        /*if (collision.tag == "room0")
         {
             DataManager.instance.nowPlayer.playerRoom = 0;
         }
@@ -68,9 +68,9 @@ public class PlayerRoom : MonoBehaviour
         if (collision.tag == "room14")
         {
             DataManager.instance.nowPlayer.playerRoom = 14;
-        }
+        }*/
         #endregion
-
+/*
         if (collision.tag == "Up")
         {
             DataManager.instance.nowPlayer.playerDirection = 1;
@@ -79,7 +79,7 @@ public class PlayerRoom : MonoBehaviour
         if (collision.tag == "Down") DataManager.instance.nowPlayer.playerDirection = 2;
         if (collision.tag == "Right") DataManager.instance.nowPlayer.playerDirection = 3;
         if (collision.tag == "Left") DataManager.instance.nowPlayer.playerDirection = 4;
-        if (collision.tag == "Center") DataManager.instance.nowPlayer.playerDirection = 5;
+        if (collision.tag == "Center") DataManager.instance.nowPlayer.playerDirection = 5;*/
         DataManager.instance.SaveData();
     }
 }

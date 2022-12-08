@@ -41,8 +41,13 @@ public class DoorOnOff : MonoBehaviour
 
     private void Start()
     {
-        x = 5;
-        y = 6;
+        /*x = 5;
+        y = 6;*/
+
+        x = DataManager.instance.nowPlayer.x;
+        y = DataManager.instance.nowPlayer.y;
+
+
         _RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
     }
 
@@ -102,7 +107,6 @@ public class DoorOnOff : MonoBehaviour
 
         if (hit == null)
         {
-            Debug.Log("dkdk");
             if (_RMS.mapGrid[x + 1, y] == null)
             /*if (DataManager.instance.mapGrid[0].mapArr[x + 1] == null &&
                 DataManager.instance.mapGrid[1].mapArr[y] == null)*/
@@ -121,10 +125,14 @@ public class DoorOnOff : MonoBehaviour
             /*if (DataManager.instance.mapGrid[0].mapArr[x - 1] == null &&
                 DataManager.instance.mapGrid[1].mapArr[y] == null)*/
             {
+                Debug.Log("오른쪽 문 닫힘");//
+                Debug.Log($"{x - 1}, {y}");
                 leftD.SetActive(true);
             }
             else
             {
+                Debug.Log("오른쪽 문 열림");
+                Debug.Log($"{x - 1}, {y}");
                 leftD.SetActive(false);
             }
 
@@ -170,6 +178,9 @@ public class DoorOnOff : MonoBehaviour
             x--;
         else if (dir == Dir.right)
             x++;
+
+        DataManager.instance.nowPlayer.x = x;
+        DataManager.instance.nowPlayer.y = y;
     }
 
 }
