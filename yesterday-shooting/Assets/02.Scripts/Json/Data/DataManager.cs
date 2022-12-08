@@ -103,7 +103,7 @@ public class DataManager : MonoBehaviour
 
     public BoolArrTwo boolArrTwo;
 
-    public void TwoSave(MapArrTwo? mapArrTwo/* = null*/, BoolArrTwo? boolArrTwo = null)
+    public void TwoSave(MapArrTwo? mapArrTwo/* = null*/, BoolArrTwo? boolArrTwo = null)                     
     {
         //Debug.Log("데이터 배열 저장");
         mapArrTwo = new MapArrTwo(mapGrid);

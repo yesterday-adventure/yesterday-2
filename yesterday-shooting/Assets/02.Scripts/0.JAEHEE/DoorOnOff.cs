@@ -19,7 +19,6 @@ public class DoorOnOff : MonoBehaviour
     [SerializeField] GameObject rightD;
 
     public Dir dir = Dir.up;
-    Collider2D hit = null;
 
     int x = 5;
     int y = 6;
