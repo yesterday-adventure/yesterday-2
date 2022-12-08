@@ -35,7 +35,7 @@ public class NavAgent : MonoBehaviour
 
     private LineRenderer line;
 
-    private bool isMove = false;
+    //private bool isMove = false;
     private int moveIdx = 0;
     private Vector3 nextPos;
 
@@ -96,7 +96,7 @@ public class NavAgent : MonoBehaviour
     {
         if(moveIdx >= routePath.Count)
         {
-            isMove = false;
+            //isMove = false;
             return Vector3Int.zero;
         }
 

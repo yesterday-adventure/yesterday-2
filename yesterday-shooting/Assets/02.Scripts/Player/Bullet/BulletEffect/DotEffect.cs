@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class DotEffect : MonoBehaviour
 {
-    [Header("µµÆ®µ¥¹ÌÁö")]
+    [Header("ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")]
     [SerializeField] float dotDamage = 0;
-    [Header("¹Ýº¹È½¼ö")]
+    [Header("ï¿½Ýºï¿½È½ï¿½ï¿½")]
     [SerializeField] float loopTime = 0;
-    [Header("µµÆ®µ¥¹ÌÁö °£°Ý")]
+    [Header("ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     [SerializeField] float dotTick = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Enemy"))
         collision.gameObject.GetComponent<DamageOverTime>().Dot(dotDamage, loopTime, dotTick);
     }
 }

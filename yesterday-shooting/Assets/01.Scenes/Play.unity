@@ -20022,6 +20022,7 @@ GameObject:
   - component: {fileID: 1790954349}
   - component: {fileID: 1790954351}
   - component: {fileID: 1790954350}
+  - component: {fileID: 1790954352}
   m_Layer: 5
   m_Name: GoldenCoin
   m_TagString: Untagged
@@ -20146,6 +20147,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790954348}
   m_CullTransparentMesh: 1
+--- !u!114 &1790954352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790954348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2979844df96cc458c0dabcdd641559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldTxt: {fileID: 1790954350}
 --- !u!1 &1803253215
 GameObject:
   m_ObjectHideFlags: 0

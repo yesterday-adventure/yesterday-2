@@ -19,10 +19,10 @@ public class SoundManager : MonoBehaviour
         {
             DataManager.instance.OptionLoadData();
         }
-        BGMSlider.value = DataManager.instance.nowOption.BGM;
+        //BGMSlider.value = DataManager.instance.nowOption.BGM;
         BGM.volume = DataManager.instance.nowOption.BGM;
 
-        ButtonClickSoundSlider.value = DataManager.instance.nowOption.ButtonClickSound;
+        //ButtonClickSoundSlider.value = DataManager.instance.nowOption.ButtonClickSound;
         ButtonClickSound.volume = DataManager.instance.nowOption.ButtonClickSound;
     }
 
