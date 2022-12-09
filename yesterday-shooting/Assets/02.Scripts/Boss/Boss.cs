@@ -6,14 +6,10 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] float hp;
     [SerializeField] float speed;
-    
-    private void Awake()
-    {
-            
-    }
 
     private void Update()
     {
-    
+        
     }
+
 }
