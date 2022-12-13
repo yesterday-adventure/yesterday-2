@@ -9,13 +9,16 @@ public class Boss : MonoBehaviour
 
     [SerializeField] float hp;
     [SerializeField] float speed;
-    [SerializeField] float distance;
+    [Tooltip("플레이어와 보스의 거라")]
+    [SerializeField] float distance = 10;
+    [Tooltip("플레이어 근처 손 소환 범위")]
     [SerializeField] float summonRange;
 
     Rigidbody2D rb;
     Animator _animator;
     GameObject player;
 
+    private bool walkState = false;
 
     private void Awake()
     {
@@ -32,54 +35,66 @@ public class Boss : MonoBehaviour
     private void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
+
+        if (walkState)
+        {
+            rb.velocity = (player.transform.position - transform.position).normalized * speed;
+            _animator.SetBool("Walk", true);
+            Debug.Log("걷기");
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            _animator.SetBool("Walk", false);
+            Debug.Log("멈추기");
+        }
+
+        if (player.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
     }
 
     private IEnumerator Pattern()
     {
         while (hp > 0)
         {
-            yield return new WaitForSeconds(3);
-            if (distance >= 7)
+            if (distance < 2)
             {
-                //대기
-                rb.velocity = Vector2.zero;
-                yield return new WaitForSeconds(0.1f);
-            }
+                //직접공격
+                walkState = false;
+                Attack();
+                yield return new WaitForSeconds(3f);
+            } //공격
+            else if (distance > 6)
+            {
+                //소환
+                walkState = false;
+                _animator.SetBool("Summon", true);
+                yield return new WaitForSeconds(0.08f);
+                _animator.SetBool("Summon", false);
+                for (int i = 1; i <= 3; i++)
+                {
+                    Summon();
+                    yield return new WaitForSeconds(1);
+                }
+            } //소환
             else
             {
-                if (distance < 2)
-                {
-                    //직접공격
-                    rb.velocity = Vector2.zero;
-                    Attack();
-                    yield return new WaitForSeconds(0.1f);
-                }
-                else if (distance > 4)
-                {
-                    //소환
-                    rb.velocity = Vector2.zero;
-                    for (int i = 0; i < 4; i++)
-                    {
-                        Summon(i);
-                        yield return new WaitForSeconds(i / 2);
-                    }
-                }
-                else
-                {
-                    //걷기
-                    rb.velocity = (player.transform.position - transform.position).normalized * speed;
-                    yield return new WaitForSeconds(0.1f);
-                }
-            }
+                walkState = true;
+                yield return new WaitUntil(() => distance > 4 || distance < 2);
+            } //걷기
+            yield return new WaitForSeconds(1);
         }
     }
 
-    private void Summon(int loop = 1)
+    private void Summon()
     {
-        for (int i = 0; i < loop; i++)
-        {
-            Instantiate(hand, SetPos(), Quaternion.identity);
-        }
+        Instantiate(hand, SetPos(), Quaternion.identity);
     }
 
     private Vector2 SetPos()
@@ -89,6 +104,7 @@ public class Boss : MonoBehaviour
 
     private void Attack()
     {
-
+        _animator.SetBool("Attack", true);
+        Debug.Log("공격");
     }
 }
