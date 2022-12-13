@@ -5088,7 +5088,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1143934175
 Animator:
   serializedVersion: 3
@@ -5385,8 +5385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0070ee0eca88d479bc4f0f76ba5c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 1143934174}
   hp: 100
-  speed: 5
+  speed: 2
   distance: 0
 --- !u!1 &1759232468
 GameObject:
