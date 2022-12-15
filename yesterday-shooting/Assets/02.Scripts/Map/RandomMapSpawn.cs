@@ -16,9 +16,10 @@ public class RandomMapSpawn : MonoBehaviour
     private int NearRoomCount = 0;
 
     [SerializeField] int maxRoomCount;
-
     [SerializeField] int roomCount = 12;
+
     public GameObject[] isMap = new GameObject[12];
+    public GameObject shop;
 
     [SerializeField] GameObject monsterMinimap;
     [SerializeField] GameObject minimap;
@@ -33,7 +34,7 @@ public class RandomMapSpawn : MonoBehaviour
 
             for (int i = 0; i < DataManager.instance.nowPlayer.mapGrid.Length; i += 2) //21번 만큼 돌림, 0, 2, 4, 6, 8...
             {
-                mapGrid[DataManager.instance.nowPlayer.mapGrid[i], 
+                mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
                 DataManager.instance.nowPlayer.mapGrid[i + 1]] = maps;
                 if (mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
                 DataManager.instance.nowPlayer.mapGrid[i + 1]] != null)
@@ -74,6 +75,7 @@ public class RandomMapSpawn : MonoBehaviour
                 RandomSpawn(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
                 //RandomSpawnn(DataManager.instance.mapGrid, maps);
             }
+            InputShopMap(mapGrid, maps);
 
 
             //���������ä�
@@ -132,8 +134,8 @@ public class RandomMapSpawn : MonoBehaviour
     {
         //map[5, 6] = _map;
 
-        map[0].mapArr[5] = _map; 
-        map[1].mapArr[6] = _map; 
+        map[0].mapArr[5] = _map;
+        map[1].mapArr[6] = _map;
     }
 
 
@@ -161,7 +163,7 @@ public class RandomMapSpawn : MonoBehaviour
 
                 GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
 
-                spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x-5,y-6);
+                spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
                 //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
 
 
@@ -178,10 +180,45 @@ public class RandomMapSpawn : MonoBehaviour
                 DataManager.instance.twoBoolArr[1].boolArr[y] = true;
 
                 MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
-                BoolArrTwo boolArrTwo= new BoolArrTwo(DataManager.instance.twoBoolArr);
+                BoolArrTwo boolArrTwo = new BoolArrTwo(DataManager.instance.twoBoolArr);
                 DataManager.instance.TwoSave(mapArrTwo);
                 DataManager.instance.TwoSave(null, boolArrTwo);
                 RoomCount++;
+            }
+        }
+    }
+    void InputShopMap(Map[,] map, Map _map)
+    {
+        while (true)
+        {
+            NearRoomCount = 0;
+            int x = Random.Range(1, xIndex);
+            int y = Random.Range(1, yIndex);
+            if (map[x, y] == null)
+            {
+                if (map[x + 1, y] != null)
+                    NearRoomCount++;
+                if (map[x - 1, y] != null)
+                    NearRoomCount++;
+                if (map[x, y + 1] != null)
+                    NearRoomCount++;
+                if (map[x, y - 1] != null)
+                    NearRoomCount++;
+
+                if (NearRoomCount == 1)
+                {
+                    GameObject spawnMap = Instantiate(shop, _map.SetPos(x, y), Quaternion.identity);
+
+                    GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+
+                    spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
+
+
+                    spawnMap.name = $"Shop";
+
+                    map[x, y] = _map;
+                    break;
+                }
             }
         }
     }
@@ -197,7 +234,7 @@ public class RandomMapSpawn : MonoBehaviour
             DataManager.instance.nowPlayer.mapGrid[number] = two;
             if (number <= 21)
             {
-             number++;
+                number++;
             }
         }
         catch

@@ -8908,6 +8908,7 @@ MonoBehaviour:
   player: {fileID: 0}
   stopPanel: {fileID: 1931961738}
   speed: 5
+  rightIsTrue: 0
   nowBombCount: 10
   bombDeley: 0.7
   bomb: {fileID: 8342439436060693773, guid: 7288d04b5f736e14885bfc3fc6256c7b, type: 3}
@@ -16412,6 +16413,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  shop: {fileID: 537103339870646402, guid: 0f1c8d3890628e143b1575bb7f2a7630, type: 3}
   monsterMinimap: {fileID: 5838585122523306124, guid: b94f36ca1f78539409e197d976f96ce5, type: 3}
   minimap: {fileID: 730787328}
 --- !u!1 &2080884384
