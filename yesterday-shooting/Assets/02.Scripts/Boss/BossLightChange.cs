@@ -15,7 +15,7 @@ public class BossLightChange : MonoBehaviour
         //이거 왜 작동하는거지
         degree += speed * Time.deltaTime;
         float radian = degree * Mathf.PI / 180; //라디안값
-        inten = (Mathf.Cos(radian) + 1) / 2 * 1.2f;
+        inten = (Mathf.Cos(radian) + 1) / 2 * 1.5f;
         _light.intensity = inten;
     }
 }

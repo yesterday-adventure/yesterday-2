@@ -5283,10 +5283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 4382653326359402370, guid: 6da7b2ac484a24b4a90814761b5e2728, type: 3}
+  ball: {fileID: 268749792737658304, guid: dd04e30ce95df0a4aab26e179759d46f, type: 3}
   hp: 100
   speed: 2
   distance: 10
-  summonRange: 2
+  summonRange: 1.5
 --- !u!1 &1754919084
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5384,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5961124}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5394,7 +5395,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.1922245}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1759232468
 GameObject:
