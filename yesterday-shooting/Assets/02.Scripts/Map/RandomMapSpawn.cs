@@ -20,6 +20,7 @@ public class RandomMapSpawn : MonoBehaviour
 
     public GameObject[] isMap = new GameObject[12];
     public GameObject shop;
+    public GameObject bossMap;
 
     [SerializeField] GameObject monsterMinimap;
     [SerializeField] GameObject minimap;
@@ -76,6 +77,7 @@ public class RandomMapSpawn : MonoBehaviour
                 //RandomSpawnn(DataManager.instance.mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
+            InputBossMap(mapGrid, maps);
 
 
             //���������ä�
@@ -215,6 +217,41 @@ public class RandomMapSpawn : MonoBehaviour
 
 
                     spawnMap.name = $"Shop";
+
+                    map[x, y] = _map;
+                    break;
+                }
+            }
+        }
+    }
+    void InputBossMap(Map[,] map, Map _map)
+    {
+        while (true)
+        {
+            NearRoomCount = 0;
+            int x = Random.Range(1, xIndex);
+            int y = Random.Range(1, yIndex);
+            if (map[x, y] == null)
+            {
+                if (map[x + 1, y] != null)
+                    NearRoomCount++;
+                if (map[x - 1, y] != null)
+                    NearRoomCount++;
+                if (map[x, y + 1] != null)
+                    NearRoomCount++;
+                if (map[x, y - 1] != null)
+                    NearRoomCount++;
+
+                if (NearRoomCount == 1)
+                {
+                    GameObject spawnMap = Instantiate(bossMap, _map.SetPos(x, y), Quaternion.identity);
+
+                    GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+
+                    spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
+
+
+                    spawnMap.name = $"Boss";
 
                     map[x, y] = _map;
                     break;

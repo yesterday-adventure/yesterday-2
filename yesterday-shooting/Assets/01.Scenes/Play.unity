@@ -16414,6 +16414,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   shop: {fileID: 537103339870646402, guid: 0f1c8d3890628e143b1575bb7f2a7630, type: 3}
+  bossMap: {fileID: 4055234525482407543, guid: 465dc4d020d216743816119e429ab1a2, type: 3}
   monsterMinimap: {fileID: 5838585122523306124, guid: b94f36ca1f78539409e197d976f96ce5, type: 3}
   minimap: {fileID: 730787328}
 --- !u!1 &2080884384
