@@ -7,7 +7,7 @@ public class ShopOwner : MonoBehaviour
     [SerializeField] string[] shopItem;
     [SerializeField] int[] price;
 
-    void Start()
+    void OnEnable()
     {
         for(int i = 0; i < 4; i++)
         {
