@@ -16,6 +16,8 @@ public class PlayerFire : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
+    PlayerManager playerManager;
+
     public enum FireDir : short
     {
         right = 0,
@@ -46,6 +48,7 @@ public class PlayerFire : MonoBehaviour
     private void Start()
     {
         effectSound = FindObjectOfType<GameEffectSoundManager>();
+        playerManager = GetComponent<PlayerManager>();
         StartCoroutine("Fire");
     }
 
@@ -55,6 +58,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
+                playerManager.rightIsTrue = true;
                 effectSound.PlayerAtteck();
                 _spriteRenderer.flipX = false;
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
@@ -63,6 +67,7 @@ public class PlayerFire : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
+                playerManager.rightIsTrue = false;
                 effectSound.PlayerAtteck();
                 _spriteRenderer.flipX = true;
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);

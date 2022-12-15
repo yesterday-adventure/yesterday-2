@@ -13,6 +13,13 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject stopPanel;
     [SerializeField] private float speed = 5f;
 
+    [Header("Player Bomb")]
+    public bool rightIsTrue;    //플레이어가 현재 보고 있는 방향
+    public int nowBombCount;    //현재 플레이어가 가지고 있는 폭탄 개수
+    [SerializeField] float bombDeley = 0.7f;    //폭탄 딜레이
+    [SerializeField] GameObject bomb, bombRange;    //폭탄과 폭탄 범위
+    public float moveLocation = 5f;   //폭탄이 날라가는 거리
+
     private void Awake()
     {
         player = this.gameObject;
@@ -23,6 +30,8 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+
+        StartCoroutine(Bomb());
     }
 
     void Update()
@@ -31,6 +40,7 @@ public class PlayerManager : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(x, y, 0);
         rb2D.velocity = dir.normalized * speed;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (stopPanel.activeSelf == false)
@@ -43,6 +53,42 @@ public class PlayerManager : MonoBehaviour
                 stopPanel.SetActive(false);
                 Time.timeScale = 1;
             }
+        }
+    }
+
+    IEnumerator Bomb()
+    {
+        while (true)
+        {
+            if (nowBombCount > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    Debug.Log("폭탄");
+                    nowBombCount--;
+
+                    if (rightIsTrue)
+                    {
+                        GameObject go = Instantiate(bomb);
+                        go.transform.position = this.transform.position;
+                        moveLocation = Mathf.Abs(moveLocation);
+
+                        yield return new WaitForSeconds(bombDeley);
+                    }
+                    else
+                    {
+                        GameObject go = Instantiate(bomb);
+                        go.transform.position = this.transform.position;
+                        if (moveLocation > 0)
+                        {
+                            moveLocation = -moveLocation;
+                        }
+
+                        yield return new WaitForSeconds(bombDeley);
+                    }
+                }
+            }
+            yield return null;
         }
     }
 }
