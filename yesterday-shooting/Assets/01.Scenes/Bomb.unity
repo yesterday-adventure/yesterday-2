@@ -484,9 +484,8 @@ MonoBehaviour:
   bomb: {fileID: 8342439436060693773, guid: 7288d04b5f736e14885bfc3fc6256c7b, type: 3}
   bombBang: {fileID: 6951590567328401415, guid: 7304f12716c05364fb47300552d7e13b, type: 3}
   now_bomb: 5
+  rightIsTrue: 0
   moveLocation: 4
-  upDownMoveLocation: 3
-  upDownMoveTime: 1
 --- !u!212 &1663080745
 SpriteRenderer:
   m_ObjectHideFlags: 0

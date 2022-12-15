@@ -18,13 +18,13 @@ public class ITween : MonoBehaviour
 
     public GameObject bombBang;
 
-    PlayerMove playerMove;
+    PlayerManager playerManager;
 
     public void Start()
     {
-        playerMove = FindObjectOfType<PlayerMove>();
+        playerManager = FindObjectOfType<PlayerManager>();
 
-        parabolaDestination = new Vector3(gameObject.transform.position.x + playerMove.moveLocation, gameObject.transform.position.y - 0.5f, 0);
+        parabolaDestination = new Vector3(gameObject.transform.position.x + playerManager.moveLocation, gameObject.transform.position.y - 0.5f, 0);
 
         // y 축 이동 (위 아래로 움직이기)
         iTween.MoveBy(child, iTween.Hash("y", parabolaHeight, "time", moveTime / 2, "easeType", iTween.EaseType.easeOutQuad));

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float speed;
+    //[SerializeField] float speed;
     [SerializeField] float bombDelay;
     [SerializeField] GameObject bomb, bombBang;
     public int now_bomb;
 
+    public bool rightIsTrue = false;
+
     ITween itween;
 
     public float moveLocation;
-    public float upDownMoveLocation;
-    public float upDownMoveTime;
+    //public float upDownMoveLocation;
+    //public float upDownMoveTime;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,16 @@ public class PlayerMove : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        transform.position += (new Vector3(x, y, 0)) * speed * Time.deltaTime;
+        //transform.position += (new Vector3(x, y, 0)) * speed * Time.deltaTime;
+
+        if (x > 0)
+        {
+            rightIsTrue = true;
+        }
+        else if (x < 0)
+        {
+            rightIsTrue = false;
+        }
     }
 
     IEnumerator Bomb()
@@ -36,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (now_bomb > 0)
             {
-                if (Input.GetKey(KeyCode.RightArrow))
+                if (Input.GetKey(KeyCode.Q) && rightIsTrue)
                 {
                     now_bomb--;
                     GameObject go = Instantiate(bomb);
@@ -46,7 +57,7 @@ public class PlayerMove : MonoBehaviour
                     yield return new WaitForSeconds(bombDelay);
                 }
 
-                if (Input.GetKey(KeyCode.LeftArrow))
+                if (Input.GetKey(KeyCode.Q) && !rightIsTrue)
                 {
                     now_bomb--;
                     GameObject go = Instantiate(bomb);
