@@ -5,7 +5,8 @@ using System.IO;
 
 public class RandomMapSpawn : MonoBehaviour
 {
-    [SerializeField] Map maps;
+    public static RandomMapSpawn Instance = null;
+    [SerializeField]public Map maps;
     public Map[,] mapGrid;
     [SerializeField] GameObject[] randomMap;
 
@@ -27,6 +28,10 @@ public class RandomMapSpawn : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+            Instance = this;
+        else
+            Debug.LogError("RandomMapSpawn Multiples");
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
             mapGrid = new Map[xIndex + 1, yIndex + 1];
