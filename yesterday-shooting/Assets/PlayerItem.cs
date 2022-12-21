@@ -17,7 +17,7 @@ public class PlayerItem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && cool <= 0)
         {
             item.Skil();
-            cool = item.maxColl;S
+            cool = item.maxColl;
         }
     }
 }
