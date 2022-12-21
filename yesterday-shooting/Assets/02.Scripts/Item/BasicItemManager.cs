@@ -8,6 +8,7 @@ public class BasicItemManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bombText;
     [SerializeField] TextMeshProUGUI goldenCoinText;
     [SerializeField] TextMeshProUGUI goldenKeyText;
+
     private void Update()
     {
         if (DataManager.instance.nowPlayer.bomb < 10)

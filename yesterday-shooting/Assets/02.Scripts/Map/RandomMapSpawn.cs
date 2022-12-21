@@ -1,11 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public class RandomMapSpawn : MonoBehaviour
 {
-    [SerializeField] Map maps;
+    public static RandomMapSpawn Instance = null;
+    [SerializeField] public Map maps;
     public Map[,] mapGrid;
     [SerializeField] GameObject[] randomMap;
 
@@ -27,6 +27,11 @@ public class RandomMapSpawn : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Debug.LogError("RandomMapSpawn Multiples");
+        //파일 있으면 불러와줌
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
             mapGrid = new Map[xIndex + 1, yIndex + 1];
@@ -47,7 +52,6 @@ public class RandomMapSpawn : MonoBehaviour
                 }
                 Debug.Log("mapGrid에 값 넣어주기");
             }
-            //Debug.Log($"{mapGrid[0, 0]}");
         }
     }
 
@@ -55,92 +59,80 @@ public class RandomMapSpawn : MonoBehaviour
     {
         if (Select.instance.newStart)
         {
-            /*Debug.Log("데이터 배열 저장");
-            DataManager.instance.mapGrid.Add(new MapArr(new Map[10]));
-            DataManager.instance.mapGrid.Add(new MapArr(new Map[11]));*/
-
-            //map[0].mapArr[5] = _map
             DataManager.instance.mapGrid[0].mapArr[5] = maps;
             DataManager.instance.mapGrid[1].mapArr[6] = maps;
 
-            //MapArrTwo mapArrTwo = new MapArrTwo(DataManager.instance.mapGrid);
             DataManager.instance.TwoSave(DataManager.instance.mapArrTwo);
-            //DataManager.instance.TwoSave(mapArrTwo);
 
-            //DataManager.instance.nowPlayer.
             mapGrid = new Map[xIndex + 1, yIndex + 1];
-            InputStartMap(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
-            //InputStartMapp(DataManager.instance.mapGrid, maps);
+            InputStartMap(mapGrid, maps);
             while (RoomCount < maxRoomCount)
             {
-                RandomSpawn(/*DataManager.instance.nowPlayer.*/mapGrid, maps);
-                //RandomSpawnn(DataManager.instance.mapGrid, maps);
+                RandomSpawn(mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
             InputBossMap(mapGrid, maps);
 
 
-            //���������ä�
-            for (int i = 1; i < roomCount + 1; i++)
+            for (int i = 1; i < roomCount + 1; i++)     //13번 반복
             {
                 if (GameObject.Find(i.ToString()) != null)
                 {
-                    //Debug.Log("���� �������!");
                     isMap[i - 1] = GameObject.Find(i.ToString());
                     DataManager.instance.nowPlayer.roomPos[i - 1] = isMap[i - 1].transform.position;
                     DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
-                else
-                {
-                    //Debug.Log("���� �����Ǵٸ��Ҵ�!");
-                }
-                //Debug.Log("���� ������!");
-
             }
         }
         else
         {
-            number = 0;
-            Debug.Log("�ʸʸ�");
+            roomSaveNumber = 0;
+            Debug.Log("맵 생성");
             if (DataManager.instance.nowPlayer.roomPos != null && DataManager.instance.nowPlayer.roomNumber != null)
             {
-                // ��ġ���� �� ���ڸ� ���ؼ� ����
-                for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)
+                for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)     //12 + 1 = 13
                 {
                     Debug.Log("MapSpaw?");
-                    //DataManager.instance.nowPlayer.roomPos[i]
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
 
-                    //여기에다가 미니맵 스폰 넣으면 될 듯. 안되면 자살
+                    //미니맵
                     GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+                    spawnMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapGrid[roomSaveNumber] - 5, DataManager.instance.nowPlayer.mapGrid[roomSaveNumber + 1] - 6);
 
-                    spawnMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapGrid[number] - 5, DataManager.instance.nowPlayer.mapGrid[number + 1] - 6);
-
-                    number += 2;
+                    roomSaveNumber += 2;
                 }
             }
+
+            //map Script
+            mapGrid[DataManager.instance.nowPlayer.mapShopAndBoss[0], DataManager.instance.nowPlayer.mapShopAndBoss[1]] = maps;
+            mapGrid[DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]] = maps;
+
+            //Shop
+            GameObject spawnShopMap = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0], DataManager.instance.nowPlayer.mapShopAndBoss[1]), Quaternion.identity);
+            GameObject spawnShopMiniMap = Instantiate(monsterMinimap, minimap.transform);
+            //spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(x - 5, y - 6);
+            spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[1] - 6);
+            spawnShopMap.name = $"Shop";
+
+            //Boss
+            GameObject spawnBossMap = Instantiate(bossMap, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]), Quaternion.identity);
+            GameObject spawnBossMiniMap = Instantiate(monsterMinimap, minimap.transform);
+            spawnBossMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[3] - 6);
+            spawnBossMap.name = $"Boss";
+
         }
     }
 
     void InputStartMap(Map[,] map, Map _map)
     {
         map[5, 6] = _map;
-
-        //map[DataManager.instance.mapGrid[0].mapArr[5], DataManager.instance.mapGrid[1].mapArr[6]] = _map; 
     }
-
-
-
 
     void InputStartMapp(List<MapArr> map, Map _map)
     {
-        //map[5, 6] = _map;
-
         map[0].mapArr[5] = _map;
         map[1].mapArr[6] = _map;
     }
-
-
 
     //no data save
     void RandomSpawn(Map[,] map, Map _map)
@@ -166,11 +158,9 @@ public class RandomMapSpawn : MonoBehaviour
                 GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
 
                 spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
-                //spawnMap.name = spawnMap.name.Replace("(Clone)", "");
 
 
                 spawnMap.name = $"{RoomCount + 1}";
-                //spawnMap.transform.GetComponent<EnterRoom>().roomNumber = RoomCount + 1;
 
                 map[x, y] = _map;
                 mapGirdSave(x, y);
@@ -219,6 +209,7 @@ public class RandomMapSpawn : MonoBehaviour
                     spawnMap.name = $"Shop";
 
                     map[x, y] = _map;
+                    MapShopAndBoss(x, y);
                     break;
                 }
             }
@@ -254,31 +245,43 @@ public class RandomMapSpawn : MonoBehaviour
                     spawnMap.name = $"Boss";
 
                     map[x, y] = _map;
+                    MapShopAndBoss(x, y);
                     break;
                 }
             }
         }
     }
 
-    int number = 0;
-
+    int roomSaveNumber = 0;
     void mapGirdSave(int own, int two)
     {
         try
         {
-            DataManager.instance.nowPlayer.mapGrid[number] = own;
-            number++;
-            DataManager.instance.nowPlayer.mapGrid[number] = two;
-            if (number <= 21)
+            DataManager.instance.nowPlayer.mapGrid[roomSaveNumber] = own;
+            roomSaveNumber++;
+            DataManager.instance.nowPlayer.mapGrid[roomSaveNumber] = two;
+            /*if (number <= 21)
             {
                 number++;
-            }
+            }*/
+            roomSaveNumber++;
+            DataManager.instance.SaveData();
         }
         catch
         {
-            Debug.Log($"현재 맵 그리드 숫자 {number}, 넣으려는 숫자 {own}, {two}");
+            Debug.Log($"현재 맵 그리드 숫자 {roomSaveNumber}, 넣으려는 숫자 {own}, {two}");
         }
+    }
 
+    int roomShopAndBoss;
+    void MapShopAndBoss(int own, int two)   //여기에다가 보스랑 저거 뭐냐 상점 위치저장할거임.
+    {
+        DataManager.instance.nowPlayer.mapShopAndBoss[roomShopAndBoss] = own;
+        roomShopAndBoss++;
+        DataManager.instance.nowPlayer.mapShopAndBoss[roomShopAndBoss] = two;
+        roomShopAndBoss++;
+
+        DataManager.instance.SaveData();
     }
 
     public GameObject PopMap()

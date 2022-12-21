@@ -22,6 +22,8 @@ public class PlayerData
     
     public int playerHp = 5;
     public int[] mapGrid = new int[24]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
+    //public int[] mapGrid = new int[28]; //맵 그리드 인트로 들어가게 해서 맵 설정해줌
+    public int[] mapShopAndBoss = new int[4];   //맵 상점이랑 보스방 위치 저장.
 
     public string weaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
     public string activeItem = null;      //아이템 이름 저장 설아야 이거 써서 엑티브 아이템 저장해줭

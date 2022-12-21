@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Player Bomb")]
     public bool rightIsTrue;    //플레이어가 현재 보고 있는 방향
-    public int nowBombCount;    //현재 플레이어가 가지고 있는 폭탄 개수
+    public int nowBombCount = DataManager.instance.nowPlayer.bomb;    //현재 플레이어가 가지고 있는 폭탄 개수
     [SerializeField] float bombDeley = 0.7f;    //폭탄 딜레이
     [SerializeField] GameObject bomb, bombRange;    //폭탄과 폭탄 범위
     public float moveLocation = 5f;   //폭탄이 날라가는 거리
@@ -66,6 +66,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     Debug.Log("폭탄");
                     nowBombCount--;
+                    DataManager.instance.nowPlayer.bomb = nowBombCount;
 
                     if (rightIsTrue)
                     {
