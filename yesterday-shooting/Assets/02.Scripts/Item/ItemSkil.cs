@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class ItemSkil
 {
-    protected int curColl;
-    protected int maxColl;
+    public int maxColl;
     public abstract void Skil();
 }

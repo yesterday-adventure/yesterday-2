@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TeleportPotion : ItemSkil
 {
+    [SerializeField] private int itemMaxColl = 10;
     public override void Skil()
     {
-        
+        maxColl = itemMaxColl;
     }
 }
