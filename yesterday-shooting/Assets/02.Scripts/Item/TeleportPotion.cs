@@ -27,7 +27,6 @@ public class TeleportPotion : ItemSkil
                         case 0:
                             GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y)
                             +new Vector2(8f,0);
-
                             break;
 
                         case 1:
