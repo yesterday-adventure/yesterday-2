@@ -48,7 +48,8 @@ MonoBehaviour:
   parabolaHeight: 1
   parabolaDestination: {x: 0, y: 0, z: 0}
   moveTime: 1
-  bombBang: {fileID: 6951590567328401415, guid: 7304f12716c05364fb47300552d7e13b, type: 3}
+  bombRangePrefab: {fileID: 4447839649711588749, guid: c2a166b3318311346a7f90c452051b96, type: 3}
+  whiteFlashMat: {fileID: 2100000, guid: 2cdac562991566c49b585c669c831275, type: 2}
 --- !u!1 &8342439437055742489
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32767
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -1483665779731714255, guid: aa826e664566d3e429048814cb05e77d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

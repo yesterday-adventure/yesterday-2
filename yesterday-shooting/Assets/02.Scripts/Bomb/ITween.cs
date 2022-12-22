@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
- 
+
 public class ITween : MonoBehaviour
 {
     // y 축 이동을 담당하는 오브젝트
@@ -16,7 +15,9 @@ public class ITween : MonoBehaviour
     // 이동까지 걸리는 시간
     public float moveTime;
 
-    public GameObject bombBang;
+    //public GameObject bombBang;
+
+    public GameObject bombRangePrefab;
 
     PlayerManager playerManager;
 
@@ -34,18 +35,41 @@ public class ITween : MonoBehaviour
         iTween.MoveTo(gameObject, iTween.Hash("position", parabolaDestination, "time", moveTime, "easeType", iTween.EaseType.linear, "oncomplete", "BombBang"));
     }
 
-    // 원래 위치로 되돌린다.
-    private void Comeback()
-    {
-        iTween.MoveTo(gameObject, Vector3.zero, 0);
-    }
-
     void BombBang()
     {
-        GameObject bang = Instantiate(bombBang);
-        bang.transform.SetParent(this.transform);
-        bang.transform.position = this.transform.position;
+        StartCoroutine(Bomb());
+    }
 
-        Destroy(gameObject, 1f);
+    float flashing = 0.5f;
+    public Material whiteFlashMat;
+    
+    IEnumerator Bomb()
+    {
+        Material defaultMat = GetComponentInChildren<SpriteRenderer>().material;
+        //= gameObject.GetComponent<SpriteRenderer>().material;
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                yield return new WaitForSeconds(flashing);
+                gameObject.GetComponentInChildren<SpriteRenderer>().material = whiteFlashMat;
+                yield return new WaitForSeconds(0.1f);
+                gameObject.GetComponentInChildren<SpriteRenderer>().material = defaultMat;
+            }
+            flashing -= 0.1f;
+        }
+
+
+        /*GameObject bang = Instantiate(bombBang);
+        bang.transform.SetParent(this.transform);
+        bang.transform.position = this.transform.position;*/
+
+        GameObject bombRange = Instantiate(bombRangePrefab, gameObject.transform.position, Quaternion.identity);
+        bombRange.GetComponent<Animator>().SetBool("IsBomb", true);
+
+        Destroy(gameObject);
+
+        yield return null;
     }
 }

@@ -175,11 +175,11 @@ public class DataManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
-        else if (instance != this)
+        else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         #endregion
 
