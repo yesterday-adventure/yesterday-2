@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5838585122523306122}
   - component: {fileID: 5838585122523306123}
   m_Layer: 0
-  m_Name: MonsterMap1
+  m_Name: ShopMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -49445625
   m_SortingLayer: 2
   m_SortingOrder: 1001
-  m_Sprite: {fileID: 645411862609229670, guid: ee32eb52394cb384bb8475bf27c7b7e8, type: 3}
+  m_Sprite: {fileID: -7625090320749137583, guid: c842bd36de57a6549b50d59ab98a7bf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
