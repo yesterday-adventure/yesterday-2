@@ -23,6 +23,8 @@ public class RandomMapSpawn : MonoBehaviour
     public GameObject bossMap;
 
     [SerializeField] GameObject monsterMinimap;
+    [SerializeField] GameObject shopMinimap;
+    [SerializeField] GameObject bossMinimap;
     [SerializeField] GameObject minimap;
 
     private void Awake()
@@ -109,14 +111,14 @@ public class RandomMapSpawn : MonoBehaviour
 
             //Shop
             GameObject spawnShopMap = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0], DataManager.instance.nowPlayer.mapShopAndBoss[1]), Quaternion.identity);
-            GameObject spawnShopMiniMap = Instantiate(monsterMinimap, minimap.transform);
+            GameObject spawnShopMiniMap = Instantiate(shopMinimap, minimap.transform);
             //spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(x - 5, y - 6);
             spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[1] - 6);
             spawnShopMap.name = $"Shop";
 
             //Boss
             GameObject spawnBossMap = Instantiate(bossMap, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]), Quaternion.identity);
-            GameObject spawnBossMiniMap = Instantiate(monsterMinimap, minimap.transform);
+            GameObject spawnBossMiniMap = Instantiate(bossMinimap, minimap.transform);
             spawnBossMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[3] - 6);
             spawnBossMap.name = $"Boss";
 
@@ -201,7 +203,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     GameObject spawnMap = Instantiate(shop, _map.SetPos(x, y), Quaternion.identity);
 
-                    GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+                    GameObject spawnMiniMap = Instantiate(shopMinimap, minimap.transform);
 
                     spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
 
@@ -237,7 +239,7 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     GameObject spawnMap = Instantiate(bossMap, _map.SetPos(x, y), Quaternion.identity);
 
-                    GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
+                    GameObject spawnMiniMap = Instantiate(bossMinimap, minimap.transform);
 
                     spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
 
