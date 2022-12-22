@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  cornerCheck: 0
+  cornerCheck: 1
   isDebug: 1
 --- !u!114 &1851609765068752811
 MonoBehaviour:
