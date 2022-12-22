@@ -12,6 +12,7 @@ public enum Dir
 }
 public class DoorOnOff : MonoBehaviour
 {
+    public static DoorOnOff Instance;
 
     [SerializeField] GameObject upD;
     [SerializeField] GameObject downD;
@@ -20,15 +21,24 @@ public class DoorOnOff : MonoBehaviour
 
     public Dir dir = Dir.up;
 
-    int x = 5;
-    int y = 6;
+    public int x = 5;
+    public int y = 6;
     [SerializeField] RandomMapSpawn _RMS;
+
+    public Collider2D hit = null;
 
     private void Awake()
     {
         //_RMS = GameObject.Find("SpawnMap/RandomMapSpawn").GetComponent<RandomMapSpawn>();
         //Debug.Log(_RMS);
-
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogError("DoorOnOff Multiple");
+        }
 
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
@@ -103,7 +113,7 @@ public class DoorOnOff : MonoBehaviour
 
     private void Update()
     {
-        Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
+        hit= Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10);
 
         if (hit == null)
         {

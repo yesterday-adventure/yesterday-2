@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Tests : ItemSkil
 {
-    public override void Skil(){
+    public override bool Skill(){
+        return true;
         //효과를 다르게 줄수있으니까
     }
 }

@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GodsDice : ItemSkil
+{
+    private EnemyHp[] enemyHps;
+    [SerializeField] private int itemMaxColl = 20;
+    private int rand = 0;
+    public override bool Skill()
+    {
+        if(DoorOnOff.Instance.hit != null)
+        {
+            return false;
+        }
+        else
+        {
+            maxColl = itemMaxColl;
+            rand = Random.Range(1, 100);
+            if (rand <= 100) 
+            {
+                Debug.Log("20%");
+                PlayerItem.Instance.useGodsDice = true;
+            }
+            else
+                Debug.Log("80%");
+
+            return true;
+        }
+    }
+}
