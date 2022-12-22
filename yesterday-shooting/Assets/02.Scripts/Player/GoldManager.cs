@@ -18,7 +18,7 @@ public class GoldManager : MonoBehaviour
     {
         if(Instance != null)
         {
-            Debug.LogError("Multiple GoldManger");
+            Destroy(gameObject);
         }
         Instance = this;
     }

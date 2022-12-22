@@ -89,6 +89,6 @@ public class PlayerHp : MonoBehaviour
     {
         Destroy(gameObject);//플레이어 죽는 애니메션
         System.IO.File.Delete(DataManager.instance.path + DataManager.instance.nowSlot);
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Over");
     }
 }

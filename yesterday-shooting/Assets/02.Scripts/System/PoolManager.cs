@@ -11,7 +11,14 @@ public class PoolManager : MonoBehaviour
     private void Awake()
     {
         if(Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         foreach(GameObject temp in prefabs)
         {
