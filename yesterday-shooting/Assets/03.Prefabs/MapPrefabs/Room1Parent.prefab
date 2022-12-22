@@ -5383,6 +5383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7912702764944160511}
     m_Modifications:
+    - target: {fileID: 5247410437236897095, guid: 02fb8cdedfefe5840b44fba1cf609913, type: 3}
+      propertyPath: cornerCheck
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7869459583551800596, guid: 02fb8cdedfefe5840b44fba1cf609913, type: 3}
       propertyPath: m_Name
       value: Burst

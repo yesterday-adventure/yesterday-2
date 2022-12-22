@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c6455d2301e5f4d83091b44fa8dc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  cornerCheck: 0
+  speed: 4
+  cornerCheck: 1
   isDebug: 0
 --- !u!114 &5985825516373895622
 MonoBehaviour:
