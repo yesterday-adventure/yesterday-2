@@ -18,7 +18,18 @@ public class EnterRoom : MonoBehaviour
             if(MapManager.Instance != null)
                 MapManager.Instance.Init(GameManager.Instance.MapTrm);
             room.SetActive(true);
+            if(PlayerItem.Instance.useGodsDice)
+            {
+                Debug.Log("사용");
+                foreach (EnemyHp enemyHp in transform.GetChild(0).GetComponentsInChildren<EnemyHp>())
+                {
+                    enemyHp.hp = 0;
+                    Debug.Log("삭-제");
+                }
+                PlayerItem.Instance.useGodsDice = false;
+            }
         }
+
     }
 
 }

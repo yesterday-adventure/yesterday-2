@@ -7,19 +7,26 @@ public class TeleportPotion : ItemSkil
     [SerializeField] private int itemMaxColl = 10;
     int[,] randomMap;
     
-    public override void Skil()
+    public override bool Skill()
     {
+        if(DoorOnOff.Instance.hit != null)
+            return false;
+        
         while(true)
         {
             int x = Random.Range(0,10);
             int y = Random.Range(0,10);
             Debug.Log(RandomMapSpawn.Instance);
-            if(RandomMapSpawn.Instance.mapGrid[x,y] != null)
+            if(Mathf.Abs(x - DoorOnOff.Instance.x) + Mathf.Abs(y - DoorOnOff.Instance.y) >= 2)
             {
-                GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y);
-                break;
+                if(RandomMapSpawn.Instance.mapGrid[x,y] != null)
+                {
+                    GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y);
+                    break;
+                }
             }
         }
         maxColl = itemMaxColl;
+        return true;
     }
 }

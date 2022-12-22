@@ -7,6 +7,6 @@ public class Items : MonoBehaviour
     [SerializeField] ItemSkil itemSkil;
 
     public void Use() {
-        itemSkil?.Skil();
+        itemSkil?.Skill();
     }
 }

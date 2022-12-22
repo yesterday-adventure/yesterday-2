@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class ItemSkil : MonoBehaviour
 {
     public int maxColl;
-    public abstract void Skil();
+    public abstract bool Skill();
 }

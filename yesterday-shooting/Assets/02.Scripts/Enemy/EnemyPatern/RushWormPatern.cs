@@ -13,6 +13,8 @@ public class RushWormPatern : MonoBehaviour
 
     private bool useSkill = false;
 
+    private Collider2D col2D;
+
     public LayerMask wallLayer;
 
     private bool iswallR;
@@ -30,6 +32,7 @@ public class RushWormPatern : MonoBehaviour
     Coroutine coroutineMove;
     private void OnEnable()
     {
+        col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         useSkill = false;
         target = GameObject.Find("Player");
@@ -236,6 +239,7 @@ public class RushWormPatern : MonoBehaviour
                     StopCoroutine(coroutineMove);
                     checkCo = false;
                 }
+                col2D.isTrigger = true;
                 useSkill = true;
                 chR = true;
                 chL = true;
@@ -273,6 +277,17 @@ public class RushWormPatern : MonoBehaviour
             StopCoroutine("Rush");
             StartCoroutine("Rush");
             useSkill = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Wall") && useSkill)
+        {
+            StopCoroutine("Rush");
+            StartCoroutine("Rush");
+            useSkill = false;
+            col2D.isTrigger = false;
         }
     }
 }

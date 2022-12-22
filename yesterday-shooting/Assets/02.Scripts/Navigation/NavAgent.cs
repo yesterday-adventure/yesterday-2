@@ -57,7 +57,6 @@ public class NavAgent : MonoBehaviour
 
     private void SetCurrentPosition()
     {
-        Debug.Log(MapManager.Instance);
         Vector3Int cellPos = MapManager.Instance.GetTilePos(transform.position);
         currentPosition = cellPos;
     }
