@@ -1,12 +1,19 @@
+using System.Runtime.Versioning;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class IntroButtonManager : MonoBehaviour
 {
     Animator anim;
     Select select;
+ 
+    [SerializeField] private RectTransform ExitPanle;
+    [SerializeField] private GameObject targetObj;
+    [SerializeField] private GameObject targetObj1;
+
 
     void Start()
     {
@@ -20,6 +27,10 @@ public class IntroButtonManager : MonoBehaviour
         anim.SetBool("isExit", true);
     }
 
+    public void ExitT() {
+        ExitPanle.transform.DOMove(targetObj.transform.position, 0.5f);
+    }
+
     public void ExitYes()
     {
         Application.Quit();
@@ -28,6 +39,10 @@ public class IntroButtonManager : MonoBehaviour
     public void ExitNo()
     {
         anim.SetBool("isExit", false);
+    }
+
+    public void ExitNoT() {
+        ExitPanle.transform.DOMove(targetObj1.transform.position, 0.5f);
     }
     #endregion
 
@@ -73,6 +88,16 @@ public class IntroButtonManager : MonoBehaviour
     public void SaveBackk()
     {
         anim.SetLayerWeight(2, 0f);
+    }
+    #endregion
+
+    #region Over
+    public void Menu() {
+        SceneManager.LoadScene("Intro");
+    }
+
+    public void GameT() {
+        SceneManager.LoadScene("Play");
     }
     #endregion
 }

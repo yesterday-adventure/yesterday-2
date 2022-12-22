@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Play.unity
     guid: 21324b741be316443b7c6afe301759c1
   - enabled: 1
-    path: Assets/01.Scenes/Test.unity
-    guid: 27734eacc49de274abee4a58639afc33
+    path: Assets/01.Scenes/Over.unity
+    guid: bee46dbabc7b53e4d9fdbd3536f594f0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
