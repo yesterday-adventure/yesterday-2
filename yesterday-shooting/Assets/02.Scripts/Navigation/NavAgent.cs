@@ -27,7 +27,7 @@ public class NavAgent : MonoBehaviour
             destination = value;
             CalcRoute();
             moveIdx = 0;
-            if (isDebug) PrintRoute();
+            //if (isDebug) PrintRoute();
         }
     }
 
