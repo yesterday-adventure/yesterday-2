@@ -135,14 +135,14 @@ public class DoorOnOff : MonoBehaviour
             /*if (DataManager.instance.mapGrid[0].mapArr[x - 1] == null &&
                 DataManager.instance.mapGrid[1].mapArr[y] == null)*/
             {
-                Debug.Log("오른쪽 문 닫힘");//
-                Debug.Log($"{x - 1}, {y}");
+                //Debug.Log("오른쪽 문 닫힘");//
+                //Debug.Log($"{x - 1}, {y}");
                 leftD.SetActive(true);
             }
             else
             {
-                Debug.Log("오른쪽 문 열림");
-                Debug.Log($"{x - 1}, {y}");
+                //Debug.Log("오른쪽 문 열림");
+                //Debug.Log($"{x - 1}, {y}");
                 leftD.SetActive(false);
             }
 
