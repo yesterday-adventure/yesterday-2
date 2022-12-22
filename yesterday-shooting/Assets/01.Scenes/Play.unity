@@ -9173,11 +9173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76350f4a2a1c71a42af00aeaad55fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1672638141}
+  item: {fileID: 941185610}
   itemarr:
   - {fileID: 941185610}
   - {fileID: 1672638141}
   cool: 0
+  useGodsDice: 0
 --- !u!1 &1543174408
 GameObject:
   m_ObjectHideFlags: 0

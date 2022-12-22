@@ -21,7 +21,33 @@ public class TeleportPotion : ItemSkil
             {
                 if(RandomMapSpawn.Instance.mapGrid[x,y] != null)
                 {
-                    GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y);
+                    int randomValue = Random.Range(0,4);
+                    switch(randomValue)
+                    {
+                        case 0:
+                            GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y)
+                            +new Vector2(8f,0);
+
+                            break;
+
+                        case 1:
+                            GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y)
+                            +new Vector2(-8f,0);
+                            break;
+
+                        case 2:
+                            GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y)
+                            +new Vector2(0,4f);
+                            break;
+
+                        case 3:
+                            GameObject.Find("Player").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y)
+                            +new Vector2(0,-4f);
+                            break;
+                    }
+                    Debug.Log(randomValue);
+                    GameObject.Find("Main Camera").transform.position = RandomMapSpawn.Instance.maps.SetPos(x,y);
+                    GameObject.Find("Main Camera").transform.position += new Vector3(0,0,-10);
                     break;
                 }
             }
