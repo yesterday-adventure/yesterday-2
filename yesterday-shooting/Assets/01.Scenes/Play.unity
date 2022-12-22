@@ -16531,6 +16531,7 @@ MonoBehaviour:
   shopMinimap: {fileID: 5838585122523306124, guid: 2e47e4a110e739046ac61033069925a2, type: 3}
   bossMinimap: {fileID: 5838585122523306124, guid: e027bc752e1c8eb44963c80b987ad0a9, type: 3}
   minimap: {fileID: 730787328}
+  playerPos: {fileID: 5838585122523306124, guid: 6269fc05c2fa78543bb368d6936fbad4, type: 3}
 --- !u!1 &2080884384
 GameObject:
   m_ObjectHideFlags: 0

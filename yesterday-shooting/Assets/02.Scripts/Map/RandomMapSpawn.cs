@@ -26,6 +26,8 @@ public class RandomMapSpawn : MonoBehaviour
     [SerializeField] GameObject shopMinimap;
     [SerializeField] GameObject bossMinimap;
     [SerializeField] GameObject minimap;
+    [SerializeField] GameObject playerPos;
+    public GameObject showPlayerPos;
 
     private void Awake()
     {
@@ -139,6 +141,8 @@ public class RandomMapSpawn : MonoBehaviour
     //no data save
     void RandomSpawn(Map[,] map, Map _map)
     {
+        showPlayerPos = Instantiate(playerPos,minimap.transform);
+        showPlayerPos.transform.localPosition = _map.MiniMapSetPos(0,0);
         NearRoomCount = 0;
         int x = Random.Range(1, xIndex);
         int y = Random.Range(1, yIndex);
