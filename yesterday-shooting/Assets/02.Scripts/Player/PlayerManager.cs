@@ -7,7 +7,6 @@ public class PlayerManager : MonoBehaviour
     static public PlayerManager instance = null;
 
     private Rigidbody2D rb2D;
-
     public GameObject player;
 
     [SerializeField] GameObject stopPanel;
