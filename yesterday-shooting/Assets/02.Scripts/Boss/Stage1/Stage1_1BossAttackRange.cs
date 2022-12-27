@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttackRange : MonoBehaviour
+public class Stage1_1BossAttackRange : MonoBehaviour
 {
     [SerializeField] GameObject rangeObj;
     SpriteRenderer rangeViewer;

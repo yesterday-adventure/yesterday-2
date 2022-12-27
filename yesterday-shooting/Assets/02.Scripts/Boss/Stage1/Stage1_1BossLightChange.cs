@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class BossLightChange : MonoBehaviour
+public class Stage1_1BossLightChange : MonoBehaviour
 {
     public int speed = 1;
     private float degree = 0;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHandCol : MonoBehaviour
+public class Stage1_1BossHandCol : MonoBehaviour
 {
     Collider2D _collider;
     
