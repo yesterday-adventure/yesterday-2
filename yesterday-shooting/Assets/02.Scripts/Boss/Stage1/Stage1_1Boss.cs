@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Stage1_1Boss : MonoBehaviour
 {
     [SerializeField] GameObject hand;
     [SerializeField] GameObject ball;

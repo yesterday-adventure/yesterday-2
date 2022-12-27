@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBall : MonoBehaviour
+public class Stage1_1BossBall : MonoBehaviour
 {
     Collider2D _collider;
     [SerializeField] float speed = 1;
@@ -10,11 +10,6 @@ public class BossBall : MonoBehaviour
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
-    }
-
-    private void OnEnable()
-    {
-
     }
 
     private void Update()
