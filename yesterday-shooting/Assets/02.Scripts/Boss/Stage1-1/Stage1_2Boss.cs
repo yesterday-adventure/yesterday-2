@@ -8,6 +8,6 @@ public class Stage1_2Boss : MonoBehaviour
 
     private void Awake()
     {
-        
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 }
