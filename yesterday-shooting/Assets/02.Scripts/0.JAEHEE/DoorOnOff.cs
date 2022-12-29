@@ -175,6 +175,8 @@ public class DoorOnOff : MonoBehaviour
             leftD.SetActive(true);
             rightD.SetActive(true);
         }
+        Debug.Log(x);
+        Debug.Log(y);
         hit = Physics2D.OverlapBox(transform.position, new Vector2(17.7f, 9.3f), 0, 1 << 10); //���� ������ null
     }
 

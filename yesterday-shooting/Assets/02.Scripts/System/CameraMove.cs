@@ -21,7 +21,7 @@ public class CameraMove : MonoBehaviour
         }    
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (player.position.x - transform.position.x > offset.x && move)
         {
