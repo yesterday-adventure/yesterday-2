@@ -1,61 +1,46 @@
 fileFormatVersion: 2
-guid: 261b5b433ee2d4d4bb11f47a5d720abd
+guid: 57b2c66e60bf9074ab03d47bf99d0d47
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 717060690724173096
-    second: troll_regular_hair_0
+      213: 210704702857509274
+    second: attacking_0
   - first:
-      213: -2394353956609493952
-    second: troll_regular_hair_1
+      213: 7467001538722481690
+    second: attacking_1
   - first:
-      213: -5907486342779080797
-    second: troll_regular_hair_2
+      213: -9118675687842726345
+    second: attacking_2
   - first:
-      213: -5427237720565975751
-    second: troll_regular_hair_3
+      213: -4401908728460256907
+    second: attacking_3
   - first:
-      213: 4583645012082523071
-    second: troll_regular_hair_4
+      213: -2559348636315826340
+    second: attacking_4
   - first:
-      213: -728559732036223206
-    second: troll_regular_hair_5
+      213: -7854623405326919840
+    second: attacking_5
   - first:
-      213: -5403687092802792076
-    second: troll_regular_hair_6
+      213: -3255058754827376486
+    second: attacking_6
   - first:
-      213: 5375650798253708454
-    second: troll_regular_hair_7
+      213: 4774364955286074200
+    second: attacking_7
   - first:
-      213: 1870409928731009954
-    second: troll_regular_hair_8
+      213: 3496524092526253487
+    second: attacking_8
   - first:
-      213: 539225058573401263
-    second: troll_regular_hair_9
+      213: 3275866309459176758
+    second: attacking_9
   - first:
-      213: -2275793259353579374
-    second: troll_regular_hair_10
+      213: 5928742637116941630
+    second: attacking_10
   - first:
-      213: 5014324929009181190
-    second: troll_regular_hair_11
+      213: 4741326518408471436
+    second: attacking_11
   - first:
-      213: 579600945094425087
-    second: troll_regular_hair_12
-  - first:
-      213: 7745662401516103212
-    second: troll_regular_hair_13
-  - first:
-      213: 2108786725035129863
-    second: troll_regular_hair_14
-  - first:
-      213: 5097764612735394945
-    second: troll_regular_hair_15
-  - first:
-      213: 5995665909051944025
-    second: troll_regular_hair_16
-  - first:
-      213: -6660999599089819258
-    second: troll_regular_hair_17
+      213: -2630918475818767111
+    second: attacking_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,379 +154,274 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: troll_regular_hair_0
+      name: attacking_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
-        width: 20
-        height: 20
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 825b20926e283f900800000000000000
-      internalID: 717060690724173096
+      spriteID: a9973569fc29ce200800000000000000
+      internalID: 210704702857509274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_hair_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0447db523cb85ced0800000000000000
-      internalID: -2394353956609493952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3af6e2f6874640ea0800000000000000
-      internalID: -5907486342779080797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_3
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93570124c049ea4b0800000000000000
-      internalID: -5427237720565975751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fbb7ba17ad06c9f30800000000000000
-      internalID: 4583645012082523071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_5
+      name: attacking_1
       rect:
         serializedVersion: 2
         x: 100
-        y: 20
-        width: 20
-        height: 20
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1fb356a8c2a3e5f0800000000000000
-      internalID: -728559732036223206
+      spriteID: a1649dc665e10a760800000000000000
+      internalID: 7467001538722481690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_hair_6
+      name: attacking_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 20
-        width: 20
-        height: 20
+        x: 200
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4755024183f3205b0800000000000000
-      internalID: -5403687092802792076
+      spriteID: 73eb42456c4f37180800000000000000
+      internalID: -9118675687842726345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_hair_7
+      name: attacking_3
       rect:
         serializedVersion: 2
-        x: 140
-        y: 20
-        width: 20
-        height: 20
+        x: 300
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a4157a6be52a9a40800000000000000
-      internalID: 5375650798253708454
+      spriteID: 5795f62755749e2c0800000000000000
+      internalID: -4401908728460256907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_hair_8
+      name: attacking_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 20
-        width: 20
-        height: 20
+        x: 400
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a3206a9be705f910800000000000000
-      internalID: 1870409928731009954
+      spriteID: c57c30ca9fd5b7cd0800000000000000
+      internalID: -2559348636315826340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_hair_9
+      name: attacking_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0671501e0a5cef290800000000000000
+      internalID: -7854623405326919840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a982d7bfe45b3d2d0800000000000000
+      internalID: -3255058754827376486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85376e391a3f14240800000000000000
+      internalID: 4774364955286074200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa55f930326268030800000000000000
+      internalID: 3496524092526253487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63debfa5d07367d20800000000000000
+      internalID: 3275866309459176758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3561124400274250800000000000000
+      internalID: 5928742637116941630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8360ed09539cc140800000000000000
+      internalID: 4741326518408471436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attacking_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: facb1467556bb7700800000000000000
-      internalID: 539225058573401263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_10
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 290600a9612ca60e0800000000000000
-      internalID: -2275793259353579374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_11
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6026af5b4f5769540800000000000000
-      internalID: 5014324929009181190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_12
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff975db1df72b0800800000000000000
-      internalID: 579600945094425087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2667787aee1e7b60800000000000000
-      internalID: 7745662401516103212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_14
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70c37c48a5ae34d10800000000000000
-      internalID: 2108786725035129863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_15
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18466aaf7e5eeb640800000000000000
-      internalID: 5097764612735394945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_16
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95ce5fcb062e43350800000000000000
-      internalID: 5995665909051944025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_hair_17
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6816b37f7206f83a0800000000000000
-      internalID: -6660999599089819258
+      spriteID: 9fc6fcfd5991d7bd0800000000000000
+      internalID: -2630918475818767111
       vertices: []
       indices: 
       edges: []

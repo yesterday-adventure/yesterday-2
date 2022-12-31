@@ -1,61 +1,43 @@
 fileFormatVersion: 2
-guid: a4fdedab04956c343aaf16ef8d28f8f6
+guid: a2617b9fa3854834cb8ec20fb680f42a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3407328771301476967
-    second: orc_regular_hair_0
+      213: -2833775182555582667
+    second: skill1_0
   - first:
-      213: 4456201937213555851
-    second: orc_regular_hair_1
+      213: -5708941596360452247
+    second: skill1_1
   - first:
-      213: 377866485839453654
-    second: orc_regular_hair_2
+      213: -6852985128836715184
+    second: skill1_2
   - first:
-      213: -5681826208194956695
-    second: orc_regular_hair_3
+      213: -706068992433645699
+    second: skill1_3
   - first:
-      213: -1228529751179838375
-    second: orc_regular_hair_4
+      213: 6341960913417918139
+    second: skill1_4
   - first:
-      213: 182397447485421102
-    second: orc_regular_hair_5
+      213: 3594819719720684759
+    second: skill1_5
   - first:
-      213: 8448930635307837656
-    second: orc_regular_hair_6
+      213: -5259044502740863221
+    second: skill1_6
   - first:
-      213: 6123834449866496913
-    second: orc_regular_hair_7
+      213: 391909082404558028
+    second: skill1_7
   - first:
-      213: 4775507032169267433
-    second: orc_regular_hair_8
+      213: 6694025853591573197
+    second: skill1_8
   - first:
-      213: -3911123551818019630
-    second: orc_regular_hair_9
+      213: 2365104174983624309
+    second: skill1_9
   - first:
-      213: 2239592447365191852
-    second: orc_regular_hair_10
+      213: -6857078158124440818
+    second: skill1_10
   - first:
-      213: 1126625263870674245
-    second: orc_regular_hair_11
-  - first:
-      213: -8865947449183726578
-    second: orc_regular_hair_12
-  - first:
-      213: -3310671770686871905
-    second: orc_regular_hair_13
-  - first:
-      213: 1881779062196867139
-    second: orc_regular_hair_14
-  - first:
-      213: 7128866211495842664
-    second: orc_regular_hair_15
-  - first:
-      213: 8364053853675705523
-    second: orc_regular_hair_16
-  - first:
-      213: -1946209062866365622
-    second: orc_regular_hair_17
+      213: -2682086547265108738
+    second: skill1_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,379 +151,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: orc_regular_hair_0
+      name: skill1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
-        width: 20
-        height: 20
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a8466f673494f20800000000000000
-      internalID: 3407328771301476967
+      spriteID: 53fe4764c786ca8d0800000000000000
+      internalID: -2833775182555582667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b84850b4d0c97dd30800000000000000
-      internalID: 4456201937213555851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dd5cfc11937e3500800000000000000
-      internalID: 377866485839453654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_3
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 962f801da291621b0800000000000000
-      internalID: -5681826208194956695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95c3de843b263fee0800000000000000
-      internalID: -1228529751179838375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_5
+      name: skill1_1
       rect:
         serializedVersion: 2
         x: 100
-        y: 20
-        width: 20
-        height: 20
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e267e491381088200800000000000000
-      internalID: 182397447485421102
+      spriteID: 967db798dd3c5c0b0800000000000000
+      internalID: -5708941596360452247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_6
+      name: skill1_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 20
-        width: 20
-        height: 20
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d8607106a1a04570800000000000000
-      internalID: 8448930635307837656
+      spriteID: 05d27a0855e45e0a0800000000000000
+      internalID: -6852985128836715184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_7
+      name: skill1_3
       rect:
         serializedVersion: 2
-        x: 140
-        y: 20
-        width: 20
-        height: 20
+        x: 300
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19b97979cfa3cf450800000000000000
-      internalID: 6123834449866496913
+      spriteID: d7713170ef98336f0800000000000000
+      internalID: -706068992433645699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_8
+      name: skill1_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 20
-        width: 20
-        height: 20
+        x: 400
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e044d21852064240800000000000000
-      internalID: 4775507032169267433
+      spriteID: bb6dfaf79db230850800000000000000
+      internalID: 6341960913417918139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_9
+      name: skill1_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc45892d7d53e130800000000000000
+      internalID: 3594819719720684759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill1_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dc09350ad5e8b9c0800000000000000
-      internalID: -3911123551818019630
+      spriteID: b07f82c63ee1407b0800000000000000
+      internalID: -5259044502740863221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_10
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca899da0771a41f10800000000000000
-      internalID: 2239592447365191852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_11
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5450ef755b392af00800000000000000
-      internalID: 1126625263870674245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_12
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e049f1ec4c3d5f480800000000000000
-      internalID: -8865947449183726578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f96ab44b0912e02d0800000000000000
-      internalID: -3310671770686871905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: orc_regular_hair_14
+      name: skill1_7
       rect:
         serializedVersion: 2
         x: 100
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3401304461c6d1a10800000000000000
-      internalID: 1881779062196867139
+      spriteID: cc419f8eb37507500800000000000000
+      internalID: 391909082404558028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_15
+      name: skill1_8
       rect:
         serializedVersion: 2
-        x: 120
+        x: 200
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8639e7b8c02dee260800000000000000
-      internalID: 7128866211495842664
+      spriteID: dc25b902c05f5ec50800000000000000
+      internalID: 6694025853591573197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_16
+      name: skill1_9
       rect:
         serializedVersion: 2
-        x: 140
+        x: 300
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b4d39e4aa6131470800000000000000
-      internalID: 8364053853675705523
+      spriteID: 57631be57b982d020800000000000000
+      internalID: 2365104174983624309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orc_regular_hair_17
+      name: skill1_10
       rect:
         serializedVersion: 2
-        x: 160
+        x: 400
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4354353b2dadf4e0800000000000000
-      internalID: -1946209062866365622
+      spriteID: e0327ebdeb3c6d0a0800000000000000
+      internalID: -6857078158124440818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill1_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c86dde7057cad0800000000000000
+      internalID: -2682086547265108738
       vertices: []
       indices: 
       edges: []

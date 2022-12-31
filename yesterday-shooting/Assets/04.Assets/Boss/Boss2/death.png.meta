@@ -1,61 +1,61 @@
 fileFormatVersion: 2
-guid: e120087745c34f648ac33ed71a54a35f
+guid: ebe8e034ab91b224b8adb2aa086df5a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4155811534017016936
-    second: troll_regular_bald_0
+      213: -9192638271177797499
+    second: death_0
   - first:
-      213: -7202580449592697812
-    second: troll_regular_bald_1
+      213: 8559509556701815258
+    second: death_1
   - first:
-      213: 4108898670936408468
-    second: troll_regular_bald_2
+      213: -5286180679089938723
+    second: death_2
   - first:
-      213: 3522428459071208580
-    second: troll_regular_bald_3
+      213: -1891855120789479077
+    second: death_3
   - first:
-      213: 201849133295889624
-    second: troll_regular_bald_4
+      213: -5582970244224541034
+    second: death_4
   - first:
-      213: -1361388146933508949
-    second: troll_regular_bald_5
+      213: 830680230883465780
+    second: death_5
   - first:
-      213: 1805495238611377868
-    second: troll_regular_bald_6
+      213: 6596258498841548387
+    second: death_6
   - first:
-      213: 6470829314434587151
-    second: troll_regular_bald_7
+      213: -4147321062969920389
+    second: death_7
   - first:
-      213: -7511570090121893560
-    second: troll_regular_bald_8
+      213: 2602597460433512539
+    second: death_8
   - first:
-      213: 3861412387742738796
-    second: troll_regular_bald_9
+      213: -2134515381725696932
+    second: death_9
   - first:
-      213: 4694519084748984733
-    second: troll_regular_bald_10
+      213: -270028788923616002
+    second: death_10
   - first:
-      213: 4301828688494252642
-    second: troll_regular_bald_11
+      213: -5121890589552714621
+    second: death_11
   - first:
-      213: -6775663232108005134
-    second: troll_regular_bald_12
+      213: 627783550670650900
+    second: death_12
   - first:
-      213: -2423019739411147138
-    second: troll_regular_bald_13
+      213: 2891620135027730149
+    second: death_13
   - first:
-      213: 4108956909502671123
-    second: troll_regular_bald_14
+      213: 7975919600420608313
+    second: death_14
   - first:
-      213: 180368237311373120
-    second: troll_regular_bald_15
+      213: 6275631635777415744
+    second: death_15
   - first:
-      213: 1873188343560034862
-    second: troll_regular_bald_16
+      213: -9015114149152096869
+    second: death_16
   - first:
-      213: -3226476581212637600
-    second: troll_regular_bald_17
+      213: -133209616158212645
+    second: death_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,379 +169,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: troll_regular_bald_0
+      name: death_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 20
-        width: 20
-        height: 20
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89bc171ad679356c0800000000000000
-      internalID: -4155811534017016936
+      spriteID: 58059c172303d6080800000000000000
+      internalID: -9192638271177797499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2c9ad3fd3b4b0c90800000000000000
-      internalID: -7202580449592697812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4914d33429db50930800000000000000
-      internalID: 4108898670936408468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_3
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48c7aa9550e22e030800000000000000
-      internalID: 3522428459071208580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 20
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8dc6250a7bc1dc200800000000000000
-      internalID: 201849133295889624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_5
+      name: death_1
       rect:
         serializedVersion: 2
         x: 100
-        y: 20
-        width: 20
-        height: 20
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba4d99c71b06b1de0800000000000000
-      internalID: -1361388146933508949
+      spriteID: ad1e5c2779c79c670800000000000000
+      internalID: 8559509556701815258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_6
+      name: death_2
       rect:
         serializedVersion: 2
-        x: 120
-        y: 20
-        width: 20
-        height: 20
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cce17158a586e0910800000000000000
-      internalID: 1805495238611377868
+      spriteID: dde9f440ea6b3a6b0800000000000000
+      internalID: -5286180679089938723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_7
+      name: death_3
       rect:
         serializedVersion: 2
-        x: 140
-        y: 20
-        width: 20
-        height: 20
+        x: 300
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0ade014af00dc950800000000000000
-      internalID: 6470829314434587151
+      spriteID: b51e6d68ac7ceb5e0800000000000000
+      internalID: -1891855120789479077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_8
+      name: death_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 20
-        width: 20
-        height: 20
+        x: 400
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 849e5d01dca81c790800000000000000
-      internalID: -7511570090121893560
+      spriteID: 69e9b69842e4582b0800000000000000
+      internalID: -5582970244224541034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_9
+      name: death_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a9fb3d44b278b00800000000000000
+      internalID: 830680230883465780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3661a1ef72e9a8b50800000000000000
+      internalID: 6596258498841548387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74be287771c176c0800000000000000
+      internalID: -4147321062969920389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b582972e9984e1420800000000000000
+      internalID: 2602597460433512539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_9
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ce1a8c19da062e0800000000000000
+      internalID: -2134515381725696932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_10
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c69e2b6ab1e769530800000000000000
-      internalID: 3861412387742738796
+      spriteID: ef434154f3aa04cf0800000000000000
+      internalID: -270028788923616002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_10
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9151c52c38462140800000000000000
-      internalID: 4694519084748984733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_11
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 262d84e666a23bb30800000000000000
-      internalID: 4301828688494252642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_12
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f8f68c703208f1a0800000000000000
-      internalID: -6775663232108005134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7693ac7264bf5ed0800000000000000
-      internalID: -2423019739411147138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: troll_regular_bald_14
+      name: death_11
       rect:
         serializedVersion: 2
         x: 100
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3192b4cf982f50930800000000000000
-      internalID: 4108956909502671123
+      spriteID: 38c5b4f45a36be8b0800000000000000
+      internalID: -5121890589552714621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_15
+      name: death_12
       rect:
         serializedVersion: 2
-        x: 120
+        x: 200
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04f25b9c4fbc08200800000000000000
-      internalID: 180368237311373120
+      spriteID: 41ebe8d20d556b800800000000000000
+      internalID: 627783550670650900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_16
+      name: death_13
       rect:
         serializedVersion: 2
-        x: 140
+        x: 300
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a5c47bfd6eef910800000000000000
-      internalID: 1873188343560034862
+      spriteID: 5e6e1bd3139112820800000000000000
+      internalID: 2891620135027730149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll_regular_bald_17
+      name: death_14
       rect:
         serializedVersion: 2
-        x: 160
+        x: 400
         y: 0
-        width: 20
-        height: 20
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06634bcd4a04933d0800000000000000
-      internalID: -3226476581212637600
+      spriteID: 939552c4e9820be60800000000000000
+      internalID: 7975919600420608313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_15
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a67b719b5871750800000000000000
+      internalID: 6275631635777415744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9df03a0271e3e280800000000000000
+      internalID: -9015114149152096869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: death_17
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd39345f8eb62ef0800000000000000
+      internalID: -133209616158212645
       vertices: []
       indices: 
       edges: []
