@@ -6,10 +6,10 @@ public class PlayerItem : MonoBehaviour
 {
     public static PlayerItem Instance = null;
 
-    public ItemSkil item = null;
+    public ItemSkill item = null;
 
-    [SerializeField] private ItemSkil[] itemarr;
-    Dictionary<string, ItemSkil> items = new Dictionary<string, ItemSkil>();
+    [SerializeField] private ItemSkill[] itemarr;
+    Dictionary<string, ItemSkill> items = new Dictionary<string, ItemSkill>();
 
     public int cool = 0;
 
@@ -17,7 +17,7 @@ public class PlayerItem : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -29,13 +29,22 @@ public class PlayerItem : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && cool <= 0)
+        if (Input.GetKeyDown(KeyCode.E) && cool <= 0)
         {
-            if(item.Skill())
+            if (item.Skill())
                 cool = item.maxColl;
         }
 
-        if(Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.I))
             cool = 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "ActiveItem")
+        {
+            ItemSkill temp = item;
+            item = collision.GetComponent<ItemSkill>();
+        }
     }
 }

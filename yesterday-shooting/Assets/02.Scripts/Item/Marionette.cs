@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Marionette : ItemSkil
+public class Marionette : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
     BulletMove bulletMove;

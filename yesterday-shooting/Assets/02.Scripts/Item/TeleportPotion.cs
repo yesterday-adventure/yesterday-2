@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportPotion : ItemSkil
+public class TeleportPotion : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
     int[,] randomMap;

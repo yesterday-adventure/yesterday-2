@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DevilsBook : ItemSkil
+public class DevilsBook : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
     PlayerData playerData;

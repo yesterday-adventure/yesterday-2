@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IronArmor : ItemSkil
+public class IronArmor : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
     PlayerFire playerFire;

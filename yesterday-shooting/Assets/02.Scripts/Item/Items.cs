@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    [SerializeField] ItemSkil itemSkil;
+    [SerializeField] ItemSkill itemSkil;
 
     public void Use() {
         itemSkil?.Skill();
