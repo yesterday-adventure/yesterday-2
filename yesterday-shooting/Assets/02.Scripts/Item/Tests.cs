@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tests : ItemSkil
+public class Tests : ItemSkill
 {
     public override bool Skill(){
         return true;

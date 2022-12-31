@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IronArmor : ItemSkil
+public class IronArmor : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
     PlayerFire playerFire;
@@ -10,7 +10,7 @@ public class IronArmor : ItemSkil
     public bool shield = false;
     public override bool Skill()
     {
-        maxColl = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
+        maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
 
         playerFire.delay -= 0.3f;
         //공격속도가 0.3초 감소
