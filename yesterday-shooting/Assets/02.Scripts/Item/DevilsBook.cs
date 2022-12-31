@@ -9,7 +9,7 @@ public class DevilsBook : ItemSkill
     BulletInfo bulletInfo;
     public override bool Skill()
     {
-        maxColl = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
+        maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
                                
         playerData.playerHp -= 1;
         //HP - 1

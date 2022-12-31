@@ -15,7 +15,7 @@ public class GodsDice : ItemSkill
         }
         else
         {
-            maxColl = itemMaxColl;
+            maxCool = itemMaxColl;
             rand = Random.Range(1, 100);
             if (rand <= 100) 
             {

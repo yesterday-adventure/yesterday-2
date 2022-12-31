@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class ItemSkill : MonoBehaviour
 {
-    public int maxColl;
+    public int maxCool;
     public abstract bool Skill();
 }

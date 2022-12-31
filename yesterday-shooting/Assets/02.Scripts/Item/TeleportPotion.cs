@@ -53,7 +53,7 @@ public class TeleportPotion : ItemSkill
                 }
             }
         }
-        maxColl = itemMaxColl;
+        maxCool = itemMaxColl;
         return true;
     }
 }

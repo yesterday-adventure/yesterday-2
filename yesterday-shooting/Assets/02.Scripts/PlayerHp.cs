@@ -12,7 +12,8 @@ public class PlayerHp : MonoBehaviour
     public float shieldTime = 1; // 무적시간
     [SerializeField] SpriteRenderer sR;
 
-    IronArmor ironArmor = new IronArmor();
+    IronArmor ironArmor;
+
     public void OnDamage(Action lambda)
     {
         if (ironArmor.shield) { //철갑주 아이템을 사용하여 보호막이 있는 경우

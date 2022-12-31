@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerItem : MonoBehaviour
 {
     public static PlayerItem Instance = null;
 
-    public ItemSkill item = null;
+    public FieldActiveItem item = null;
 
-    [SerializeField] private ItemSkill[] itemarr;
-    Dictionary<string, ItemSkill> items = new Dictionary<string, ItemSkill>();
+    [SerializeField] private FieldActiveItem[] itemarr;
+    Dictionary<string, FieldActiveItem> items = new Dictionary<string, FieldActiveItem>();
 
     public int cool = 0;
 
     public bool useGodsDice = false;
+
+    [SerializeField] private Image playerUI;
 
     private void Awake()
     {
@@ -31,8 +34,8 @@ public class PlayerItem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && cool <= 0)
         {
-            if (item.Skill())
-                cool = item.maxColl;
+            if (item.Use())
+                cool = item.ItemSkill.maxCool;
         }
 
         if (Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.I))
@@ -43,8 +46,10 @@ public class PlayerItem : MonoBehaviour
     {
         if (collision.tag == "ActiveItem")
         {
-            ItemSkill temp = item;
-            item = collision.GetComponent<ItemSkill>();
+            ItemSkill temp = collision.transform.GetComponent<FieldActiveItem>().ItemSkill;
+            collision.transform.GetComponent<FieldActiveItem>().ItemSkill = item.ItemSkill;
+            item.ItemSkill = temp;
+            playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
     }
 }
