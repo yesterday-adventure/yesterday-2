@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Linq;
 
 public class RandomMapSpawn : MonoBehaviour
 {
     public static RandomMapSpawn Instance = null;
     [SerializeField] public Map maps;
     public Map[,] mapGrid;
-    [SerializeField] GameObject[] randomMap;
-
+    [SerializeField] List<GameObject> randomMap = new List<GameObject>();
     private int xIndex = 9;
     private int yIndex = 10;
 
@@ -98,7 +98,6 @@ public class RandomMapSpawn : MonoBehaviour
                 {
                     Debug.Log("MapSpaw?");
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
-
                     //미니맵
                     GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
                     spawnMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapGrid[roomSaveNumber] - 5, DataManager.instance.nowPlayer.mapGrid[roomSaveNumber + 1] - 6);
@@ -160,6 +159,7 @@ public class RandomMapSpawn : MonoBehaviour
             if (NearRoomCount == 1)
             {
                 GameObject spawnMap = Instantiate(PopMap(), _map.SetPos(x, y), Quaternion.identity);
+                randomMap.Remove(randomMap[random]);
 
                 GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
 
@@ -170,7 +170,7 @@ public class RandomMapSpawn : MonoBehaviour
 
                 map[x, y] = _map;
                 mapGirdSave(x, y);
-                Debug.Log($"처음으로 생성되는 맵의 X 좌표는 : {x}, Y 좌표는 : {y}");
+                //Debug.Log($"처음으로 생성되는 맵의 X 좌표는 : {x}, Y 좌표는 : {y}");
                 DataManager.instance.mapGrid[0].mapArr[x] = maps;
                 DataManager.instance.twoBoolArr[0].boolArr[x] = true;
 
@@ -289,11 +289,12 @@ public class RandomMapSpawn : MonoBehaviour
 
         DataManager.instance.SaveData();
     }
-
+    int random = 0;
     public GameObject PopMap()
     {
-        int random = Random.Range(0, randomMap.Length);
+        random = Random.Range(0, randomMap.Count);
         GameObject returnMap = randomMap[random];
+        Debug.Log(randomMap[random]);
         return returnMap;
     }
 }
