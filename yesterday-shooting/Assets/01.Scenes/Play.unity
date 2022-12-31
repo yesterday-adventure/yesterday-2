@@ -4914,6 +4914,8 @@ MonoBehaviour:
   - {fileID: 7720566519286760163, guid: b9173a2b1dcae2a44ba1f5b445c3df0b, type: 3}
   - {fileID: 952945829235681776, guid: c53a0e32740b7b8409fd041249ba07ff, type: 3}
   - {fileID: 3613678498546281289, guid: 74d2550b467ad9445b9f322e4a5563ff, type: 3}
+  - {fileID: 268749792737658304, guid: dd04e30ce95df0a4aab26e179759d46f, type: 3}
+  - {fileID: 4382653326359402370, guid: 6da7b2ac484a24b4a90814761b5e2728, type: 3}
 --- !u!4 &867948764
 Transform:
   m_ObjectHideFlags: 0
@@ -16532,6 +16534,7 @@ MonoBehaviour:
   bossMinimap: {fileID: 5838585122523306124, guid: e027bc752e1c8eb44963c80b987ad0a9, type: 3}
   minimap: {fileID: 730787328}
   playerPos: {fileID: 5838585122523306124, guid: 6269fc05c2fa78543bb368d6936fbad4, type: 3}
+  showPlayerPos: {fileID: 0}
 --- !u!1 &2080884384
 GameObject:
   m_ObjectHideFlags: 0

@@ -116,16 +116,16 @@ public class Stage1_1Boss : MonoBehaviour
     private void Summon()
     {
         Vector2 summonPos = SetPos();
-        Instantiate(hand, new Vector2(summonPos.x, summonPos.y + 1.2f), Quaternion.identity);
-        //PoolManager.Instance.Pop(hand, new Vector2(summonPos.x, summonPos.y + 1.2f),Quaternion.identity);
+        //Instantiate(hand, new Vector2(summonPos.x, summonPos.y + 1.2f), Quaternion.identity);
+        PoolManager.Instance.Pop(hand, new Vector2(summonPos.x, summonPos.y + 1.2f),Quaternion.identity);
     }
 
     private void Ball(int k)
     {
         for (int i = 0; i < 8; i++)
         {
-            Instantiate(ball, transform.position, Quaternion.Euler(0, 0, (i * 45) + (k * 22.5f)));
-            //PoolManager.Instance.Pop(ball, transform.position, Quaternion.Euler(0, 0, i * 45));
+            //Instantiate(ball, transform.position, Quaternion.Euler(0, 0, (i * 45) + (k * 22.5f)));
+            PoolManager.Instance.Pop(ball, transform.position, Quaternion.Euler(0, 0, (i * 45) + (k * 22.5f)));
         }
     }
 
