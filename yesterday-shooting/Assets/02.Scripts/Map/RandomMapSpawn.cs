@@ -75,6 +75,7 @@ public class RandomMapSpawn : MonoBehaviour
                 RandomSpawn(mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
+            InputShopMap(mapGrid, maps);
             InputBossMap(mapGrid, maps);
 
 

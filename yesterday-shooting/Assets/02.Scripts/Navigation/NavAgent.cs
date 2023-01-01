@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class NavAgent : MonoBehaviour
 {
-        private PriorityQueue<Node> openList;
+    private PriorityQueue<Node> openList;
     private List<Node> closeList;
 
     private List<Vector3Int> routePath;

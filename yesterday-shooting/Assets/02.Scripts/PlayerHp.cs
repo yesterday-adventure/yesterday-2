@@ -16,10 +16,25 @@ public class PlayerHp : MonoBehaviour
 
     public void OnDamage(Action lambda)
     {
-        if (ironArmor.shield) { //철갑주 아이템을 사용하여 보호막이 있는 경우
-            ironArmor.shield = false;
+        if (ironArmor != null)
+        {
+
+            if (ironArmor.shield)
+            { //철갑주 아이템을 사용하여 보호막이 있는 경우
+                ironArmor.shield = false;
+            }
+            else
+            { //없는 경우
+                shieldTime = 0;
+                //hp--;
+                DataManager.instance.nowPlayer.playerHp--;
+                //StartCoroutine(TwinkeON());
+                HitAnimation();
+                lambda?.Invoke();
+            }
         }
-        else { //없는 경우
+        else
+        { //없는 경우
             shieldTime = 0;
             //hp--;
             DataManager.instance.nowPlayer.playerHp--;

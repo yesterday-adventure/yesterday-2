@@ -22,12 +22,12 @@ public class Chase : MonoBehaviour
     public void TakeAction()
     {
         Vector3Int targetPos = MapManager.Instance.GetTilePos(_brain.target.position);
-        if(targetPos != beforeTargetPos)
-        {
+        //if(targetPos != beforeTargetPos)
+        //{
             _brain.Agent.Destination = targetPos;
             beforeTargetPos = targetPos;
             SetNextPosition();
-        }
+        //}
         if(Vector3.Distance(nextPos,transform.position) <= 0.75)
         {
             SetNextPosition();
