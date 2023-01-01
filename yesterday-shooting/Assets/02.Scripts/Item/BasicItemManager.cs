@@ -7,7 +7,7 @@ public class BasicItemManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI bombText;
     [SerializeField] TextMeshProUGUI goldenCoinText;
-    [SerializeField] TextMeshProUGUI goldenKeyText;
+    //[SerializeField] TextMeshProUGUI goldenKeyText;
 
     private void Update()
     {
@@ -29,13 +29,13 @@ public class BasicItemManager : MonoBehaviour
             goldenCoinText.text = DataManager.instance.nowPlayer.bomb.ToString();
         }
 
-        if (DataManager.instance.nowPlayer.goldenKey < 10)
-        {
-            goldenKeyText.text = "0" + DataManager.instance.nowPlayer.bomb.ToString();
-        }
-        else
-        {
-            goldenKeyText.text = DataManager.instance.nowPlayer.bomb.ToString();
-        }
+        // if (DataManager.instance.nowPlayer.goldenKey < 10)
+        // {
+        //     goldenKeyText.text = "0" + DataManager.instance.nowPlayer.bomb.ToString();
+        // }
+        // else
+        // {
+        //     goldenKeyText.text = DataManager.instance.nowPlayer.bomb.ToString();
+        // }
     }
 }
