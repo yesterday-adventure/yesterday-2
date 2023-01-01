@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GodsDice : ItemSkil
+public class GodsDice : ItemSkill
 {
     private EnemyHp[] enemyHps;
     [SerializeField] private int itemMaxColl = 20;
@@ -15,7 +15,7 @@ public class GodsDice : ItemSkil
         }
         else
         {
-            maxColl = itemMaxColl;
+            maxCool = itemMaxColl;
             rand = Random.Range(1, 100);
             if (rand <= 100) 
             {

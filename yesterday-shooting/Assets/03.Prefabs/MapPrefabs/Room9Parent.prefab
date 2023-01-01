@@ -2627,7 +2627,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2637,7 +2637,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2754,18 +2754,18 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 2849329c385eebb4f91d2ebe8e5e8597, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 2b60efb2aafaa9a41a0f680747c735d0, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: fabe2e73ac55cbc4b9853a3bb3f69498, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: cb1c2e57a5c660a4ba507f63944dc9e0, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9b15c13effd2e494f898b82429d29942, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 485a8c7b40a90254a9826196f1c55596, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: cb1c2e57a5c660a4ba507f63944dc9e0, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: fabe2e73ac55cbc4b9853a3bb3f69498, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 20
     m_Data:
@@ -3004,10 +3004,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoPiecesAttached (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2863453856122875465, guid: 0114175282289a8419f374fb8e479dc1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2863453856122875470, guid: 0114175282289a8419f374fb8e479dc1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3070,10 +3066,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoPiecesAttached
       objectReference: {fileID: 0}
-    - target: {fileID: 2863453856122875465, guid: 0114175282289a8419f374fb8e479dc1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2863453856122875470, guid: 0114175282289a8419f374fb8e479dc1, type: 3}
       propertyPath: m_RootOrder
       value: 0

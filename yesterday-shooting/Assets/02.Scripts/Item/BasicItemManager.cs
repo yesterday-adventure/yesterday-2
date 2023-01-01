@@ -7,7 +7,7 @@ public class BasicItemManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI bombText;
     [SerializeField] TextMeshProUGUI goldenCoinText;
-    [SerializeField] TextMeshProUGUI goldenKeyText;
+    //[SerializeField] TextMeshProUGUI goldenKeyText;
 
     private void Update()
     {

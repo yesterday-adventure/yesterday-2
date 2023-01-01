@@ -28,12 +28,13 @@ public class Chase : MonoBehaviour
             beforeTargetPos = targetPos;
             SetNextPosition();
         }
-        if(Vector3.Distance(nextPos,transform.position) <= 0.75)
+        if(Vector3.Distance(nextPos,transform.position) <= 0.2)
         {
             SetNextPosition();
         }
-
+        
         _brain.Move((nextPos - transform.position).normalized);
+        Debug.Log(nextPos - transform.position);
     }
 
     private void SetNextPosition()

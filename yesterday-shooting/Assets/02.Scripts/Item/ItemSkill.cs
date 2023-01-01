@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemSkil : MonoBehaviour
+public abstract class ItemSkill : MonoBehaviour
 {
-    public int maxColl;
+    public int maxCool;
     public abstract bool Skill();
 }

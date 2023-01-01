@@ -23,33 +23,36 @@ public class CameraMove : MonoBehaviour
 
     void LateUpdate()
     {
-        if (player.position.x - transform.position.x > offset.x && move)
+        if(player != null)
         {
-            StartCoroutine(CameraRight());
-            doorOnOff.dir = Dir.right;
-            doorOnOff.changePos();
-            move = false;
-        }
-        if (player.position.x - transform.position.x < -offset.x && move)
-        {
-            StartCoroutine(CameraLeft());
-            doorOnOff.dir = Dir.left;
-            doorOnOff.changePos();
-            move = false;
-        }
-        if (player.position.y - transform.position.y > offset.y && move)
-        {
-            StartCoroutine(CameraUp());
-            doorOnOff.dir = Dir.up;
-            doorOnOff.changePos();
-            move = false;
-        }
-        if (player.position.y - transform.position.y < -offset.y && move)
-        {
-            StartCoroutine(CameraDown());
-            doorOnOff.dir = Dir.down;
-            doorOnOff.changePos();
-            move = false;
+            if (player.position.x - transform.position.x > offset.x && move)
+            {
+                StartCoroutine(CameraRight());
+                doorOnOff.dir = Dir.right;
+                doorOnOff.changePos();
+                move = false;
+            }
+            if (player.position.x - transform.position.x < -offset.x && move)
+            {
+                StartCoroutine(CameraLeft());
+                doorOnOff.dir = Dir.left;
+                doorOnOff.changePos();
+                move = false;
+            }
+            if (player.position.y - transform.position.y > offset.y && move)
+            {
+                StartCoroutine(CameraUp());
+                doorOnOff.dir = Dir.up;
+                doorOnOff.changePos();
+                move = false;
+            }
+            if (player.position.y - transform.position.y < -offset.y && move)
+            {
+                StartCoroutine(CameraDown());
+                doorOnOff.dir = Dir.down;
+                doorOnOff.changePos();
+                move = false;
+            }
         }
 
     }

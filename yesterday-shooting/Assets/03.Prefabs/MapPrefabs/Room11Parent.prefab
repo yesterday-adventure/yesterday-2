@@ -3319,18 +3319,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBig (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409777, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: firDir
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: range
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3392,18 +3380,6 @@ PrefabInstance:
     - target: {fileID: 4059997920124409776, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_Name
       value: BigBig (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409777, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: firDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: range
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
@@ -3467,18 +3443,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBig
       objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409777, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: firDir
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: range
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3540,18 +3504,6 @@ PrefabInstance:
     - target: {fileID: 4059997920124409776, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_Name
       value: BigBig (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409777, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: firDir
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059997920124409781, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
-      propertyPath: range
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder
@@ -3615,10 +3567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burst
       objectReference: {fileID: 0}
-    - target: {fileID: 7869459583551800598, guid: 02fb8cdedfefe5840b44fba1cf609913, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 7869459583551800599, guid: 02fb8cdedfefe5840b44fba1cf609913, type: 3}
       propertyPath: m_RootOrder
       value: 0
