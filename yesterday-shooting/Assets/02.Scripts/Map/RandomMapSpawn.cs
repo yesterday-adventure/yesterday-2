@@ -75,7 +75,7 @@ public class RandomMapSpawn : MonoBehaviour
                 RandomSpawn(mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
-            InputShopMap(mapGrid, maps);
+            //InputShopMap(mapGrid, maps);     ->json문제있음
             InputBossMap(mapGrid, maps);
 
 
@@ -295,7 +295,7 @@ public class RandomMapSpawn : MonoBehaviour
     {
         random = Random.Range(0, randomMap.Count);
         GameObject returnMap = randomMap[random];
-        Debug.Log(randomMap[random]);
+        //Debug.Log(randomMap[random]);
         return returnMap;
     }
 }
