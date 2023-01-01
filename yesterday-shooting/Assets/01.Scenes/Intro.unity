@@ -3386,6 +3386,7 @@ MonoBehaviour:
     cameraPosition: {x: 90, y: 60, z: -10}
     playerHp: 5
     mapGrid: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    mapShopAndBoss: 00000000000000000000000000000000
     weaponName: 
     activeItem: 
     activeItemCoolTime: 0
@@ -3512,6 +3513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc600593141658847a14e3e28e1712a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExitPanle: {fileID: 0}
+  targetObj: {fileID: 0}
+  targetObj1: {fileID: 0}
 --- !u!4 &1858211244
 Transform:
   m_ObjectHideFlags: 0
