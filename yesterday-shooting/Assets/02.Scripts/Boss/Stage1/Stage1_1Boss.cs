@@ -31,7 +31,7 @@ public class Stage1_1Boss : MonoBehaviour
     private void OnEnable()
     {
         player = FindObjectOfType<PlayerHp>().transform.gameObject;
-        StartCoroutine(Pattern());
+        StartCoroutine(this.Pattern());
     }
 
     private void Update()
