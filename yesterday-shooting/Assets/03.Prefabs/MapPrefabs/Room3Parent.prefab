@@ -2921,14 +2921,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StraightLineAttack (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: delay
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: firDir
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6802937908760554700, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2973,10 +2965,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554703, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
 --- !u!4 &3699515685182238043 stripped
@@ -2994,14 +2982,6 @@ PrefabInstance:
     - target: {fileID: 6802937908760554696, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
       propertyPath: m_Name
       value: StraightLineAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: delay
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: firDir
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6802937908760554700, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
       propertyPath: m_RootOrder
@@ -3047,10 +3027,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554703, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
 --- !u!4 &3699515686207015546 stripped
@@ -3068,14 +3044,6 @@ PrefabInstance:
     - target: {fileID: 6802937908760554696, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
       propertyPath: m_Name
       value: StraightLineAttack (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: delay
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554697, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: firDir
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6802937908760554700, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
       propertyPath: m_RootOrder
@@ -3121,10 +3089,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6802937908760554703, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5073fb19f0e63849b9d4dbec6be004a, type: 3}
 --- !u!4 &3699515686057086911 stripped

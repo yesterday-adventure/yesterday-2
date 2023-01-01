@@ -23,6 +23,10 @@ public class AgentMovement : MonoBehaviour
             {
                 followSpeed = 0;
             }
+            else
+            {
+                followSpeed = speed;
+            }
 
             _movementDirection = movementInput.normalized;
         }
