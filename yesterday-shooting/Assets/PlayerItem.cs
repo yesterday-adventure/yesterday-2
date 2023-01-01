@@ -28,6 +28,8 @@ public class PlayerItem : MonoBehaviour
         {
             Debug.LogError("PlayerItem Multiple");
         }
+
+        playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
     }
 
     private void Update()
