@@ -1,61 +1,79 @@
 fileFormatVersion: 2
-guid: ebe8e034ab91b224b8adb2aa086df5a3
+guid: 61bb27586b62df24590012a82b618ff8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9192638271177797499
-    second: death_0
+      213: -5341952068120270008
+    second: Cacodaemon Sprite Sheet 1_0
   - first:
-      213: 8559509556701815258
-    second: death_1
+      213: -8237351115790522257
+    second: Cacodaemon Sprite Sheet 1_1
   - first:
-      213: -5286180679089938723
-    second: death_2
+      213: 3486708106387505569
+    second: Cacodaemon Sprite Sheet 1_2
   - first:
-      213: -1891855120789479077
-    second: death_3
+      213: 2556216044501096884
+    second: Cacodaemon Sprite Sheet 1_3
   - first:
-      213: -5582970244224541034
-    second: death_4
+      213: 6127257045608223836
+    second: Cacodaemon Sprite Sheet 1_4
   - first:
-      213: 830680230883465780
-    second: death_5
+      213: -4441863175902633704
+    second: Cacodaemon Sprite Sheet 1_5
   - first:
-      213: 6596258498841548387
-    second: death_6
+      213: 3023820316505861306
+    second: Cacodaemon Sprite Sheet 1_6
   - first:
-      213: -4147321062969920389
-    second: death_7
+      213: -7384165183747846338
+    second: Cacodaemon Sprite Sheet 1_7
   - first:
-      213: 2602597460433512539
-    second: death_8
+      213: -6059730638056658583
+    second: Cacodaemon Sprite Sheet 1_8
   - first:
-      213: -2134515381725696932
-    second: death_9
+      213: -2097794305164169981
+    second: Cacodaemon Sprite Sheet 1_9
   - first:
-      213: -270028788923616002
-    second: death_10
+      213: 446838168851279935
+    second: Cacodaemon Sprite Sheet 1_10
   - first:
-      213: -5121890589552714621
-    second: death_11
+      213: 3347348517929750917
+    second: Cacodaemon Sprite Sheet 1_11
   - first:
-      213: 627783550670650900
-    second: death_12
+      213: 8435596175847241808
+    second: Cacodaemon Sprite Sheet 1_12
   - first:
-      213: 2891620135027730149
-    second: death_13
+      213: 1542406540121122303
+    second: Cacodaemon Sprite Sheet 1_13
   - first:
-      213: 7975919600420608313
-    second: death_14
+      213: -3447597221011441702
+    second: Cacodaemon Sprite Sheet 1_14
   - first:
-      213: 6275631635777415744
-    second: death_15
+      213: 1828342382985119041
+    second: Cacodaemon Sprite Sheet 1_15
   - first:
-      213: -9015114149152096869
-    second: death_16
+      213: 5720531334451969529
+    second: Cacodaemon Sprite Sheet 1_16
   - first:
-      213: -133209616158212645
-    second: death_17
+      213: 5939288184073334201
+    second: Cacodaemon Sprite Sheet 1_17
+  - first:
+      213: 7646779794523569788
+    second: Cacodaemon Sprite Sheet 1_18
+  - first:
+      213: -2611379749174848522
+    second: Cacodaemon Sprite Sheet 1_19
+  - first:
+      213: 8628744908488712459
+    second: Cacodaemon Sprite Sheet 1_20
+  - first:
+      213: 7195791717695581674
+    second: Cacodaemon Sprite Sheet 1_21
+  - first:
+      213: -3933738975857110840
+    second: Cacodaemon Sprite Sheet 1_22
+  - first:
+      213: 6495260304868045244
+    second: Cacodaemon Sprite Sheet 1_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -169,13 +187,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: death_0
+      name: Cacodaemon Sprite Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 100
-        height: 100
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58059c172303d6080800000000000000
-      internalID: -9192638271177797499
+      spriteID: 84b278c95e29dd5b0800000000000000
+      internalID: -5341952068120270008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_1
+      name: Cacodaemon Sprite Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1e5c2779c79c670800000000000000
-      internalID: 8559509556701815258
+      spriteID: f686325bdcc0fad80800000000000000
+      internalID: -8237351115790522257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_2
+      name: Cacodaemon Sprite Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 100
-        width: 100
-        height: 100
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dde9f440ea6b3a6b0800000000000000
-      internalID: -5286180679089938723
+      spriteID: 1a1c3b4ac86436030800000000000000
+      internalID: 3486708106387505569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_3
+      name: Cacodaemon Sprite Sheet 1_3
       rect:
         serializedVersion: 2
-        x: 300
-        y: 100
-        width: 100
-        height: 100
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51e6d68ac7ceb5e0800000000000000
-      internalID: -1891855120789479077
+      spriteID: 4b954a5f2f0897320800000000000000
+      internalID: 2556216044501096884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_4
+      name: Cacodaemon Sprite Sheet 1_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 100
-        width: 100
-        height: 100
+        x: 256
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69e9b69842e4582b0800000000000000
-      internalID: -5582970244224541034
+      spriteID: c54dcf2c1d3680550800000000000000
+      internalID: 6127257045608223836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_5
+      name: Cacodaemon Sprite Sheet 1_5
       rect:
         serializedVersion: 2
-        x: 500
-        y: 100
-        width: 100
-        height: 100
+        x: 320
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43a9fb3d44b278b00800000000000000
-      internalID: 830680230883465780
+      spriteID: 8116f6bb9f45b52c0800000000000000
+      internalID: -4441863175902633704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_6
+      name: Cacodaemon Sprite Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 600
-        y: 100
-        width: 100
-        height: 100
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3661a1ef72e9a8b50800000000000000
-      internalID: 6596258498841548387
+      spriteID: abce0f59e84c6f920800000000000000
+      internalID: 3023820316505861306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_7
+      name: Cacodaemon Sprite Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 100
-        width: 100
-        height: 100
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b74be287771c176c0800000000000000
-      internalID: -4147321062969920389
+      spriteID: e3f07eb63ec268990800000000000000
+      internalID: -7384165183747846338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_8
+      name: Cacodaemon Sprite Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 800
-        y: 100
-        width: 100
-        height: 100
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,20 +369,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b582972e9984e1420800000000000000
-      internalID: 2602597460433512539
+      spriteID: 969e41c271387eba0800000000000000
+      internalID: -6059730638056658583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_9
+      name: Cacodaemon Sprite Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 900
-        y: 100
-        width: 100
-        height: 100
+        x: 192
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,20 +390,146 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5ce1a8c19da062e0800000000000000
-      internalID: -2134515381725696932
+      spriteID: 30d2adca13323e2e0800000000000000
+      internalID: -2097794305164169981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_10
+      name: Cacodaemon Sprite Sheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30777672fc733600800000000000000
+      internalID: 446838168851279935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58112a6fdbb247e20800000000000000
+      internalID: 3347348517929750917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058b40a3702411570800000000000000
+      internalID: 8435596175847241808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5a823839ab76510800000000000000
+      internalID: 1542406540121122303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad73df8f79ca720d0800000000000000
+      internalID: -3447597221011441702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1458e99d5b39f5910800000000000000
+      internalID: 1828342382985119041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cacodaemon Sprite Sheet 1_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,20 +537,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef434154f3aa04cf0800000000000000
-      internalID: -270028788923616002
+      spriteID: 9fd3084a0f8636f40800000000000000
+      internalID: 5720531334451969529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_11
+      name: Cacodaemon Sprite Sheet 1_17
       rect:
         serializedVersion: 2
-        x: 100
+        x: 64
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,20 +558,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c5b4f45a36be8b0800000000000000
-      internalID: -5121890589552714621
+      spriteID: 9bdad5eb2279c6250800000000000000
+      internalID: 5939288184073334201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_12
+      name: Cacodaemon Sprite Sheet 1_18
       rect:
         serializedVersion: 2
-        x: 200
+        x: 128
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,20 +579,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41ebe8d20d556b800800000000000000
-      internalID: 627783550670650900
+      spriteID: c7e363075b1de1a60800000000000000
+      internalID: 7646779794523569788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_13
+      name: Cacodaemon Sprite Sheet 1_19
       rect:
         serializedVersion: 2
-        x: 300
+        x: 192
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,20 +600,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e6e1bd3139112820800000000000000
-      internalID: 2891620135027730149
+      spriteID: 6f3d8cc24f382cbd0800000000000000
+      internalID: -2611379749174848522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_14
+      name: Cacodaemon Sprite Sheet 1_20
       rect:
         serializedVersion: 2
-        x: 400
+        x: 256
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,20 +621,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 939552c4e9820be60800000000000000
-      internalID: 7975919600420608313
+      spriteID: b012ee7f6c57fb770800000000000000
+      internalID: 8628744908488712459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_15
+      name: Cacodaemon Sprite Sheet 1_21
       rect:
         serializedVersion: 2
-        x: 500
+        x: 320
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,20 +642,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04a67b719b5871750800000000000000
-      internalID: 6275631635777415744
+      spriteID: aed61fa31769cd360800000000000000
+      internalID: 7195791717695581674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_16
+      name: Cacodaemon Sprite Sheet 1_22
       rect:
         serializedVersion: 2
-        x: 600
+        x: 384
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,20 +663,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9df03a0271e3e280800000000000000
-      internalID: -9015114149152096869
+      spriteID: 8c09de84e3d8869c0800000000000000
+      internalID: -3933738975857110840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death_17
+      name: Cacodaemon Sprite Sheet 1_23
       rect:
         serializedVersion: 2
-        x: 700
+        x: 448
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,8 +684,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdd39345f8eb62ef0800000000000000
-      internalID: -133209616158212645
+      spriteID: cb1fa5b75dcc32a50800000000000000
+      internalID: 6495260304868045244
       vertices: []
       indices: 
       edges: []
