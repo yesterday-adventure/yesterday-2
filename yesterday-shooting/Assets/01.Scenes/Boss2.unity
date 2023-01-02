@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c91a4e3f8142141a5fec1bcf7db87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossBullet: {fileID: 5688646600433592366, guid: 2da73a8455c06fb4ebf60f48ee5a707e, type: 3}
   yWall: {fileID: 0}
   xWall: {fileID: 0}
   farFromPlayer: 0
@@ -366,7 +365,6 @@ MonoBehaviour:
   stopPanel: {fileID: 0}
   speed: 5
   rightIsTrue: 0
-  nowBombCount: 10
   bombDeley: 0.7
   bomb: {fileID: 8342439436060693773, guid: 7288d04b5f736e14885bfc3fc6256c7b, type: 3}
   bombRange: {fileID: 6951590567328401415, guid: 7304f12716c05364fb47300552d7e13b, type: 3}
