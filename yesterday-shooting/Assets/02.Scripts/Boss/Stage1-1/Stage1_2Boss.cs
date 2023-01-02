@@ -8,14 +8,16 @@ public class Stage1_2Boss : MonoBehaviour
     SpriteRenderer _spriteRenderer = null;
     GameObject _player = null; //플레이어 오브젝트
 
-    private bool playerOnR = false; //플래이어가 나보다 오른쪽에 있는지 확인
-    private bool flip = false; //false 면 오른쪽 바라봄
+    [SerializeField] private Collider2D _wall;
 
-    private bool farFromPlayer = false;
+    private bool playerOnR = false; //플래이어가 나보다 오른쪽에 있는지 확인
+
+    [SerializeField] private bool farFromPlayer = false;
     private bool moveUp = false;
 
     [SerializeField] private float yDistance = 0; //플레이어와 나 사이의 y 거리
     [SerializeField] private float hp = 0;
+
 
     private void Awake()
     {
@@ -31,55 +33,65 @@ public class Stage1_2Boss : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.flipX = flip;
-
         playerOnR = transform.position.x < _player.transform.position.x;
+
         yDistance = Vector2.Distance(new Vector2(0, transform.position.y),
             new Vector2(0, _player.transform.position.y));
+
+        _wall = Physics2D.OverlapBox(transform.position, new Vector2(2, 2), 0, 1 << 6);
+
+        if (_wall != null)
+        {
+            moveUp = !moveUp;
+        }
+
 
         if (farFromPlayer)
         {
             if (moveUp)
             {
-                _rigid.velocity = new Vector2(0, 1);
+                _rigid.velocity = new Vector2(0, 1) * 3;
             }
             else
             {
-                _rigid.velocity = new Vector2(0, -1);
+                _rigid.velocity = new Vector2(0, -1) * 3;
             }
         }
     }
 
     IEnumerator Pattern()
     {
+        yield return new WaitForSeconds(1);
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            _wall = null;
+            yield return new WaitForSeconds(0.5f);
 
             if (yDistance <= 1.5f)
             {
                 farFromPlayer = false;
+                _rigid.velocity = Vector2.zero;
                 if (playerOnR)
                 {
-                    flip = false;
+                    transform.localScale = new Vector3(1, 1, 1);
+                    _rigid.velocity = new Vector2(7, 0);
+                    yield return new WaitUntil(() => _wall != null);
+                    _rigid.velocity = Vector2.zero;
+                    farFromPlayer = true;
                 }
                 else
                 {
-                    flip = true;
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    _rigid.velocity = new Vector2(-7, 0);
+                    yield return new WaitUntil(() => _wall != null);
+                    _rigid.velocity = Vector2.zero;
+                    farFromPlayer = true;
                 }
             }
             else
             {
                 farFromPlayer = true;
             }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Wall")
-        {
-
         }
     }
 }
