@@ -17,6 +17,7 @@ TagManager:
   - room0
   - LockItem
   - ActiveItem
+  - Potion
   layers:
   - Default
   - TransparentFX

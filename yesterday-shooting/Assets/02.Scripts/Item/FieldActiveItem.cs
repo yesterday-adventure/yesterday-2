@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FieldActiveItem : MonoBehaviour
 {
-    [SerializeField] private ItemSkill itme;
+    [SerializeField] private ItemSkill item;
     public ItemSkill ItemSkill
     {
-        get { return itme; }
-        set { itme = value; }
+        get { return item; }
+        set { item = value; }
     }
 
     public bool Use()
     {
-        return itme.Skill();
+        return item.Skill();
     }   
 }

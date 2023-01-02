@@ -6,7 +6,7 @@ public class PlayerFire : MonoBehaviour
 {
     public GameObject weapon = null;
 
-    [SerializeField] private GameObject[] weaponarr;
+    [SerializeField] private GameObject[] weaponArr;
     Dictionary<string, GameObject> weapons = new Dictionary<string, GameObject>();
 
     public static PlayerFire instance = null;
@@ -35,9 +35,9 @@ public class PlayerFire : MonoBehaviour
             instance = this;
         }
 
-        for (int i = 0; i < weaponarr.Length; i++)
+        for (int i = 0; i < weaponArr.Length; i++)
         {
-            weapons.Add(weaponarr[i].name, weaponarr[i]);
+            weapons.Add(weaponArr[i].name, weaponArr[i]);
         }
 
         delay = weapon.GetComponent<BulletInfo>().AttackDelay;
@@ -117,7 +117,7 @@ public class PlayerFire : MonoBehaviour
         isChanging = true;
         string temp = weapon.name;
         weapon = weapons[collision.gameObject.name];
-        collision.gameObject.name = temp;
+        collision.gameObject.name = temp; 
         yield return new WaitForSeconds(0.5f);
         delay = weapon.GetComponent<BulletInfo>().AttackDelay;
         yield return new WaitForSeconds(1f);
