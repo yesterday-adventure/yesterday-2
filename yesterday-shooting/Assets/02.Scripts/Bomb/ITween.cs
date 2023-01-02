@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using DG.Tweening;
 
 public class ITween : MonoBehaviour
 {
@@ -36,6 +35,23 @@ public class ITween : MonoBehaviour
         iTween.MoveTo(gameObject, iTween.Hash("position", parabolaDestination, "time", moveTime, "easeType", iTween.EaseType.linear, "oncomplete", "BombBang"));
     }
 
+    float time = 0;
+
+    private void Update()
+    {
+
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+
+        if (pos.x > 1f || pos.x < 0f)
+        {
+            //iTween.MoveTo(gameObject, iTween.Hash("position", -parabolaDestination, "time", time, "easeType", iTween.EaseType.linear, "oncomplete", "BombBang"));
+        }
+        else
+        {
+            time = moveTime - (time += Time.deltaTime);
+        }
+    }
+
     void BombBang()
     {
         StartCoroutine(Bomb());
@@ -43,7 +59,7 @@ public class ITween : MonoBehaviour
 
     float flashing = 0.5f;
     public Material whiteFlashMat;
-    
+
     IEnumerator Bomb()
     {
         Material defaultMat = GetComponentInChildren<SpriteRenderer>().material;
