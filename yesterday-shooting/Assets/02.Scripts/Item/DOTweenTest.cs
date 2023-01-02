@@ -6,7 +6,11 @@ using DG.Tweening;
 public class DOTweenTest : MonoBehaviour
 {
     [SerializeField] private Ease ease;
+
+    private void Start() {
+        ItemDropAnim();
+    }
     public void ItemDropAnim() {
-        transform.DOJump(transform.position, 3, 1, 1f, false).SetEase(ease);
+        transform.DOJump(transform.position, 3, 1, 2f, false).SetEase(ease);
     }
 }
