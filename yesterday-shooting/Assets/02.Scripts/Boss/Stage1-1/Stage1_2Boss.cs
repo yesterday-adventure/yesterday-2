@@ -5,10 +5,11 @@ using UnityEngine;
 public class Stage1_2Boss : MonoBehaviour
 {
     Rigidbody2D _rigid = null;
-    SpriteRenderer _spriteRenderer = null;
     GameObject _player = null; //플레이어 오브젝트
+    Animator _anim = null;
 
-    [SerializeField] private Collider2D _wall;
+    [SerializeField] private Collider2D yWall;
+    [SerializeField] private Collider2D xWall;
 
     private bool playerOnR = false; //플래이어가 나보다 오른쪽에 있는지 확인
 
@@ -18,11 +19,10 @@ public class Stage1_2Boss : MonoBehaviour
     [SerializeField] private float yDistance = 0; //플레이어와 나 사이의 y 거리
     [SerializeField] private float hp = 0;
 
-
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -35,12 +35,10 @@ public class Stage1_2Boss : MonoBehaviour
     {
         playerOnR = transform.position.x < _player.transform.position.x;
 
-        yDistance = Vector2.Distance(new Vector2(0, transform.position.y),
-            new Vector2(0, _player.transform.position.y));
+        yWall = Physics2D.OverlapBox(transform.position, new Vector2(1, 2.5f), 0, 1 << 6);
+        xWall = Physics2D.OverlapBox(transform.position, new Vector2(2.5f, 1), 0, 1 << 6);
 
-        _wall = Physics2D.OverlapBox(transform.position, new Vector2(2, 2), 0, 1 << 6);
-
-        if (_wall != null)
+        if (yWall != null)
         {
             moveUp = !moveUp;
         }
@@ -48,6 +46,7 @@ public class Stage1_2Boss : MonoBehaviour
 
         if (farFromPlayer)
         {
+            _anim.SetBool("IsRun", false);
             if (moveUp)
             {
                 _rigid.velocity = new Vector2(0, 1) * 3;
@@ -57,6 +56,11 @@ public class Stage1_2Boss : MonoBehaviour
                 _rigid.velocity = new Vector2(0, -1) * 3;
             }
         }
+
+        if (hp <= 0)
+        {
+            _anim.SetTrigger("Die");
+        }
     }
 
     IEnumerator Pattern()
@@ -64,8 +68,12 @@ public class Stage1_2Boss : MonoBehaviour
         yield return new WaitForSeconds(1);
         while (true)
         {
-            _wall = null;
-            yield return new WaitForSeconds(0.5f);
+            yWall = null;
+            xWall = null;
+            yield return new WaitForSeconds(0.1f);
+
+            yDistance = Vector2.Distance(new Vector2(0, transform.position.y),
+                new Vector2(0, _player.transform.position.y));
 
             if (yDistance <= 1.5f)
             {
@@ -74,16 +82,20 @@ public class Stage1_2Boss : MonoBehaviour
                 if (playerOnR)
                 {
                     transform.localScale = new Vector3(1, 1, 1);
-                    _rigid.velocity = new Vector2(7, 0);
-                    yield return new WaitUntil(() => _wall != null);
+                    _rigid.velocity = new Vector2(10, 0);
+                    _anim.SetBool("IsRun", true);
+                    yield return new WaitUntil(() => xWall != null);
+                    _anim.SetBool("IsRun", false);
                     _rigid.velocity = Vector2.zero;
                     farFromPlayer = true;
                 }
                 else
                 {
                     transform.localScale = new Vector3(-1, 1, 1);
-                    _rigid.velocity = new Vector2(-7, 0);
-                    yield return new WaitUntil(() => _wall != null);
+                    _rigid.velocity = new Vector2(-10, 0);
+                    _anim.SetBool("IsRun", true);
+                    yield return new WaitUntil(() => xWall != null);
+                    _anim.SetBool("IsRun", false);
                     _rigid.velocity = Vector2.zero;
                     farFromPlayer = true;
                 }
@@ -93,5 +105,14 @@ public class Stage1_2Boss : MonoBehaviour
                 farFromPlayer = true;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(transform.position, new Vector2(1, 2.5f));
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position, new Vector2(2.5f, 1));
     }
 }

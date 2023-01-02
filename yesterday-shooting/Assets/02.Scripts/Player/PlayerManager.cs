@@ -29,7 +29,6 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-
         StartCoroutine(Bomb());
     }
 
