@@ -16,5 +16,8 @@ EditorBuildSettings:
     guid: 2c5e51506cbe4a44682c96b9823d9b32
   - enabled: 1
     path: Assets/01.Scenes/Over.unity
+    guid: 191606a8d6fd1c140a765b8aacc80443
+  - enabled: 1
+    path: Assets/01.Scenes/OverTest.unity
     guid: bee46dbabc7b53e4d9fdbd3536f594f0
   m_configObjects: {}

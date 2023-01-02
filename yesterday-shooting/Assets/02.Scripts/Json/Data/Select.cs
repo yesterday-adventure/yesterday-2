@@ -14,7 +14,7 @@ public class Select : MonoBehaviour
 
     public Color playing, fileSelect;
 
-    bool[] savefile = new bool[3];
+    public bool[] savefile = new bool[3];
 
     public bool newStart = false;
 
