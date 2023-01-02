@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4447839649711588747}
   - component: {fileID: 4447839649711588746}
   - component: {fileID: 4447839649711588745}
+  - component: {fileID: 4211744323392305899}
   m_Layer: 0
   m_Name: BombRange
   m_TagString: Untagged
@@ -115,3 +116,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a3d2c81590bfd4aa767d87ff84073a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &4211744323392305899
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447839649711588749}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
