@@ -1108,11 +1108,22 @@ MonoBehaviour:
   - SLR
   - Teleport
   - ThunderBullet
-  weaponPrice: 000000000000000000000000000000000000000000000000
-  shopItem: []
-  itemPrice: 
-  shopPotion: []
-  potionPrice: 
+  weaponMinPrice: 0a0000001900000019000000190000002300000019000000
+  shopItem:
+  - DevilsBook
+  - TeleportPotion
+  - GodDice
+  - Marionette
+  - IronArmor
+  - CurseNail
+  - RustyRazorBlade
+  - InvincibleHand
+  - MarksmanEye
+  itemMinPrice: 14000000190000001e000000190000001400000014000000140000001e00000019000000
+  shopPotion:
+  - CoolDownPotion
+  - HealingPotion
+  potionMinPrice: 140000000a000000
 --- !u!1 &537103338688842179
 GameObject:
   m_ObjectHideFlags: 0
