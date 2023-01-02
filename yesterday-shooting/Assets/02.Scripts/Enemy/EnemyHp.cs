@@ -7,6 +7,12 @@ public class EnemyHp : MonoBehaviour, IDamageable
 {
     [SerializeField] public float hp;
     private SpriteRenderer _renderer;
+
+    private bool _isAttack;
+
+    public bool isAttack {
+        get { return _isAttack; }
+    }
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
@@ -14,6 +20,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     
     public void OnDamage(Action lambda, float damage)
     {
+        _isAttack = true;
         hp -= damage;
         Debug.Log($"damage : {damage} , hp : {hp}");
 

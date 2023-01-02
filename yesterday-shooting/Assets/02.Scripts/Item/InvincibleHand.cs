@@ -10,7 +10,9 @@ public class InvincibleHand : ItemSkill
 
     private Vector2 playerPos;
 
-    public bool isSkil;
+    //무적인건 playerHp Ondamage 조건문에 붙여둠 ㅇㅇ
+
+    public bool isSkil; //스킬이 돌아가는 중인지 구분하는
 
     private void Update() {
         if (isSkil) {
