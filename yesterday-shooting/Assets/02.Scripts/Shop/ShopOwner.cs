@@ -11,13 +11,13 @@ public class ShopOwner : MonoBehaviour
     [SerializeField] int[] weaponMinPrice;
 
     [Header("아이템")]
-    [SerializeField] GameObject[] shopItem;
+    [SerializeField] string[] shopItem;
     
     [Header("아이템 가격")]
     [SerializeField] int[] itemMinPrice;
 
     [Header("포션")]
-    [SerializeField] GameObject[] shopPotion;
+    [SerializeField] string[] shopPotion;
     
     [Header("포션 가격")]
     [SerializeField] int[] potionMinPrice;
@@ -80,7 +80,7 @@ public class ShopOwner : MonoBehaviour
     void SetItem(int i)
     {
         int r = Random.Range(0,shopItem.Length);
-        //transform.GetChild(i).name = shopItem[r];
+        transform.GetChild(i).name = shopItem[r];
         int plusPrice = itemMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
 
@@ -98,8 +98,8 @@ public class ShopOwner : MonoBehaviour
 
     void SetPotion(int i)
     {
-        int r = Random.Range(0,shopWeapon.Length);
-        //transform.GetChild(i) = shopPotion[r];
+        int r = Random.Range(0,shopPotion.Length);
+        transform.GetChild(i).name = shopPotion[r];
         int plusPrice = potionMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
 
