@@ -44,8 +44,8 @@ public class RushWormPatern : MonoBehaviour
     {
         iswallR = Physics2D.Raycast(transform.position, Vector2.right, transform.localScale.x / 2f + 0.1f, wallLayer);
         iswallL = Physics2D.Raycast(transform.position, Vector2.left, transform.localScale.x / 2f + 0.1f, wallLayer);
-        iswallU = Physics2D.Raycast(transform.position, Vector2.up, transform.localScale.x / 2f + 0.1f, wallLayer);
-        iswallD = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.x / 2f + 0.1f, wallLayer);
+        iswallU = Physics2D.Raycast(transform.position, Vector2.up, transform.localScale.x / 2f + 0.25f, wallLayer);
+        iswallD = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.x / 2f + 0.25f, wallLayer);
 
         if(useSkill)
             return;

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyBullet: {fileID: 7583783584051772301, guid: c0fed57c9665cce4c97bca4067485fb3, type: 3}
   firDir: 4
-  delay: 3
+  delay: 1.8
 --- !u!95 &392280216
 Animator:
   serializedVersion: 3
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0
 --- !u!114 &-3046123700089798033
 MonoBehaviour:
   m_ObjectHideFlags: 0
