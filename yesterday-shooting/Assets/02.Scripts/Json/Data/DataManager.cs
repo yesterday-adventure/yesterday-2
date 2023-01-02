@@ -30,7 +30,7 @@ public class PlayerData
     public int activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
 
     public int goldenCoin = 0;   //이 세개는 돈, 폭탄, 열쇠임.
-    public int bomb = 0;
+    public int bomb = 3;
     public int goldenKey = 0;
 }
 
