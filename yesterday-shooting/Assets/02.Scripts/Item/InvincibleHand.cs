@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvincibleHand : ItemSkil
+public class InvincibleHand : ItemSkill
 {
     PlayerData playerData;
 
@@ -17,15 +17,17 @@ public class InvincibleHand : ItemSkil
             player.transform.position = playerPos;
         }
     }
-
-    public override void Skil()
+    public override bool Skill()
     {
-        playerPos = player.transform.position; //사용 시 플레이어 위치 받아오는,,
+        playerPos = player.transform.position; //사용 시 플레이어 위치 받아오는
+        StartCoroutine($"{SkillTime()}");
+        return true;
     }
 
-    IEnumerator ddd() { //3초 동안 굴러가는,,
+    IEnumerator SkillTime() { //3초 동안 굴러가는,,
         isSkil = true;
         yield return new WaitForSeconds(3);
         isSkil=  false;
     }
+
 }
