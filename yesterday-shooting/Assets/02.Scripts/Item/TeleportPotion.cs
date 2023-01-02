@@ -47,6 +47,8 @@ public class TeleportPotion : ItemSkill
                     GameObject.Find("Main Camera").transform.position += new Vector3(0, 0, -10);
                     DoorOnOff.Instance.x = x;
                     DoorOnOff.Instance.y = y;
+                    CameraMove.Instance.xIndex = x - 5;
+                    CameraMove.Instance.yIndex = y - 6;
                     DataManager.instance.nowPlayer.x = x;
                     DataManager.instance.nowPlayer.y = y;
                     break;

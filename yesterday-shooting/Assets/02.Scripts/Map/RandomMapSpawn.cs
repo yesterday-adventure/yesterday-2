@@ -88,6 +88,9 @@ public class RandomMapSpawn : MonoBehaviour
                     DataManager.instance.nowPlayer.roomNumber[i - 1] = isMap[i - 1].GetComponentInChildren<EnterRoom>().roomNumber;
                 }
             }
+            showPlayerPos = Instantiate(playerPos, minimap.transform);
+            showPlayerPos.transform.localPosition = maps.MiniMapSetPos(0, 0);
+
         }
         else
         {
@@ -141,8 +144,6 @@ public class RandomMapSpawn : MonoBehaviour
     //no data save
     void RandomSpawn(Map[,] map, Map _map)
     {
-        showPlayerPos = Instantiate(playerPos,minimap.transform);
-        showPlayerPos.transform.localPosition = _map.MiniMapSetPos(0,0);
         NearRoomCount = 0;
         int x = Random.Range(1, xIndex);
         int y = Random.Range(1, yIndex);
