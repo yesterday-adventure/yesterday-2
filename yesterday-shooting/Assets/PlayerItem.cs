@@ -50,12 +50,20 @@ public class PlayerItem : MonoBehaviour
     {
         if (collision.tag == "ActiveItem")
         {
-            ItemSkill temp = collision.transform.GetComponent<FieldActiveItem>().ItemSkill;
+            FieldActiveItem fieldItem = collision.GetComponent<FieldActiveItem>();
+            string temp = fieldItem.ItemSkill.name;
             Debug.Log(temp);
-            Debug.Log(temp.transform.name);
-            collision.transform.GetComponent<FieldActiveItem>().ItemSkill = item.ItemSkill;
-            item.ItemSkill = temp;
+            fieldItem.ItemSkill = item.ItemSkill;
+            
+            item.ItemSkill = items[temp].ItemSkill;
             playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
+            
+            //ItemSkill temp = collision.transform.GetComponent<FieldActiveItem>().ItemSkill;
+            //Debug.Log(temp);
+            //Debug.Log(temp.transform.name);
+            //collision.transform.GetComponent<FieldActiveItem>().ItemSkill = item.ItemSkill;
+            //item.ItemSkill = temp;
+            //playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
     }
 }
