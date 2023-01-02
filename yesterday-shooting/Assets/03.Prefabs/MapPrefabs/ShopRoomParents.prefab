@@ -1101,14 +1101,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3a2bb5bd0e7d94786f23f7a4e62fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopItem:
-  - Teleport
-  - ThunderBullet
-  - SLR
+  shopWeapon:
+  - BasicWeapon
   - FireBullet
   - KnockbackWeapon
-  - BasicWeapon
-  price: 1d0000001f00000019000000350000001b0000000e000000
+  - SLR
+  - Teleport
+  - ThunderBullet
+  weaponPrice: 000000000000000000000000000000000000000000000000
+  shopItem: []
+  itemPrice: 
+  shopPotion: []
+  potionPrice: 
 --- !u!1 &537103338688842179
 GameObject:
   m_ObjectHideFlags: 0

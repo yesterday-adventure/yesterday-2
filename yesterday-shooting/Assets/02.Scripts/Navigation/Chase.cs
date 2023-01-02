@@ -34,7 +34,6 @@ public class Chase : MonoBehaviour
         }
         
         _brain.Move((nextPos - transform.position).normalized);
-        Debug.Log(nextPos - transform.position);
     }
 
     private void SetNextPosition()
