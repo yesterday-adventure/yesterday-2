@@ -118,13 +118,13 @@ public class RandomMapSpawn : MonoBehaviour
             GameObject spawnShopMap = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0], DataManager.instance.nowPlayer.mapShopAndBoss[1]), Quaternion.identity);
             GameObject spawnShopMiniMap = Instantiate(shopMinimap, minimap.transform);
             spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[1] - 6);
-            spawnShopMap.name = $"Shop";
+            spawnShopMap.name = $"Shop1";
 
             //Shop
             GameObject spawnShopMap2 = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]), Quaternion.identity);
             GameObject spawnShopMiniMap2 = Instantiate(shopMinimap, minimap.transform);
             spawnShopMiniMap2.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[3] - 6);
-            spawnShopMap2.name = $"Boss";
+            spawnShopMap2.name = $"Shop2";
 
             //Boss
             GameObject spawnBossMap = Instantiate(bossMap, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[4], DataManager.instance.nowPlayer.mapShopAndBoss[5]), Quaternion.identity);
@@ -191,6 +191,9 @@ public class RandomMapSpawn : MonoBehaviour
             }
         }
     }
+
+    int number = 1;
+
     void InputShopMap(Map[,] map, Map _map)
     {
         while (true)
@@ -217,8 +220,8 @@ public class RandomMapSpawn : MonoBehaviour
 
                     spawnMiniMap.transform.localPosition = _map.MiniMapSetPos(x - 5, y - 6);
 
-
-                    spawnMap.name = $"Shop";
+                    spawnMap.name = $"Shop{number}";
+                    number++;
 
                     map[x, y] = _map;
                     MapShopAndBoss(x, y);

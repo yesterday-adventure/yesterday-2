@@ -30,6 +30,8 @@ public class PlayerItem : MonoBehaviour
         }
 
         playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
+
+        cool = DataManager.instance.nowPlayer.activeItemCoolTime;
     }
 
     private void Update()

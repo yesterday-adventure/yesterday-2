@@ -32,6 +32,11 @@ public class PlayerData
     public int goldenCoin = 0;   //이 세개는 돈, 폭탄, 열쇠임.
     public int bomb = 3;
     public int goldenKey = 0;
+
+    public string[] shopItem1 = new string[4];
+    public int[] shopPlusPrice1 = new int[4];
+    public string[] shopItem2 = new string[4];
+    public int[] shopPlusPrice2 = new int[4];
 }
 
 public class GameOption
