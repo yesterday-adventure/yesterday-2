@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class CameraMove : MonoBehaviour
 {
+    public static CameraMove Instance = null;
     [SerializeField] DoorOnOff doorOnOff;
 
     public Transform player;
@@ -13,8 +14,20 @@ public class CameraMove : MonoBehaviour
     public GameObject playerP;
     private bool move = true;
 
+    public int xIndex = 0;
+    public int yIndex = 0;
+
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("CameraMove Multiple");
+            Destroy(gameObject);
+        }
         if(doorOnOff == null)
         {
             doorOnOff = GetComponent<DoorOnOff>();
@@ -27,6 +40,7 @@ public class CameraMove : MonoBehaviour
         {
             if (player.position.x - transform.position.x > offset.x && move)
             {
+                xIndex++;
                 StartCoroutine(CameraRight());
                 doorOnOff.dir = Dir.right;
                 doorOnOff.changePos();
@@ -34,6 +48,7 @@ public class CameraMove : MonoBehaviour
             }
             if (player.position.x - transform.position.x < -offset.x && move)
             {
+                xIndex--;
                 StartCoroutine(CameraLeft());
                 doorOnOff.dir = Dir.left;
                 doorOnOff.changePos();
@@ -41,6 +56,7 @@ public class CameraMove : MonoBehaviour
             }
             if (player.position.y - transform.position.y > offset.y && move)
             {
+                yIndex++;
                 StartCoroutine(CameraUp());
                 doorOnOff.dir = Dir.up;
                 doorOnOff.changePos();
@@ -48,11 +64,13 @@ public class CameraMove : MonoBehaviour
             }
             if (player.position.y - transform.position.y < -offset.y && move)
             {
+                yIndex--;
                 StartCoroutine(CameraDown());
                 doorOnOff.dir = Dir.down;
                 doorOnOff.changePos();
                 move = false;
             }
+            RandomMapSpawn.Instance.showPlayerPos.transform.localPosition = RandomMapSpawn.Instance.maps.MiniMapSetPos(xIndex,yIndex);
         }
 
     }

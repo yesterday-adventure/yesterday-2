@@ -5392,7 +5392,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -4.614563, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9675,7 +9675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76350f4a2a1c71a42af00aeaad55fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 70614126}
+  item: {fileID: 941185610}
   itemarr:
   - {fileID: 941185610}
   - {fileID: 1672638141}
@@ -15796,6 +15796,8 @@ MonoBehaviour:
   player: {fileID: 1529723048}
   offset: {x: 9, y: 5, z: -10}
   playerP: {fileID: 1529723045}
+  xIndex: 0
+  yIndex: 0
 --- !u!114 &1752153546
 MonoBehaviour:
   m_ObjectHideFlags: 0
