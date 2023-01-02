@@ -24,10 +24,32 @@ public class ShopOwner : MonoBehaviour
 
     void OnEnable()
     {
-        SetWeapon(0);
-        SetItem(1);
-        SetItem(2);
-        SetPotion(3);
+        if (Select.instance.newStart)
+        {
+            SetWeapon(0);
+            SetItem(1);
+            SetItem(2);
+            SetPotion(3);
+        }
+        else
+        {
+            if (gameObject.transform.parent.name == "Shop1")
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    transform.GetChild(i).name = DataManager.instance.nowPlayer.shopItem1[i];
+                    transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = DataManager.instance.nowPlayer.shopPlusPrice1[i];
+                }
+            }
+            else if (gameObject.transform.parent.name == "Shop2")
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    transform.GetChild(i).name = DataManager.instance.nowPlayer.shopItem2[i];
+                    transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = DataManager.instance.nowPlayer.shopPlusPrice2[i];
+                }
+            }
+        }
         // for(int i = 0; i < 4; i++)
         // {
         //     int r = Random.Range(0,shopWeapon.Length);
@@ -42,6 +64,17 @@ public class ShopOwner : MonoBehaviour
         transform.GetChild(i).name = shopWeapon[r];
         int plusPrice = weaponMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
+
+        if (gameObject.transform.parent.name == "Shop1")
+        {
+            DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
+        }
+        else if (gameObject.transform.parent.name == "Shop2")
+        {
+            DataManager.instance.nowPlayer.shopItem2[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice2[i] = plusPrice;
+        }
     }
 
     void SetItem(int i)
@@ -50,6 +83,17 @@ public class ShopOwner : MonoBehaviour
         //transform.GetChild(i).name = shopItem[r];
         int plusPrice = itemMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
+
+        if (gameObject.transform.parent.name == "Shop1")
+        {
+            DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
+        }
+        else if (gameObject.transform.parent.name == "Shop2")
+        {
+            DataManager.instance.nowPlayer.shopItem2[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice2[i] = plusPrice;
+        }
     }
 
     void SetPotion(int i)
@@ -58,5 +102,16 @@ public class ShopOwner : MonoBehaviour
         //transform.GetChild(i) = shopPotion[r];
         int plusPrice = potionMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
+
+        if (gameObject.transform.parent.name == "Shop1")
+        {
+            DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
+        }
+        else if (gameObject.transform.parent.name == "Shop2")
+        {
+            DataManager.instance.nowPlayer.shopItem2[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopPlusPrice2[i] = plusPrice;
+        }
     }
 }
