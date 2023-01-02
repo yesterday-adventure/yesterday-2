@@ -29,13 +29,13 @@ public class BasicItemManager : MonoBehaviour
             goldenCoinText.text = DataManager.instance.nowPlayer.goldenCoin.ToString();
         }
 
-        if (DataManager.instance.nowPlayer.goldenKey < 10)
+        /*if (DataManager.instance.nowPlayer.goldenKey < 10)
         {
             goldenKeyText.text = "0" + DataManager.instance.nowPlayer.goldenKey.ToString();
         }
         else
         {
             goldenKeyText.text = DataManager.instance.nowPlayer.goldenKey.ToString();
-        }
+        }*/
     }
 }
