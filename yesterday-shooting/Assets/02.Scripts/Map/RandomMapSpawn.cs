@@ -75,7 +75,7 @@ public class RandomMapSpawn : MonoBehaviour
                 RandomSpawn(mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
-            //InputShopMap(mapGrid, maps);     ->json문제있음
+            InputShopMap(mapGrid, maps);     //->json문제있음
             InputBossMap(mapGrid, maps);
 
 
@@ -114,16 +114,20 @@ public class RandomMapSpawn : MonoBehaviour
             //Shop
             GameObject spawnShopMap = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0], DataManager.instance.nowPlayer.mapShopAndBoss[1]), Quaternion.identity);
             GameObject spawnShopMiniMap = Instantiate(shopMinimap, minimap.transform);
-            //spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(x - 5, y - 6);
             spawnShopMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[0] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[1] - 6);
             spawnShopMap.name = $"Shop";
 
-            //Boss
-            GameObject spawnBossMap = Instantiate(bossMap, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]), Quaternion.identity);
-            GameObject spawnBossMiniMap = Instantiate(bossMinimap, minimap.transform);
-            spawnBossMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[3] - 6);
-            spawnBossMap.name = $"Boss";
+            //Shop
+            GameObject spawnShopMap2 = Instantiate(shop, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2], DataManager.instance.nowPlayer.mapShopAndBoss[3]), Quaternion.identity);
+            GameObject spawnShopMiniMap2 = Instantiate(shopMinimap, minimap.transform);
+            spawnShopMiniMap2.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[2] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[3] - 6);
+            spawnShopMap2.name = $"Boss";
 
+            //Boss
+            GameObject spawnBossMap = Instantiate(bossMap, maps.SetPos(DataManager.instance.nowPlayer.mapShopAndBoss[4], DataManager.instance.nowPlayer.mapShopAndBoss[5]), Quaternion.identity);
+            GameObject spawnBossMiniMap = Instantiate(bossMinimap, minimap.transform);
+            spawnBossMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[4] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[5] - 6);
+            spawnBossMap.name = $"Boss";
         }
     }
 

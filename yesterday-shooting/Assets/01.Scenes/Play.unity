@@ -9457,7 +9457,7 @@ MonoBehaviour:
   stopPanel: {fileID: 1931961738}
   speed: 5
   rightIsTrue: 0
-  nowBombCount: 10
+  nowBombCount: 12
   bombDeley: 0.7
   bomb: {fileID: 8342439436060693773, guid: 7288d04b5f736e14885bfc3fc6256c7b, type: 3}
   bombRange: {fileID: 6951590567328401415, guid: 7304f12716c05364fb47300552d7e13b, type: 3}
