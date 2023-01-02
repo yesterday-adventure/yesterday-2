@@ -49,6 +49,8 @@ public class PlayerItem : MonoBehaviour
         if (collision.tag == "ActiveItem")
         {
             ItemSkill temp = collision.transform.GetComponent<FieldActiveItem>().ItemSkill;
+            Debug.Log(temp);
+            Debug.Log(temp.transform.name);
             collision.transform.GetComponent<FieldActiveItem>().ItemSkill = item.ItemSkill;
             item.ItemSkill = temp;
             playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;

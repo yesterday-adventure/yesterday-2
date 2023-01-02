@@ -14,5 +14,5 @@ public class FieldActiveItem : MonoBehaviour
     public bool Use()
     {
         return itme.Skill();
-    }
+    }   
 }
