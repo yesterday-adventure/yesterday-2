@@ -40,6 +40,9 @@ public class PlayerMove : MonoBehaviour
         {
             rightIsTrue = false;
         }
+
+        ServeItemManager.Instance.Gold = now_coin;
+        ServeItemManager.Instance.Bomb = now_bomb;
     }
 
     IEnumerator Bomb()
