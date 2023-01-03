@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float bombDelay;
     [SerializeField] GameObject bomb, bombBang;
     public int now_bomb;
+    public int now_coin;
 
     public bool rightIsTrue = false;
 
@@ -80,7 +81,7 @@ public class PlayerMove : MonoBehaviour
 
                     yield return new WaitForSeconds(bombDelay);
                 }*/
-                // À§ ¾Æ·¡ ¸¸µé±â...?
+                // ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½...?
             }
             yield return null;
         }
@@ -101,5 +102,5 @@ public class PlayerMove : MonoBehaviour
     {
         Debug.Log("tqfdafsfdsfasge");
     }*/
-    // ÁøÂ¥ Â¥Áõ³­´Ù.
+    // ï¿½ï¿½Â¥ Â¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 }

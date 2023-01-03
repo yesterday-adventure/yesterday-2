@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class DOTweenTest : MonoBehaviour
+public class ItemDropDoTween : MonoBehaviour
 {
     [SerializeField] private Ease ease;
     private void Start() {

@@ -27,7 +27,7 @@ public class GoldManager : MonoBehaviour
     {
         if(gold > 99)
             gold = 99;
-        goldTxt.text = (gold < 10)? $"0{gold}" : $"{gold}";
+            goldTxt.text = (gold < 10)? $"0{gold}" : $"{gold}";
         if(Input.GetKeyDown(KeyCode.V))
         {
             gold += 3;
