@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GoldManager : MonoBehaviour
+public class ServeItemManager : MonoBehaviour
 {
-    public static GoldManager Instance; 
+    public static ServeItemManager Instance; 
     private int gold = 0;
+    private int bomb;
     [SerializeField] private TextMeshProUGUI goldTxt;
+    [SerializeField] private TextMeshProUGUI bombTxt;
 
     public int Gold
     {
         get => gold;
         set => gold = value;
+    }
+    public int Bomb
+    {
+        get => bomb;
+        set => bomb = value;
     }
     private void Awake()
     {
@@ -31,6 +38,16 @@ public class GoldManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.V))
         {
             gold += 3;
+        }
+
+        if(bomb > 99) {
+
+        }
+            bomb = 99;
+            bombTxt.text = (bomb < 10)? $"0{bomb}" : $"{bomb}";
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            bomb += 3;
         }
     }
 }

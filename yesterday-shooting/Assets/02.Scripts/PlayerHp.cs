@@ -108,7 +108,7 @@ public class PlayerHp : MonoBehaviour
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
             if (invincibleHand  ==  null && !invincibleHand.isSkil) OnDamage(() => { });
         }
-    }
+        }
 
     void Die()
     {

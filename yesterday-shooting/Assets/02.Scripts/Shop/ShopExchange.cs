@@ -19,9 +19,9 @@ public class ShopExchange : MonoBehaviour
     }
     public bool CanExchange()
     {
-        if(GoldManager.Instance.Gold >= needMoney)
+        if(ServeItemManager.Instance.Gold >= needMoney)
         {
-            GoldManager.Instance.Gold -= needMoney;
+            ServeItemManager.Instance.Gold -= needMoney;
             return true;
         }
         return false;
