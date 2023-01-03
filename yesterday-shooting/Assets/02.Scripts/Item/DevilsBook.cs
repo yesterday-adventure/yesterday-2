@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DevilsBook : ItemSkill
 {
-    [SerializeField] private int itemMaxColl = 10;
+    [SerializeField] private int itemMaxColl = 5;
     PlayerData playerData;
     BulletInfo bulletInfo;
     public override bool Skill()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IronArmor : ItemSkill
 {
-    [SerializeField] private int itemMaxColl = 10;
+    [SerializeField] private int itemMaxColl = 5;
     PlayerFire playerFire;
 
     public bool shield = false;
@@ -16,6 +16,7 @@ public class IronArmor : ItemSkill
         //공격속도가 0.3초 감소
         shield = true;
         //보호막을 생성한다 ~PlayerHp/OnDamage 메서드에 적용해둠
+        
         //공격속도가 0.3 감소하고 한 번의 공격을 막아주는 방어막이 생긴다.
         return true;
     }
