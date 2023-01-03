@@ -28,9 +28,10 @@ public class Chase : MonoBehaviour
             beforeTargetPos = targetPos;
             SetNextPosition();
         }
-        if(Vector3.Distance(nextPos,transform.position) <= 0.2)
+        if(Vector3.Distance(nextPos,transform.position) <= 0.2f)
         {
             SetNextPosition();
+            //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         
         _brain.Move((nextPos - transform.position).normalized);

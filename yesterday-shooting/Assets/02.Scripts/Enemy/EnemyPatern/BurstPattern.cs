@@ -6,6 +6,11 @@ public class BurstPattern : MonoBehaviour
 {
     public GameObject EnemyBullet = null;
     public GameObject player;
+
+    private void OnEnable()
+    {
+        player = GameObject.Find("Player");
+    }
     private void OnDisable()
     {
         if (player == null)

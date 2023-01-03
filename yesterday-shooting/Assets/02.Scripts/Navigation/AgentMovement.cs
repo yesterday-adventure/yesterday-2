@@ -24,17 +24,26 @@ public class AgentMovement : MonoBehaviour
     {
         if (movementInput.sqrMagnitude > 0)
         {
-            if(Vector2.Dot(movementInput, _movementDirection) < 0)
+            if(Vector2.Dot(movementInput, _movementDirection) <= 0)
             {
                 followSpeed = 0;
+                _rigid.velocity = Vector2.zero;
             }
             else
             {
                 followSpeed = speed;
             }
+            Debug.Log(Vector2.Dot(movementInput, _movementDirection) + " : " + followSpeed);
+            // else
+            // {
+            //     followSpeed = speed;
+            // }
+
 
             _movementDirection = movementInput.normalized;
         }
+        else
+            followSpeed = 0;
     }
 
 
