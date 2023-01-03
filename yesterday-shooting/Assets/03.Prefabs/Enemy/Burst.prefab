@@ -187,6 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
+  bomb: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!95 &1576723887
 Animator:
   serializedVersion: 3
@@ -328,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
 --- !u!114 &5247410437236897095
 MonoBehaviour:
   m_ObjectHideFlags: 0
