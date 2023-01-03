@@ -3430,6 +3430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMoney: 7
+  shopItem: 3
 --- !u!114 &537103339033057537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3592,6 +3593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMoney: 8
+  shopItem: 1
 --- !u!114 &537103339042619670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3754,6 +3756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMoney: 7
+  shopItem: 2
 --- !u!114 &537103339140873215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4050,6 +4053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMoney: 7
+  shopItem: 2
 --- !u!114 &537103340114942972
 MonoBehaviour:
   m_ObjectHideFlags: 0
