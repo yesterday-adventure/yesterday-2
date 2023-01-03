@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8883666087159632469}
   - component: {fileID: 952945829235681777}
   - component: {fileID: 8523115941984272904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}

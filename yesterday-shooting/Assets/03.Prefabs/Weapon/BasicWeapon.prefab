@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6789308091102963441}
   - component: {fileID: 3146537486080786719}
   - component: {fileID: 5388017983363615048}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BasicWeapon
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
