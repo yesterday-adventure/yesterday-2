@@ -119,7 +119,15 @@ public class PlayerHp : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);//플레이어 죽는 애니메션
-        System.IO.File.Delete(DataManager.instance.path + DataManager.instance.nowSlot);
+
+        System.IO.File.Delete(DataManager.instance.path + $"{DataManager.instance.nowSlot}");
+        System.IO.File.Delete(DataManager.instance.path + $"TwoArr{DataManager.instance.nowSlot}");
+        System.IO.File.Delete(DataManager.instance.path + $"TwoArrBool{DataManager.instance.nowSlot}");
+        Select.instance.savefile[DataManager.instance.nowSlot] = false;
+
+        //DataManager.instance.DataClear();
+
+        //File.Delete(DataManager.instance.path + DataManager.instance.nowSlot);
         SceneManager.LoadScene("Over");
     }
 }

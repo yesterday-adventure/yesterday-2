@@ -39,6 +39,15 @@ public class PlayerItem : MonoBehaviour
         cool = DataManager.instance.nowPlayer.activeItemCoolTime;
     }
 
+    private void Start()
+    {
+        //바닥에 떨어진 아이템 넣어주는 곳.
+        if (!Select.instance.newStart)  //처음 시작하는 것이 아니라면
+        {
+
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && cool <= 0)

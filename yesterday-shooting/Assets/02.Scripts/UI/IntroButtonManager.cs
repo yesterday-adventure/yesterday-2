@@ -96,7 +96,19 @@ public class IntroButtonManager : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
+    int slot = 0;
+
     public void GameT() {
+        slot = FindObjectOfType<DataManager>().nowSlot;
+
+        DataManager.instance.DataClear();
+        
+        DataManager.instance.nowSlot = slot;
+        DataManager.instance.nowPlayer.playing = true;
+        Select.instance.newStart = true;
+        Select.instance.savefile[DataManager.instance.nowSlot] = true;
+
+        DataManager.instance.SaveData();
         SceneManager.LoadScene("Play");
     }
     #endregion

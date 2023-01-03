@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using DG.Tweening;
 
 public class ITween : MonoBehaviour
 {
@@ -22,11 +21,17 @@ public class ITween : MonoBehaviour
 
     PlayerManager playerManager;
 
+    Vector3 basicPos;
+    Vector3 nowPos;
+
     public void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
 
+        wallTouch = true;
+
         parabolaDestination = new Vector3(gameObject.transform.position.x + playerManager.moveLocation, gameObject.transform.position.y - 0.5f, 0);
+        basicPos.x = gameObject.transform.position.x;
 
         // y 축 이동 (위 아래로 움직이기)
         iTween.MoveBy(child, iTween.Hash("y", parabolaHeight, "time", moveTime / 2, "easeType", iTween.EaseType.easeOutQuad));
@@ -36,6 +41,36 @@ public class ITween : MonoBehaviour
         iTween.MoveTo(gameObject, iTween.Hash("position", parabolaDestination, "time", moveTime, "easeType", iTween.EaseType.linear, "oncomplete", "BombBang"));
     }
 
+    float time = 0;
+    public Vector3 moved;
+    bool wallTouch = false;
+
+    private void Update()
+    {
+
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+
+        if ((pos.x > 1f || pos.x < 0f) && wallTouch)
+        {
+            iTween.Stop(gameObject);
+
+            moveTime -= time;
+            moved = new Vector3(gameObject.transform.position.x - (playerManager.moveLocation - (nowPos.x - basicPos.x)), parabolaDestination.y, 0);
+
+            iTween.MoveTo(gameObject, iTween.Hash("position", moved, "time", moveTime, "easeType", iTween.EaseType.linear, "oncomplete", "BombBang"));
+
+            wallTouch = false;
+        }
+        else
+        {
+            if (wallTouch)
+            {
+                time += Time.deltaTime;
+                nowPos.x = gameObject.transform.position.x;
+            }
+        }
+    }
+
     void BombBang()
     {
         StartCoroutine(Bomb());
@@ -43,7 +78,7 @@ public class ITween : MonoBehaviour
 
     float flashing = 0.5f;
     public Material whiteFlashMat;
-    
+
     IEnumerator Bomb()
     {
         Material defaultMat = GetComponentInChildren<SpriteRenderer>().material;
