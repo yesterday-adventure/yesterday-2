@@ -7,7 +7,7 @@ public class ServeItemManager : MonoBehaviour
 {
     public static ServeItemManager Instance; 
     private int gold = 0;
-    private int bomb;
+    private int bomb = 0;
     [SerializeField] private TextMeshProUGUI goldTxt;
     [SerializeField] private TextMeshProUGUI bombTxt;
 
@@ -41,9 +41,8 @@ public class ServeItemManager : MonoBehaviour
         }
 
         if(bomb > 99) {
-
-        }
             bomb = 99;
+        }
             bombTxt.text = (bomb < 10)? $"0{bomb}" : $"{bomb}";
         if(Input.GetKeyDown(KeyCode.B))
         {

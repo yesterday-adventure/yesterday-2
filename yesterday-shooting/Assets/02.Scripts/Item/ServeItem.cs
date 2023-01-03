@@ -12,14 +12,11 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
     // [SerializeField] private List<TextMeshProUGUI> txtList = new List<TextMeshProUGUI>(); //표시할 TMP
     // private string currentItem; //현재 아이템 이름을 받아올 변수
 
-    PlayerMove playerMove;
 
 
-    private void Awake() {
+    private void OnEnable() {
         // serveItemList.Add("bomp", serveItem[0]);
         // serveItemList.Add("coin", serveItem[1]);
-
-        playerMove = FindObjectOfType<PlayerMove>();
     }
     private void Update() {
         // txtList[0].text = serveItem[0].ToString();
@@ -39,9 +36,8 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
         //         serveItemList[str]++; //key 값의 value 값에 +1을 해준다
         //     }
         // }
-
-        if (gameObject.name == "Bomb") playerMove.now_bomb++; //이름이 폭탄이면 폭탄++
-        else { playerMove.now_coin++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
+        if (gameObject.tag == "Bomb") ServeItemManager.Instance.Bomb++; //이름이 폭탄이면 폭탄++
+        else { ServeItemManager.Instance.Gold++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
 
         Destroy(gameObject); //아이템은 삭제    
     }

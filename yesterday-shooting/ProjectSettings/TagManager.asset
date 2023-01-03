@@ -32,6 +32,7 @@ TagManager:
   - room14
   - room1
   - room8
+  - Bomb
   layers:
   - Default
   - TransparentFX
