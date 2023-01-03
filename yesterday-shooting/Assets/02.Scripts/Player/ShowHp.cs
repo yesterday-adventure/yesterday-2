@@ -15,23 +15,40 @@ public class ShowHp : MonoBehaviour
     {
         switch(DataManager.instance.nowPlayer.playerHp)
         {
+            case 5:
+                this.transform.GetChild(4).gameObject.SetActive(true);
+                this.transform.GetChild(3).gameObject.SetActive(true);
+                this.transform.GetChild(2).gameObject.SetActive(true);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
+                break;
             case 4:
                 this.transform.GetChild(4).gameObject.SetActive(false);
+                this.transform.GetChild(3).gameObject.SetActive(true);
+                this.transform.GetChild(2).gameObject.SetActive(true);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case 3:
                 this.transform.GetChild(4).gameObject.SetActive(false);
                 this.transform.GetChild(3).gameObject.SetActive(false);
+                this.transform.GetChild(2).gameObject.SetActive(true);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case 2:
                 this.transform.GetChild(4).gameObject.SetActive(false);
                 this.transform.GetChild(3).gameObject.SetActive(false);
                 this.transform.GetChild(2).gameObject.SetActive(false);
+                this.transform.GetChild(1).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case 1:
                 this.transform.GetChild(4).gameObject.SetActive(false);
                 this.transform.GetChild(3).gameObject.SetActive(false);
                 this.transform.GetChild(2).gameObject.SetActive(false);
                 this.transform.GetChild(1).gameObject.SetActive(false);
+                this.transform.GetChild(0).gameObject.SetActive(true);
                 break;
             case 0:
                 this.transform.GetChild(4).gameObject.SetActive(false);
