@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4326334445132371801}
-  - component: {fileID: 4326334445132371802}
+  - component: {fileID: 2749951184836127401}
   m_Layer: 0
-  m_Name: DevilsBook
+  m_Name: RustyRazorBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 4326334445463588169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4326334445132371802
+--- !u!114 &2749951184836127401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4326334445132371800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09710c01ed1b908478394daebecc6580, type: 3}
+  m_Script: {fileID: 11500000, guid: b50d9aeca82eac64aab89075f336ed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxCool: 0
@@ -190,4 +190,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf4c0a4aa3bdb941ae2cd7fef54f81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 4326334445132371802}
+  item: {fileID: 0}
