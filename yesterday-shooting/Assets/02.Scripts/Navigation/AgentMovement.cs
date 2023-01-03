@@ -6,7 +6,12 @@ public class AgentMovement : MonoBehaviour
 {
     private Rigidbody2D _rigid;
 
-    [SerializeField]protected float speed = 0;
+    [SerializeField]private float speed = 0;
+
+    public float Speed{
+        get{return speed;}
+        set{speed = value;}
+    }
     float followSpeed = 0f;
     protected Vector2 _movementDirection;
 

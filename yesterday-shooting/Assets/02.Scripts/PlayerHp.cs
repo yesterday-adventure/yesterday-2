@@ -13,6 +13,7 @@ public class PlayerHp : MonoBehaviour
     [SerializeField] SpriteRenderer sR;
 
     IronArmor ironArmor;
+    InvincibleHand invincibleHand;
 
     public void OnDamage(Action lambda)
     {
@@ -91,13 +92,13 @@ public class PlayerHp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1 && !invincibleHand.isSkil)
             OnDamage(() => { });
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1 && !invincibleHand.isSkil)
             OnDamage(() => { });
     }
 
