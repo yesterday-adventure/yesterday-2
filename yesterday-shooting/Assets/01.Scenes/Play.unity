@@ -5162,6 +5162,7 @@ GameObject:
   - component: {fileID: 891854253}
   - component: {fileID: 891854255}
   - component: {fileID: 891854254}
+  - component: {fileID: 891854256}
   m_Layer: 5
   m_Name: Bomb
   m_TagString: Untagged
@@ -5286,6 +5287,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891854252}
   m_CullTransparentMesh: 1
+--- !u!114 &891854256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891854252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2979844df96cc458c0dabcdd641559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldTxt: {fileID: 891854254}
+  bombTxt: {fileID: 891854254}
 --- !u!1 &914213456
 GameObject:
   m_ObjectHideFlags: 0
@@ -15868,7 +15883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2979844df96cc458c0dabcdd641559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldTxt: {fileID: 1790954350}
+  goldTxt: {fileID: 891854254}
+  bombTxt: {fileID: 891854254}
 --- !u!1 &1803253215
 GameObject:
   m_ObjectHideFlags: 0
@@ -16571,6 +16587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
+  bomb: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!212 &2045750780
 SpriteRenderer:
   m_ObjectHideFlags: 0

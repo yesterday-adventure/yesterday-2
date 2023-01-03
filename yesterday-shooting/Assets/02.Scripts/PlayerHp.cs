@@ -99,16 +99,22 @@ public class PlayerHp : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
-            if (invincibleHand  ==  null && !invincibleHand.isSkil) OnDamage(() => { });
+            if (invincibleHand) { //null이 아니라면
+                if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
+            }
+            else { OnDamage(() => { }); }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
-            if (invincibleHand  ==  null && !invincibleHand.isSkil) OnDamage(() => { });
+            if (invincibleHand) { //null이 아니라면
+                if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
+            }
+            else { OnDamage(() => { }); }
         }
-        }
+    }
 
     void Die()
     {
