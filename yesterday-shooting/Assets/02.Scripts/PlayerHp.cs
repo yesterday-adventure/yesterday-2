@@ -17,9 +17,9 @@ public class PlayerHp : MonoBehaviour
 
     private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
 
-    private void Awake() {
-        if (GameObject.Find("Player/InvincibleHand")) isInvincibleHand = true; //플레이어 아래 이 아이템이 있다면,,
-    }
+    // private void Update() {
+    //     if (GameObject.Find("Player/InvincibleHand")) isInvincibleHand = true; //플레이어 아래 이 아이템이 있다면,,
+    // }
 
     public void OnDamage(Action lambda)
     {
@@ -98,14 +98,16 @@ public class PlayerHp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1 && isInvincibleHand)
-            if (!invincibleHand.isSkil) OnDamage(() => { });
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
+            if (invincibleHand  ==  null && !invincibleHand.isSkil) OnDamage(() => { });
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1 && isInvincibleHand)
-            if (!invincibleHand.isSkil) OnDamage(() => { });
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
+            if (invincibleHand  ==  null && !invincibleHand.isSkil) OnDamage(() => { });
+        }
     }
 
     void Die()
