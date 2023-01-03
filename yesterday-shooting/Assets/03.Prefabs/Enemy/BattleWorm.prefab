@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
+  bomb: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!114 &1088391304772076646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3e0673af5a5d540b109859ea44cfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
 --- !u!114 &8585430401287407250
 MonoBehaviour:
   m_ObjectHideFlags: 0
