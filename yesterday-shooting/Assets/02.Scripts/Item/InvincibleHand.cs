@@ -8,14 +8,17 @@ public class InvincibleHand : ItemSkill
 
     PlayerData playerData;
 
-    [SerializeField] private GameObject player = null;
+    private GameObject player;
 
     private Vector2 playerPos;
 
     //무적인건 ~playerHp/OnDamage 조건문에 붙여둠 ㅇㅇ
 
-    public bool isSkil; //스킬이 돌아가는 중인지 구분하는
+    public bool isSkil = false; //스킬이 돌아가는 중인지 구분하는
 
+    private void Awake() {
+        player = GameObject.Find("Player");
+    }
     private void Update() {
         if (isSkil) {
             player.transform.position = playerPos; //3초가 안 지났다면 계속 고정 위치값 때려박아주기

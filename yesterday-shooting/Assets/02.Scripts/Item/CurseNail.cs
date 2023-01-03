@@ -8,11 +8,16 @@ public class CurseNail : ItemSkill
 
     PlayerData playerData;
 
-    Vector2 player; //찾아오지 않았음
-    private Vector2 size; //정의하지 않았음
+    private GameObject player;
+    private Vector2 size;
 
     Collider2D[] overLapBox;
     AgentMovement movement = null;
+
+    private void Awake() {
+        player = GameObject.Find("Player");
+        size = new Vector2(50, 50);
+    }
     public override bool Skill()
     {
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
@@ -21,7 +26,7 @@ public class CurseNail : ItemSkill
         //오버랩박스 그리기
         //그린애들 찾아다가 스피드 -2
         
-        overLapBox = Physics2D.OverlapBoxAll(player, size, 0, 1<<10); 
+        overLapBox = Physics2D.OverlapBoxAll(player.transform.position, size, 0, 1<<10); 
         //오버랩 박스를 만들어 그 구간에 들어온 것들의 콜라이더를 가져온다(레이어가 10번인 = 에너미)
 
         foreach(var arr in overLapBox){ //걸린 콜라이더들을 전부 반복한다
