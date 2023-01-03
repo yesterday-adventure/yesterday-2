@@ -12,7 +12,7 @@ public class PlayerItem : MonoBehaviour
     [SerializeField] private FieldActiveItem[] itemarr;
     Dictionary<string, FieldActiveItem> items = new Dictionary<string, FieldActiveItem>();
 
-    public int cool = 0;
+    public float cool = 0;
 
     public bool useGodsDice = false;
 

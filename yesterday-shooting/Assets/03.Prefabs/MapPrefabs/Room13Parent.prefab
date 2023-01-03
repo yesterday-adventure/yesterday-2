@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 2096960510993274163}
-  roomNumber: 12
+  roomNumber: 13
 --- !u!1 &2096960510169393222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,7 +2917,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2096960510993274162
 Transform:
   m_ObjectHideFlags: 0
