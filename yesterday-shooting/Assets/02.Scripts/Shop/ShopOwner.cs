@@ -37,6 +37,10 @@ public class ShopOwner : MonoBehaviour
             {
                 for (int i = 0; i < 4; i++)
                 {
+                    if (DataManager.instance.nowPlayer.shopItem1[i] == null && DataManager.instance.nowPlayer.shopPlusPrice1[i] == 0)
+                    {
+                        continue;
+                    }
                     transform.GetChild(i).name = DataManager.instance.nowPlayer.shopItem1[i];
                     transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = DataManager.instance.nowPlayer.shopPlusPrice1[i];
                 }
@@ -45,6 +49,10 @@ public class ShopOwner : MonoBehaviour
             {
                 for (int i = 0; i < 4; i++)
                 {
+                    if (DataManager.instance.nowPlayer.shopItem2[i] == null && DataManager.instance.nowPlayer.shopPlusPrice2[i] == 0)
+                    {
+                        continue;
+                    }
                     transform.GetChild(i).name = DataManager.instance.nowPlayer.shopItem2[i];
                     transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = DataManager.instance.nowPlayer.shopPlusPrice2[i];
                 }

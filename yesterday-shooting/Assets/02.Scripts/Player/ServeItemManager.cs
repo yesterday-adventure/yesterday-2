@@ -6,7 +6,7 @@ using TMPro;
 public class ServeItemManager : MonoBehaviour
 {
     public static ServeItemManager Instance; 
-    private int gold = 0;
+    private int gold;
     private int bomb;
     [SerializeField] private TextMeshProUGUI goldTxt;
     [SerializeField] private TextMeshProUGUI bombTxt;
@@ -32,22 +32,26 @@ public class ServeItemManager : MonoBehaviour
 
     void Update()
     {
-        if(gold > 99)
-            gold = 99;
-            goldTxt.text = (gold < 10)? $"0{gold}" : $"{gold}";
+        if(gold > 99) gold = 99;
+
+        goldTxt.text = (gold < 10)? $"0{gold}" : $"{gold}";
+        
         if(Input.GetKeyDown(KeyCode.V))
         {
+            Debug.Log("코인증가");
             gold += 3;
         }
 
         if(bomb > 99) {
-
-        }
             bomb = 99;
-            bombTxt.text = (bomb < 10)? $"0{bomb}" : $"{bomb}";
+        }
+        
+        bombTxt.text = (bomb < 10)? $"0{bomb}" : $"{bomb}";
+        
         if(Input.GetKeyDown(KeyCode.B))
         {
             bomb += 3;
+            FindObjectOfType<PlayerManager>().nowBombCount += 3;
         }
     }
 }

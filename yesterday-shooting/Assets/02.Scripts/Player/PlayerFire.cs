@@ -106,6 +106,17 @@ public class PlayerFire : MonoBehaviour
                     collision.tag = "ActiveItem";
                 else if(shopExchange.shopItem == ShopItem.potion)
                     collision.tag = "Potion";
+
+                if (collision.transform.parent.name == "Shop1")
+                {
+                    DataManager.instance.nowPlayer.shopItem1[collision.GetComponent<Item>().myNumber] = null;
+                    DataManager.instance.nowPlayer.shopPlusPrice1[collision.GetComponent<Item>().myNumber] = 0;
+                }
+                else if (collision.transform.parent.name == "Shop2")
+                {
+                    DataManager.instance.nowPlayer.shopItem2[collision.GetComponent<Item>().myNumber] = null;
+                    DataManager.instance.nowPlayer.shopPlusPrice2[collision.GetComponent<Item>().myNumber] = 0;
+                }
             }
         }
 

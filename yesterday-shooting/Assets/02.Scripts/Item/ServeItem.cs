@@ -40,8 +40,8 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
         //     }
         // }
 
-        if (gameObject.name == "Bomb") playerMove.now_bomb++; //이름이 폭탄이면 폭탄++
-        else { playerMove.now_coin++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
+        if (gameObject.name == "Bomb") ServeItemManager.Instance.Bomb++; //이름이 폭탄이면 폭탄++
+        else { ServeItemManager.Instance.Gold++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
 
         Destroy(gameObject); //아이템은 삭제    
     }
