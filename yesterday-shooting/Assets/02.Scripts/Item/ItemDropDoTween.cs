@@ -6,10 +6,13 @@ using DG.Tweening;
 public class ItemDropDoTween : MonoBehaviour
 {
     [SerializeField] private Ease ease;
-    private void Start() {
-        //ItemDropAnim();
+    private void Start()
+    {
+        ItemDropAnim();
     }
-    public void ItemDropAnim() {
-        transform.DOJump(transform.position, 3, 1, 2.5f, false).SetEase(ease);
+
+    public void ItemDropAnim()
+    {
+        transform.DOJump((Vector2)transform.position + (Random.insideUnitCircle / 2), 1, 1, 1f).SetEase(ease);
     }
 }
