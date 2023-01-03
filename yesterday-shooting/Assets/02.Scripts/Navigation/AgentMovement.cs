@@ -33,7 +33,6 @@ public class AgentMovement : MonoBehaviour
             {
                 followSpeed = speed;
             }
-            Debug.Log(Vector2.Dot(movementInput, _movementDirection) + " : " + followSpeed);
             // else
             // {
             //     followSpeed = speed;

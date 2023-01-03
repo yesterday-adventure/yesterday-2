@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
-  bomb: {fileID: 0}
-  coin: {fileID: 0}
+  bomb: {fileID: 489223338349646256, guid: e16345bfa80731543aa9c1141d2b3a51, type: 3}
+  coin: {fileID: 6235591056422325518, guid: cc9bce55e465372458de60cbb6e88171, type: 3}
 --- !u!114 &195402603285124504
 MonoBehaviour:
   m_ObjectHideFlags: 0
