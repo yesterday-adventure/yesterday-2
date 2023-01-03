@@ -3427,11 +3427,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6893924602397070804, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: speed
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409776, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_Name
       value: BigBig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
+      propertyPath: delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
