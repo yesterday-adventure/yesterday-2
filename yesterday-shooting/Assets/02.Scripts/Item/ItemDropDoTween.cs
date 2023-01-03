@@ -13,6 +13,6 @@ public class ItemDropDoTween : MonoBehaviour
 
     public void ItemDropAnim()
     {
-        transform.DOJump((Vector2)transform.position + (Random.insideUnitCircle / 2), 1, 1, 1f).SetEase(ease);
+        transform.DOJump((Vector2)transform.position + (Random.insideUnitCircle), 1, 1, 1f).SetEase(ease);
     }
 }

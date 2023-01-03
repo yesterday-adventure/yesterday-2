@@ -15,7 +15,8 @@ public class PlayerItem : MonoBehaviour
 
     public bool useGodsDice = false;
 
-    [SerializeField] private Image playerUI;
+    [SerializeField] private Image playerUI1;
+    [SerializeField] private Image playerUI2;
 
     private void Awake()
     {
@@ -28,7 +29,8 @@ public class PlayerItem : MonoBehaviour
             Debug.LogWarning("Multiple PlayerItem Instance running");
         }
 
-        playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
+        playerUI1.sprite = item.GetComponent<SpriteRenderer>().sprite;
+        playerUI2.sprite = item.GetComponent<SpriteRenderer>().sprite;
 
         //µÒº≈≥ ∏Æø° æ∆¿Ã≈€ √ﬂ∞°
         for (int i = 0; i < itemArr.Length; i++)
