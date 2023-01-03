@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,13 @@ public class EnemyHp : MonoBehaviour, IDamageable
     public bool isAttack {
         get { return _isAttack; }
     }
+
+    [SerializeField] private GameObject bomb = null;
+
+    [SerializeField] private GameObject coin = null;
+
+    private int ran;
+
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
@@ -62,5 +70,26 @@ public class EnemyHp : MonoBehaviour, IDamageable
         PlayerItem.Instance.cool--;
         effectSound.MonsterDie();
         Destroy(this.gameObject);
+
+        SpawnCoin();
+        SpawnBomb();
+    }
+
+    void SpawnCoin(){
+        ran = UnityEngine.Random.Range(1, 2); //이거 유니티엔진이랑 시스템 사이에서 모호하대서 걍 때려박음
+        
+        for (int i = 0; i < ran; i++) { //코인 생성, 반반 확률로 1개나 2개 얻기 ㄱㄴ
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
+            ran = 0;
+        }
+    }
+
+    void SpawnBomb() {
+        ran = UnityEngine.Random.Range(1, 100);
+
+        if (ran <= 25) { //폭탄 생성, 25 확률로 1개 줌 ㅎㅎ
+            Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+            ran = 0;
+        }
     }
 }
