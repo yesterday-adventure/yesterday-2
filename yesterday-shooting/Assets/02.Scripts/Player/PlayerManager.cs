@@ -10,27 +10,32 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] GameObject stopPanel;
     [SerializeField] private float speed = 5f;
+    public int coin;
 
     [Header("Player Bomb")]
     public bool rightIsTrue;    //플레이어가 현재 보고 있는 방향
-    int nowBombCount = DataManager.instance.nowPlayer.bomb;    //현재 플레이어가 가지고 있는 폭탄 개수
+    public int nowBombCount;    //현재 플레이어가 가지고 있는 폭탄 개수
     [SerializeField] float bombDeley = 0.7f;    //폭탄 딜레이
     [SerializeField] GameObject bomb, bombRange;    //폭탄과 폭탄 범위
     public float moveLocation = 5f;   //폭탄이 날라가는 거리
 
     private void Awake()
     {
-        DataManager.instance.nowPlayer.bomb = nowBombCount;
-
         player = this.gameObject;
         if (instance == null)
             instance = this;
+
+        coin = DataManager.instance.nowPlayer.goldenCoin;
+        nowBombCount = DataManager.instance.nowPlayer.bomb;
     }
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         StartCoroutine(Bomb());
+
+        ServeItemManager.Instance.Gold = coin;
+        ServeItemManager.Instance.Bomb = nowBombCount;
     }
 
     void Update()
@@ -65,7 +70,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     Debug.Log("폭탄");
                     nowBombCount--;
-                    DataManager.instance.nowPlayer.bomb = nowBombCount;
+                    ServeItemManager.Instance.Bomb = nowBombCount;
 
                     if (rightIsTrue)
                     {

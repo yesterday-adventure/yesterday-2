@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     SpriteRenderer _renderer;
+    public int myNumber;
 
     private void Awake()
     {

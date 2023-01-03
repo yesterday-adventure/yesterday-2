@@ -7,7 +7,7 @@ public class PlayerData
 {
     // ���⿡ ������ ������ ��� ���
     public bool playing = false; // �÷����� ����� �ְ� ����Ǿ� �ִ��� �Ǵ�.
-    public bool[] roomClear = new bool[14] ;    // 전에 썼던 방 클리어 유뮤 판단하기
+    public bool[] roomClear = new bool[16] ;    // 전에 썼던 방 클리어 유뮤 판단하기
 
     public Vector3 playerPosition = new Vector3(90, 60, 0); //플레이어 포지션
     public int x = 5; // 플레이어가 마지막으로 있던 방의 방 숫자 배열 첫번째
@@ -28,7 +28,7 @@ public class PlayerData
     public string activeItem = null;      //아이템 이름 저장 설아야 이거 써서 엑티브 아이템 저장해줭
     public int activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
 
-    public int goldenCoin = 0;   //이 세개는 돈, 폭탄, 열쇠임.
+    public int goldenCoin = 3;   //이 세개는 돈, 폭탄, 열쇠임.
     public int bomb = 3;
     public int goldenKey = 0;
 
