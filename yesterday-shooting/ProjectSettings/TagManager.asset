@@ -14,25 +14,11 @@ TagManager:
   - Left
   - Center
   - WeaponItem
-  - room0
   - LockItem
   - ActiveItem
   - Potion
-  - room2
-  - room3
-  - room10
-  - room4
-  - room7
-  - room11
-  - room12
-  - room9
-  - room6
-  - room5
-  - room13
-  - room14
-  - room1
-  - room8
   - Bomb
+  - Hole
   layers:
   - Default
   - TransparentFX
@@ -41,9 +27,9 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
+  - Weapon
   - Player
-  - 
+  - Hole
   - Enemy
   - Room
   - 

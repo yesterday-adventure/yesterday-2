@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 913080602}
   - component: {fileID: 5555010088243352307}
   - component: {fileID: 3198605740045366671}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KnockbackWeapon
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}

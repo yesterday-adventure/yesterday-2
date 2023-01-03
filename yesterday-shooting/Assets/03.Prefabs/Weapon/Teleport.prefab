@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7475626793005031155}
   - component: {fileID: 491569756557596324}
   - component: {fileID: -629500575715067443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Teleport
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}

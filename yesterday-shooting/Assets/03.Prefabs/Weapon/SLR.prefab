@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3613678498546281294}
   - component: {fileID: 3619279401252804894}
   - component: {fileID: 391168827688375803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SLR
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
