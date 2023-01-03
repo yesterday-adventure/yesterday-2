@@ -100,7 +100,12 @@ public class PlayerFire : MonoBehaviour
             if(shopExchange.CanExchange())
             {
                 Debug.Log("구매!");
-                collision.tag = "WeaponItem";
+                if(shopExchange.shopItem == ShopItem.weapon)
+                    collision.tag = "WeaponItem";
+                else if(shopExchange.shopItem == ShopItem.activeItem)
+                    collision.tag = "ActiveItem";
+                else if(shopExchange.shopItem == ShopItem.potion)
+                    collision.tag = "Potion";
             }
         }
 
