@@ -24,7 +24,6 @@ public class AIBrain : MonoBehaviour
     }
     public void Move(Vector2 direction)
     {
-        Debug.Log(direction);
         OnMovementCommend?.Invoke(direction);
     }
 }
