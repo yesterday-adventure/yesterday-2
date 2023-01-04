@@ -180,6 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   attackDelay: 1.5
+  titleTxt: Thunder Bullet
+  captionTxt: 3 at once!
 --- !u!114 &-1828366587710884457
 MonoBehaviour:
   m_ObjectHideFlags: 0

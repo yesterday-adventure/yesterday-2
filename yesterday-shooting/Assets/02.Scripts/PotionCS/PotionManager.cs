@@ -14,6 +14,7 @@ public class PotionManager : MonoBehaviour
                     return;
                 else
                 {
+                    ItemNameAnimation.Instance.InitText("Cooldown Potion","Cooldown Reset!");
                     PlayerItem.Instance.cool = 0;
                     Destroy(gameObject);
                 }
@@ -24,7 +25,10 @@ public class PotionManager : MonoBehaviour
                     return;
                 else
                 {
+                    ItemNameAnimation.Instance.InitText("Healing Potion","Recover 2 hearts!");
                     DataManager.instance.nowPlayer.playerHp++;
+                    if(DataManager.instance.nowPlayer.playerHp != 5)
+                        DataManager.instance.nowPlayer.playerHp++;
                     Destroy(gameObject);
                 }
             }

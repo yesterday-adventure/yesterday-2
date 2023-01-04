@@ -192,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   attackDelay: 3
+  titleTxt: Sword Path
+  captionTxt: Throw, press again to move!
 --- !u!114 &-629500575715067443
 MonoBehaviour:
   m_ObjectHideFlags: 0

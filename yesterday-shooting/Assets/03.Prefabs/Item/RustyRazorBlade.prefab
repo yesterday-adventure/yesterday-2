@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50d9aeca82eac64aab89075f336ed10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Rusty razor blade
+  captionTxt: Heart slowly shrinks
   maxCool: 0
   itemMaxColl: 5
 --- !u!1 &4326334445463588168
@@ -190,4 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf4c0a4aa3bdb941ae2cd7fef54f81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 2749951184836127401}

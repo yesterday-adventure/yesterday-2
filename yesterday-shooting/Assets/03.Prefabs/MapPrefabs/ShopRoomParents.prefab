@@ -3472,6 +3472,7 @@ GameObject:
   - component: {fileID: 537103339042619675}
   - component: {fileID: 537103339042619671}
   - component: {fileID: 537103339042619670}
+  - component: {fileID: 8022129770405478674}
   m_Layer: 0
   m_Name: FireBullet
   m_TagString: LockItem
@@ -3620,6 +3621,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceTxt: {fileID: 5137301565690617564}
+--- !u!114 &8022129770405478674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537103339042619673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f06d07c7a96b845bcb1a1c59b8ac49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  attackDelay: 0
+  titleTxt: 
+  captionTxt: 
 --- !u!1 &537103339140873158
 GameObject:
   m_ObjectHideFlags: 0

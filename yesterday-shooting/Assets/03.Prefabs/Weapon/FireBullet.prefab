@@ -225,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   attackDelay: 1.5
+  titleTxt: Fire Bullet
+  captionTxt: It will keep hurting!
 --- !u!114 &952945829235681777
 MonoBehaviour:
   m_ObjectHideFlags: 0

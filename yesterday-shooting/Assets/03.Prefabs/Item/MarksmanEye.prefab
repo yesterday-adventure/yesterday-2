@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3147c4dddf65c08429deea5a21ac532e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Marksman's eye
+  captionTxt: One shot is enough.
   maxCool: 0
   itemMaxColl: 5
 --- !u!1 &111018177398288010
@@ -190,4 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf4c0a4aa3bdb941ae2cd7fef54f81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 1889776710789034913}

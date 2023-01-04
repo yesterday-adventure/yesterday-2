@@ -71,6 +71,7 @@ public class PlayerItem : MonoBehaviour
             item = items[collision.name];
             collision.name = temp;
 
+            ItemNameAnimation.Instance.InitText(item.ItemSkill.titleTxt,item.ItemSkill.captionTxt);
             //FieldActiveItem fieldItem = collision.GetComponent<FieldActiveItem>();
             //string temp = fieldItem.ItemSkill.name;
             //Debug.Log(temp);

@@ -123,8 +123,10 @@ public class PlayerFire : MonoBehaviour
         string temp = weapon.name;
         weapon = weapons[collision.gameObject.name];
         collision.gameObject.name = temp; 
+        BulletInfo bulletInfo = weapon.GetComponent<BulletInfo>();
+        ItemNameAnimation.Instance.InitText(bulletInfo.titleTxt,bulletInfo.captionTxt);
         yield return new WaitForSeconds(0.5f);
-        delay = weapon.GetComponent<BulletInfo>().AttackDelay;
+        delay = bulletInfo.AttackDelay;
         yield return new WaitForSeconds(1f);
         isChanging = false;
     }

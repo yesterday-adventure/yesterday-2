@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1560c582eb7feb5499e4fa584d55d9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Marionette
+  captionTxt: Reversal and Power
   maxCool: 0
   itemMaxColl: 10
   player: {fileID: 0}

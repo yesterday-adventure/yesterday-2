@@ -6,6 +6,7 @@ using TMPro;
 
 public class ItemNameAnimation : MonoBehaviour
 {
+    public static ItemNameAnimation Instance = null;
     Vector3 origin;
 
     TextMeshProUGUI title;
@@ -13,6 +14,15 @@ public class ItemNameAnimation : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("Multiple ItemNameAnimation");
+            Destroy(gameObject);
+        }
         title = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         caption = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 

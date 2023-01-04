@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf4c0a4aa3bdb941ae2cd7fef54f81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 2448979371432459939}
+  item: {fileID: 9049388714096478614}
 --- !u!1 &2448979371432459949
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448979371432459948}
-  - component: {fileID: 2448979371432459939}
   - component: {fileID: 9049388714096478614}
   m_Layer: 0
   m_Name: InvincibleHand
@@ -178,20 +177,6 @@ Transform:
   m_Father: {fileID: 2448979371097191693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2448979371432459939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2448979371432459949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09710c01ed1b908478394daebecc6580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCool: 0
-  itemMaxColl: 5
 --- !u!114 &9049388714096478614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163de0ba9a4134e40a0db32d626ab51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Invincible hand
+  captionTxt: Invincibility!
   maxCool: 0
   itemMaxColl: 10
-  player: {fileID: 0}
   isSkil: 0
