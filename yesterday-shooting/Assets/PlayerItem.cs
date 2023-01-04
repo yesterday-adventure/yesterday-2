@@ -64,21 +64,18 @@ public class PlayerItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "ActiveItem")
+        if (collision.tag == "ActiveItem" && ItemNameAnimation.Instance.IsChanging == false)
         {
-            Debug.Log("æ◊∆º∫Í æ∆¿Ã≈€ »πµÊ Ω√µµ");
+            playerUI1.sprite = collision.GetComponent<SpriteRenderer>().sprite;
+            playerUI2.sprite = collision.GetComponent<SpriteRenderer>().sprite;
+            //Debug.Log("æ◊∆º∫Í æ∆¿Ã≈€ »πµÊ Ω√µµ");
             string temp = item.name;
-            item = items[collision.name];
-            collision.name = temp;
+            Debug.Log(temp);
+            Debug.Log(collision.gameObject.name);
+            item = items[collision.gameObject.name];
+            collision.gameObject.name = temp;
 
             ItemNameAnimation.Instance.InitText(item.ItemSkill.titleTxt,item.ItemSkill.captionTxt);
-            //FieldActiveItem fieldItem = collision.GetComponent<FieldActiveItem>();
-            //string temp = fieldItem.ItemSkill.name;
-            //Debug.Log(temp);
-            //fieldItem.ItemSkill = item.ItemSkill;
-
-            //item.ItemSkill = items[temp].ItemSkill;
-            //playerUI.sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
     }
 }

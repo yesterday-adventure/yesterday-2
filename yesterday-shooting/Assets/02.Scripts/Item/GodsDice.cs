@@ -16,8 +16,8 @@ public class GodsDice : ItemSkill
         else
         {
             maxCool = itemMaxColl;
-            rand = Random.Range(1, 100);
-            if (rand <= 100) 
+            rand = Random.Range(1, 101);
+            if (rand <= 20) 
             {
                 Debug.Log("20%");
                 PlayerItem.Instance.useGodsDice = true;

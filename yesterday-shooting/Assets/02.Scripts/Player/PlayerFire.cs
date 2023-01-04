@@ -125,7 +125,7 @@ public class PlayerFire : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("WeaponItem") && !isChanging)
+        if (collision.CompareTag("WeaponItem") && !isChanging && ItemNameAnimation.Instance.IsChanging == false)
         {
             Debug.Log(collision);
             StartCoroutine(ChangeWeapon(collision));

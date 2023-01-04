@@ -8,7 +8,7 @@ public class DestroyMe : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            GetComponent<EnemyHp>().hp -= 10;
+            collision.GetComponent<EnemyHp>().hp -= 10;
         }
 
         if (collision.gameObject.CompareTag("Player"))
