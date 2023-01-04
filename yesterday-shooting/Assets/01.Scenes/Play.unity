@@ -9273,7 +9273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da44366fbefab1439875cee817d7d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 4374826873290748653, guid: 7922c20e7fdc63f469eeb11a13a8004b, type: 3}
+  weapon: {fileID: 952945829235681776, guid: c53a0e32740b7b8409fd041249ba07ff, type: 3}
   weaponArr:
   - {fileID: 4374826873290748653, guid: 7922c20e7fdc63f469eeb11a13a8004b, type: 3}
   - {fileID: 952945829235681776, guid: c53a0e32740b7b8409fd041249ba07ff, type: 3}
