@@ -23,7 +23,7 @@ public class JSonIsRoomClear : MonoBehaviour
 
         if (hitmonster == null && hitPlayer != null)
         {
-            Debug.Log("방이 클리어 되었다.");
+            //Debug.Log("방이 클리어 되었다.");
             DataManager.instance.nowPlayer.roomClear[roomNumber - 1] = true;
             DataManager.instance.SaveData();
         }

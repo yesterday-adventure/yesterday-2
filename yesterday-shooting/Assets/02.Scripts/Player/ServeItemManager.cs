@@ -5,7 +5,7 @@ using TMPro;
 
 public class ServeItemManager : MonoBehaviour
 {
-    public static ServeItemManager Instance; 
+    public static ServeItemManager Instance = null; 
     private int gold;
     private int bomb;
     [SerializeField] private TextMeshProUGUI goldTxt;
@@ -23,11 +23,15 @@ public class ServeItemManager : MonoBehaviour
     }
     private void Awake()
     {
-        if(Instance != null)
+        Debug.Log(transform.name);
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
         {
             Destroy(gameObject);
         }
-        Instance = this;
     }
 
     void Update()
