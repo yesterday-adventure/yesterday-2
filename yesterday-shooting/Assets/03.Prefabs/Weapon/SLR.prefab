@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f06d07c7a96b845bcb1a1c59b8ac49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  attackDelay: 1.5
+  damage: 0
+  attackDelay: 0.6
   titleTxt: SLR
   captionTxt: Blood continues to decrease!
 --- !u!114 &3613678498546281294

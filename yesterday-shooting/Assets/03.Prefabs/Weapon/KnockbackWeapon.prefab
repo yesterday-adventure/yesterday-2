@@ -211,6 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  attackDelay: 2
+  attackDelay: 0.9
   titleTxt: 'Knock Back Weapon '
   captionTxt: Push back!

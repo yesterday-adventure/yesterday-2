@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -3046123700089798033}
   - component: {fileID: -2472811631652943999}
   - component: {fileID: 3809295161737316987}
+  - component: {fileID: -1024199095653432225}
   m_Layer: 10
   m_Name: BigBig
   m_TagString: Enemy
@@ -280,5 +281,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 819378545babd9e48bdc907fe35b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1024199095653432225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059997920124409776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7beb215a7a07494596c017542261171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

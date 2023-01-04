@@ -13,11 +13,12 @@ public class DestroyMe : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            DataManager.instance.nowPlayer.playerHp -= 1;
+            //DataManager.instance.nowPlayer.playerHp -= 1;
+            collision.GetComponent<PlayerHp>().OnDamage(()=>{});
             Debug.Log("플레이어에게 닿음");
         }
 
-        gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+        gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
     }
 
     public void DestroyMeMethod()

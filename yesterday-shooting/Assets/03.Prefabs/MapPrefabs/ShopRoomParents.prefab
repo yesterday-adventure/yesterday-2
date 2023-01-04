@@ -1108,7 +1108,9 @@ MonoBehaviour:
   - SLR
   - Teleport
   - ThunderBullet
-  weaponMinPrice: 0a0000001900000019000000190000002300000019000000
+  - FastSpeed
+  - PowerfulWeapon
+  weaponMinPrice: 0a00000019000000190000001900000023000000190000001e0000001e000000
   shopItem:
   - DevilsBook
   - TeleportPotion

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 5247410437236897095}
   - component: {fileID: 7044507934423723265}
   - component: {fileID: 7730140156099100260}
+  - component: {fileID: 8301511667343254335}
   m_Layer: 10
   m_Name: Burst
   m_TagString: Enemy
@@ -385,5 +386,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 819378545babd9e48bdc907fe35b74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8301511667343254335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869459583551800596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7beb215a7a07494596c017542261171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
