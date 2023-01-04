@@ -40,6 +40,7 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
         {
             ServeItemManager.Instance.Bomb++;
             FindObjectOfType<PlayerManager>().nowBombCount++;
+            //Debug.Log(FindObjectOfType<PlayerManager>().nowBombCount);
         } //이름이 폭탄이면 폭탄++
         else { ServeItemManager.Instance.Gold++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
 
