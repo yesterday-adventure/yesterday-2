@@ -29,7 +29,11 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
-        weapon = weapons[DataManager.instance.nowPlayer.weaponName];
+        if (!Select.instance.newStart)
+        {
+            weapon = weapons[DataManager.instance.nowPlayer.weaponName];
+        }
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (instance == null)
         {

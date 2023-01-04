@@ -40,6 +40,7 @@ public class ServeItemManager : MonoBehaviour
         {
             Debug.Log("코인증가");
             gold += 3;
+            DataManager.instance.nowPlayer.goldenCoin = gold;
         }
 
         if(bomb > 99) {
