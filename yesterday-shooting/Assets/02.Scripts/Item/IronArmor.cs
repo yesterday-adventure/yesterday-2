@@ -5,14 +5,13 @@ using UnityEngine;
 public class IronArmor : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 5;
-    PlayerFire playerFire;
-
+    
     public bool shield = false;
     public override bool Skill()
     {
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
 
-        playerFire.delay -= 0.3f;
+        PlayerFire.instance.delay -= 0.3f;
         //공격속도가 0.3초 감소
         shield = true;
         //보호막을 생성한다 ~PlayerHp/OnDamage 메서드에 적용해둠

@@ -18,11 +18,15 @@ public class PlayerHp : MonoBehaviour
     //     if (GameObject.Find("Player/InvincibleHand")) isInvincibleHand = true; //플레이어 아래 이 아이템이 있다면,,
     // }
 
+    private void Awake() {
+        ironArmor = FindObjectOfType<IronArmor>();
+        invincibleHand = FindObjectOfType<InvincibleHand>();
+    }
+
     public void OnDamage(Action lambda)
     {
         if (ironArmor != null)
         {
-
             if (ironArmor.shield)
             { //철갑주 아이템을 사용하여 보호막이 있는 경우
                 ironArmor.shield = false;

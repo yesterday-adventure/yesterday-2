@@ -76,7 +76,7 @@ public class ITween : MonoBehaviour
         StartCoroutine(Bomb());
     }
 
-    float flashing = 0.5f;
+    float flashing = 0.3f;
     public Material whiteFlashMat;
 
     IEnumerator Bomb()
@@ -84,7 +84,7 @@ public class ITween : MonoBehaviour
         Material defaultMat = GetComponentInChildren<SpriteRenderer>().material;
         //= gameObject.GetComponent<SpriteRenderer>().material;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 2; j++)
             {

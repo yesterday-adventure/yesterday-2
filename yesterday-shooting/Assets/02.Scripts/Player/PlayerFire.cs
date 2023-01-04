@@ -29,6 +29,11 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        if (!Select.instance.newStart)
+        {
+            weapon = weapons[DataManager.instance.nowPlayer.weaponName];
+        }
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (instance == null)
         {
@@ -120,7 +125,7 @@ public class PlayerFire : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("WeaponItem") && !isChanging)
+        if (collision.CompareTag("WeaponItem") && !isChanging && ItemNameAnimation.Instance.IsChanging == false)
         {
             Debug.Log(collision);
             StartCoroutine(ChangeWeapon(collision));
@@ -140,5 +145,7 @@ public class PlayerFire : MonoBehaviour
         delay = bulletInfo.AttackDelay;
         yield return new WaitForSeconds(1f);
         isChanging = false;
+
+        DataManager.instance.nowPlayer.weaponName = weapon.name;
     }
 }

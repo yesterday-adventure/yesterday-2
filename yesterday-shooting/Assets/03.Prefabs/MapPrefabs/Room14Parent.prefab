@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d42398198465e48a9f79ad98163277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNumber: 2
+  roomNumber: 14
 --- !u!1 &6425451640662025990
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,9 +846,9 @@ GameObject:
   - component: {fileID: 6425451640662026011}
   - component: {fileID: 6425451640662026008}
   - component: {fileID: 6425451640662026010}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Collisions
-  m_TagString: Wall
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3508,11 +3508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5280347
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9722102
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3570,11 +3570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.512123
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9722102
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_LocalPosition.z
