@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f272ad5c88bc848ad2f6902a960197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Iron armor
+  captionTxt: It's heavy, but protect me.
   maxCool: 0
   itemMaxColl: 5
   shield: 0

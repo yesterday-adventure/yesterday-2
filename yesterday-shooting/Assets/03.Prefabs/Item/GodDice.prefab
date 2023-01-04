@@ -189,5 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81913a6e1ba5534295bb5973245928e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: God's dice
+  captionTxt: Kill Everyone! ..sometimes
   maxCool: 0
   itemMaxColl: 20

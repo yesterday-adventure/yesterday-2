@@ -257,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   attackDelay: 1.5
+  titleTxt: SLR
+  captionTxt: Blood continues to decrease!
 --- !u!114 &3613678498546281294
 MonoBehaviour:
   m_ObjectHideFlags: 0

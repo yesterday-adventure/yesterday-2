@@ -12,7 +12,7 @@ public class PlayerHp : MonoBehaviour
     IronArmor ironArmor;
     InvincibleHand invincibleHand;
 
-    private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
+    //private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
 
     // private void Update() {
     //     if (GameObject.Find("Player/InvincibleHand")) isInvincibleHand = true; //플레이어 아래 이 아이템이 있다면,,

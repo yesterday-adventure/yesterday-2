@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09710c01ed1b908478394daebecc6580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleTxt: Devil's book
+  captionTxt: Exchange hearts and strength
   maxCool: 0
   itemMaxColl: 5
 --- !u!1 &4058461324442050420
