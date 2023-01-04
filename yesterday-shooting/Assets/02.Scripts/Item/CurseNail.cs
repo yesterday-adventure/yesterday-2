@@ -6,23 +6,19 @@ public class CurseNail : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 5;
 
-    PlayerData playerData;
-
     private GameObject player;
-    private Vector2 size;
+    private Vector2 size = new Vector2(50, 50);
 
     Collider2D[] overLapBox;
     AgentMovement movement = null;
 
-    private void Awake() {
-        player = GameObject.Find("Player");
-        size = new Vector2(50, 50);
-    }
     public override bool Skill()
     {
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
 
-        playerData.playerHp -= 1; //체력을 한 칸 잃는다.
+        player = GameObject.Find("Player");
+
+        DataManager.instance.nowPlayer.playerHp -= 1; //체력을 한 칸 잃는다.
         //오버랩박스 그리기
         //그린애들 찾아다가 스피드 -2
         
