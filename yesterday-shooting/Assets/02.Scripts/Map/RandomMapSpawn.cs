@@ -131,6 +131,10 @@ public class RandomMapSpawn : MonoBehaviour
             GameObject spawnBossMiniMap = Instantiate(bossMinimap, minimap.transform);
             spawnBossMiniMap.transform.localPosition = maps.MiniMapSetPos(DataManager.instance.nowPlayer.mapShopAndBoss[4] - 5, DataManager.instance.nowPlayer.mapShopAndBoss[5] - 6);
             spawnBossMap.name = $"Boss";
+
+
+            showPlayerPos = Instantiate(playerPos, minimap.transform);
+            showPlayerPos.transform.localPosition = maps.MiniMapSetPos(CameraMove.Instance.xIndex, CameraMove.Instance.yIndex);
         }
     }
 

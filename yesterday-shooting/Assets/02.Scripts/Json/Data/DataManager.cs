@@ -36,6 +36,12 @@ public class PlayerData
     public int[] shopPlusPrice1 = new int[4];
     public string[] shopItem2 = new string[4];
     public int[] shopPlusPrice2 = new int[4];
+
+    public List<Vector3> dropBomb = new List<Vector3>(); 
+    public List<Vector3> dropCoin = new List<Vector3>();
+
+    public int xIndex = 0;
+    public int yIndex = 0;
 }
 
 public class GameOption

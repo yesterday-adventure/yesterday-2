@@ -34,6 +34,14 @@ public class CameraMove : MonoBehaviour
         }    
     }
 
+    private void Start()
+    {
+        if (!Select.instance.newStart) {
+            xIndex = DataManager.instance.nowPlayer.xIndex;
+            yIndex = DataManager.instance.nowPlayer.yIndex;
+                }
+    }
+
     void LateUpdate()
     {
         if(player != null)
@@ -70,6 +78,10 @@ public class CameraMove : MonoBehaviour
                 doorOnOff.changePos();
                 move = false;
             }
+
+            DataManager.instance.nowPlayer.xIndex = xIndex;
+            DataManager.instance.nowPlayer.yIndex = yIndex;
+
             RandomMapSpawn.Instance.showPlayerPos.transform.localPosition = RandomMapSpawn.Instance.maps.MiniMapSetPos(xIndex,yIndex);
         }
 
