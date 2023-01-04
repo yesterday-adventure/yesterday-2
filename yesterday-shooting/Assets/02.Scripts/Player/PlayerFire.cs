@@ -29,6 +29,7 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
+        weapon = weapons[DataManager.instance.nowPlayer.weaponName];
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (instance == null)
         {
@@ -140,5 +141,7 @@ public class PlayerFire : MonoBehaviour
         delay = bulletInfo.AttackDelay;
         yield return new WaitForSeconds(1f);
         isChanging = false;
+
+        DataManager.instance.nowPlayer.weaponName = weapon.name;
     }
 }
