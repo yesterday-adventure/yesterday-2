@@ -36,7 +36,11 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
         //         serveItemList[str]++; //key 값의 value 값에 +1을 해준다
         //     }
         // }
-        if (gameObject.tag == "Bomb") ServeItemManager.Instance.Bomb++; //이름이 폭탄이면 폭탄++
+        if (gameObject.tag == "Bomb")
+        {
+            ServeItemManager.Instance.Bomb++;
+            FindObjectOfType<PlayerManager>().nowBombCount++;
+        } //이름이 폭탄이면 폭탄++
         else { ServeItemManager.Instance.Gold++; } //아니면 코인밖에 없으니까 코인++ ㅎㅎ,,
 
         Destroy(gameObject); //아이템은 삭제    
