@@ -3433,7 +3433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409778, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: firDir
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4059997920124409782, guid: 3ea28126f0251ce4ca83d50d7c69f601, type: 3}
       propertyPath: m_RootOrder

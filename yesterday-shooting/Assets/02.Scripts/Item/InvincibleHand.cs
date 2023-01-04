@@ -6,8 +6,6 @@ public class InvincibleHand : ItemSkill
 {
     [SerializeField] private int itemMaxColl = 10;
 
-    PlayerData playerData;
-
     private GameObject player;
 
     private Vector2 playerPos;
@@ -16,9 +14,6 @@ public class InvincibleHand : ItemSkill
 
     public bool isSkil = false; //스킬이 돌아가는 중인지 구분하는
 
-    private void Awake() {
-        player = GameObject.Find("Player");
-    }
     private void Update() {
         if (isSkil) {
             player.transform.position = playerPos; //3초가 안 지났다면 계속 고정 위치값 때려박아주기
@@ -27,6 +22,8 @@ public class InvincibleHand : ItemSkill
     public override bool Skill()
     {
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
+
+        player = GameObject.Find("Player");
         
         playerPos = player.transform.position; //사용 시 플레이어 위치 받아오는
         StartCoroutine($"{SkillTime()}");
@@ -38,5 +35,4 @@ public class InvincibleHand : ItemSkill
         yield return new WaitForSeconds(3);
         isSkil=  false;
     }
-
 }
