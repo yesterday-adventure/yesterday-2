@@ -8,7 +8,12 @@ public class ItemUsingParticleLightChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 10, 1.5f);
-        Destroy(gameObject, 2);
+        Sequence seq = DOTween.Sequence()
+        .Append(DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 10, 1f))
+        .Append(DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 10, 1f))
+        .AppendCallback(() =>
+        {
+            Destroy(gameObject);
+        });
     }
 }

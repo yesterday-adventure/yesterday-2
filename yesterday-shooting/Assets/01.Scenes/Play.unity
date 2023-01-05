@@ -9393,6 +9393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76350f4a2a1c71a42af00aeaad55fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingParticle: {fileID: 9014780734027559150, guid: bdd6a4df3463bfb4b9225623b32d59e4, type: 3}
   item: {fileID: 6139962566944116031, guid: 9028dea6311151b449af7b7b765b2644, type: 3}
   itemArr:
   - {fileID: 675986575968791163, guid: 79c4168f769a8f34c984206f75be3f9f, type: 3}
