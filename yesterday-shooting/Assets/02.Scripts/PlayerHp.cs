@@ -3,10 +3,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.Rendering.Universal;
+using UnityEditor;
+using Unity.Rendering.HybridV2;
 
 public class PlayerHp : MonoBehaviour
 {
     //public int hp = 5;
+    [SerializeField] Light2D playerLight;
     public float shieldTime = 1; // 무적시간
     [SerializeField] SpriteRenderer sR;
 
@@ -36,7 +40,7 @@ public class PlayerHp : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    
+
 
     public void OnDamage(Action lambda)
     {
@@ -86,7 +90,7 @@ public class PlayerHp : MonoBehaviour
 
     private void HitAnimation()
     {
-        if(DataManager.instance.nowPlayer.playerHp > 0)
+        if (DataManager.instance.nowPlayer.playerHp > 0)
         {
             StartCoroutine(StartTimeFrizm());
             Sequence seq = DOTween.Sequence();
@@ -125,14 +129,14 @@ public class PlayerHp : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
             DataManager.instance.nowPlayer.playerHp--;
         if (DataManager.instance.nowPlayer.playerHp <= 0 && isdie)
         {
             Sequence seq = DOTween.Sequence();
             seq.Append(camera1.transform.DOMove(
-            new Vector3(transform.position.x,transform.position.y,camera1.transform.position.z),4f));
-            StartCoroutine(dieCamera());
+            new Vector3(transform.position.x, transform.position.y, camera1.transform.position.z), 4f));
+            DieCamera();
         }
 
         if (shieldTime < 1)
@@ -146,16 +150,29 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
-    IEnumerator dieCamera()
+    private void DieCamera()
     {
-        isdie =false;
-        while(camera1.orthographicSize >= 2f)
+        Sequence seq = DOTween.Sequence();
+        Light2D[] light = FindObjectsOfType<Light2D>();
+        foreach (var item in light)
         {
-            camera1.orthographicSize -= 0.01f;
-            yield return new WaitForSeconds(0.01f);
+            item.intensity = 0;
         }
-        yield return new WaitForSeconds(1.5f);
-        Die();
+        playerLight.intensity = 1f;
+        playerLight.pointLightOuterRadius = 10;
+        isdie = false;
+        seq.Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 3))
+        .Join(DOTween.To(() => playerLight.pointLightInnerRadius, x => playerLight.pointLightInnerRadius = x, 2, 3))
+        .Join(DOTween.To(() => camera1.orthographicSize, x => camera1.orthographicSize = x, 2, 3))
+        .AppendCallback(() =>
+        {
+            Die();
+        });
+        //while (camera1.orthographicSize >= 2f)
+        //{
+        //    camera1.orthographicSize -= 0.01f;
+        //    yield return new WaitForSeconds(0.01f);
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -166,7 +183,8 @@ public class PlayerHp : MonoBehaviour
             { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
-            else if (ironArmor) { //null이 아니라면
+            else if (ironArmor)
+            { //null이 아니라면
                 if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
             }
             else { OnDamage(() => { }); }
@@ -181,7 +199,8 @@ public class PlayerHp : MonoBehaviour
             { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
-            else if (ironArmor) { //null이 아니라면
+            else if (ironArmor)
+            { //null이 아니라면
                 if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
             }
             else { OnDamage(() => { }); }
@@ -195,7 +214,7 @@ public class PlayerHp : MonoBehaviour
         System.IO.File.Delete(DataManager.instance.path + $"{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArr{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArrBool{DataManager.instance.nowSlot}");
-        System.IO. File.Delete(DataManager.instance.path + $"AfterData{DataManager.instance.nowSlot}");
+        System.IO.File.Delete(DataManager.instance.path + $"AfterData{DataManager.instance.nowSlot}");
         Select.instance.savefile[DataManager.instance.nowSlot] = false;
 
         //DataManager.instance.DataClear();
