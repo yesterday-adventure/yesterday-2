@@ -6,10 +6,12 @@ public class BurstPattern : MonoBehaviour
 {
     public GameObject EnemyBullet = null;
     public GameObject player;
+    SpriteRenderer spriteRenderer;
 
     private void OnEnable()
     {
         player = GameObject.Find("Player");
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnDisable()
     {
@@ -27,5 +29,20 @@ public class BurstPattern : MonoBehaviour
 
         GameObject obj3 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
         obj3.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.left);
+    }
+
+    private void Update()
+    {
+        if (player == null)
+            return;
+
+        if(player.transform.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(player.transform.position.x < transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 }
