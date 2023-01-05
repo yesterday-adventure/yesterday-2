@@ -57,6 +57,11 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
+            if(PlayerItem.Instance.useRustyRazorBlade)
+            {
+                GetComponent<DamageOverTime>().Dot(1, 2, 1);
+                PlayerItem.Instance.useRustyRazorBlade = false;
+            }
             if(PlayerItem.Instance.useMarksmansEye)
             {
                 OnDamage(()=>{}, 20f);
@@ -64,7 +69,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
             }
             else
             {
-                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage);
+                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage + DataManager.instance.nowPlayer.addDamage);
             }
         }
     }

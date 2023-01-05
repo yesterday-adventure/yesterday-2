@@ -12,7 +12,8 @@ public class DevilsBook : ItemSkill
                                
         DataManager.instance.nowPlayer.playerHp -= 1;
         //HP - 1
-        PlayerFire.instance.weapon.GetComponent<BulletInfo>().Damage += 3;
+        DataManager.instance.nowPlayer.addDamage += 3f;
+        //PlayerFire.instance.weapon.GetComponent<BulletInfo>().Damage += 3;
         //공격력 3 증가
 
         return true;
