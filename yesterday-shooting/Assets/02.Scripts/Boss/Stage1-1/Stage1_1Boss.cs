@@ -1,7 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stage1_1Boss : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class Stage1_1Boss : MonoBehaviour
     [SerializeField] GameObject ball;
 
     [SerializeField] float hp;
+    float maxHp;
     [SerializeField] float speed;
     [Tooltip("플레이어와 보스의 거라")]
     [SerializeField] float distance = 10;
@@ -18,12 +18,14 @@ public class Stage1_1Boss : MonoBehaviour
     Rigidbody2D rb;
     Animator _animator;
     GameObject player;
+    [SerializeField] private Slider slider;
 
     private bool walkState = false;
     private bool isAttacking = false;
 
     private void Awake()
     {
+        maxHp = hp;
         _animator = transform.GetChild(0).GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -137,5 +139,14 @@ public class Stage1_1Boss : MonoBehaviour
     private void Attack()
     {
         _animator.SetBool("Attack", true);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "PlayerBullet")
+        {
+            hp -= collision.GetComponent<BulletInfo>().Damage;
+            slider.value = hp / maxHp;
+        }
     }
 }

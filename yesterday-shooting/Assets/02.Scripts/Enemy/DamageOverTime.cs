@@ -16,7 +16,7 @@ public class DamageOverTime : MonoBehaviour
         {
             enemyHp.OnDamage(() => { }, damage);
             yield return new WaitForSeconds(tick);
-            Debug.Log("틱이닷!!!!아얏!!");
+            Debug.Log("틱이닷!!!!아얏!!"); //?
         }
     }
 }

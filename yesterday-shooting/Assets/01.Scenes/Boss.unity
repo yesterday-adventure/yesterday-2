@@ -240,6 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb4fa27bd31b7b488718fb1ebf4d9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 0}
+  caption: {fileID: 0}
+  image: {fileID: 0}
 --- !u!1 &967689077
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +920,18 @@ PrefabInstance:
     - target: {fileID: 4055234525482407543, guid: 465dc4d020d216743816119e429ab1a2, type: 3}
       propertyPath: m_Name
       value: Stage1BossParents
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020228265918672951, guid: 465dc4d020d216743816119e429ab1a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773159570791647376, guid: 465dc4d020d216743816119e429ab1a2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773159570791647376, guid: 465dc4d020d216743816119e429ab1a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465dc4d020d216743816119e429ab1a2, type: 3}

@@ -5400,6 +5400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleWorm
       objectReference: {fileID: 0}
+    - target: {fileID: 4980068569744868255, guid: 0b655e839415c244aa58b9774e10563b, type: 3}
+      propertyPath: m_Intensity
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b655e839415c244aa58b9774e10563b, type: 3}
 --- !u!4 &7121650190436635883 stripped
