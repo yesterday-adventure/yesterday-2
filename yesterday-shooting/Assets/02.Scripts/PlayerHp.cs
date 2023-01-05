@@ -168,6 +168,7 @@ public class PlayerHp : MonoBehaviour
         seq.Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 3))
         .Join(DOTween.To(() => playerLight.pointLightInnerRadius, x => playerLight.pointLightInnerRadius = x, 2, 3))
         .Join(DOTween.To(() => camera1.orthographicSize, x => camera1.orthographicSize = x, 2, 3))
+        .AppendInterval(1.5f)
         .AppendCallback(() =>
         {
             Die();
