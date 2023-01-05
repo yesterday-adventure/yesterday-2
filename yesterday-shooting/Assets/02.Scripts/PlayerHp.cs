@@ -164,6 +164,9 @@ public class PlayerHp : MonoBehaviour
             { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
+            else if (ironArmor) { //null이 아니라면
+                if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
+            }
             else { OnDamage(() => { }); }
         }
     }
@@ -175,6 +178,9 @@ public class PlayerHp : MonoBehaviour
             if (invincibleHand)
             { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
+            }
+            else if (ironArmor) { //null이 아니라면
+                if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
             }
             else { OnDamage(() => { }); }
         }
