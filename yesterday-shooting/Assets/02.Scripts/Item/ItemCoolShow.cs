@@ -17,7 +17,10 @@ public class ItemCoolShow : MonoBehaviour
         {
             image.enabled = false;
         }
-        if(PlayerItem.Instance.item.ItemSkill.maxCool != 0)
-        image.fillAmount = 1 - PlayerItem.Instance.cool / PlayerItem.Instance.item.ItemSkill.maxCool;
+        else
+        {
+            if(PlayerItem.Instance.item.ItemSkill.maxCool != 0)
+                image.fillAmount = 1 - PlayerItem.Instance.cool / PlayerItem.Instance.item.ItemSkill.maxCool;
+        }
     }
 }

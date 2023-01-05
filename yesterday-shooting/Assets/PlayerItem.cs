@@ -34,8 +34,11 @@ public class PlayerItem : MonoBehaviour
             Debug.LogWarning("Multiple PlayerItem Instance running");
         }
 
-        playerUI1.sprite = item.GetComponent<SpriteRenderer>().sprite;
-        playerUI2.sprite = item.GetComponent<SpriteRenderer>().sprite;
+        if(item != null)
+        {
+            playerUI1.sprite = item.GetComponent<SpriteRenderer>().sprite;
+            playerUI2.sprite = item.GetComponent<SpriteRenderer>().sprite;
+        }
 
         //��ųʸ��� ������ �߰�
         for (int i = 0; i < itemArr.Length; i++)
