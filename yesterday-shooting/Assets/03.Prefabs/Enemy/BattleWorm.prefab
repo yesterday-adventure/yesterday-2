@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1851609765068752811}
   - component: {fileID: 4416439629523064954}
   - component: {fileID: -6341390460956730388}
+  - component: {fileID: 268185695676034659}
   m_Layer: 10
   m_Name: BattleWorm
   m_TagString: Enemy
@@ -278,6 +279,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7beb215a7a07494596c017542261171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &268185695676034659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088391304772076655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885be547e74e88946825b8d23aab38ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4484305896111702262
