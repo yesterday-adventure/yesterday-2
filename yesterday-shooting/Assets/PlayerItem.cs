@@ -22,6 +22,8 @@ public class PlayerItem : MonoBehaviour
     public bool useGodsDice = false;
     public bool useIronArmor = false;
 
+    public float plusMarionette = 0f;
+
     [SerializeField] private Image playerUI1;
     [SerializeField] private Image playerUI2;
 
