@@ -10,6 +10,8 @@ public class ServeItemManager : MonoBehaviour
     private int bomb;
     [SerializeField] private TextMeshProUGUI goldTxt;
     [SerializeField] private TextMeshProUGUI bombTxt;
+    public GameObject goldObj;
+    public GameObject bombObj;
 
     public int Gold
     {
@@ -31,6 +33,22 @@ public class ServeItemManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        if (!Select.instance.newStart)
+        {
+            for (int i = 0; i < DataManager.instance.nowPlayer.dropCoin.Count; i++)
+            {
+                Instantiate(goldObj, DataManager.instance.nowPlayer.dropCoin[i], Quaternion.identity);
+            }
+
+            for (int i = 0; i < DataManager.instance.nowPlayer.dropBomb.Count; i++)
+            {
+                Instantiate(bombObj, DataManager.instance.nowPlayer.dropBomb[i], Quaternion.identity);
+            }
         }
     }
 

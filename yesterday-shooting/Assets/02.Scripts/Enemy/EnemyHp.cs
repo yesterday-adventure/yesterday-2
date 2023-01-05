@@ -63,19 +63,6 @@ public class EnemyHp : MonoBehaviour, IDamageable
     private void Start()
     {
         effectSound = FindObjectOfType<GameEffectSoundManager>();
-
-        if (!Select.instance.newStart)
-        {
-            for (int i = 0; i < DataManager.instance.nowPlayer.dropCoin.Count; i++)
-            {
-                Instantiate(coin, DataManager.instance.nowPlayer.dropCoin[i], Quaternion.identity);
-            }
-
-            for (int i = 0; i < DataManager.instance.nowPlayer.dropBomb.Count; i++)
-            {
-                Instantiate(bomb, DataManager.instance.nowPlayer.dropBomb[i], Quaternion.identity);
-            }
-        }
     }
 
     void Die()

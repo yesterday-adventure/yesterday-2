@@ -15,6 +15,8 @@ public class PlayerHp : MonoBehaviour
     Camera camera1;
 
     private bool isdie = true;
+    int nowHp;
+
     //private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
 
     // private void Update() {
@@ -31,6 +33,8 @@ public class PlayerHp : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1f;
+
+        nowHp = DataManager.instance.nowPlayer.playerHp;
     }
 
     public void OnDamage(Action lambda)
@@ -132,6 +136,12 @@ public class PlayerHp : MonoBehaviour
 
         if (shieldTime < 1)
             shieldTime += Time.deltaTime;
+
+        if (nowHp != DataManager.instance.nowPlayer.playerHp)
+        {
+            FindObjectOfType<GameEffectSoundManager>().playerHpDown();
+            nowHp = DataManager.instance.nowPlayer.playerHp;
+        }
     }
 
     IEnumerator dieCamera()
