@@ -53,7 +53,8 @@ public class PlayerManager : MonoBehaviour
 
         if(PlayerItem.Instance.useIronArmor)
         {
-            speed = 3.5f;
+            speed = 2f;
+            Debug.Log("1");
         }
         else
         {
