@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameEffectSoundManager : MonoBehaviour
 {
-    [SerializeField] AudioSource playerAtteck, monsterDie, monsterAtteck;
+    [SerializeField] AudioSource playerAtteck, monsterDie, monsterAtteck, playerHit;
 
     private void Update()
     {
@@ -26,5 +26,10 @@ public class GameEffectSoundManager : MonoBehaviour
     public void MonsterDie()
     {
         monsterDie.Play();
+    }
+
+    public void playerHpDown()
+    {
+        playerHit.Play();
     }
 }
