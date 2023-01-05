@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 6425451640662026011}
   - component: {fileID: 6425451640662026008}
   - component: {fileID: 6425451640662026010}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Collisions
   m_TagString: Hole
   m_Icon: {fileID: 0}

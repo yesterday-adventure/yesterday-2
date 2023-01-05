@@ -19,6 +19,7 @@ TagManager:
   - Potion
   - Bomb
   - Hole
+  - room0
   layers:
   - Default
   - TransparentFX
