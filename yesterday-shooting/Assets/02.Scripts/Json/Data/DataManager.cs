@@ -7,7 +7,7 @@ public class PlayerData
 {
     // ���⿡ ������ ������ ��� ���
     public bool playing = false; // �÷����� ����� �ְ� ����Ǿ� �ִ��� �Ǵ�.
-    public bool[] roomClear = new bool[16] ;    // 전에 썼던 방 클리어 유뮤 판단하기
+    public bool[] roomClear = new bool[45] ;    // 전에 썼던 방 클리어 유뮤 판단하기
 
     public Vector3 playerPosition = new Vector3(90, 60, 0); //플레이어 포지션
     public int x = 5; // 플레이어가 마지막으로 있던 방의 방 숫자 배열 첫번째
@@ -28,17 +28,10 @@ public class PlayerData
     public string activeItem = null;      //아이템 이름 저장 설아야 이거 써서 엑티브 아이템 저장해줭
     public int activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
 
-    public int goldenCoin = 3;   //이 세개는 돈, 폭탄, 열쇠임.
-    public int bomb = 3;
-    public int goldenKey = 0;
-
     public string[] shopItem1 = new string[4];
     public int[] shopPlusPrice1 = new int[4];
     public string[] shopItem2 = new string[4];
     public int[] shopPlusPrice2 = new int[4];
-
-    public List<Vector3> dropBomb = new List<Vector3>(); 
-    public List<Vector3> dropCoin = new List<Vector3>();
 
     public int xIndex = 0;
     public int yIndex = 0;
@@ -48,6 +41,15 @@ public class GameOption
 {
     public float BGM = 0.5f;
     public float ButtonClickSound = 0.5f;
+}
+
+public class PlayerAfterData
+{
+    public int goldenCoin = 3;   //이 세개는 돈, 폭탄, 열쇠임.
+    public int bomb = 3;
+    
+    public List<Vector3> dropBomb = new List<Vector3>(); 
+    public List<Vector3> dropCoin = new List<Vector3>();
 }
 
 
@@ -175,6 +177,7 @@ public class DataManager : MonoBehaviour
 
     public PlayerData nowPlayer = new PlayerData();
     public GameOption nowOption = new GameOption();
+    public PlayerAfterData afterData = new PlayerAfterData();
 
     public string path;
     public int nowSlot;
@@ -217,6 +220,12 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(path + "Option", data);
     }
 
+    public void SaveAfterData()
+    {
+        string data = JsonUtility.ToJson(afterData);
+        File.WriteAllText(path +"AfterData" + nowSlot.ToString(), data);
+    }
+
     public void LoadData()
     {
         string data = File.ReadAllText(path + nowSlot.ToString());
@@ -227,6 +236,12 @@ public class DataManager : MonoBehaviour
     {
         string data = File.ReadAllText(path + "Option");
         nowOption = JsonUtility.FromJson<GameOption>(data);
+    }
+
+    public void LoadAfterData()
+    {
+        string data = File.ReadAllText(path + "AfterData" + nowSlot.ToString());
+        afterData = JsonUtility.FromJson<PlayerAfterData>(data);
     }
 
     public void DataClear()

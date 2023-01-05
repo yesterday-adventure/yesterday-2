@@ -7,6 +7,7 @@ public class ItemDropDoTween : MonoBehaviour
 {
     [SerializeField] private Ease ease;
     Sequence seq = null;
+    Vector2 pos;
     private void Start()
     {
         seq = DOTween.Sequence();
@@ -15,7 +16,16 @@ public class ItemDropDoTween : MonoBehaviour
 
     public void ItemDropAnim()
     {
-        seq.Append(transform.DOJump((Vector2)transform.position + (Random.insideUnitCircle / 2), 1, 1, 1f).SetEase(ease));
+        pos = (Vector2)transform.position + (Random.insideUnitCircle / 2);
+        if (transform.name == "bomb")
+        {
+            DataManager.instance.afterData.dropBomb.Add(pos);
+        }
+        else
+        {
+            DataManager.instance.afterData.dropCoin.Add(pos);
+        }
+        seq.Append(transform.DOJump(pos, 1, 1, 1f).SetEase(ease));
     }
 
     private void OnDisable()

@@ -32,7 +32,7 @@ public class BasicItemManager : MonoBehaviour
 
     private void Update()
     {
-        if (DataManager.instance.nowPlayer.bomb < 10)
+        /*if (DataManager.instance.nowPlayer.bomb < 10)
         {
             bombText.text = "0" + DataManager.instance.nowPlayer.bomb.ToString();
         }
@@ -48,7 +48,7 @@ public class BasicItemManager : MonoBehaviour
         else
         {
             goldenCoinText.text = DataManager.instance.nowPlayer.goldenCoin.ToString();
-        }
+        }*/
 
         /*if (DataManager.instance.nowPlayer.goldenKey < 10)
         {
