@@ -59,7 +59,7 @@ public class PlayerFire : MonoBehaviour
 
     IEnumerator Fire()
     {
-        while (true)
+        while (DataManager.instance.nowPlayer.playerHp > 0)
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {

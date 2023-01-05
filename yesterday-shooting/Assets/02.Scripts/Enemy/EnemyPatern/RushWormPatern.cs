@@ -42,6 +42,11 @@ public class RushWormPatern : MonoBehaviour
 
     private void Update()
     {
+        if(DataManager.instance.nowPlayer.playerHp <= 0)
+        {
+            StopAllCoroutines();
+            return;
+        }
         iswallR = Physics2D.Raycast(transform.position, Vector2.right, transform.localScale.x / 2f + 0.1f, wallLayer);
         iswallL = Physics2D.Raycast(transform.position, Vector2.left, transform.localScale.x / 2f + 0.1f, wallLayer);
         iswallU = Physics2D.Raycast(transform.position, Vector2.up, transform.localScale.x / 2f + 0.25f, wallLayer);
@@ -232,6 +237,8 @@ public class RushWormPatern : MonoBehaviour
         yield return new WaitForSeconds(4f);
         while (true)
         {
+            if(target == null)
+                break;
             if (transform.position.y > target.transform.position.y - 0.5f && transform.position.y < target.transform.position.y + 0.5f)
             {
                 if (coroutineMove != null)

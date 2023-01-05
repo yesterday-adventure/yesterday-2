@@ -40,6 +40,11 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        if(DataManager.instance.nowPlayer.playerHp <= 0)
+        {
+            rb2D.velocity = Vector2.zero;
+            return;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(x, y, 0);

@@ -31,11 +31,13 @@ public class EnemyBulletMove : MonoBehaviour
             StartCoroutine(Down());
         else if(A == EnemyBulletDir.FireDir.follow)
             StartCoroutine(Follow());
+        else
+            Debug.LogError($"{A} : 실행안함");
     }
 
     IEnumerator Right()
     {
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             transform.position += speed * Time.deltaTime * Vector3.right;
             yield return null;
@@ -44,7 +46,7 @@ public class EnemyBulletMove : MonoBehaviour
 
     IEnumerator Left()
     {
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             transform.position += speed * Time.deltaTime * Vector3.left;
             yield return null;
@@ -53,7 +55,7 @@ public class EnemyBulletMove : MonoBehaviour
 
     IEnumerator Up()
     {
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             transform.position += speed * Time.deltaTime * Vector3.up;
             yield return null;
@@ -62,7 +64,7 @@ public class EnemyBulletMove : MonoBehaviour
 
     IEnumerator Down()
     {
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             transform.position += speed * Time.deltaTime * Vector3.down;
             yield return null;
@@ -72,7 +74,7 @@ public class EnemyBulletMove : MonoBehaviour
     IEnumerator Follow()
     {
         dir = player.transform.position - transform.position;
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             transform.position += speed * Time.deltaTime * dir.normalized;
             yield return null;
@@ -80,8 +82,11 @@ public class EnemyBulletMove : MonoBehaviour
     }
     void Update()
     {
+        if(DataManager.instance.nowPlayer.playerHp <= 0)
+            return;
         time += Time.deltaTime;
-        
+        if(player == null)
+            PoolManager.Instance.Push(gameObject);
         if(time > 2)
         {
             StopAllCoroutines();
