@@ -26,7 +26,8 @@ public class InvincibleHand : ItemSkill
         player = GameObject.Find("Player");
         
         playerPos = player.transform.position; //사용 시 플레이어 위치 받아오는
-        StartCoroutine($"{SkillTime()}");
+        StartCoroutine(SkillTime());
+
         return true;
     }
 
