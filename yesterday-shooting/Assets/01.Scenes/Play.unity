@@ -3796,7 +3796,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 0}
+  m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541043819
 MonoBehaviour:
@@ -6296,7 +6296,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 0}
+  m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281806413
 MonoBehaviour:
@@ -9307,6 +9307,7 @@ MonoBehaviour:
   - {fileID: 1293106168}
   - {fileID: 1883140706}
   - {fileID: 1418358020}
+  deathParticle: {fileID: 5463766033903692987, guid: 6477f72e9f616834a8003ee8c3fc291c, type: 3}
 --- !u!95 &1529723053
 Animator:
   serializedVersion: 3
@@ -9392,6 +9393,7 @@ MonoBehaviour:
   useMarksmansEye: 0
   useGodsDice: 0
   useIronArmor: 0
+  plusMarionette: 0
   playerUI1: {fileID: 2083697066}
   playerUI2: {fileID: 2120742877}
 --- !u!114 &1529723058

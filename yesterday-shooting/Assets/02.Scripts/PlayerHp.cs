@@ -24,6 +24,8 @@ public class PlayerHp : MonoBehaviour
     private bool isdie = true;
     int nowHp;
 
+    [SerializeField] private GameObject deathParticle;
+
     //private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
 
     // private void Update() {
@@ -175,14 +177,20 @@ public class PlayerHp : MonoBehaviour
                 active[i].SetActive(false);
             }
         })
-        .Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 3).SetUpdate(false))
-        .Join(DOTween.To(() => playerLight.pointLightInnerRadius, x => playerLight.pointLightInnerRadius = x, 2, 3).SetUpdate(false))
-        .Join(DOTween.To(() => camera1.orthographicSize, x => camera1.orthographicSize = x, 2, 3).SetUpdate(false))
-        .AppendInterval(1.5f)
+        .AppendInterval(1f)
         .AppendCallback(() =>
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+        }).SetUpdate(false)
+        .Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 2).SetUpdate(false))
+        .Join(DOTween.To(() => playerLight.pointLightInnerRadius, x => playerLight.pointLightInnerRadius = x, 2, 2).SetUpdate(false))
+        .Join(DOTween.To(() => camera1.orthographicSize, x => camera1.orthographicSize = x, 2, 2).SetUpdate(false))
+        .AppendInterval(1).SetUpdate(false)
+        .AppendCallback(() =>
+        {
+            Destroy(gameObject);
             Die();
-        }).SetUpdate(false);
+        });
         //while (camera1.orthographicSize >= 2f)
         //{
         //    camera1.orthographicSize -= 0.01f;
@@ -223,8 +231,7 @@ public class PlayerHp : MonoBehaviour
     }
 
     void Die()
-    {
-        Destroy(gameObject);//플레이어 죽는 애니메션
+    {   
 
         System.IO.File.Delete(DataManager.instance.path + $"{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArr{DataManager.instance.nowSlot}");
