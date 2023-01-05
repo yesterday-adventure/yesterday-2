@@ -10,7 +10,7 @@ public class ItemUsingParticleLightChanger : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence()
         .Append(DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 10, 1f))
-        .Append(DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 10, 1f))
+        .Append(DOTween.To(() => _light.pointLightOuterRadius, x => _light.pointLightOuterRadius = x, 0, 0.5f))
         .AppendCallback(() =>
         {
             Destroy(gameObject);

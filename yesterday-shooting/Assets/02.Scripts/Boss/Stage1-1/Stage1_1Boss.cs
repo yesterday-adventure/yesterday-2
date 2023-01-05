@@ -119,7 +119,7 @@ public class Stage1_1Boss : MonoBehaviour
     {
         Vector2 summonPos = SetPos();
         //Instantiate(hand, new Vector2(summonPos.x, summonPos.y + 1.2f), Quaternion.identity);
-        PoolManager.Instance.Pop(hand, new Vector2(summonPos.x, summonPos.y + 1.2f),Quaternion.identity);
+        PoolManager.Instance.Pop(hand, new Vector2(summonPos.x, summonPos.y + 1.2f), Quaternion.identity);
     }
 
     private void Ball(int k)
@@ -143,7 +143,7 @@ public class Stage1_1Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "PlayerBullet")
+        if (collision.tag == "PlayerBullet")
         {
             hp -= collision.GetComponent<BulletInfo>().Damage;
             slider.value = hp / maxHp;
