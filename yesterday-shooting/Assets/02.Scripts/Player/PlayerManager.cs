@@ -69,11 +69,15 @@ public class PlayerManager : MonoBehaviour
             if (stopPanel.activeSelf == false)
             {
                 stopPanel.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 Time.timeScale = 0;
             }
             else if (stopPanel.activeSelf == true)
             {
                 stopPanel.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1;
             }
         }

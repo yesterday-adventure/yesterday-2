@@ -131,6 +131,8 @@ public class Select : MonoBehaviour
     {
         DataManager.instance.SaveData();
         SceneManager.LoadScene("Play");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Back()

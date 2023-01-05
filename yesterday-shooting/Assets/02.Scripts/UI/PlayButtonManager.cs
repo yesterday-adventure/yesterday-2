@@ -111,6 +111,8 @@ public class PlayButtonManager : MonoBehaviour
     public void OnClickReturnToGame()
     {
         stopPanel.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }
 }
