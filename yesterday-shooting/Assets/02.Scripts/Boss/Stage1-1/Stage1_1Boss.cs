@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.Analytics;
 
 public class Stage1_1Boss : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Stage1_1Boss : MonoBehaviour
     [SerializeField] float distance = 10;
     [Tooltip("플레이어 근처 손 소환 범위")]
     [SerializeField] float summonRange;
+
+    [SerializeField] private SpriteRenderer _render;
 
     Rigidbody2D rb;
     Animator _animator;
@@ -148,5 +152,15 @@ public class Stage1_1Boss : MonoBehaviour
             hp -= collision.GetComponent<BulletInfo>().Damage;
             slider.value = hp / maxHp;
         }
+    }
+
+    private void ChangeColor()
+    {
+        Sequence seq = DOTween.Sequence()
+        .Append(_render.DOColor(Color.red, 0.2f))
+        .OnComplete(() =>
+        {
+            _render.DOColor(Color.white, 0.1f);
+        });
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEditor;
 using Unity.Rendering.HybridV2;
+using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerHp : MonoBehaviour
     IronArmor ironArmor;
     InvincibleHand invincibleHand;
     Camera camera1;
+
+    [SerializeField] private GameObject[] active;
 
     private bool isdie = true;
     int nowHp;
@@ -165,7 +168,14 @@ public class PlayerHp : MonoBehaviour
         playerLight.intensity = 1f;
         playerLight.pointLightOuterRadius = 10;
         isdie = false;
-        seq.Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 3).SetUpdate(false))
+        seq.PrependCallback(() =>
+        {
+            for (int i = 0; i < active.Length; i++)
+            {
+                active[i].SetActive(false);
+            }
+        })
+        .Append(DOTween.To(() => playerLight.pointLightOuterRadius, x => playerLight.pointLightOuterRadius = x, 2, 3).SetUpdate(false))
         .Join(DOTween.To(() => playerLight.pointLightInnerRadius, x => playerLight.pointLightInnerRadius = x, 2, 3).SetUpdate(false))
         .Join(DOTween.To(() => camera1.orthographicSize, x => camera1.orthographicSize = x, 2, 3).SetUpdate(false))
         .AppendInterval(1.5f)
