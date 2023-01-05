@@ -9405,6 +9405,7 @@ MonoBehaviour:
   - {fileID: 4326334445463588170, guid: 24c76af9d704a804d81d5a75aa99df24, type: 3}
   - {fileID: 3757083004735491169, guid: 6ea7d5f0dd49e4845a2d5c1ac322d319, type: 3}
   cool: 0
+  useRustyRazorBlade: 1
   useMarksmansEye: 0
   useGodsDice: 0
   playerUI1: {fileID: 2083697066}
@@ -17195,6 +17196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2083697066}
+  image1: {fileID: 2120742877}
 --- !u!1 &2098967263
 GameObject:
   m_ObjectHideFlags: 0
