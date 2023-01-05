@@ -30,8 +30,8 @@ public class PlayerManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        coin = DataManager.instance.nowPlayer.goldenCoin;
-        nowBombCount = DataManager.instance.nowPlayer.bomb;
+        coin = DataManager.instance.afterData.goldenCoin;
+        nowBombCount = DataManager.instance.afterData.bomb;
     }
 
     void Start()

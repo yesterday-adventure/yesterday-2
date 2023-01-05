@@ -40,14 +40,18 @@ public class ServeItemManager : MonoBehaviour
     {
         if (!Select.instance.newStart)
         {
-            for (int i = 0; i < DataManager.instance.nowPlayer.dropCoin.Count; i++)
+            DataManager.instance.LoadAfterData();
+            Debug.Log(DataManager.instance.afterData.goldenCoin);
+            Debug.Log(DataManager.instance.afterData.bomb);
+
+            for (int i = 0; i < DataManager.instance.afterData.dropCoin.Count; i++)
             {
-                Instantiate(goldObj, DataManager.instance.nowPlayer.dropCoin[i], Quaternion.identity);
+                Instantiate(goldObj, DataManager.instance.afterData.dropCoin[i], Quaternion.identity);
             }
 
-            for (int i = 0; i < DataManager.instance.nowPlayer.dropBomb.Count; i++)
+            for (int i = 0; i < DataManager.instance.afterData.dropBomb.Count; i++)
             {
-                Instantiate(bombObj, DataManager.instance.nowPlayer.dropBomb[i], Quaternion.identity);
+                Instantiate(bombObj, DataManager.instance.afterData.dropBomb[i], Quaternion.identity);
             }
         }
     }
@@ -62,7 +66,7 @@ public class ServeItemManager : MonoBehaviour
         {
             Debug.Log("코인증가");
             gold += 3;
-            DataManager.instance.nowPlayer.goldenCoin = gold;
+            DataManager.instance.afterData.goldenCoin = gold;
         }
 
         if(bomb > 99) {

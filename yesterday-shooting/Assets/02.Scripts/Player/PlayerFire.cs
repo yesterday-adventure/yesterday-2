@@ -34,11 +34,7 @@ public class PlayerFire : MonoBehaviour
 
     private void Awake()
     {
-        if (!Select.instance.newStart)
-        {
-            weapon = weapons[DataManager.instance.nowPlayer.weaponName];
-        }
-
+        DataManager.instance.nowPlayer.weaponName = weapon.name;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (instance == null)
         {
@@ -48,6 +44,12 @@ public class PlayerFire : MonoBehaviour
         for (int i = 0; i < weaponArr.Length; i++)
         {
             weapons.Add(weaponArr[i].name, weaponArr[i]);
+        }
+
+        if (!Select.instance.newStart)
+        {
+            Debug.Log(DataManager.instance.nowPlayer.weaponName);
+            weapon = weapons[DataManager.instance.nowPlayer.weaponName];
         }
 
         delay = weapon.GetComponent<BulletInfo>().AttackDelay;

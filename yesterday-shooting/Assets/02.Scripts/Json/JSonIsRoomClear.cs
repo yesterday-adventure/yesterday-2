@@ -26,6 +26,9 @@ public class JSonIsRoomClear : MonoBehaviour
             //Debug.Log("방이 클리어 되었다.");
             DataManager.instance.nowPlayer.roomClear[roomNumber - 1] = true;
             DataManager.instance.SaveData();
+            DataManager.instance.SaveAfterData();
+            Debug.Log(DataManager.instance.afterData.goldenCoin);
+            Debug.Log(DataManager.instance.afterData.bomb);
         }
     }
 }

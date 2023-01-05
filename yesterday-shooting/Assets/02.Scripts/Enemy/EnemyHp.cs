@@ -31,7 +31,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         _isAttack = true;
         hp -= damage;
-        Debug.Log($"damage : {damage} , hp : {hp}");
+        //Debug.Log($"damage : {damage} , hp : {hp}");
 
         if (hp > 0)
         {
@@ -81,7 +81,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
         
         for (int i = 0; i < ran; i++) { //코인 생성, 반반 확률로 1개나 2개 얻기 ㄱㄴ
             Instantiate(coin, gameObject.transform.position, Quaternion.identity);
-            DataManager.instance.nowPlayer.dropCoin.Add(gameObject.transform.position);
+            //DataManager.instance.afterData.dropCoin.Add(gameObject.transform.position);
             ran = 0;
         }
     }
@@ -91,7 +91,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
 
         if (ran <= 25) { //폭탄 생성, 25 확률로 1개 줌 ㅎㅎ
             Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
-            DataManager.instance.nowPlayer.dropBomb.Add(gameObject.transform.position);
+            //DataManager.instance.afterData.dropBomb.Add(gameObject.transform.position);
             ran = 0;
         }
     }

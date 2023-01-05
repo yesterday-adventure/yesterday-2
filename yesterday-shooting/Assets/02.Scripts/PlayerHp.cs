@@ -28,14 +28,15 @@ public class PlayerHp : MonoBehaviour
         ironArmor = FindObjectOfType<IronArmor>();
         invincibleHand = FindObjectOfType<InvincibleHand>();
         camera1 = GameObject.Find("Main Camera").GetComponent<Camera>();
+        nowHp = DataManager.instance.nowPlayer.playerHp;
     }
 
     private void OnDisable()
     {
         Time.timeScale = 1f;
-
-        nowHp = DataManager.instance.nowPlayer.playerHp;
     }
+
+    
 
     public void OnDamage(Action lambda)
     {
@@ -139,6 +140,7 @@ public class PlayerHp : MonoBehaviour
 
         if (nowHp != DataManager.instance.nowPlayer.playerHp)
         {
+            Debug.Log("체력달음");
             FindObjectOfType<GameEffectSoundManager>().playerHpDown();
             nowHp = DataManager.instance.nowPlayer.playerHp;
         }
@@ -193,6 +195,7 @@ public class PlayerHp : MonoBehaviour
         System.IO.File.Delete(DataManager.instance.path + $"{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArr{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArrBool{DataManager.instance.nowSlot}");
+        System.IO. File.Delete(DataManager.instance.path + $"AfterData{DataManager.instance.nowSlot}");
         Select.instance.savefile[DataManager.instance.nowSlot] = false;
 
         //DataManager.instance.DataClear();
