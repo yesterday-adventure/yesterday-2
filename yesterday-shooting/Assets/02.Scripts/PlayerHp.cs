@@ -131,6 +131,10 @@ public class PlayerHp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
             DataManager.instance.nowPlayer.playerHp--;
+
+        if (Input.GetKeyDown(KeyCode.K))
+            DataManager.instance.nowPlayer.playerHp++;
+
         if (DataManager.instance.nowPlayer.playerHp <= 0 && isdie)
         {
             Sequence seq = DOTween.Sequence();
