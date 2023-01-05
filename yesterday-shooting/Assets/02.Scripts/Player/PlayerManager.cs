@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject bomb, bombRange;    //��ź�� ��ź ����
     public float moveLocation = 5f;   //��ź�� ���󰡴� �Ÿ�
 
-    private int mc;
+    private int mc = 1;
     public int moveChange {
         set { mc = value; }
     }
