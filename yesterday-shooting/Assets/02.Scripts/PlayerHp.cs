@@ -12,7 +12,9 @@ public class PlayerHp : MonoBehaviour
 
     IronArmor ironArmor;
     InvincibleHand invincibleHand;
+    Camera camera1;
 
+    private bool isdie = true;
     //private bool isInvincibleHand = false; //invin~ 아이템을 플레이어가 가지고 있는지 없는지 판단할 변수
 
     // private void Update() {
@@ -23,6 +25,7 @@ public class PlayerHp : MonoBehaviour
     {
         ironArmor = FindObjectOfType<IronArmor>();
         invincibleHand = FindObjectOfType<InvincibleHand>();
+        camera1 = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void OnDisable()
@@ -61,17 +64,16 @@ public class PlayerHp : MonoBehaviour
 
     IEnumerator StartTimeFrizm()
     {
-        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        int r = UnityEngine.Random.Range(-20, 20);
+        int r = UnityEngine.Random.Range(-5, 5);
         Time.timeScale = 0.3f;
-        camera.orthographicSize = 3.95f;
-        camera.transform.rotation = Quaternion.Euler(0, 0, r);
+        camera1.orthographicSize = 3.95f;
+        camera1.transform.rotation = Quaternion.Euler(0, 0, r);
 
-        camera.transform.DORotate(new Vector3(0, 0, 0), 0.7f);
+        camera1.transform.DORotate(new Vector3(0, 0, 0), 0.7f);
         while (Time.timeScale < 1)
         {
             Time.timeScale += 0.01f;
-            camera.orthographicSize += 0.015f;
+            camera1.orthographicSize += 0.015f;
             yield return new WaitForSeconds(0.01f);
         }
         yield return null;
@@ -79,12 +81,15 @@ public class PlayerHp : MonoBehaviour
 
     private void HitAnimation()
     {
-        StartCoroutine(StartTimeFrizm());
-        Sequence seq = DOTween.Sequence();
-        seq.Append(sR.DOFade(0, 0.1f));
-        seq.Append(sR.DOFade(1, 0.3f));
-        seq.Append(sR.DOFade(0, 0.1f));
-        seq.Append(sR.DOFade(1, 0.3f));
+        if(DataManager.instance.nowPlayer.playerHp > 0)
+        {
+            StartCoroutine(StartTimeFrizm());
+            Sequence seq = DOTween.Sequence();
+            seq.Append(sR.DOFade(0, 0.1f));
+            seq.Append(sR.DOFade(1, 0.3f));
+            seq.Append(sR.DOFade(0, 0.1f));
+            seq.Append(sR.DOFade(1, 0.3f));
+        }
     }
     //IEnumerator TwinkeON()
     //{
@@ -115,14 +120,30 @@ public class PlayerHp : MonoBehaviour
 
     private void Update()
     {
-
-        if (DataManager.instance.nowPlayer.playerHp <= 0)
+        if(Input.GetKeyDown(KeyCode.L))
+            DataManager.instance.nowPlayer.playerHp--;
+        if (DataManager.instance.nowPlayer.playerHp <= 0 && isdie)
         {
-            Die();//여기에 죽는 애니메이션
+            Sequence seq = DOTween.Sequence();
+            seq.Append(camera1.transform.DOMove(
+            new Vector3(transform.position.x,transform.position.y,camera1.transform.position.z),4f));
+            StartCoroutine(dieCamera());
         }
 
         if (shieldTime < 1)
             shieldTime += Time.deltaTime;
+    }
+
+    IEnumerator dieCamera()
+    {
+        isdie =false;
+        while(camera1.orthographicSize >= 2f)
+        {
+            camera1.orthographicSize -= 0.01f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(1.5f);
+        Die();
     }
 
     private void OnCollisionEnter2D(Collision2D other)

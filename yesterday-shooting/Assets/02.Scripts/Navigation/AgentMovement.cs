@@ -48,6 +48,11 @@ public class AgentMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(DataManager.instance.nowPlayer.playerHp <= 0)
+        {
+            _rigid.velocity = Vector2.zero;
+            return;
+        }
         _rigid.velocity = _movementDirection * followSpeed;
     }
 }

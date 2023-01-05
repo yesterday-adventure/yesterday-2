@@ -21,7 +21,7 @@ public class SLAPattern : MonoBehaviour
 
     IEnumerator Attack()
     {
-        while(true)
+        while(DataManager.instance.nowPlayer.playerHp > 0)
         {
             yield return new WaitForSeconds(delay);
             
