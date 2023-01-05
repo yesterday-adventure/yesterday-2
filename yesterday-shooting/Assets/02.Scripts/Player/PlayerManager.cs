@@ -13,11 +13,11 @@ public class PlayerManager : MonoBehaviour
     public int coin;
 
     [Header("Player Bomb")]
-    public bool rightIsTrue;    //ÇÃ·¹ÀÌ¾î°¡ ÇöÀç º¸°í ÀÖ´Â ¹æÇâ
-    public int nowBombCount;    //ÇöÀç ÇÃ·¹ÀÌ¾î°¡ °¡Áö°í ÀÖ´Â ÆøÅº °³¼ö
-    [SerializeField] float bombDeley = 0.7f;    //ÆøÅº µô·¹ÀÌ
-    [SerializeField] GameObject bomb, bombRange;    //ÆøÅº°ú ÆøÅº ¹üÀ§
-    public float moveLocation = 5f;   //ÆøÅºÀÌ ³¯¶ó°¡´Â °Å¸®
+    public bool rightIsTrue;    //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public int nowBombCount;    //ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] float bombDeley = 0.7f;    //ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] GameObject bomb, bombRange;    //ï¿½ï¿½Åºï¿½ï¿½ ï¿½ï¿½Åº ï¿½ï¿½ï¿½ï¿½
+    public float moveLocation = 5f;   //ï¿½ï¿½Åºï¿½ï¿½ ï¿½ï¿½ï¿½ó°¡´ï¿½ ï¿½Å¸ï¿½
 
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    Debug.Log("ÆøÅº");
+                    Debug.Log("ï¿½ï¿½Åº");
                     nowBombCount--;
                     ServeItemManager.Instance.Bomb = nowBombCount;
 

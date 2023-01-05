@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,14 +12,24 @@ public class MarksmansEye : ItemSkill
 
     private GameObject _attackEnemy;
 
+    private bool isSkil;
+
+    private void Update() {
+        if (enemyHp.isAttack && isSkil) {
+            enemyHp.OnDamage(() => { }, 20);
+            enemyHp.isAttack = false;
+            isSkil = false;
+        }
+    }
+    
     public override bool Skill()
     {
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
 
         enemyHp = FindObjectOfType<EnemyHp>();
 
+        isSkil = true;
         //공격했다면 데미지 20 때려박기 (기본 에너미의 경우 즉사해벌ㄹ임;, 보스의 경우 20만 주기)
-        if (enemyHp.isAttack) enemyHp.OnDamage(() => { }, 20);
         return true;
     }
 }

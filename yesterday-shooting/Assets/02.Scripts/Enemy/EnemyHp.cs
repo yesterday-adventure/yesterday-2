@@ -13,6 +13,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
 
     public bool isAttack {
         get { return _isAttack; }
+        set { _isAttack = value; }
     }
 
     [SerializeField] private GameObject bomb = null;

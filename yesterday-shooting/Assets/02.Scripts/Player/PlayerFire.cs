@@ -18,6 +18,11 @@ public class PlayerFire : MonoBehaviour
 
     PlayerManager playerManager;
 
+    public KeyCode inputRight = KeyCode.RightArrow;
+    public KeyCode inputLeft = KeyCode.LeftArrow;
+    public KeyCode inputUp = KeyCode.UpArrow;
+    public KeyCode inputDown = KeyCode.DownArrow;
+
     public enum FireDir : short
     {
         right = 0,
@@ -61,7 +66,7 @@ public class PlayerFire : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(key:inputRight))
             {
                 playerManager.rightIsTrue = true;
                 effectSound.PlayerAtteck();
@@ -70,7 +75,7 @@ public class PlayerFire : MonoBehaviour
                 fireDir = FireDir.right;
                 yield return new WaitForSeconds(delay);
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(key:inputLeft))
             {
                 playerManager.rightIsTrue = false;
                 effectSound.PlayerAtteck();
@@ -79,14 +84,14 @@ public class PlayerFire : MonoBehaviour
                 fireDir = FireDir.left;
                 yield return new WaitForSeconds(delay);
             }
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(key:inputUp))
             {
                 effectSound.PlayerAtteck();
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
                 fireDir = FireDir.up;
                 yield return new WaitForSeconds(delay);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(key:inputDown))
             {
                 effectSound.PlayerAtteck();
                 PoolManager.Instance.Pop(weapon, new Vector3(transform.position.x, transform.position.y - 0.3f), Quaternion.identity);
