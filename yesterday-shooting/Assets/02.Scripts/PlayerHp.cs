@@ -64,16 +64,16 @@ public class PlayerHp : MonoBehaviour
 
     IEnumerator StartTimeFrizm()
     {
-        int r = UnityEngine.Random.Range(-5, 5);
+        //int r = UnityEngine.Random.Range(-5, 5);
         Time.timeScale = 0.3f;
-        camera1.orthographicSize = 3.95f;
-        camera1.transform.rotation = Quaternion.Euler(0, 0, r);
+        //camera1.orthographicSize = 3.95f;
+        //camera1.transform.rotation = Quaternion.Euler(0, 0, r);
 
-        camera1.transform.DORotate(new Vector3(0, 0, 0), 0.7f);
+        //camera1.transform.DORotate(new Vector3(0, 0, 0), 0.7f);
         while (Time.timeScale < 1)
         {
             Time.timeScale += 0.01f;
-            camera1.orthographicSize += 0.015f;
+            //camera1.orthographicSize += 0.015f;
             yield return new WaitForSeconds(0.01f);
         }
         yield return null;

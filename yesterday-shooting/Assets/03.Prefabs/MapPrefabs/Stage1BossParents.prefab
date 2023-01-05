@@ -2667,7 +2667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   room: {fileID: 7020228265918672951}
-  roomNumber: 15
+  roomNumber: 42
 --- !u!1 &4055234525651778675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,7 @@ GameObject:
   - component: {fileID: 4055234525651778672}
   - component: {fileID: 4055234525651778673}
   m_Layer: 0
-  m_Name: Room2Tile
+  m_Name: BossRoomTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
