@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,9 +19,15 @@ public class PlayerHp : MonoBehaviour
     //     if (GameObject.Find("Player/InvincibleHand")) isInvincibleHand = true; //플레이어 아래 이 아이템이 있다면,,
     // }
 
-    private void Awake() {
+    private void Awake()
+    {
         ironArmor = FindObjectOfType<IronArmor>();
         invincibleHand = FindObjectOfType<InvincibleHand>();
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
     }
 
     public void OnDamage(Action lambda)
@@ -52,9 +59,30 @@ public class PlayerHp : MonoBehaviour
         }
     }
 
+    IEnumerator StartTimeFrizm()
+    {
+        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        int r = UnityEngine.Random.Range(-20, 20);
+        Time.timeScale = 0.3f;
+        camera.orthographicSize = 3.95f;
+        camera.transform.rotation = Quaternion.Euler(0, 0, r);
+
+        camera.transform.DORotate(new Vector3(0, 0, 0), 0.7f);
+        while (Time.timeScale < 1)
+        {
+            Time.timeScale += 0.01f;
+            camera.orthographicSize += 0.015f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return null;
+    }
+
     private void HitAnimation()
     {
+        StartCoroutine(StartTimeFrizm());
         Sequence seq = DOTween.Sequence();
+        seq.Append(sR.DOFade(0, 0.1f));
+        seq.Append(sR.DOFade(1, 0.3f));
         seq.Append(sR.DOFade(0, 0.1f));
         seq.Append(sR.DOFade(1, 0.3f));
     }
@@ -99,8 +127,10 @@ public class PlayerHp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
-            if (invincibleHand) { //null이 아니라면
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+        {
+            if (invincibleHand)
+            { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
             else { OnDamage(() => { }); }
@@ -109,8 +139,10 @@ public class PlayerHp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1) {
-            if (invincibleHand) { //null이 아니라면
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
+        {
+            if (invincibleHand)
+            { //null이 아니라면
                 if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
             else { OnDamage(() => { }); }

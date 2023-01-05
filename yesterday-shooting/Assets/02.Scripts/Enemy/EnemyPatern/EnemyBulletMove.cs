@@ -31,6 +31,8 @@ public class EnemyBulletMove : MonoBehaviour
             StartCoroutine(Down());
         else if(A == EnemyBulletDir.FireDir.follow)
             StartCoroutine(Follow());
+        else
+            Debug.LogError($"{A} : 실행안함");
     }
 
     IEnumerator Right()
@@ -81,7 +83,8 @@ public class EnemyBulletMove : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        
+        if(player == null)
+            PoolManager.Instance.Push(gameObject);
         if(time > 2)
         {
             StopAllCoroutines();
