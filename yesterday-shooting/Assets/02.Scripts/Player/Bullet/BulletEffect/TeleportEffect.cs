@@ -5,15 +5,11 @@ public class TeleportEffect : MonoBehaviour
     [SerializeField] float splashRange;
     [SerializeField] float splashDamage;
 
-    private bool onHoll;
-
-    private void OnEnable()
-    {
-        onHoll = false;
-    }
+    Collider2D hole;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && DataManager.instance.nowPlayer.playerHp > 0 && !onHoll)
+        hole = Physics2D.OverlapBox(transform.position, new Vector2(1.5f, 1.5f), 0, 1 << 9);
+        if (Input.GetKeyDown(KeyCode.Space) && DataManager.instance.nowPlayer.playerHp > 0 && !hole)//
         {
             PlayerManager.instance.player.transform.position = transform.position;
             PoolManager.Instance.Push(gameObject);
@@ -25,22 +21,6 @@ public class TeleportEffect : MonoBehaviour
                 item.gameObject.GetComponent<EnemyHp>().OnDamage(() => { }, splashDamage);
                 Debug.Log("EMOTIONAL DAMAGE!@");
             }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.transform.tag == "Hole")
-        {
-            onHoll = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(other.transform.tag == "Hole")
-        {
-            onHoll = false;
         }
     }
 }
