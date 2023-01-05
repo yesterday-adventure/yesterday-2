@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerItem : MonoBehaviour
 {
     public static PlayerItem Instance = null;
-
+    [SerializeField] private GameObject usingParticle;
     public FieldActiveItem item = null;
 
     [SerializeField] private FieldActiveItem[] itemArr;
@@ -35,7 +36,7 @@ public class PlayerItem : MonoBehaviour
             Debug.LogWarning("Multiple PlayerItem Instance running");
         }
 
-        if(item != null)
+        if (item != null)
         {
             playerUI1.sprite = item.GetComponent<SpriteRenderer>().sprite;
             playerUI2.sprite = item.GetComponent<SpriteRenderer>().sprite;
@@ -64,7 +65,8 @@ public class PlayerItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && cool <= 0)
         {
             if (item.Use())
-                cool = item.ItemSkill.maxCool;
+                Instantiate(usingParticle, transform.position, Quaternion.identity);
+            cool = item.ItemSkill.maxCool;
         }
 
         if (Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.I))
@@ -84,7 +86,7 @@ public class PlayerItem : MonoBehaviour
             item = items[collision.gameObject.name];
             collision.gameObject.name = temp;
 
-            ItemNameAnimation.Instance.InitText(item.ItemSkill.titleTxt,item.ItemSkill.captionTxt);
+            ItemNameAnimation.Instance.InitText(item.ItemSkill.titleTxt, item.ItemSkill.captionTxt);
         }
     }
 }
