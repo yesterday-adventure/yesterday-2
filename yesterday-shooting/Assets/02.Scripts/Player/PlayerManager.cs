@@ -50,6 +50,15 @@ public class PlayerManager : MonoBehaviour
             rb2D.velocity = Vector2.zero;
             return;
         }
+
+        if(PlayerItem.Instance.useIronArmor)
+        {
+            speed = 3.5f;
+        }
+        else
+        {
+            speed = 5f;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(x, y, 0);

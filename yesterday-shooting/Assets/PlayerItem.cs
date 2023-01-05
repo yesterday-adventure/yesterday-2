@@ -19,6 +19,7 @@ public class PlayerItem : MonoBehaviour
 
     public bool useMarksmansEye = false;
     public bool useGodsDice = false;
+    public bool useIronArmor = false;
 
     [SerializeField] private Image playerUI1;
     [SerializeField] private Image playerUI2;

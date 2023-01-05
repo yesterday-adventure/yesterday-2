@@ -7,7 +7,7 @@ public class TeleportEffect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && DataManager.instance.nowPlayer.playerHp > 0)
         {
             PlayerManager.instance.player.transform.position = transform.position;
             PoolManager.Instance.Push(gameObject);
