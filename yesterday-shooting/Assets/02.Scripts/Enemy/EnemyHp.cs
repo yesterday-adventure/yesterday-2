@@ -57,6 +57,11 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
         {
+            if(PlayerItem.Instance.useRustyRazorBlade)
+            {
+                GetComponent<DamageOverTime>().Dot(1, 2, 1);
+                PlayerItem.Instance.useRustyRazorBlade = false;
+            }
             if(PlayerItem.Instance.useMarksmansEye)
             {
                 OnDamage(()=>{}, 20f);
