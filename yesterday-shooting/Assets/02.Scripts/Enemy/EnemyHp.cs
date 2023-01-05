@@ -64,7 +64,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
             }
             else
             {
-                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage);
+                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage + DataManager.instance.nowPlayer.addDamage);
             }
         }
     }

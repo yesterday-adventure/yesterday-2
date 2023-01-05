@@ -10,6 +10,7 @@ public class PlayerData
     public bool[] roomClear = new bool[45] ;    // 전에 썼던 방 클리어 유뮤 판단하기
 
     public Vector3 playerPosition = new Vector3(90, 60, 0); //플레이어 포지션
+    public float addDamage = 0;
     public int x = 5; // 플레이어가 마지막으로 있던 방의 방 숫자 배열 첫번째
     public int y = 6; // 플레이어가 마지막으로 있던 방의 방 숫자 배열 두번째
 
