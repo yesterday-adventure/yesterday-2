@@ -19,6 +19,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject bomb, bombRange;    //��ź�� ��ź ����
     public float moveLocation = 5f;   //��ź�� ���󰡴� �Ÿ�
 
+    private int mc;
+    public int moveChange {
+        set { mc = value; }
+    }
+
     private void Awake()
     {
         player = this.gameObject;
@@ -48,7 +53,7 @@ public class PlayerManager : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(x, y, 0);
-        rb2D.velocity = dir.normalized * speed;
+        rb2D.velocity = dir.normalized * speed * mc;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
