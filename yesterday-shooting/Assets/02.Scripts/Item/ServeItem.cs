@@ -51,10 +51,10 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
 
             foreach (Vector3 item in DataManager.instance.afterData.dropBomb)
             {
-                Debug.Log(2);
+                //Debug.Log(2);
                 if (item == transform.position)
                 {
-                    Debug.Log(1);
+                    //Debug.Log(1);
                     DataManager.instance.afterData.dropBomb.RemoveAt(DataManager.instance.afterData.dropBomb.FindIndex(a => a == item));
                     break;
                 }
@@ -67,10 +67,10 @@ public class ServeItem : MonoBehaviour //폭탄이랑 코인에만 들어갈 스
             DataManager.instance.afterData.goldenCoin++;
             foreach (Vector3 item in DataManager.instance.afterData.dropCoin)
             {
-                Debug.Log(2);
+                //Debug.Log(2);
                 if (item == transform.position)
                 {
-                    Debug.Log(1);
+                    //Debug.Log(1);
                     //DataManager.instance.afterData.dropCoin.Remove(item);
                     DataManager.instance.afterData.dropCoin.RemoveAt(DataManager.instance.afterData.dropCoin.FindIndex(a => a == item));
                     break;

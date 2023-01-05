@@ -211,7 +211,6 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         string data = JsonUtility.ToJson(nowPlayer);
-
         File.WriteAllText(path + nowSlot.ToString(), data);
     }
 
@@ -249,5 +248,6 @@ public class DataManager : MonoBehaviour
     {
         nowSlot = -1;
         nowPlayer = new PlayerData();
+        afterData = new PlayerAfterData();
     }
 }

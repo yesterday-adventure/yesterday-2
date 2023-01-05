@@ -44,6 +44,7 @@ public class Select : MonoBehaviour
             }
             else
             {
+                savefile[i] = false;
                 slotButton[i].image.color = Color.white;
             }
         }
@@ -101,6 +102,7 @@ public class Select : MonoBehaviour
         }
         else
         {
+            newStart = false;
             fileDelete.interactable = true;
         }
         start.interactable = true;

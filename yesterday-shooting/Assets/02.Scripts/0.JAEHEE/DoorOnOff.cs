@@ -118,8 +118,8 @@ public class DoorOnOff : MonoBehaviour
         if (hit == null)
         {
             DataManager.instance.SaveAfterData();
-            Debug.Log(DataManager.instance.afterData.goldenCoin);
-            Debug.Log(DataManager.instance.afterData.bomb);
+            //Debug.Log(DataManager.instance.afterData.goldenCoin);
+            //Debug.Log(DataManager.instance.afterData.bomb);
 
             if (_RMS.mapGrid[x + 1, y] == null)
             /*if (DataManager.instance.mapGrid[0].mapArr[x + 1] == null &&
