@@ -92,7 +92,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     }
 
     void SpawnCoin(){
-        ran = UnityEngine.Random.Range(1, 3); //이거 유니티엔진이랑 시스템 사이에서 모호하대서 걍 때려박음
+        ran = UnityEngine.Random.Range(2, 5); //이거 유니티엔진이랑 시스템 사이에서 모호하대서 걍 때려박음
         
         for (int i = 0; i < ran; i++) { //코인 생성, 반반 확률로 1개나 2개 얻기 ㄱㄴ
             Instantiate(coin, gameObject.transform.position, Quaternion.identity);
@@ -104,7 +104,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     void SpawnBomb() {
         ran = UnityEngine.Random.Range(0, 101);
 
-        if (ran <= 25) { //폭탄 생성, 25 확률로 1개 줌 ㅎㅎ
+        if (ran <= 15) { //폭탄 생성, 25 확률로 1개 줌 ㅎㅎ
             Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
             //DataManager.instance.afterData.dropBomb.Add(gameObject.transform.position);
             ran = 0;
