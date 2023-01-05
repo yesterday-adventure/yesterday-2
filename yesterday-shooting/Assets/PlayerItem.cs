@@ -13,6 +13,7 @@ public class PlayerItem : MonoBehaviour
 
     public float cool = 0;
 
+    public bool useMarksmansEye = false;
     public bool useGodsDice = false;
 
     [SerializeField] private Image playerUI1;
@@ -32,7 +33,7 @@ public class PlayerItem : MonoBehaviour
         playerUI1.sprite = item.GetComponent<SpriteRenderer>().sprite;
         playerUI2.sprite = item.GetComponent<SpriteRenderer>().sprite;
 
-        //µñ¼Å³Ê¸®¿¡ ¾ÆÀÌÅÛ Ãß°¡
+        //ï¿½ï¿½Å³Ê¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         for (int i = 0; i < itemArr.Length; i++)
         {
             items.Add(itemArr[i].name, itemArr[i]);
@@ -43,8 +44,8 @@ public class PlayerItem : MonoBehaviour
 
     private void Start()
     {
-        //¹Ù´Ú¿¡ ¶³¾îÁø ¾ÆÀÌÅÛ ³Ö¾îÁÖ´Â °÷.
-        if (!Select.instance.newStart)  //Ã³À½ ½ÃÀÛÇÏ´Â °ÍÀÌ ¾Æ´Ï¶ó¸é
+        //ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½.
+        if (!Select.instance.newStart)  //Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½
         {
 
         }
@@ -68,7 +69,7 @@ public class PlayerItem : MonoBehaviour
         {
             playerUI1.sprite = collision.GetComponent<SpriteRenderer>().sprite;
             playerUI2.sprite = collision.GetComponent<SpriteRenderer>().sprite;
-            //Debug.Log("¾×Æ¼ºê ¾ÆÀÌÅÛ È¹µæ ½Ãµµ");
+            //Debug.Log("ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½ ï¿½Ãµï¿½");
             string temp = item.name;
             Debug.Log(temp);
             Debug.Log(collision.gameObject.name);

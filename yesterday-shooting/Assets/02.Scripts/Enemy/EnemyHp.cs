@@ -56,7 +56,17 @@ public class EnemyHp : MonoBehaviour, IDamageable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PlayerBullet"))
-            OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage);
+        {
+            if(PlayerItem.Instance.useMarksmansEye)
+            {
+                OnDamage(()=>{}, 20f);
+                PlayerItem.Instance.useMarksmansEye = false;
+            }
+            else
+            {
+                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage);
+            }
+        }
     }
 
     GameEffectSoundManager effectSound;
