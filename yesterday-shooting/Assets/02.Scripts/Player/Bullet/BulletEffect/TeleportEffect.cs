@@ -5,9 +5,11 @@ public class TeleportEffect : MonoBehaviour
     [SerializeField] float splashRange;
     [SerializeField] float splashDamage;
 
+    Collider2D hole;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && DataManager.instance.nowPlayer.playerHp > 0)
+        hole = Physics2D.OverlapBox(transform.position, new Vector2(1.5f, 1.5f), 0, 1 << 9);
+        if (Input.GetKeyDown(KeyCode.Space) && DataManager.instance.nowPlayer.playerHp > 0 && !hole)//
         {
             PlayerManager.instance.player.transform.position = transform.position;
             PoolManager.Instance.Push(gameObject);
