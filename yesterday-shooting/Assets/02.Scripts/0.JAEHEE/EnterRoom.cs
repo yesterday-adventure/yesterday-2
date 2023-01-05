@@ -23,7 +23,7 @@ public class EnterRoom : MonoBehaviour
                 Debug.Log("사용");
                 foreach (EnemyHp enemyHp in transform.GetChild(0).GetComponentsInChildren<EnemyHp>())
                 {
-                    enemyHp.hp = 0;
+                    enemyHp.hp = -999;
                     Debug.Log("삭-제");
                 }
                 PlayerItem.Instance.useGodsDice = false;
