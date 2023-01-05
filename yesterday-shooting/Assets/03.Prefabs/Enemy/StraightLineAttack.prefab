@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6802937908760554700}
   - component: {fileID: 6802937908760554703}
-  - component: {fileID: 6802937908760554702}
-  - component: {fileID: 6802937908760554697}
   - component: {fileID: 6821673676253718087}
   - component: {fileID: 7518125590839245736}
+  - component: {fileID: 6802937908760554702}
+  - component: {fileID: 6802937908760554697}
   - component: {fileID: 4524118070487998121}
   - component: {fileID: 1013819076}
   - component: {fileID: 7381888492970203772}
@@ -93,36 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6802937908760554702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6802937908760554696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d52ca85e87a3ab419c8aee0e4bb30eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 4
-  bomb: {fileID: 489223338349646256, guid: e16345bfa80731543aa9c1141d2b3a51, type: 3}
-  coin: {fileID: 6235591056422325518, guid: cc9bce55e465372458de60cbb6e88171, type: 3}
---- !u!114 &6802937908760554697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6802937908760554696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b5fa5b34b8cf994dba713c259965f7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyBullet: {fileID: 7583783584051772301, guid: c0fed57c9665cce4c97bca4067485fb3, type: 3}
-  firDir: 3
-  delay: 2
 --- !u!50 &6821673676253718087
 Rigidbody2D:
   serializedVersion: 4
@@ -182,6 +152,36 @@ PolygonCollider2D:
       - {x: 0.55383396, y: -0.6497834}
       - {x: 0.82240963, y: -0.590116}
       - {x: 0.65420103, y: 0.027616024}
+--- !u!114 &6802937908760554702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802937908760554696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d52ca85e87a3ab419c8aee0e4bb30eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 4
+  bomb: {fileID: 489223338349646256, guid: e16345bfa80731543aa9c1141d2b3a51, type: 3}
+  coin: {fileID: 6235591056422325518, guid: cc9bce55e465372458de60cbb6e88171, type: 3}
+--- !u!114 &6802937908760554697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802937908760554696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5fa5b34b8cf994dba713c259965f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyBullet: {fileID: 7583783584051772301, guid: c0fed57c9665cce4c97bca4067485fb3, type: 3}
+  firDir: 3
+  delay: 2
 --- !u!114 &4524118070487998121
 MonoBehaviour:
   m_ObjectHideFlags: 0
