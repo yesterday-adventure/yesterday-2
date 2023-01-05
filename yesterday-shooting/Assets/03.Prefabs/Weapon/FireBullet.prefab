@@ -253,6 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede55df48ab98bf42a4fa0933a6102f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dotDamage: 0.5
+  dotDamage: 0.2
   loopTime: 6
-  dotTick: 1
+  dotTick: 0.1

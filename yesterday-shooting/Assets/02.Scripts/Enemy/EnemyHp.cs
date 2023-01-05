@@ -59,7 +59,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
         {
             if(PlayerItem.Instance.useRustyRazorBlade)
             {
-                GetComponent<DamageOverTime>().Dot(1, 2, 1);
+                GetComponent<DamageOverTime>().Dot(1, 300, 1);
                 PlayerItem.Instance.useRustyRazorBlade = false;
             }
             if(PlayerItem.Instance.useMarksmansEye)
@@ -69,7 +69,8 @@ public class EnemyHp : MonoBehaviour, IDamageable
             }
             else
             {
-                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage + DataManager.instance.nowPlayer.addDamage);
+                OnDamage(() => { }, other.GetComponent<BulletInfo>().Damage + DataManager.instance.nowPlayer.addDamage + 
+                PlayerItem.Instance.plusMarionette);
             }
         }
     }
