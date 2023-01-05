@@ -27,8 +27,8 @@ public class JSonIsRoomClear : MonoBehaviour
             DataManager.instance.nowPlayer.roomClear[roomNumber - 1] = true;
             DataManager.instance.SaveData();
             DataManager.instance.SaveAfterData();
-            Debug.Log(DataManager.instance.afterData.goldenCoin);
-            Debug.Log(DataManager.instance.afterData.bomb);
+            /*Debug.Log(DataManager.instance.afterData.goldenCoin);
+            Debug.Log(DataManager.instance.afterData.bomb);*/
         }
     }
 }

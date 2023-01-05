@@ -14,17 +14,45 @@ public class ItemDropDoTween : MonoBehaviour
         ItemDropAnim();
     }
 
+    bool a = true;
+
     public void ItemDropAnim()
     {
         pos = (Vector2)transform.position + (Random.insideUnitCircle / 2);
         if (transform.name == "bomb")
         {
-            DataManager.instance.afterData.dropBomb.Add(pos);
+            foreach (Vector3 item in DataManager.instance.afterData.dropBomb)
+            {
+                if (item == transform.position)
+                {
+                    a = false;
+                    break;
+                }
+            }
+            //Debug.Log("폭탄 복사버그를 시작합니다!");
+            if (a == true) {
+                DataManager.instance.afterData.dropBomb.Add(pos);
+            }
         }
         else
         {
-            DataManager.instance.afterData.dropCoin.Add(pos);
+            foreach (Vector3 item in DataManager.instance.afterData.dropCoin)
+            {
+                if (item == transform.position)
+                {
+                    a = false;
+                    break;
+                }
+            }
+
+            if (a == true)
+            {
+                /*Debug.Log(gameObject.name);
+                Debug.Log("코인 복사버그를 시작합니다!");*/
+                DataManager.instance.afterData.dropCoin.Add(pos);
+            }
         }
+
         seq.Append(transform.DOJump(pos, 1, 1, 1f).SetEase(ease));
     }
 

@@ -40,12 +40,14 @@ public class ServeItemManager : MonoBehaviour
     {
         if (!Select.instance.newStart)
         {
+            //Debug.Log(Select.instance.newStart);
             DataManager.instance.LoadAfterData();
-            Debug.Log(DataManager.instance.afterData.goldenCoin);
-            Debug.Log(DataManager.instance.afterData.bomb);
+            /*Debug.Log(DataManager.instance.afterData.goldenCoin);
+            Debug.Log(DataManager.instance.afterData.bomb);*/
 
             for (int i = 0; i < DataManager.instance.afterData.dropCoin.Count; i++)
             {
+                Debug.Log("코인만들기 존나");
                 Instantiate(goldObj, DataManager.instance.afterData.dropCoin[i], Quaternion.identity);
             }
 
