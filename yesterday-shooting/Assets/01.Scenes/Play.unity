@@ -9147,6 +9147,7 @@ MonoBehaviour:
   bomb: {fileID: 8342439436060693773, guid: 7288d04b5f736e14885bfc3fc6256c7b, type: 3}
   bombRange: {fileID: 6951590567328401415, guid: 7304f12716c05364fb47300552d7e13b, type: 3}
   moveLocation: 5
+  delayTime: 0
 --- !u!212 &1529723047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9377,7 +9378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usingParticle: {fileID: 9014780734027559150, guid: bdd6a4df3463bfb4b9225623b32d59e4, type: 3}
-  item: {fileID: 2448979371097191692, guid: 66f28ed2e959c6343b4545f2eb2ea862, type: 3}
+  item: {fileID: 6139962566944116031, guid: 9028dea6311151b449af7b7b765b2644, type: 3}
   itemArr:
   - {fileID: 675986575968791163, guid: 79c4168f769a8f34c984206f75be3f9f, type: 3}
   - {fileID: 4058461324442050422, guid: 7f33a89e1f5399048925ff32f23a09a8, type: 3}
@@ -9393,6 +9394,7 @@ MonoBehaviour:
   useMarksmansEye: 0
   useGodsDice: 0
   useIronArmor: 0
+  useInvincibleHand: 0
   plusMarionette: 0
   playerUI1: {fileID: 2083697066}
   playerUI2: {fileID: 2120742877}

@@ -17,18 +17,27 @@ public class BurstPattern : MonoBehaviour
     {
         if (player == null)
             return;
-            
-        GameObject obj = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
-        obj.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.up);
 
-        GameObject obj1 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
-        obj1.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.down);
-
-        GameObject obj2 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
-        obj2.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.right);
-
-        GameObject obj3 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
-        obj3.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.left);
+        if (PoolManager.Instance != null)
+        {
+            GameObject obj = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
+            obj.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.up);
+        }
+        if (PoolManager.Instance != null)
+        {
+            GameObject obj1 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
+            obj1.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.down);
+        }
+        if (PoolManager.Instance != null)
+        {
+            GameObject obj2 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
+            obj2.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.right);
+        }
+        if (PoolManager.Instance != null)
+        {
+            GameObject obj3 = PoolManager.Instance.Pop(EnemyBullet, transform.position, Quaternion.identity);
+            obj3.GetComponent<EnemyBulletMove>().set(EnemyBulletDir.FireDir.left);
+        }
     }
 
     private void Update()
@@ -36,11 +45,11 @@ public class BurstPattern : MonoBehaviour
         if (player == null)
             return;
 
-        if(player.transform.position.x > transform.position.x)
+        if (player.transform.position.x > transform.position.x)
         {
             spriteRenderer.flipX = false;
         }
-        else if(player.transform.position.x < transform.position.x)
+        else if (player.transform.position.x < transform.position.x)
         {
             spriteRenderer.flipX = true;
         }
