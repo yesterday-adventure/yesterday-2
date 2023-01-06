@@ -151,6 +151,11 @@ public class Stage1_1Boss : MonoBehaviour
         {
             hp -= collision.GetComponent<BulletInfo>().Damage;
             slider.value = hp / maxHp;
+            ChangeColor();
+        }
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerItem : MonoBehaviour
 {
@@ -16,16 +16,17 @@ public class PlayerItem : MonoBehaviour
 
     //public float DataManager.instance.nowPlayer.addDamage = 0f;
 
-    public bool useRustyRazorBlade = true;
-
+    public bool useRustyRazorBlade = false;
     public bool useMarksmansEye = false;
     public bool useGodsDice = false;
     public bool useIronArmor = false;
+    public bool useInvincibleHand = false;
 
     public float plusMarionette = 0f;
 
     [SerializeField] private Image playerUI1;
     [SerializeField] private Image playerUI2;
+    [SerializeField] private Image usingImage;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class PlayerItem : MonoBehaviour
         {
             items.Add(itemArr[i].name, itemArr[i]);
         }
+        useRustyRazorBlade = false;//먼 버그징..?
 
         cool = DataManager.instance.nowPlayer.activeItemCoolTime;
     }
@@ -67,8 +69,16 @@ public class PlayerItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && cool <= 0)
         {
             if (item.Use())
+            {
                 Instantiate(usingParticle, transform.position, Quaternion.identity);
-            cool = item.ItemSkill.maxCool;
+                cool = item.ItemSkill.maxCool;
+                
+                usingImage.transform.localScale = new Vector2(1, 1);
+                usingImage.color = Color.white;
+                Sequence seq = DOTween.Sequence()
+                .Append(usingImage.transform.DOScale(new Vector2(5, 5), 1.2f).SetEase(Ease.OutQuart))
+                .Join(usingImage.DOFade(0, 1.3f));
+            }
         }
 
         if (Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.I))
@@ -81,6 +91,7 @@ public class PlayerItem : MonoBehaviour
         {
             playerUI1.sprite = collision.GetComponent<SpriteRenderer>().sprite;
             playerUI2.sprite = collision.GetComponent<SpriteRenderer>().sprite;
+            usingImage.sprite = collision.GetComponent<SpriteRenderer>().sprite;
             //Debug.Log("��Ƽ�� ������ ȹ�� �õ�");
             string temp = item.name;
             Debug.Log(temp);

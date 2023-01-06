@@ -49,21 +49,9 @@ public class PlayerHp : MonoBehaviour
 
     public void OnDamage(Action lambda)
     {
-        if (ironArmor != null)
-        {
-            if (ironArmor.shield)
-            { //철갑주 아이템을 사용하여 보호막이 있는 경우
-                ironArmor.shield = false;
-            }
-            else
-            { //없는 경우
-                shieldTime = 0;
-                //hp--;
-                DataManager.instance.nowPlayer.playerHp--;
-                //StartCoroutine(TwinkeON());
-                HitAnimation();
-                lambda?.Invoke();
-            }
+        if (PlayerItem.Instance.useIronArmor)
+        { //철갑주 아이템을 사용하여 보호막이 있는 경우
+            PlayerItem.Instance.useIronArmor = false;
         }
         else
         { //없는 경우
@@ -79,7 +67,7 @@ public class PlayerHp : MonoBehaviour
     IEnumerator StartTimeFrizm()
     {
         //int r = UnityEngine.Random.Range(-5, 5);
-        Time.timeScale = 0.3f;
+        Time.timeScale = 0.5f;
         //camera1.orthographicSize = 3.95f;
         //camera1.transform.rotation = Quaternion.Euler(0, 0, r);
 
@@ -202,13 +190,9 @@ public class PlayerHp : MonoBehaviour
     {
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
         {
-            if (invincibleHand)
+            if (invincibleHand != null)
             { //null이 아니라면
-                if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
-            }
-            else if (ironArmor)
-            { //null이 아니라면
-                if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
+                if (!PlayerItem.Instance.useInvincibleHand) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
             else { OnDamage(() => { }); }
         }
@@ -218,20 +202,16 @@ public class PlayerHp : MonoBehaviour
     {
         if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet")) && shieldTime >= 1)
         {
-            if (invincibleHand)
+            if (invincibleHand != null)
             { //null이 아니라면
-                if (!invincibleHand.isSkil) { OnDamage(() => { }); } //무적 상태가 아니라면
-            }
-            else if (ironArmor)
-            { //null이 아니라면
-                if (!ironArmor.shield) { OnDamage(() => { }); } //쉴드가 없다면
+                if (!PlayerItem.Instance.useInvincibleHand) { OnDamage(() => { }); } //무적 상태가 아니라면
             }
             else { OnDamage(() => { }); }
         }
     }
 
     void Die()
-    {   
+    {
 
         System.IO.File.Delete(DataManager.instance.path + $"{DataManager.instance.nowSlot}");
         System.IO.File.Delete(DataManager.instance.path + $"TwoArr{DataManager.instance.nowSlot}");

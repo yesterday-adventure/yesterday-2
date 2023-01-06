@@ -31,7 +31,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         _isAttack = true;
         hp -= damage;
-        //Debug.Log($"damage : {damage} , hp : {hp}");
+        Debug.Log($"damage : {damage} , hp : {hp}");
 
         if (hp > 0)
         {
@@ -59,6 +59,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
         {
             if(PlayerItem.Instance.useRustyRazorBlade)
             {
+                Debug.Log("도트아이템 사용");
                 GetComponent<DamageOverTime>().Dot(1, 300, 1);
                 PlayerItem.Instance.useRustyRazorBlade = false;
             }
