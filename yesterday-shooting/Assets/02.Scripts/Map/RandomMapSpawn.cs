@@ -54,13 +54,10 @@ public class RandomMapSpawn : MonoBehaviour
 
                     //Debug.Log($"{DataManager.instance.nowPlayer.mapGrid[i]}, {DataManager.instance.nowPlayer.mapGrid[i + 1]}");
                 }
-                Debug.Log("mapGrid에 값 넣어주기");
+                //Debug.Log("mapGrid에 값 넣어주기");
             }
         }
-    }
 
-    void Start()
-    {
         if (Select.instance.newStart)
         {
             DataManager.instance.mapGrid[0].mapArr[5] = maps;
@@ -75,7 +72,7 @@ public class RandomMapSpawn : MonoBehaviour
                 RandomSpawn(mapGrid, maps);
             }
             InputShopMap(mapGrid, maps);
-            InputShopMap(mapGrid, maps);     //->json문제있음
+            InputShopMap(mapGrid, maps);  
             InputBossMap(mapGrid, maps);
 
 
@@ -95,12 +92,12 @@ public class RandomMapSpawn : MonoBehaviour
         else
         {
             roomSaveNumber = 0;
-            Debug.Log("맵 생성");
+            //Debug.Log("맵 생성");
             if (DataManager.instance.nowPlayer.roomPos != null && DataManager.instance.nowPlayer.roomNumber != null)
             {
                 for (int i = 0; i < DataManager.instance.nowPlayer.roomPos.Length; i++)     //12 + 1 = 13
                 {
-                    Debug.Log("MapSpaw?");
+                    //Debug.Log("MapSpaw?");
                     Instantiate(randomMap[DataManager.instance.nowPlayer.roomNumber[i] - 1], DataManager.instance.nowPlayer.roomPos[i], Quaternion.identity);
                     //미니맵
                     GameObject spawnMiniMap = Instantiate(monsterMinimap, minimap.transform);
@@ -136,6 +133,11 @@ public class RandomMapSpawn : MonoBehaviour
             showPlayerPos = Instantiate(playerPos, minimap.transform);
             showPlayerPos.transform.localPosition = maps.MiniMapSetPos(CameraMove.Instance.xIndex, CameraMove.Instance.yIndex);
         }
+    }
+
+    void Start()
+    {
+        
     }
 
     void InputStartMap(Map[,] map, Map _map)

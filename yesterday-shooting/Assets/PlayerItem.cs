@@ -52,7 +52,8 @@ public class PlayerItem : MonoBehaviour
         }
         useRustyRazorBlade = false;//먼 버그징..?
 
-        DataManager.instance.nowPlayer.activeItem = item.ToString();
+        if (DataManager.instance.nowPlayer.activeItem == null)
+        DataManager.instance.nowPlayer.activeItem = item.name;
             //초기값 저장하는거
     }
 
@@ -62,7 +63,7 @@ public class PlayerItem : MonoBehaviour
         //�ٴڿ� ������ ������ �־��ִ� ��.
         if (!Select.instance.newStart)  //ó�� �����ϴ� ���� �ƴ϶��
         {
-        Debug.Log(items[DataManager.instance.nowPlayer.activeItem]);
+        //Debug.Log(items[DataManager.instance.nowPlayer.activeItem]);
             item = items[DataManager.instance.nowPlayer.activeItem];
             cool = DataManager.instance.nowPlayer.activeItemCoolTime;
         }

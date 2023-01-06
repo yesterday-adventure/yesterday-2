@@ -25,7 +25,7 @@ public class ServeItemManager : MonoBehaviour
     }
     private void Awake()
     {
-        Debug.Log(transform.name);
+        //Debug.Log(transform.name);
         if(Instance == null)
         {
             Instance = this;
