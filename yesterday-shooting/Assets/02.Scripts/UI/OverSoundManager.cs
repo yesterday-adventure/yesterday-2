@@ -13,6 +13,8 @@ public class OverSoundManager : MonoBehaviour
     }
     public void ButtonClick()
     {
+        //Debug.Log(DataManager.instance.nowOption.ButtonClickSound);
+        ButtonClickSound.volume = DataManager.instance.nowOption.ButtonClickSound;
         ButtonClickSound.Play();
     }
 }

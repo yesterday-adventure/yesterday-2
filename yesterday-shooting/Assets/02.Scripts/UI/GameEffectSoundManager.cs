@@ -11,6 +11,7 @@ public class GameEffectSoundManager : MonoBehaviour
         playerAtteck.volume = DataManager.instance.nowOption.ButtonClickSound;
         monsterDie.volume = DataManager.instance.nowOption.ButtonClickSound;
         monsterAtteck.volume = DataManager.instance.nowOption.ButtonClickSound;
+        playerHit.volume = DataManager.instance.nowOption.ButtonClickSound;
     }
 
     public void PlayerAtteck()

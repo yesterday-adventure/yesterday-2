@@ -49,10 +49,10 @@ public class RandomMapSpawn : MonoBehaviour
                 if (mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
                 DataManager.instance.nowPlayer.mapGrid[i + 1]] != null)
                 {
-                    Debug.Log(mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
-                    DataManager.instance.nowPlayer.mapGrid[i + 1]]);
+                    //Debug.Log(mapGrid[DataManager.instance.nowPlayer.mapGrid[i],
+                    //DataManager.instance.nowPlayer.mapGrid[i + 1]]);
 
-                    Debug.Log($"{DataManager.instance.nowPlayer.mapGrid[i]}, {DataManager.instance.nowPlayer.mapGrid[i + 1]}");
+                    //Debug.Log($"{DataManager.instance.nowPlayer.mapGrid[i]}, {DataManager.instance.nowPlayer.mapGrid[i + 1]}");
                 }
                 Debug.Log("mapGrid에 값 넣어주기");
             }
