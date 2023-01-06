@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Stage1_1BossAttackRange : MonoBehaviour
@@ -31,5 +29,10 @@ public class Stage1_1BossAttackRange : MonoBehaviour
     {
         rangeCollider.enabled = false;
         _animator.SetBool("Attack", false);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject, 0.3f);
     }
 }

@@ -22,7 +22,7 @@ public class Stage1_1Boss : MonoBehaviour
     Rigidbody2D rb;
     Animator _animator;
     GameObject player;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider _slider;
 
     private bool walkState = false;
     private bool isAttacking = false;
@@ -42,6 +42,9 @@ public class Stage1_1Boss : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) _slider.gameObject.SetActive(!_slider.gameObject.activeSelf);
+        if (DataManager.instance.nowPlayer.playerHp <= 0) return;
+
         if (walkState)
         {
             rb.velocity = (player.transform.position - transform.position).normalized * speed;
@@ -150,12 +153,13 @@ public class Stage1_1Boss : MonoBehaviour
         if (collision.tag == "PlayerBullet")
         {
             hp -= collision.GetComponent<BulletInfo>().Damage;
-            slider.value = hp / maxHp;
+            _slider.value = hp / maxHp;
             ChangeColor();
         }
-        if(hp <= 0)
+        if (hp <= 0)
         {
-            Destroy(gameObject);
+            _animator.SetTrigger("Die");
+            //Destroy(gameObject);
         }
     }
 

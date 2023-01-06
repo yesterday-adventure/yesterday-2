@@ -7995,7 +7995,8 @@ MonoBehaviour:
   speed: 2
   distance: 10
   summonRange: 1.5
-  slider: {fileID: 7036273225963140548}
+  _render: {fileID: 7020228266110599365}
+  _slider: {fileID: 7036273225963140548}
 --- !u!114 &7496977460402129417
 MonoBehaviour:
   m_ObjectHideFlags: 0
