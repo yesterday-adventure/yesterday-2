@@ -8,7 +8,11 @@ public class PlayerManager : MonoBehaviour
     private Rigidbody2D rb2D;
     public GameObject player;
 
-    [SerializeField] GameObject stopPanel;
+    [SerializeField] private GameObject stopPanel;
+    public GameObject StopPanel
+    {
+        get { return stopPanel; }
+    }
     [SerializeField] private float speed = 5f;
     int coin;
 

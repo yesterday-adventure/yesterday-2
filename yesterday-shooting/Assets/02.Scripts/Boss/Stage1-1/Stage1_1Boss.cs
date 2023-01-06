@@ -44,7 +44,8 @@ public class Stage1_1Boss : MonoBehaviour
 
     private void OnEnable()
     {
-        stopPanel = GameObject.Find("StopPanel");
+        stopPanel = PlayerManager.instance.StopPanel;
+        Debug.Log(stopPanel);
         player = FindObjectOfType<PlayerHp>().transform.gameObject;
         StartCoroutine(this.Pattern());
     }
@@ -94,6 +95,7 @@ public class Stage1_1Boss : MonoBehaviour
 
     private IEnumerator Pattern()
     {
+        yield return new WaitForSeconds(1);
         while (hp > 0)
         {
             distance = Vector2.Distance(transform.position, player.transform.position);

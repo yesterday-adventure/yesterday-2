@@ -47,7 +47,7 @@ public class ItemNameAnimation : MonoBehaviour
             transform.position = new Vector2(origin.x - 3000, origin.y);
         })    
         .Append(transform.DOMove(origin, 0.5f, false))
-        .AppendInterval(1)
+        .AppendInterval(2)
         .Append(transform.DOMove(new Vector2(origin.x + 3000, origin.y), 1f, false))
         .AppendCallback(()=>{
         isChanging = false;
