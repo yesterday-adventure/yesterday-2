@@ -16,11 +16,11 @@ public class PlayerItem : MonoBehaviour
 
     //public float DataManager.instance.nowPlayer.addDamage = 0f;
 
-    public bool useRustyRazorBlade = true;
-
+    public bool useRustyRazorBlade = false;
     public bool useMarksmansEye = false;
     public bool useGodsDice = false;
     public bool useIronArmor = false;
+    public bool useInvincibleHand = false;
 
     public float plusMarionette = 0f;
 

@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
         ServeItemManager.Instance.Gold = coin;
         ServeItemManager.Instance.Bomb = nowBombCount;
     }
-
+    public float delayTime = 0f;
     void Update()
     {
         if(DataManager.instance.nowPlayer.playerHp <= 0)
@@ -50,20 +50,6 @@ public class PlayerManager : MonoBehaviour
             rb2D.velocity = Vector2.zero;
             return;
         }
-
-        if(PlayerItem.Instance.useIronArmor)
-        {
-            speed = 2f;
-        }
-        else
-        {
-            speed = 5f;
-        }
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        Vector3 dir = new Vector3(x, y, 0);
-        rb2D.velocity = dir.normalized * speed * mc;
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (stopPanel.activeSelf == false)
@@ -77,6 +63,30 @@ public class PlayerManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+
+        if(delayTime > 3f)
+        {
+            PlayerItem.Instance.useInvincibleHand = false;
+        }
+        if(PlayerItem.Instance.useInvincibleHand)
+        {
+            delayTime += Time.deltaTime;
+            rb2D.velocity = Vector2.zero;
+            return;
+        }
+        if(PlayerItem.Instance.useIronArmor)
+        {
+            speed = 2f;
+        }
+        else
+        {
+            speed = 5f;
+        }
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        Vector3 dir = new Vector3(x, y, 0);
+        rb2D.velocity = dir.normalized * speed * mc;
+
     }
 
     IEnumerator Bomb()
