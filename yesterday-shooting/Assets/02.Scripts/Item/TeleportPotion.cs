@@ -51,6 +51,7 @@ public class TeleportPotion : ItemSkill
                     CameraMove.Instance.yIndex = y - 6;
                     DataManager.instance.nowPlayer.x = x;
                     DataManager.instance.nowPlayer.y = y;
+                    CameraMove.Instance.BulletPush();
                     break;
                 }
             }
