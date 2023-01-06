@@ -42,7 +42,7 @@ public class DoorOnOff : MonoBehaviour
 
         if (File.Exists(DataManager.instance.path + "TwoArr" + DataManager.instance.nowSlot.ToString()))
         {
-            Debug.Log("2���� �迭 �޾ƿ���");
+            //Debug.Log("2���� �迭 �޾ƿ���");
             DataManager.instance.TwoLoad();
             DataManager.instance.TwoSave(DataManager.instance.mapArrTwo, DataManager.instance.boolArrTwo);
 

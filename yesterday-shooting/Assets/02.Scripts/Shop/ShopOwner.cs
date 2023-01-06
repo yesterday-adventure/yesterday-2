@@ -22,7 +22,7 @@ public class ShopOwner : MonoBehaviour
     [Header("포션 가격")]
     [SerializeField] int[] potionMinPrice;
 
-    void OnEnable()
+    void Start()
     {
         if (Select.instance.newStart)
         {
@@ -45,6 +45,7 @@ public class ShopOwner : MonoBehaviour
                     {
                         continue;
                     }
+                    Debug.Log(DataManager.instance.nowPlayer.shopItem1[i]);
                     transform.GetChild(i).name = DataManager.instance.nowPlayer.shopItem1[i];
                     transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = DataManager.instance.nowPlayer.shopPlusPrice1[i];
                 }
@@ -77,8 +78,11 @@ public class ShopOwner : MonoBehaviour
         int plusPrice = weaponMinPrice[r] + (Random.Range(0,3) * 5);
         transform.GetChild(i).GetComponent<ShopExchange>().NeedMoney = plusPrice;
 
+        Debug.Log(gameObject.transform.parent.name);
+            
         if (gameObject.transform.parent.name == "Shop1")
         {
+            Debug.Log(shopWeapon[r]);
             DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
             DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
         }
@@ -98,12 +102,13 @@ public class ShopOwner : MonoBehaviour
 
         if (gameObject.transform.parent.name == "Shop1")
         {
-            DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
+            Debug.Log (shopItem[r]);
+            DataManager.instance.nowPlayer.shopItem1[i] = shopItem[r];
             DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
         }
         else if (gameObject.transform.parent.name == "Shop2")
         {
-            DataManager.instance.nowPlayer.shopItem2[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopItem2[i] = shopItem[r];
             DataManager.instance.nowPlayer.shopPlusPrice2[i] = plusPrice;
         }
     }
@@ -117,12 +122,12 @@ public class ShopOwner : MonoBehaviour
 
         if (gameObject.transform.parent.name == "Shop1")
         {
-            DataManager.instance.nowPlayer.shopItem1[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopItem1[i] = shopPotion[r];
             DataManager.instance.nowPlayer.shopPlusPrice1[i] = plusPrice;
         }
         else if (gameObject.transform.parent.name == "Shop2")
         {
-            DataManager.instance.nowPlayer.shopItem2[i] = shopWeapon[r];
+            DataManager.instance.nowPlayer.shopItem2[i] = shopPotion[r];
             DataManager.instance.nowPlayer.shopPlusPrice2[i] = plusPrice;
         }
     }

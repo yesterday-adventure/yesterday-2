@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        Debug.Log(DataManager.instance.afterData.bomb);
+        //Debug.Log(DataManager.instance.afterData.bomb);
         coin = DataManager.instance.afterData.goldenCoin;
         nowBombCount = DataManager.instance.afterData.bomb;
     }
