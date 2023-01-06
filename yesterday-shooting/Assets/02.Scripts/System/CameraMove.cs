@@ -12,6 +12,7 @@ public class CameraMove : MonoBehaviour
     public Vector3 offset;
 
     public GameObject playerP;
+    private BulletInfo[] bulletInfo;
     private bool move = true;
 
     public int xIndex = 0;
@@ -53,6 +54,7 @@ public class CameraMove : MonoBehaviour
                 doorOnOff.dir = Dir.right;
                 doorOnOff.changePos();
                 move = false;
+                BulletPush();
             }
             if (player.position.x - transform.position.x < -offset.x && move)
             {
@@ -61,6 +63,7 @@ public class CameraMove : MonoBehaviour
                 doorOnOff.dir = Dir.left;
                 doorOnOff.changePos();
                 move = false;
+                BulletPush();
             }
             if (player.position.y - transform.position.y > offset.y && move)
             {
@@ -69,6 +72,7 @@ public class CameraMove : MonoBehaviour
                 doorOnOff.dir = Dir.up;
                 doorOnOff.changePos();
                 move = false;
+                BulletPush();
             }
             if (player.position.y - transform.position.y < -offset.y && move)
             {
@@ -77,6 +81,7 @@ public class CameraMove : MonoBehaviour
                 doorOnOff.dir = Dir.down;
                 doorOnOff.changePos();
                 move = false;
+                BulletPush();
             }
 
             DataManager.instance.nowPlayer.xIndex = xIndex;
@@ -137,5 +142,16 @@ public class CameraMove : MonoBehaviour
         playerP.transform.position += new Vector3(0, -1, 0);
         yield return new WaitForSeconds(0.1f);
         move = true;
+    }
+
+    public void BulletPush()
+    {
+        //bulletInfo = GameObject.FindObjectsOfType<BulletInfo>();
+        bulletInfo = FindObjectsOfType<BulletInfo>();
+
+        foreach(BulletInfo a in bulletInfo)
+        {
+            PoolManager.Instance.Push(a.gameObject);
+        }
     }
 }
