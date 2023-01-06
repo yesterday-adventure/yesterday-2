@@ -10,7 +10,13 @@ public class Stage1_1Boss : MonoBehaviour
     [SerializeField] GameObject ball;
 
     [SerializeField] float hp;
-    float maxHp;
+    public float HP
+    {
+        get { return hp; }
+        set { hp = value; }
+    }
+
+    private float maxHp;
     [SerializeField] float speed;
     [Tooltip("플레이어와 보스의 거라")]
     [SerializeField] float distance = 10;
@@ -22,6 +28,8 @@ public class Stage1_1Boss : MonoBehaviour
     Rigidbody2D rb;
     Animator _animator;
     GameObject player;
+    GameObject stopPanel;
+
     [SerializeField] private Slider _slider;
 
     private bool walkState = false;
@@ -32,6 +40,7 @@ public class Stage1_1Boss : MonoBehaviour
         maxHp = hp;
         _animator = transform.GetChild(0).GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        stopPanel = GameObject.Find("StopPanel");
     }
 
     private void OnEnable()
@@ -42,7 +51,7 @@ public class Stage1_1Boss : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) _slider.gameObject.SetActive(!_slider.gameObject.activeSelf);
+        _slider.gameObject.SetActive(!stopPanel.activeSelf);
         if (DataManager.instance.nowPlayer.playerHp <= 0) return;
 
         if (walkState)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8549842016845701630}
   m_Layer: 10
   m_Name: Point Light 2D
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3101,7 +3101,7 @@ GameObject:
   - component: {fileID: 7020228265826758683}
   m_Layer: 10
   m_Name: BossParticle
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7907,7 +7907,7 @@ GameObject:
   - component: {fileID: 7496977460402129417}
   m_Layer: 10
   m_Name: BossParent
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8025,7 +8025,7 @@ GameObject:
   - component: {fileID: 2663426117185655205}
   m_Layer: 10
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8168,7 +8168,7 @@ GameObject:
   - component: {fileID: 7020228266114937276}
   m_Layer: 0
   m_Name: BossAttackCol
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
