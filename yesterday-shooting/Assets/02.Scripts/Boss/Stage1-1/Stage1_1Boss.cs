@@ -52,7 +52,12 @@ public class Stage1_1Boss : MonoBehaviour
     private void Update()
     {
         _slider.gameObject.SetActive(!stopPanel.activeSelf);
-        if (DataManager.instance.nowPlayer.playerHp <= 0) return;
+
+        if (DataManager.instance.nowPlayer.playerHp <= 0)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
 
         if (walkState)
         {

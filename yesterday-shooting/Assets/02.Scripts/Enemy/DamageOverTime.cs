@@ -30,10 +30,10 @@ public class DamageOverTime : MonoBehaviour
     private IEnumerator BossDot(float damage, float loopTime, float tick)
     {
         Debug.Log("후후 공격시작이닷");
-        Stage1_1Boss bosshp = GetComponent<Stage1_1Boss>();
+        Stage1_1Boss bossHp = GetComponent<Stage1_1Boss>();
         for (int i = 0; i < loopTime; i++)
         {
-            bosshp.HP -= damage;
+            bossHp.HP -= damage;
             yield return new WaitForSeconds(tick);
             Debug.Log("틱이닷!!!!아얏!!"); //?
         }
