@@ -20,6 +20,7 @@ TagManager:
   - Bomb
   - Hole
   - room0
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Hole
   - Enemy
   - Room
-  - 
+  - Boss
   - 
   - 
   - 
