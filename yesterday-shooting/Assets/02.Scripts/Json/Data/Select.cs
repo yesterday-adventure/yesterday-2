@@ -18,6 +18,9 @@ public class Select : MonoBehaviour
 
     public bool newStart = false;
 
+    public GameObject gameLoad;
+    //public Slider gameLoad;
+
     private void Awake()
     {
         newStart = false;
@@ -130,15 +133,30 @@ public class Select : MonoBehaviour
     public void GameStart()
     {
         DataManager.instance.SaveData();
+
+        //StartCoroutine(GameStartRoutine());
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         SceneManager.LoadScene("Play");
+    }
+
+    IEnumerator GameStartRoutine()
+    {
+        gameLoad.SetActive(true);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Play");
+
+        while (!operation.isDone)
+        {
+            gameLoad.GetComponentInChildren<Slider>().value = operation.progress;
+            yield return null;
+        }
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
-    /*IEnumerator GameStartRoutine()
-    {
-        AsyncOperation operation = 
-    }*/
 
     public void Back()
     {
