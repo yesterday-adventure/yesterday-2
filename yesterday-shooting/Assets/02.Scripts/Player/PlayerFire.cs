@@ -48,7 +48,7 @@ public class PlayerFire : MonoBehaviour
 
         if (!Select.instance.newStart)
         {
-            Debug.Log(DataManager.instance.nowPlayer.weaponName);
+            //Debug.Log(DataManager.instance.nowPlayer.weaponName);
             weapon = weapons[DataManager.instance.nowPlayer.weaponName];
         }
 

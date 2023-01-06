@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class IntroButtonManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class IntroButtonManager : MonoBehaviour
     [SerializeField] private GameObject targetObj;
     [SerializeField] private GameObject targetObj1;
 
+    public GameObject gameLoad;
 
     void Start()
     {
@@ -109,7 +111,25 @@ public class IntroButtonManager : MonoBehaviour
         Select.instance.savefile[DataManager.instance.nowSlot] = true;
 
         DataManager.instance.SaveData();
-        SceneManager.LoadScene("Play");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        StartCoroutine(GameStartRoutine());
+        //SceneManager.LoadScene("Play");
     }
+
+    IEnumerator GameStartRoutine()
+    {
+        gameLoad.SetActive(true);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Play");
+
+        while (!operation.isDone)
+        {
+            gameLoad.GetComponentInChildren<Slider>().value = operation.progress;
+            yield return null;
+        }
+
+    }
+
     #endregion
 }

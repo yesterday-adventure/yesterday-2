@@ -27,7 +27,7 @@ public class PlayerData
 
     public string weaponName = null;    //무기 이름 저장 재희야 이거 활용해서 무기 저장해줘
     public string activeItem = null;      //아이템 이름 저장 설아야 이거 써서 엑티브 아이템 저장해줭
-    public int activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
+    public float activeItemCoolTime = 0;  //아이템 이름 저장 설아야 이거 써서 엑티브 아이템쿨타임 저장해줭.
 
     public string[] shopItem1 = new string[4];
     public int[] shopPlusPrice1 = new int[4];

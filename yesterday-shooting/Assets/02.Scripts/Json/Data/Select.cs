@@ -134,12 +134,15 @@ public class Select : MonoBehaviour
     {
         DataManager.instance.SaveData();
 
-        //StartCoroutine(GameStartRoutine());
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        SceneManager.LoadScene("Play");
+        StartCoroutine(GameStartRoutine());
+
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+
+        //SceneManager.LoadScene("Play");
     }
 
     IEnumerator GameStartRoutine()
@@ -148,14 +151,12 @@ public class Select : MonoBehaviour
 
         AsyncOperation operation = SceneManager.LoadSceneAsync("Play");
 
+
         while (!operation.isDone)
         {
             gameLoad.GetComponentInChildren<Slider>().value = operation.progress;
             yield return null;
         }
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Back()

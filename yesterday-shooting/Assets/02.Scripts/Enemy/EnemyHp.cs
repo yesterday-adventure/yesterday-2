@@ -31,7 +31,7 @@ public class EnemyHp : MonoBehaviour, IDamageable
     {
         _isAttack = true;
         hp -= damage;
-        Debug.Log($"damage : {damage} , hp : {hp}");
+        //Debug.Log($"damage : {damage} , hp : {hp}");
 
         if (hp > 0)
         {
