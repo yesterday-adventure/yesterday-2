@@ -55,6 +55,9 @@ public class ServeItemManager : MonoBehaviour
             {
                 Instantiate(bombObj, DataManager.instance.afterData.dropBomb[i], Quaternion.identity);
             }
+
+            gold = DataManager.instance.afterData.goldenCoin;
+            bomb = DataManager.instance.afterData.bomb;
         }
     }
 

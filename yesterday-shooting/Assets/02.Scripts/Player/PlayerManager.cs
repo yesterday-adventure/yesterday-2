@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] GameObject stopPanel;
     [SerializeField] private float speed = 5f;
-    public int coin;
+    int coin;
 
     [Header("Player Bomb")]
     public bool rightIsTrue;    //�÷��̾ ���� ���� �ִ� ����
@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
+        Debug.Log(DataManager.instance.afterData.bomb);
         coin = DataManager.instance.afterData.goldenCoin;
         nowBombCount = DataManager.instance.afterData.bomb;
     }
@@ -124,6 +125,8 @@ public class PlayerManager : MonoBehaviour
 
                         yield return new WaitForSeconds(bombDeley);
                     }
+
+                    DataManager.instance.afterData.bomb--;
                 }
             }
             yield return null;

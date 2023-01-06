@@ -135,6 +135,11 @@ public class Select : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    /*IEnumerator GameStartRoutine()
+    {
+        AsyncOperation operation = 
+    }*/
+
     public void Back()
     {
         fileDelete.interactable = false;
