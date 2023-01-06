@@ -29,7 +29,7 @@ public class CurseNail : ItemSkill
             if (arr.transform.TryGetComponent(out movement)) //만약 그것에 AgentMovement 스크립트가 있다면
             {
                 if(movement.Speed >= 2)
-                    movement.Speed -=2; //그 스크립트의 속도를 2만큼 낮춘다
+                    movement.Speed /= 2; //그 스크립트의 속도를 2만큼 낮춘다
             }
             movement = null; //? 뭔지 모르겠는데 그렇다
         }
