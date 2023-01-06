@@ -40,11 +40,11 @@ public class Stage1_1Boss : MonoBehaviour
         maxHp = hp;
         _animator = transform.GetChild(0).GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        stopPanel = GameObject.Find("StopPanel");
     }
 
     private void OnEnable()
     {
+        stopPanel = GameObject.Find("StopPanel");
         player = FindObjectOfType<PlayerHp>().transform.gameObject;
         StartCoroutine(this.Pattern());
     }

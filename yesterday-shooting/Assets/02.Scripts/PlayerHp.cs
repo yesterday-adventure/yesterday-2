@@ -142,7 +142,7 @@ public class PlayerHp : MonoBehaviour
 
         if (nowHp != DataManager.instance.nowPlayer.playerHp)
         {
-            Debug.Log("체력달음");
+            //Debug.Log("체력달음");
             FindObjectOfType<GameEffectSoundManager>().playerHpDown();
             nowHp = DataManager.instance.nowPlayer.playerHp;
         }

@@ -26,6 +26,7 @@ public class ShopOwner : MonoBehaviour
     {
         if (Select.instance.newStart)
         {
+            Debug.Log("아이템 생성하기");
             SetWeapon(0);
             SetItem(1);
             SetItem(2);
@@ -33,6 +34,9 @@ public class ShopOwner : MonoBehaviour
         }
         else
         {
+
+            Debug.Log("아이템 불러오기");
+
             if (gameObject.transform.parent.name == "Shop1")
             {
                 for (int i = 0; i < 4; i++)

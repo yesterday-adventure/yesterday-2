@@ -52,15 +52,19 @@ public class PlayerItem : MonoBehaviour
         }
         useRustyRazorBlade = false;//먼 버그징..?
 
-        cool = DataManager.instance.nowPlayer.activeItemCoolTime;
+        DataManager.instance.nowPlayer.activeItem = item.ToString();
+            //초기값 저장하는거
     }
 
     private void Start()
     {
+        //Debug.Log(DataManager.instance.nowPlayer.activeItem);
         //�ٴڿ� ������ ������ �־��ִ� ��.
         if (!Select.instance.newStart)  //ó�� �����ϴ� ���� �ƴ϶��
         {
-
+        Debug.Log(items[DataManager.instance.nowPlayer.activeItem]);
+            item = items[DataManager.instance.nowPlayer.activeItem];
+            cool = DataManager.instance.nowPlayer.activeItemCoolTime;
         }
     }
 
@@ -72,7 +76,9 @@ public class PlayerItem : MonoBehaviour
             {
                 Instantiate(usingParticle, transform.position, Quaternion.identity);
                 cool = item.ItemSkill.maxCool;
-                
+                DataManager.instance.nowPlayer.activeItemCoolTime = cool;
+
+
                 usingImage.transform.localScale = new Vector2(1, 1);
                 usingImage.color = Color.white;
                 Sequence seq = DOTween.Sequence()
@@ -97,6 +103,9 @@ public class PlayerItem : MonoBehaviour
             Debug.Log(temp);
             Debug.Log(collision.gameObject.name);
             item = items[collision.gameObject.name];
+
+            DataManager.instance.nowPlayer.activeItem = collision.gameObject.name;
+
             collision.gameObject.name = temp;
 
             ItemNameAnimation.Instance.InitText(item.ItemSkill.titleTxt, item.ItemSkill.captionTxt);
