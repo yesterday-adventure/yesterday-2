@@ -51,6 +51,7 @@ public class PlayerHp : MonoBehaviour
     {
         if (PlayerItem.Instance.useIronArmor)
         { //철갑주 아이템을 사용하여 보호막이 있는 경우
+            shieldTime = 0;
             PlayerItem.Instance.useIronArmor = false;
         }
         else
