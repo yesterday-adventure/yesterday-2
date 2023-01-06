@@ -49,6 +49,7 @@ public class PlayerItem : MonoBehaviour
         {
             items.Add(itemArr[i].name, itemArr[i]);
         }
+        useRustyRazorBlade = false;//먼 버그징..?
 
         cool = DataManager.instance.nowPlayer.activeItemCoolTime;
     }

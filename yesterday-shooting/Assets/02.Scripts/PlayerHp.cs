@@ -67,7 +67,7 @@ public class PlayerHp : MonoBehaviour
     IEnumerator StartTimeFrizm()
     {
         //int r = UnityEngine.Random.Range(-5, 5);
-        Time.timeScale = 0.3f;
+        Time.timeScale = 0.5f;
         //camera1.orthographicSize = 3.95f;
         //camera1.transform.rotation = Quaternion.Euler(0, 0, r);
 

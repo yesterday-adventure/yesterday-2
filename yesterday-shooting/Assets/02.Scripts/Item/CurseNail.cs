@@ -27,7 +27,10 @@ public class CurseNail : ItemSkill
 
         foreach(var arr in overLapBox){ //걸린 콜라이더들을 전부 반복한다
             if (arr.transform.TryGetComponent(out movement)) //만약 그것에 AgentMovement 스크립트가 있다면
-            movement.Speed -=2; //그 스크립트의 속도를 2만큼 낮춘다
+            {
+                if(movement.Speed >= 2)
+                    movement.Speed -=2; //그 스크립트의 속도를 2만큼 낮춘다
+            }
             movement = null; //? 뭔지 모르겠는데 그렇다
         }
 
