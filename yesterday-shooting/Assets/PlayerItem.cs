@@ -9,8 +9,8 @@ public class PlayerItem : MonoBehaviour
     [SerializeField] private GameObject usingParticle;
     public FieldActiveItem item = null;
 
-    [SerializeField] private FieldActiveItem[] itemArr;
-    Dictionary<string, FieldActiveItem> items = new Dictionary<string, FieldActiveItem>();
+    [SerializeField] private GameObject[] itemArr;
+    Dictionary<string, GameObject> items = new Dictionary<string, GameObject>();
 
     public float cool = 0;
 
@@ -63,7 +63,7 @@ public class PlayerItem : MonoBehaviour
         if (!Select.instance.newStart)  //ó�� �����ϴ� ���� �ƴ϶��
         {
         Debug.Log(items[DataManager.instance.nowPlayer.activeItem]);
-            item = items[DataManager.instance.nowPlayer.activeItem];
+            item = items[DataManager.instance.nowPlayer.activeItem].GetComponent<FieldActiveItem>();
             cool = DataManager.instance.nowPlayer.activeItemCoolTime;
         }
     }
@@ -102,7 +102,7 @@ public class PlayerItem : MonoBehaviour
             string temp = item.name;
             Debug.Log(temp);
             Debug.Log(collision.gameObject.name);
-            item = items[collision.gameObject.name];
+            item = items[collision.gameObject.name].GetComponent<FieldActiveItem>();
 
             DataManager.instance.nowPlayer.activeItem = collision.gameObject.name;
 
