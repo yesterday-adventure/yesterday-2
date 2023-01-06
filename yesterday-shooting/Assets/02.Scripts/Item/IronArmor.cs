@@ -8,6 +8,9 @@ public class IronArmor : ItemSkill
     
     public override bool Skill()
     {
+        if(PlayerItem.Instance.useIronArmor)
+            return false;
+
         maxCool = itemMaxColl; //이 아이템의 최대 쿨타임 수를 정한다.
 
         //PlayerFire.instance.delay -= 0.3f;
