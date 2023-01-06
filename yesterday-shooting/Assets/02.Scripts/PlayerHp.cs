@@ -243,5 +243,7 @@ public class PlayerHp : MonoBehaviour
 
         //File.Delete(DataManager.instance.path + DataManager.instance.nowSlot);
         SceneManager.LoadScene("Over");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
