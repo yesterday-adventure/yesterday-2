@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
 
     [SerializeField] private GameObject stopPanel;
-    public GameObject StopPanel
+    public GameObject StopPanelㄴ
     {
         get { return stopPanel; }
     }

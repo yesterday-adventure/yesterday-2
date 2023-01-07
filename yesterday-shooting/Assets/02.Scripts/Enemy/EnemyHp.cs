@@ -1,9 +1,6 @@
-using System.ComponentModel;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
 using DG.Tweening;
+using System;
+using UnityEngine;
 public class EnemyHp : MonoBehaviour, IDamageable
 {
     [SerializeField] public float hp;

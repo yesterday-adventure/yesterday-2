@@ -1,8 +1,7 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using UnityEngine.Analytics;
 
 public class Stage1_1Boss : MonoBehaviour
 {

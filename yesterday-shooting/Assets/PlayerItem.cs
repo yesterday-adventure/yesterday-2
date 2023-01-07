@@ -1,7 +1,7 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class PlayerItem : MonoBehaviour
 {
@@ -36,6 +36,7 @@ public class PlayerItem : MonoBehaviour
         }
         else
         {
+            //이거맞나
             Debug.LogWarning("Multiple PlayerItem Instance running");
         }
 

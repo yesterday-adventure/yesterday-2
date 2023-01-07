@@ -2,11 +2,8 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEditor;
-using Unity.Rendering.HybridV2;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHp : MonoBehaviour
 {
